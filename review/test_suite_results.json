@@ -1,63 +1,74 @@
 {
-  "test_1_product": {
-    "status": "PASS",
-    "id": 42,
-    "name": "بنطال جينز كاجوال - تجريبي",
-    "price": 450,
-    "stock": 25,
-    "stock_status": "instock"
-  },
-  "test_2_cart": {
-    "status": "PASS",
-    "subtotal": 450,
-    "shipping": 50,
-    "total": 500
-  },
-  "test_3_phone": {
-    "status": "PASS",
-    "invalid_blocked": true,
-    "invalid_error_message": "يرجى إدخال رقم محمول مصري صحيح، مثل 01012345678 أو +201012345678.",
-    "valid_phones_tested": [
-      "01012345678",
-      "+201123456789",
-      "٠١٢٣٤٥٦٧٨٩٠"
-    ]
-  },
-  "test_4_order": {
-    "id": 70,
-    "status": "processing",
-    "items": [
-      {
+    "test_1_product": {
+        "status": "PASS",
+        "id": 42,
         "name": "بنطال جينز كاجوال - تجريبي",
-        "quantity": 1,
-        "subtotal": "450",
-        "total": "450"
-      }
-    ],
-    "shipping_method": "شحن محلي داخل مصر",
-    "shipping_total": 50,
-    "total": 500,
-    "billing_phone": "01012345678"
-  },
-  "test_5_variable_stock": {
-    "status": "PASS",
-    "variable_product_id": 33,
-    "out_of_stock_variation_id": 61,
-    "in_stock_variation_id": 60,
-    "initial_stock": 6,
-    "reduced_stock": 4,
-    "restored_stock": 6
-  },
-  "test_6_mini_cart": {
-    "status": "PASS",
-    "rendered_classes": [
-      "woocommerce-mini-cart",
-      "woocommerce-mini-cart__total"
-    ],
-    "item_found_in_mini_cart": true
-  },
-  "test_7_checkout_blocks": {
-    "status": "لم يُختبر",
-    "notes": "تم اختبار Classic Checkout بالكامل مع ربط التحقق بدوال Store API عبر hook woocommerce_store_api_checkout_update_order_from_request."
-  }
+        "actual_price": 450,
+        "stock": 24,
+        "stock_status": "instock"
+    },
+    "test_2_cart": {
+        "status": "PASS",
+        "actual_subtotal": 450,
+        "actual_shipping": 50,
+        "actual_total": 500
+    },
+    "test_3_phone": {
+        "status": "PASS",
+        "invalid_blocked": true,
+        "invalid_error_message": "يرجى إدخال رقم محمول مصري صحيح، مثل 01012345678 أو +201012345678.",
+        "valid_phones_tested": [
+            "01012345678",
+            "+201123456789",
+            "٠١٢٣٤٥٦٧٨٩٠"
+        ]
+    },
+    "test_4_programmatic_order": {
+        "type": "programmatic_order",
+        "id": 73,
+        "created_via": "wc_create_order",
+        "status": "processing",
+        "items": [
+            {
+                "name": "بنطال جينز كاجوال - تجريبي",
+                "quantity": 1,
+                "subtotal": "450",
+                "total": "450"
+            }
+        ],
+        "shipping_method": "شحن محلي داخل مصر",
+        "shipping_total": 50,
+        "total": 500,
+        "payment_method": "cod (الدفع عند الاستلام (COD))",
+        "saved_billing_phone": "01012345678"
+    },
+    "test_5_browser_checkout_order": {
+        "type": "browser_checkout_order",
+        "id": 69,
+        "created_via": "checkout",
+        "status": "cancelled",
+        "total": 300,
+        "payment_method": "cod (الدفع عند الاستلام (اختبار))",
+        "saved_billing_phone": "01098765432"
+    },
+    "test_6_variable_stock": {
+        "status": "PASS",
+        "variable_product_id": 33,
+        "out_of_stock_variation_id": 61,
+        "in_stock_variation_id": 60,
+        "initial_stock": 6,
+        "reduced_stock": 4,
+        "restored_stock": 6
+    },
+    "test_7_mini_cart": {
+        "status": "PASS",
+        "rendered_classes": [
+            "woocommerce-mini-cart",
+            "woocommerce-mini-cart__total"
+        ]
+    },
+    "checkout_blocks_status": {
+        "status": "لم يُختبر",
+        "notes": "تم اختبار Classic Checkout بالكامل مع ربط التحقق بدوال Store API عبر hook woocommerce_store_api_checkout_update_order_from_request."
+    }
 }
