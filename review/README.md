@@ -23,7 +23,7 @@
 
 ---
 
-## 2. فهرس لقطات الشاشة المرفقة (`tests/screenshots/`)
+## 2. فهرس لقطات الشاشة المرفقة (`review/screenshots/`)
 
 * **الواجهات الرئيسية (Desktop & Mobile):**
   - `01_home_desktop.png`: الرئيسية على الشاشات الكبيرة.
@@ -47,6 +47,6 @@
 
 ```bash
 # تشغيل السكربت من بيئة ووردبريس المحلية
-php tests/comprehensive_test_suite.php
+php review/comprehensive_test_suite.php
 ```
-النتائج التفصيلية موثقة في ملف `tests/test_suite_results.json`.
+النتائج التفصيلية موثقة في ملف `review/test_suite_results.json`.
