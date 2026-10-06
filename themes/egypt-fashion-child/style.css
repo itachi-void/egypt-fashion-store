@@ -1,0 +1,61 @@
+/*
+Theme Name: Egypt Fashion Child
+Theme URI: https://github.com/itachi-void/egypt-fashion-store
+Description: قالب فرعي مخصص لمتجر الأزياء المصري مبني على Twenty Twenty-Five مع دعم كامل للغة العربية و WooCommerce.
+Author: Egypt Fashion Team
+Template: twentytwentyfive
+Version: 1.0.0
+Text Domain: egypt-fashion-child
+*/
+
+:root {
+    --ef-primary-color: #0f172a;
+    --ef-accent-color: #d97706;
+    --ef-bg-light: #f8fafc;
+    --ef-text-main: #1e293b;
+    --ef-text-muted: #64748b;
+    --ef-font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Noto Sans Arabic", sans-serif;
+}
+
+body {
+    font-family: var(--ef-font-family);
+    direction: rtl;
+    text-align: right;
+    color: var(--ef-text-main);
+}
+
+/* WooCommerce Store Custom RTL Helpers */
+.woocommerce, .woocommerce-page {
+    direction: rtl;
+    text-align: right;
+}
+
+.woocommerce ul.products li.product .woocommerce-loop-product__title {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--ef-primary-color);
+    margin-top: 0.75rem;
+}
+
+.woocommerce ul.products li.product .price {
+    color: var(--ef-accent-color);
+    font-weight: 700;
+}
+
+.woocommerce #respond input#submit.alt,
+.woocommerce a.button.alt,
+.woocommerce button.button.alt,
+.woocommerce input.button.alt {
+    background-color: var(--ef-primary-color);
+    color: #ffffff;
+    border-radius: 6px;
+    padding: 10px 20px;
+    transition: background-color 0.2s ease;
+}
+
+.woocommerce #respond input#submit.alt:hover,
+.woocommerce a.button.alt:hover,
+.woocommerce button.button.alt:hover,
+.woocommerce input.button.alt:hover {
+    background-color: #334155;
+}

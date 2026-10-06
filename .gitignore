@@ -1,0 +1,99 @@
+# ==============================================================================
+# Egypt Fashion Store - Git Ignore Configuration
+# ==============================================================================
+
+# --- Environment & Configuration Secrets ---
+wp-config.php
+wp-config-sample.php
+.env
+.env.*
+*.env
+*.local
+local-xdebuginfo.php
+
+# --- Private Keys, Certificates & Tokens ---
+*.pem
+*.key
+*.crt
+*.cer
+*.p12
+*.pfx
+*.pub
+id_rsa
+id_ed25519
+
+# --- Databases, Backups & Dumps ---
+*.sql
+*.sql.gz
+*.tar
+*.tar.gz
+*.zip
+*.bak
+*.backup
+backups/
+db-dumps/
+
+# --- Logs, Debug & Session Data ---
+*.log
+debug.log
+error_log
+wc-logs/
+*.sqlite
+cookies.txt
+*.session
+
+# --- Media Uploads & Generated Cache ---
+wp-content/uploads/
+uploads/
+cache/
+*.cache
+*.tmp
+temp/
+
+# --- Dependencies & Package Managers ---
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+vendor/
+composer.phar
+
+# --- WordPress Core Files (Do not track in custom code repo) ---
+wp-admin/
+wp-includes/
+wp-activate.php
+wp-blog-header.php
+wp-comments-post.php
+wp-cron.php
+wp-links-opml.php
+wp-load.php
+wp-login.php
+wp-mail.php
+wp-settings.php
+wp-signup.php
+wp-trackback.php
+xmlrpc.php
+readme.html
+license.txt
+
+# --- External & Third-Party Plugins (Install via WP-CLI / Composer) ---
+plugins/woocommerce/
+plugins/akismet/
+plugins/hello.php
+
+# --- Local Testing Tools & Staging Interceptors ---
+wp-content/mu-plugins/local-email-guard.php
+mu-plugins/local-email-guard.php
+local-email-guard.php
+plugins/capability-test-accordion/
+capability-test-accordion/
+
+# --- Operating System & Editor Artifacts ---
+.DS_Store
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
