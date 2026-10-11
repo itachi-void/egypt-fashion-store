@@ -1,0 +1,58 @@
+{
+  "step4": {
+    "cssHref": "http://capability-test.local/wp-content/themes/egypt-fashion-child/assets/madar.css?ver=2.0.2",
+    "hasVer202": true
+  },
+  "step5": {
+    "viewport1440": {
+      "brandCount": 1,
+      "firstTitle": "مدار\nMADAR",
+      "headerText": "خامات مختارة. قصّات هادية. عالم الرجال والأطفال\n\nمدار\nMADAR\nالتشكيلة\nرجالي\nأطفال\nعالم مدار\nدخول / إنشاء حساب",
+      "customerDetailsTop": 361.1875,
+      "orderReviewTop": 499.53125,
+      "diffTop": 138.34375,
+      "diffUnder80": false
+    },
+    "viewport375": {
+      "brandCount": 1,
+      "firstTitle": "مدار"
+    }
+  },
+  "step6": {
+    "orderReceivedUrl": "http://capability-test.local/checkout/order-received/83/?key=wc_order_yC4pxlR9H0hVC",
+    "orderNumber": "83",
+    "orderHeaderBrand": 0
+  },
+  "step7": {
+    "home": {
+      "url": "http://capability-test.local/",
+      "headerCount": 1,
+      "consoleErrors": 0,
+      "pass": true
+    },
+    "shop": {
+      "url": "http://capability-test.local/shop/",
+      "headerCount": 1,
+      "consoleErrors": 0,
+      "pass": true
+    },
+    "p24": {
+      "url": "http://capability-test.local/?p=24",
+      "headerCount": 1,
+      "consoleErrors": 0,
+      "pass": true
+    },
+    "cart": {
+      "url": "http://capability-test.local/cart/",
+      "headerCount": 1,
+      "consoleErrors": 0,
+      "pass": true
+    },
+    "my_account": {
+      "url": "http://capability-test.local/my-account/",
+      "headerCount": 1,
+      "consoleErrors": 0,
+      "pass": true
+    }
+  }
+}

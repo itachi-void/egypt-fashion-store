@@ -965,6 +965,7 @@ body.woocommerce-checkout #place_order { float: none !important; width: 100%; mi
     body.woocommerce-checkout form.checkout { display: grid; grid-template-columns: minmax(0, 1.4fr) minmax(320px, 1fr); gap: 0 clamp(40px, 5vw, 80px); align-items: start; }
     body.woocommerce-checkout form.checkout > * { grid-column: 1; }
     body.woocommerce-checkout form.checkout > .woocommerce-NoticeGroup { grid-column: 1 / -1; }
+    body.woocommerce-checkout form.checkout > #customer_details { grid-row: 1 / span 5; }
     body.woocommerce-checkout form.checkout > #order_review_heading { grid-column: 2; grid-row: 1; margin-top: 0; }
     body.woocommerce-checkout form.checkout > #order_review { grid-column: 2; grid-row: 2 / span 4; position: sticky; top: 110px; }
 }

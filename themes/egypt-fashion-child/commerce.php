@@ -45,6 +45,11 @@ add_filter('render_block', 'madar_render_block_enhancements', 10, 3);
 function madar_render_block_enhancements($content, $block, $instance = null) {
     $name = $block['blockName'] ?? '';
 
+    // WooCommerce's checkout template points at its own simplified header part.
+    if ('core/template-part' === $name && 'checkout-header' === ($block['attrs']['slug'] ?? '')) {
+        return '<header class="wp-block-template-part">' . madar_storefront_header() . '</header>';
+    }
+
     // Block loops: hover alternate image.
     if ('woocommerce/product-image' === $name && $instance && !empty($instance->context['postId'])) {
         $alt = madar_alt_image_html((int) $instance->context['postId']);

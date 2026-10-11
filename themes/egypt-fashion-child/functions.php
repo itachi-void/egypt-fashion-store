@@ -3,14 +3,14 @@
  * Egypt Fashion Child Theme Functions
  *
  * @package EgyptFashionChild
- * @version 2.0.1
+ * @version 2.0.2
  */
 
 if (!defined('ABSPATH')) {
     exit; // Exit if accessed directly.
 }
 
-define('MADAR_THEME_VERSION', '2.0.1');
+define('MADAR_THEME_VERSION', '2.0.2');
 
 /**
  * Enqueue parent, child and Madar design layer.
