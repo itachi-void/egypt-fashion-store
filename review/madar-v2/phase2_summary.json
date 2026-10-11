@@ -1,0 +1,29 @@
+{
+  "step13Details": {
+    "prefixText": "التصنيف:",
+    "skuText": "رمز المنتج:\n\t\t\t\tTEST-TSHIRT-VAR",
+    "sizeGuideBtnFound": true,
+    "dialogFound": true,
+    "opened": true
+  },
+  "orderId": null,
+  "orderReceivedUrl": null,
+  "accountLoggedInCheck": {
+    "isLoggedIn": true,
+    "navFound": true,
+    "links": [
+      "لوحة التحكم",
+      "الطلبات",
+      "التنزيلات",
+      "العنوان",
+      "تفاصيل الحساب",
+      "تسجيل الخروج"
+    ],
+    "ordersLinkFound": true
+  },
+  "ordersCheck": {
+    "ordersTableFound": false,
+    "ordersCount": 0,
+    "sampleOrder": null
+  }
+}

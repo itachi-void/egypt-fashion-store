@@ -3,20 +3,21 @@
  * Egypt Fashion Child Theme Functions
  *
  * @package EgyptFashionChild
- * @version 1.0.0
+ * @version 2.0.0
  */
 
 if (!defined('ABSPATH')) {
     exit; // Exit if accessed directly.
 }
 
+define('MADAR_THEME_VERSION', '2.0.0');
+
 /**
- * Enqueue parent and child stylesheets.
+ * Enqueue parent, child and Madar design layer.
  */
 function ef_enqueue_theme_styles() {
     $parent_handle = 'twentytwentyfive-style';
-    
-    // Parent theme style
+
     wp_enqueue_style(
         $parent_handle,
         get_template_directory_uri() . '/style.css',
@@ -24,15 +25,36 @@ function ef_enqueue_theme_styles() {
         wp_get_theme()->parent() ? wp_get_theme()->parent()->get('Version') : '1.0.0'
     );
 
-    // Child theme style
     wp_enqueue_style(
         'egypt-fashion-child-style',
         get_stylesheet_uri(),
         [$parent_handle],
-        wp_get_theme()->get('Version')
+        MADAR_THEME_VERSION
+    );
+
+    wp_enqueue_style(
+        'madar-fonts',
+        'https://fonts.googleapis.com/css2?family=Alexandria:wght@300;400;500&family=Noto+Naskh+Arabic:wght@400;500&display=swap',
+        [],
+        null
+    );
+
+    wp_enqueue_style(
+        'madar',
+        get_stylesheet_directory_uri() . '/assets/madar.css',
+        ['egypt-fashion-child-style', 'madar-fonts'],
+        MADAR_THEME_VERSION
+    );
+
+    wp_enqueue_script(
+        'madar',
+        get_stylesheet_directory_uri() . '/assets/madar.js',
+        [],
+        MADAR_THEME_VERSION,
+        ['in_footer' => true, 'strategy' => 'defer']
     );
 }
-add_action('wp_enqueue_scripts', 'ef_enqueue_theme_styles');
+add_action('wp_enqueue_scripts', 'ef_enqueue_theme_styles', 20);
 
 /**
  * Declare WooCommerce theme support features.
@@ -44,17 +66,6 @@ function ef_add_woocommerce_support() {
     add_theme_support('wc-product-gallery-slider');
 }
 add_action('after_setup_theme', 'ef_add_woocommerce_support');
+
 require_once __DIR__ . '/storefront.php';
-
-function madar_enqueue_storefront_styles() {
-    wp_enqueue_style('madar-storefront', get_stylesheet_directory_uri() . '/assets/storefront.css', ['egypt-fashion-child-style'], '1.1.0');
-}
-add_action('wp_enqueue_scripts', 'madar_enqueue_storefront_styles', 20);
-
-function madar_enqueue_catalog_styles() {
-    if ( ! function_exists( 'is_woocommerce' ) || ! ( is_shop() || is_product_taxonomy() || is_product() ) ) {
-        return;
-    }
-    wp_enqueue_style( 'madar-catalog', get_stylesheet_directory_uri() . '/assets/catalog.css', [ 'madar-storefront' ], '0.3.0' );
-}
-add_action( 'wp_enqueue_scripts', 'madar_enqueue_catalog_styles', 30 );
+require_once __DIR__ . '/commerce.php';

@@ -1,0 +1,7 @@
+{
+  "orderReceivedUrl": "http://capability-test.local/checkout/order-received/81/?key=wc_order_HbEo5SSB71O6L",
+  "orderDetails": {
+    "orderNumber": "81",
+    "orderTotal": null
+  }
+}
