@@ -1,0 +1,114 @@
+{
+  "step5": {
+    "madarCssHref": "http://capability-test.local/wp-content/themes/egypt-fashion-child/assets/madar.css?ver=2.0.1",
+    "hasVer201": true
+  },
+  "step6": {
+    "cart": {
+      "url": "http://capability-test.local/cart/",
+      "scrollClients": [
+        1425,
+        1425
+      ],
+      "overflowElements": [],
+      "isMatch": true
+    },
+    "home": {
+      "url": "http://capability-test.local/",
+      "scrollClients": [
+        1425,
+        1425
+      ],
+      "overflowElements": [
+        "mdr-marquee__track L=-331 R=1467",
+        " L=1326 R=1467",
+        " L=-44 R=108",
+        " L=-331 R=-116",
+        "wc-block-mini-cart__drawer wc-block-components-drawer is-mobile L=-480 R=0",
+        "wc-block-components-drawer__content L=-480 R=0",
+        "wc-block-mini-cart__template-part L=-480 R=0",
+        "wp-block-woocommerce-mini-cart-contents L=-480 R=0"
+      ],
+      "isMatch": false
+    },
+    "shop": {
+      "url": "http://capability-test.local/shop/",
+      "scrollClients": [
+        1425,
+        1425
+      ],
+      "overflowElements": [
+        "wc-block-mini-cart__drawer wc-block-components-drawer is-mobile L=-480 R=0",
+        "wc-block-components-drawer__content L=-480 R=0",
+        "wc-block-mini-cart__template-part L=-480 R=0",
+        "wp-block-woocommerce-mini-cart-contents L=-480 R=0",
+        "wc-block-components-drawer__close-wrapper L=-480 R=0",
+        "wc-block-components-button wp-element-button wc-block-components-drawer__close c L=-481 R=-429",
+        "[object SVGAnimatedString] L=-467 R=-443",
+        "[object SVGAnimatedString] L=-462 R=-447"
+      ],
+      "isMatch": false
+    },
+    "p24": {
+      "url": "http://capability-test.local/?p=24",
+      "scrollClients": [
+        1425,
+        1425
+      ],
+      "overflowElements": [
+        "wc-block-mini-cart__drawer wc-block-components-drawer is-mobile L=-480 R=0",
+        "wc-block-components-drawer__content L=-480 R=0",
+        "wc-block-mini-cart__template-part L=-480 R=0",
+        "wp-block-woocommerce-mini-cart-contents L=-480 R=0",
+        "wc-block-components-drawer__close-wrapper L=-480 R=0",
+        "wc-block-components-button wp-element-button wc-block-components-drawer__close c L=-481 R=-429",
+        "[object SVGAnimatedString] L=-467 R=-443",
+        "[object SVGAnimatedString] L=-462 R=-447"
+      ],
+      "isMatch": false
+    },
+    "checkout": {
+      "url": "http://capability-test.local/checkout/",
+      "scrollClients": [
+        1425,
+        1425
+      ],
+      "overflowElements": [],
+      "isMatch": true
+    }
+  },
+  "step7": {
+    "checkoutHeaderBrand": false,
+    "checkoutHeaderOuter": "<header class=\"wp-block-template-part\">\n<header class=\"wp-block-group has-global-padding is-layout-constrained wp-block-group-is-layout-constrained\">\n\t\n\t\t<div class=\"wp-block-group alignwide is-content-justification-space-between is-layout-flex wp-container-core-group-is-layout-6ceaa505 wp-block-gro",
+    "privacyText": "بنستخدم بياناتك عشان نجهّز طلبك ونحسّن تجربتك على الموقع، وللأغراض الموضّحة في سياسة الخصوصية.",
+    "privacyTextValid": true,
+    "checkoutGridCols": "541.328px 386.656px"
+  },
+  "step8": {
+    "orderReceivedUrl": "http://capability-test.local/checkout/order-received/82/?key=wc_order_c7i5gwPWUPTMK",
+    "orderNumber": "82"
+  },
+  "step9": {
+    "relatedHeading": "كمّل اللوك (found in body)",
+    "isValid": true
+  },
+  "step10": {
+    "viewCartLinkOuter": "<a href=\"http://capability-test.local/cart/\" class=\"added_to_cart wc_forward\" title=\"عرض السلة\">\n\t\t\t\t\tعرض السلة\n\t\t\t\t</a>"
+  },
+  "step11": {
+    "drawerOpen1440": false,
+    "drawerOpen375": false,
+    "success": false
+  },
+  "step12": {
+    "homeShiftCheck": [
+      1440,
+      1440
+    ],
+    "checkoutShiftCheck": [
+      1440,
+      1440
+    ],
+    "hasShift": false
+  }
+}

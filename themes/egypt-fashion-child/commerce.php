@@ -70,7 +70,8 @@ function madar_render_block_enhancements($content, $block, $instance = null) {
         return str_replace('SKU:', 'رمز المنتج:', $content);
     }
 
-    if ('woocommerce/related-products' === $name) {
+    if ('woocommerce/related-products' === $name
+        || ('woocommerce/product-collection' === $name && false !== strpos((string) ($block['attrs']['collection'] ?? ''), 'related'))) {
         return str_replace('منتجات ذات صلة', 'كمّل اللوك', $content);
     }
 
@@ -201,3 +202,14 @@ function madar_product_extras() {
     <?php
     return ob_get_clean();
 }
+
+/**
+ * WooCommerce stores the default checkout privacy text in English.
+ */
+add_filter('woocommerce_get_privacy_policy_text', function ($text, $type) {
+    $default = __('Your personal data will be used to process your order, support your experience throughout this website, and for other purposes described in our [privacy_policy].', 'woocommerce');
+    if ('checkout' === $type && (false !== strpos($text, 'Your personal data') || $text === $default)) {
+        return 'بنستخدم بياناتك عشان نجهّز طلبك ونحسّن تجربتك على الموقع، وللأغراض الموضّحة في [privacy_policy].';
+    }
+    return $text;
+}, 10, 2);
