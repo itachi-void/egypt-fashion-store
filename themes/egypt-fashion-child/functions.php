@@ -55,6 +55,6 @@ function madar_enqueue_catalog_styles() {
     if ( ! function_exists( 'is_woocommerce' ) || ! ( is_shop() || is_product_taxonomy() || is_product() ) ) {
         return;
     }
-    wp_enqueue_style( 'madar-catalog', get_stylesheet_directory_uri() . '/assets/catalog.css', [ 'madar-storefront' ], '0.2.0' );
+    wp_enqueue_style( 'madar-catalog', get_stylesheet_directory_uri() . '/assets/catalog.css', [ 'madar-storefront' ], '0.3.0' );
 }
 add_action( 'wp_enqueue_scripts', 'madar_enqueue_catalog_styles', 30 );

@@ -140,3 +140,65 @@ body.single-product .woocommerce div.product .woocommerce-tabs ul.tabs li.active
         grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
     }
 }
+
+/* v3: related products and product tabs on single product pages. */
+body.single-product ul.wc-block-product-template {
+    display: grid !important;
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    gap: var(--madar-catalog-space) var(--madar-catalog-gap) !important;
+}
+
+body.single-product ul.wc-block-product-template > li.wc-block-product {
+    inline-size: auto !important;
+    max-inline-size: none !important;
+    margin: 0 !important;
+    min-inline-size: 0;
+}
+
+body.single-product ul.wc-block-product-template .wc-block-components-product-image img {
+    aspect-ratio: 3 / 4 !important;
+    object-fit: contain !important;
+    inline-size: 100%;
+    block-size: auto;
+    background: var(--ef-bg-light);
+}
+
+body.single-product .woocommerce-tabs ul.tabs,
+body.single-product .wp-block-woocommerce-product-details ul.tabs {
+    display: flex !important;
+    flex-wrap: wrap;
+    gap: var(--wp--preset--spacing--40);
+    padding: 0 !important;
+    margin: 0 0 var(--madar-catalog-gap) !important;
+    border-block-end: 1px solid var(--ef-text-muted);
+}
+
+body.single-product .woocommerce-tabs ul.tabs li,
+body.single-product .wp-block-woocommerce-product-details ul.tabs li {
+    border: 0 !important;
+    border-inline-start: 0 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+body.single-product .woocommerce-tabs ul.tabs li a,
+body.single-product .wp-block-woocommerce-product-details ul.tabs li a {
+    display: block;
+    padding-block: var(--wp--preset--spacing--20);
+    font-size: var(--wp--preset--font-size--medium);
+    font-weight: 400 !important;
+    color: var(--ef-text-muted);
+    text-decoration: none;
+}
+
+body.single-product .woocommerce-tabs ul.tabs li.active a,
+body.single-product .wp-block-woocommerce-product-details ul.tabs li.active a {
+    color: var(--ef-text-main);
+    box-shadow: inset 0 -2px 0 var(--ef-text-main);
+}
+
+@media (min-width: 782px) {
+    body.single-product ul.wc-block-product-template {
+        grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
+    }
+}
