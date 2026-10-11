@@ -1,64 +1,50 @@
-# تقرير تركيب واختبار قالب مدار (Madar Theme v2.1.0)
+# تقرير فحص واختبار قالب مدار (Madar Theme v2.1.0)
 
 **الموقع المحلي:** `capability-test.local`  
 **تاريخ الفحص:** 11 أكتوبر 2026  
-**ملف التحديث:** `egypt-fashion-child-2.1.0.zip`  
-**SHA-256:** `5059a60b69aa90688c33f0d362f2c126acb542f579715b73923c5703c0cdf60a` (مطابق تماماً)  
+**الإصدار:** `2.1.0` (تم التأكد من `style.css`)  
 
 ---
 
-## 1. التركيب والتحقق من الإصدار
-
-1. **التحقق من التجزئة (Hash):**
-   - SHA-256 الفعلي: `5059a60b69aa90688c33f0d362f2c126acb542f579715b73923c5703c0cdf60a` (مطابق).
-2. **فحص بناء الجملة (PHP Lint):**
-   - `commerce.php`: `No syntax errors detected`
-   - `demo.php`: `No syntax errors detected`
-   - `functions.php`: `No syntax errors detected`
-   - `storefront.php`: `No syntax errors detected`
-3. **التحقق من الإصدار:**
-   - إصدار الثيم في `style.css` و `functions.php`: `2.1.0`
-   - رابط ملف التنسيق المحمّل:  
-     `http://capability-test.local/wp-content/themes/egypt-fashion-child/assets/madar.css?ver=2.1.0`
+## 1. التحقق من الإصدار في `style.css`
+- مسار الملف: `wp-content/themes/egypt-fashion-child/style.css`
+- سطر الإصدار: `Version: 2.1.0` (مطابق للمطلوب).
 
 ---
 
-## 2. الإعداد: استيراد محتوى العرض
-
-- **الاستيراد الأول:**
-  - تم الضغط على زر "استيراد محتوى العرض" في لوحة التحكم (`themes.php?page=madar-settings`).
-  - الرسالة الظاهرة: **`"اتستورد محتوى العرض."`** (نجح).
-  - عدد المنتجات التي تحمل SKU يبدأ بـ `MDR-DEMO-`: **`10`** منتجات (من `MDR-DEMO-1` حتى `MDR-DEMO-10`).
-- **الاستيراد الثاني:**
-  - تم الضغط على زر "استيراد محتوى العرض" مرة ثانية.
-  - الرسالة الظاهرة: **`"محتوى العرض موجود بالفعل."`** (نجح).
-  - عدد المنتجات: ظل **`10`** منتجات دون تكرار أو زيادة.
+## 2. استيراد محتوى العرض (لوحة التحكم ← المظهر ← إعدادات مدار)
+- **الضغطة الأولى:**
+  - الرسالة الظاهرة: **`"محتوى العرض موجود بالفعل."`**
+  - عدد المنتجات التي يبدأ رمزها (SKU) بـ `MDR-DEMO-`: **`10`** منتجات بالضبط (من `MDR-DEMO-1` حتى `MDR-DEMO-10`).
+- **الضغطة الثانية:**
+  - الرسالة الظاهرة: **`"محتوى العرض موجود بالفعل."`**
+  - عدد المنتجات: ظل **`10`** منتجات دون أي تكرار.
 - **ملاحظة:** تم الإبقاء على محتوى العرض ولم يتم حذفه.
 
 ---
 
-## 3. جدول شروط النجاح والقيم الفعلية المقاسة
+## 3. جدول القيم الفعلية المقاسة وشروط النجاح
 
 | البند | الشرط المطلوب | النتيجة | القيمة الفعلية المقاسة |
 |---|---|---|---|
-| **4.أ** | كل الصفحات الست ترجع 200، وفيها عنصر `.mdr-header` واحد بالضبط، و 0 أخطاء Console | **نجح** | - **`/` (الرئيسية):** HTTP `200`، عدد `.mdr-header`: `1`، أخطاء Console: `0`<br>- **`/shop/` (المتجر):** HTTP `200`، عدد `.mdr-header`: `1`، أخطاء Console: `0`<br>- **`/lookbook/` (لوكبوك):** HTTP `200`، عدد `.mdr-header`: `1`، أخطاء Console: `0`<br>- **`/journal/` (المجلة):** HTTP `200`، عدد `.mdr-header`: `1`، أخطاء Console: `0`<br>- **`/?p=141` (معطف صوف بلون الجمل):** HTTP `200`، عدد `.mdr-header`: `1`، أخطاء Console: `0`<br>- **`/checkout/` (الدفع مع منتج بالسلة):** HTTP `200`، عدد `.mdr-header`: `1`، أخطاء Console: `0` |
-| **4.ب** | `/lookbook/` فيها 4 عناصر `section.mdr-look`، و `/journal/` فيها 3 عناصر `article.mdr-story` | **نجح** | - عدد `section.mdr-look` في `/lookbook/`: **`4`** (المطلوب 4 حرفياً)<br>- عدد `article.mdr-story` في `/journal/`: **`3`** (المطلوب 3 حرفياً) |
-| **4.ج** | الرئيسية فيها `ul.mdr-trust--home` بـ 4 عناصر `li` | **نجح** | - عنصر `ul.mdr-trust--home`: موجود (`true`)<br>- عدد عناصر `li` داخله: **`4`** (المطلوب 4) |
-| **4.د** | صفحة المنتج: `ul.mdr-trust--product` موجودة بعد زر الإضافة للسلة، وشارة `span.onsale` مخفية | **نجح** | - عنصر `ul.mdr-trust--product`: موجود (`true`)<br>- `getBoundingClientRect().top` لشريط الثقة: **`716.80px`**<br>- `getBoundingClientRect().top` لزر الإضافة للسلة: **`585.81px`**<br>- المقارنة: `716.80px > 585.81px` (يقع أسفل الزر مباشرة)<br>- حالة شارة `span.onsale`: مخفية (`display = "none"`) |
-| **4.هـ** | زر `a.mdr-wa` ظاهر في الرئيسية، وغير موجود في `/checkout/` | **نجح** | - الرئيسية: الزر موجود وظاهر (`display = "flex"` والرابط `https://wa.me/201000000000...`)<br>- الدفع `/checkout/`: الزر غير موجود (`document.querySelector('a.mdr-wa') === null`) |
-| **4.و** | على عرض 375: `scrollWidth = 375` في الصفحات الست | **نجح** | - الرئيسية: `scrollWidth = 375`<br>- المتجر: `scrollWidth = 375`<br>- لوكبوك: `scrollWidth = 375`<br>- المجلة: `scrollWidth = 375`<br>- معطف صوف بلون الجمل: `scrollWidth = 375`<br>- الدفع: `scrollWidth = 375` |
-| **4.ز** | إتمام طلب دفع عند الاستلام لمنتج من محتوى العرض، وتسجيل رقم الطلب ولقطة 1440 | **نجح** | - المنتج: "معطف صوف بلون الجمل" (MDR-DEMO-10)<br>- **رقم الطلب (Order ID): `148`**<br>- رابط الاستلام: `/checkout/order-received/148/?key=wc_order_7VA8eOvwPhgYe`<br>- تم أخذ لقطة كاملة: `order_received_1440.png` |
+| **3.أ** | كل صفحة: كود الرد 200، وعنصر `.mdr-header` واحد بالضبط، و 0 أخطاء Console | **نجح** | - **`/` (الرئيسية):** كود الرد `200`، عدد `.mdr-header`: `1`، أخطاء Console: `0`<br>- **`/shop/` (المتجر):** كود الرد `200`، عدد `.mdr-header`: `1`، أخطاء Console: `0`<br>- **`/lookbook/` (لوكبوك):** كود الرد `200`، عدد `.mdr-header`: `1`، أخطاء Console: `0`<br>- **`/journal/` (المجلة):** كود الرد `200`، عدد `.mdr-header`: `1`، أخطاء Console: `0`<br>- **`/?p=141` (معطف صوف بلون الجمل):** كود الرد `200`، عدد `.mdr-header`: `1`، أخطاء Console: `0`<br>- **`/checkout/` (الدفع مع وجود منتج بالسلة):** كود الرد `200`، عدد `.mdr-header`: `1`، أخطاء Console: `0` |
+| **3.ب** | تبديل الصورة في المتجر عند وقوف الماوس على كارت منتج (/shop/ على 1440) | **نجح** | - تم وضع مؤشر الفأرة فوق كارت المنتج الأول (`x: 1215, y: 756`).<br>- الصورة البديلة `.mdr-card-alt` تحولت إلى: `opacity = 1`.<br>- الصورة الأساسية: `madar-m-white-wall-768x1024.jpg`<br>- الصورة الظاهرة عند الهوفر: `madar-f-stack-300x300.jpg`<br>- اللقطة الملتقطة: `shop_hover_1440.png` |
+| **3.ج** | `/lookbook/` فيها 4 عناصر `section.mdr-look` | **نجح** | عدد `section.mdr-look`: **`4`** بالضبط |
+| **3.د** | `/journal/` فيها 3 عناصر `article.mdr-story` | **نجح** | عدد `article.mdr-story`: **`3`** بالضبط |
+| **3.هـ** | الرئيسية فيها `ul.mdr-trust--home` بـ 4 عناصر `li` | **نجح** | عدد عناصر `li` داخل `ul.mdr-trust--home`: **`4`** عناصر |
+| **3.و** | زر `a.mdr-wa` موجود في الرئيسية، ومش موجود في `/checkout/` | **نجح** | - في الرئيسية: موجود (`true`)<br>- في الدفع `/checkout/`: غير موجود (`false`) |
+| **3.ز** | على عرض 375: قيمة `scrollWidth = 375` في كل الصفحات | **نجح** | - الرئيسية: `scrollWidth = 375` (clientWidth = 375)<br>- المتجر: `scrollWidth = 375` (clientWidth = 375)<br>- لوكبوك: `scrollWidth = 375` (clientWidth = 375)<br>- المجلة: `scrollWidth = 375` (clientWidth = 375)<br>- معطف صوف بلون الجمل: `scrollWidth = 375` (clientWidth = 375)<br>- الدفع: `scrollWidth = 375` (clientWidth = 375) |
+| **3.ح** | عمل طلب دفع عند الاستلام وتسجيل رقم الطلب | **نجح** | - طريقة الدفع: دفع عند الاستلام (COD)<br>- **رقم الطلب (Order ID): `149`**<br>- رابط الاستلام: `/checkout/order-received/149/?key=wc_order_adsrmXJgyidJT`<br>- تم حفظ لقطة الاستلام: `order_received_1440.png` |
 
 ---
 
 ## 4. قائمة لقطات الشاشة المرفقة (`review/madar-v210/screenshots/`)
 
-تم التقاط جميع اللقطات كاملة الطول (Full-Length) بدقة عالية:
-
 1. `home_1440.png` & `home_375.png` (الرئيسية)
 2. `shop_1440.png` & `shop_375.png` (المتجر)
-3. `lookbook_1440.png` & `lookbook_375.png` (لوكبوك)
-4. `journal_1440.png` & `journal_375.png` (المجلة)
-5. `camel_coat_1440.png` & `camel_coat_375.png` (معطف صوف بلون الجمل)
-6. `checkout_1440.png` & `checkout_375.png` (الدفع مع وجود منتج بالسلة)
-7. `order_received_1440.png` (تم استلام الطلب - طلب رقم 148 على 1440)
+3. `shop_hover_1440.png` (المتجر على 1440 مع الـ Hover على كارت المنتج)
+4. `lookbook_1440.png` & `lookbook_375.png` (لوكبوك)
+5. `journal_1440.png` & `journal_375.png` (المجلة)
+6. `camel_coat_1440.png` & `camel_coat_375.png` (صفحة منتج معطف صوف بلون الجمل)
+7. `checkout_1440.png` & `checkout_375.png` (الدفع مع منتج في السلة)
+8. `order_received_1440.png` (صفحة تأكيد الطلب رقم 149 على 1440)

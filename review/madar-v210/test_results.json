@@ -1,148 +1,142 @@
 {
+  "step1": {
+    "version": "2.1.0"
+  },
+  "step2": {
+    "click1Notice": "محتوى العرض موجود بالفعل.",
+    "skuCount1": 10,
+    "click2Notice": "محتوى العرض موجود بالفعل.",
+    "skuCount2": 10,
+    "skus": [
+      "MDR-DEMO-1",
+      "MDR-DEMO-2",
+      "MDR-DEMO-3",
+      "MDR-DEMO-4",
+      "MDR-DEMO-5",
+      "MDR-DEMO-6",
+      "MDR-DEMO-7",
+      "MDR-DEMO-8",
+      "MDR-DEMO-9",
+      "MDR-DEMO-10"
+    ]
+  },
   "pages": {
     "home": {
       "375": {
-        "url": "http://capability-test.local/",
-        "httpStatus": 200,
-        "mdrHeaderCount": 1,
+        "status": 200,
+        "mdrHeader": 1,
         "consoleErrors": [],
-        "errorsCount": 0,
+        "errCount": 0,
         "scrollWidth": 375,
         "clientWidth": 375
       },
       "1440": {
-        "url": "http://capability-test.local/",
-        "httpStatus": 200,
-        "mdrHeaderCount": 1,
+        "status": 200,
+        "mdrHeader": 1,
         "consoleErrors": [],
-        "errorsCount": 0
+        "errCount": 0
       }
     },
     "shop": {
       "375": {
-        "url": "http://capability-test.local/shop/",
-        "httpStatus": 200,
-        "mdrHeaderCount": 1,
+        "status": 200,
+        "mdrHeader": 1,
         "consoleErrors": [],
-        "errorsCount": 0,
+        "errCount": 0,
         "scrollWidth": 375,
         "clientWidth": 375
       },
       "1440": {
-        "url": "http://capability-test.local/shop/",
-        "httpStatus": 200,
-        "mdrHeaderCount": 1,
+        "status": 200,
+        "mdrHeader": 1,
         "consoleErrors": [],
-        "errorsCount": 0
+        "errCount": 0
       }
     },
     "lookbook": {
       "375": {
-        "url": "http://capability-test.local/lookbook/",
-        "httpStatus": 200,
-        "mdrHeaderCount": 1,
+        "status": 200,
+        "mdrHeader": 1,
         "consoleErrors": [],
-        "errorsCount": 0,
+        "errCount": 0,
         "scrollWidth": 375,
         "clientWidth": 375
       },
       "1440": {
-        "url": "http://capability-test.local/lookbook/",
-        "httpStatus": 200,
-        "mdrHeaderCount": 1,
+        "status": 200,
+        "mdrHeader": 1,
         "consoleErrors": [],
-        "errorsCount": 0
+        "errCount": 0
       }
     },
     "journal": {
       "375": {
-        "url": "http://capability-test.local/journal/",
-        "httpStatus": 200,
-        "mdrHeaderCount": 1,
+        "status": 200,
+        "mdrHeader": 1,
         "consoleErrors": [],
-        "errorsCount": 0,
+        "errCount": 0,
         "scrollWidth": 375,
         "clientWidth": 375
       },
       "1440": {
-        "url": "http://capability-test.local/journal/",
-        "httpStatus": 200,
-        "mdrHeaderCount": 1,
+        "status": 200,
+        "mdrHeader": 1,
         "consoleErrors": [],
-        "errorsCount": 0
+        "errCount": 0
       }
     },
     "camel_coat": {
       "375": {
-        "url": "http://capability-test.local/?p=141",
-        "httpStatus": 200,
-        "mdrHeaderCount": 1,
+        "status": 200,
+        "mdrHeader": 1,
         "consoleErrors": [],
-        "errorsCount": 0,
+        "errCount": 0,
         "scrollWidth": 375,
         "clientWidth": 375
       },
       "1440": {
-        "url": "http://capability-test.local/?p=141",
-        "httpStatus": 200,
-        "mdrHeaderCount": 1,
+        "status": 200,
+        "mdrHeader": 1,
         "consoleErrors": [],
-        "errorsCount": 0
+        "errCount": 0
       }
     },
     "checkout": {
       "375": {
-        "url": "http://capability-test.local/checkout/",
-        "httpStatus": 200,
-        "mdrHeaderCount": 1,
+        "status": 200,
+        "mdrHeader": 1,
         "consoleErrors": [],
-        "errorsCount": 0,
+        "errCount": 0,
         "scrollWidth": 375,
         "clientWidth": 375
       },
       "1440": {
-        "url": "http://capability-test.local/checkout/",
-        "httpStatus": 200,
-        "mdrHeaderCount": 1,
+        "status": 200,
+        "mdrHeader": 1,
         "consoleErrors": [],
-        "errorsCount": 0
+        "errCount": 0
       }
     }
   },
   "criteria": {
-    "trust_home": {
-      "exists": true,
-      "liCount": 4
+    "home_trust_li": 4,
+    "home_wa_present": true,
+    "shop_hover": {
+      "cardInfo": {
+        "x": 1215,
+        "y": 756,
+        "hasAlt": true,
+        "altSrc": "http://capability-test.local/wp-content/uploads/2026/10/madar-f-stack-300x300.jpg",
+        "origSrc": "http://capability-test.local/wp-content/uploads/2026/10/madar-m-white-wall-768x1024.jpg"
+      },
+      "altOpacity": "1"
     },
-    "wa_home": {
-      "exists": true,
-      "display": "flex",
-      "href": "https://wa.me/201000000000?text=%D8%A3%D9%87%D9%84%D9%8B%D8%A7%20%D9%85%D8%AF%D8%A7%D8%B1%D8%8C%20%D8%B9%D9%86%D8%AF%D9%8A%20%D8%B3%D8%A4%D8%A7%D9%84"
-    },
-    "lookbook_count": 4,
-    "journal_count": 3,
-    "camel_coat": {
-      "trustExists": true,
-      "trustTop": 716.796875,
-      "btnTop": 585.8125,
-      "isTrustAfterBtn": true,
-      "onsaleExists": true,
-      "onsaleDisplay": "none"
-    },
-    "wa_checkout_present": false,
-    "scrollWidth375": {
-      "home": 375,
-      "shop": 375,
-      "lookbook": 375,
-      "journal": 375,
-      "camel_coat": 375,
-      "checkout": 375
-    },
+    "lookbook_looks": 4,
+    "journal_stories": 3,
+    "checkout_wa_present": false,
     "order": {
-      "orderReceivedUrl": "http://capability-test.local/checkout/order-received/148/?key=wc_order_7VA8eOvwPhgYe",
-      "orderNumber": "148"
+      "orderNumber": "149",
+      "orderReceivedUrl": "http://capability-test.local/checkout/order-received/149/?key=wc_order_adsrmXJgyidJT"
     }
-  },
-  "cssHref": "http://capability-test.local/wp-content/themes/egypt-fashion-child/assets/madar.css?ver=2.1.0",
-  "hasVer210": true
+  }
 }
