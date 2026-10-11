@@ -35,6 +35,15 @@ function madar_category_url($slugs) {
     return madar_storefront_shop_url();
 }
 
+function madar_account_link() {
+    if (shortcode_exists('madar_account_link')) {
+        return do_shortcode('[madar_account_link]');
+    }
+    $url = function_exists('wc_get_page_permalink') ? wc_get_page_permalink('myaccount') : wp_login_url();
+    $label = is_user_logged_in() ? 'حسابي' : 'دخول / إنشاء حساب';
+    return '<a href="' . esc_url($url) . '">' . esc_html($label) . '</a>';
+}
+
 function madar_icon($name) {
     $paths = [
         'menu'    => '<path d="M3 7h18M3 12h18M3 17h18"/>',
@@ -44,6 +53,10 @@ function madar_icon($name) {
         'filter'  => '<path d="M4 7h10M18 7h2M4 17h2M10 17h10"/><circle cx="16" cy="7" r="2"/><circle cx="8" cy="17" r="2"/>',
         'grid'    => '<rect x="4" y="4" width="6" height="6"/><rect x="14" y="4" width="6" height="6"/><rect x="4" y="14" width="6" height="6"/><rect x="14" y="14" width="6" height="6"/>',
         'rows'    => '<rect x="4" y="4" width="16" height="7"/><rect x="4" y="13" width="16" height="7"/>',
+        'cash'    => '<rect x="3" y="6" width="18" height="12"/><circle cx="12" cy="12" r="2.5"/><path d="M6 9v.01M18 15v.01"/>',
+        'return'  => '<path d="M9 14L4 9l5-5"/><path d="M4 9h10a6 6 0 010 12h-3"/>',
+        'truck'   => '<path d="M2 6h12v10H2zM14 9h4l3 3v4h-7"/><circle cx="6" cy="18" r="1.8"/><circle cx="17" cy="18" r="1.8"/>',
+        'chat'    => '<path d="M4 20l1.4-4A8 8 0 1112 20a8 8 0 01-4-1z"/>',
         'ruler'   => '<path d="M3 15L15 3l6 6L9 21z"/><path d="M7 11l2 2M10 8l2 2M13 5l2 2"/>',
     ];
     if (!isset($paths[$name])) {
@@ -65,11 +78,12 @@ function madar_storefront_header() {
 <a href="<?php echo esc_url($shop_url); ?>">التشكيلة</a>
 <a href="<?php echo esc_url(madar_category_url(['men', 'mens', 'rjal'])); ?>">رجالي</a>
 <a href="<?php echo esc_url(madar_category_url(['kids', 'children', 'atfal'])); ?>">أطفال</a>
-<a href="<?php echo esc_url(home_url('/#madar-worlds')); ?>">عالم مدار</a>
+<a href="<?php echo esc_url(madar_page_url('lookbook')); ?>">لوكبوك</a>
+<a href="<?php echo esc_url(madar_page_url('journal')); ?>">المجلة</a>
 </nav>
 <div class="mdr-tools">
 <button type="button" class="mdr-icon-btn" aria-expanded="false" aria-controls="mdr-search" aria-label="البحث" data-mdr-search-toggle><?php echo madar_icon('search'); ?></button>
-<span class="mdr-account"><?php echo do_shortcode('[madar_account_link]'); ?></span>
+<span class="mdr-account"><?php echo madar_account_link(); ?></span>
 <?php if (function_exists('WC')) { echo do_blocks('<!-- wp:woocommerce/mini-cart /-->'); } ?>
 </div>
 </div>
@@ -111,6 +125,7 @@ function madar_storefront_home() {
 </figure>
 </section>
 <div class="mdr-marquee" aria-hidden="true"><div class="mdr-marquee__track"><span>خامات مختارة</span><span>قصّات هادية</span><span>للرجال والأطفال</span><span dir="ltr">THOUGHTFULLY CHOSEN</span><span>خامات مختارة</span><span>قصّات هادية</span><span>للرجال والأطفال</span><span dir="ltr">THOUGHTFULLY CHOSEN</span></div></div>
+<?php echo madar_trust_strip('home'); ?>
 <section class="mdr-section" id="madar-worlds">
 <header class="mdr-section__head mdr-reveal"><p class="mdr-eyebrow">عالم مدار / TWO WORLDS</p><h2 class="mdr-title">مساحة لك. ومساحة لهم.</h2></header>
 <div class="mdr-worlds">
@@ -140,7 +155,8 @@ function madar_storefront_footer() {
 <div class="mdr-footer">
 <div class="mdr-footer__brand"><a class="mdr-brand" href="<?php echo esc_url(home_url('/')); ?>">مدار<span>MADAR</span></a><p>حضور هادي على مدار يومك. ملابس للرجال والأطفال.</p></div>
 <nav aria-label="التسوق"><h3>التسوق</h3><a href="<?php echo esc_url($shop_url); ?>">التشكيلة</a><a href="<?php echo esc_url(madar_category_url(['men', 'mens', 'rjal'])); ?>">رجالي</a><a href="<?php echo esc_url(madar_category_url(['kids', 'children', 'atfal'])); ?>">أطفال</a></nav>
-<nav aria-label="حسابك"><h3>حسابك</h3><?php echo do_shortcode('[madar_account_link]'); ?><?php if (function_exists('wc_get_cart_url')) { ?><a href="<?php echo esc_url(wc_get_cart_url()); ?>">سلة المشتريات</a><?php } ?></nav>
+<nav aria-label="مدار"><h3>مدار</h3><a href="<?php echo esc_url(madar_page_url('lookbook')); ?>">لوكبوك</a><a href="<?php echo esc_url(madar_page_url('journal')); ?>">المجلة</a><?php $wa = madar_whatsapp_url(); if ($wa) { ?><a href="<?php echo esc_url($wa); ?>" target="_blank" rel="noopener">واتساب</a><?php } ?></nav>
+<nav aria-label="حسابك"><h3>حسابك</h3><?php echo madar_account_link(); ?><?php if (function_exists('wc_get_cart_url')) { ?><a href="<?php echo esc_url(wc_get_cart_url()); ?>">سلة المشتريات</a><?php } ?></nav>
 <p class="mdr-footer__note">مدار — نسخة تجريبية. الصور والمحتوى للإلهام؛ بيانات المنتجات الفعلية موضّحة في المتجر.</p>
 </div>
     <?php

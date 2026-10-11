@@ -177,9 +177,10 @@ function madar_product_extras() {
     ob_start();
     ?>
 <div class="mdr-extras">
+<?php echo madar_trust_strip('product'); ?>
 <button type="button" class="mdr-size-link" data-mdr-open="mdr-size-guide"><?php echo madar_icon('ruler'); ?>دليل المقاسات</button>
 <details><summary>الشحن والتوصيل</summary><p>بنوصّل لكل المحافظات. مدة وتكلفة التوصيل بتظهر في صفحة الدفع حسب عنوانك.</p></details>
-<details><summary>الاسترجاع والاستبدال</summary><p>لو المقاس أو القطعة مش مناسبين، تقدر تطلب استبدال أو استرجاع حسب سياسة المتجر، والقطعة بحالتها الأصلية.</p></details>
+<details><summary>الاسترجاع والاستبدال</summary><p><?php $mdr_days = function_exists('madar_setting') ? absint(madar_setting('return_days')) : 0; echo esc_html($mdr_days ? "لو المقاس أو القطعة مش مناسبين، تقدر تطلب استبدال أو استرجاع خلال {$mdr_days} يوم من الاستلام، والقطعة بحالتها الأصلية." : 'لو المقاس أو القطعة مش مناسبين، تقدر تطلب استبدال أو استرجاع حسب سياسة المتجر، والقطعة بحالتها الأصلية.'); ?></p></details>
 <details><summary>العناية بالقطعة</summary><p>اتبع تعليمات الغسيل على الكارت الداخلي. الغسيل على البارد والتجفيف في الظل بيحافظوا على الخامة واللون.</p></details>
 </div>
 <dialog id="mdr-size-guide" class="mdr-drawer" aria-labelledby="mdr-size-title">

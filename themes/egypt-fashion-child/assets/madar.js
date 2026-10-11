@@ -99,6 +99,10 @@
         el.style.setProperty('--mdr-delay', (i % 4) * 70 + 'ms');
         io.observe(el);
       });
+      // Never leave content hidden if the observer does not fire.
+      window.setTimeout(function () {
+        revealTargets.forEach(function (el) { el.classList.add('is-visible'); });
+      }, 2500);
     }
 
     /* Variation swatches: buttons mirror the native selects, which stay the

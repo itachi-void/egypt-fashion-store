@@ -3,14 +3,14 @@
  * Egypt Fashion Child Theme Functions
  *
  * @package EgyptFashionChild
- * @version 2.0.2
+ * @version 2.1.0
  */
 
 if (!defined('ABSPATH')) {
     exit; // Exit if accessed directly.
 }
 
-define('MADAR_THEME_VERSION', '2.0.2');
+define('MADAR_THEME_VERSION', '2.1.0');
 
 /**
  * Enqueue parent, child and Madar design layer.
@@ -69,3 +69,4 @@ add_action('after_setup_theme', 'ef_add_woocommerce_support');
 
 require_once __DIR__ . '/storefront.php';
 require_once __DIR__ . '/commerce.php';
+require_once __DIR__ . '/demo.php';
