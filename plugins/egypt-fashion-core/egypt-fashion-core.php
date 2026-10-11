@@ -102,3 +102,5 @@ function efc_validate_store_api_phone($order, $request) {
     $order->set_billing_phone($phone);
 }
 add_action('woocommerce_store_api_checkout_update_order_from_request', 'efc_validate_store_api_phone', 10, 2);
+
+require_once __DIR__ . '/account.php';

@@ -5,10 +5,10 @@
     "layout": { "contentSize": "1280px", "wideSize": "1440px" },
     "color": {
       "palette": [
-        { "slug": "base", "color": "#ffffff", "name": "أبيض" },
-        { "slug": "contrast", "color": "#22241e", "name": "حبر" },
-        { "slug": "accent", "color": "#d6ed81", "name": "مدار" },
-        { "slug": "muted", "color": "#f3f3ef", "name": "هادئ" }
+        { "slug": "base", "color": "#f6f3ed", "name": "عاجي" },
+        { "slug": "contrast", "color": "#292923", "name": "حبر" },
+        { "slug": "accent", "color": "#d8d1c3", "name": "مدار" },
+        { "slug": "muted", "color": "#e8e3d8", "name": "هادئ" }
       ]
     },
     "typography": {

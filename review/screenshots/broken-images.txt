@@ -1,0 +1,13 @@
+=== Broken Images Report (naturalWidth === 0) ===
+Page: home_1440
+  - src: http://capability-test.local/wp-content/uploads/2026/10/test-product-wallet-300x300.png (alt: محفظة بطاقات جلدية - تجريبي)
+  - src: http://capability-test.local/wp-content/uploads/2026/10/test-product-sunglasses-300x300.png (alt: نظارة شمسية كلاسيكية - تجريبي)
+  - src: http://capability-test.local/wp-content/uploads/2026/10/test-product-hoodie-300x300.png (alt: سترة هودي شتوية - تجريبي)
+  - src: http://capability-test.local/wp-content/uploads/2026/10/test-product-jeans-300x300.png (alt: بنطال جينز كاجوال - تجريبي)
+  - src: http://capability-test.local/wp-content/themes/egypt-fashion-child/assets/images/city-edit.jpg (alt: إطلالة رجالية في المدينة)
+Page: home_375
+  - src: http://capability-test.local/wp-content/uploads/2026/10/test-product-wallet-300x300.png (alt: محفظة بطاقات جلدية - تجريبي)
+  - src: http://capability-test.local/wp-content/uploads/2026/10/test-product-sunglasses-300x300.png (alt: نظارة شمسية كلاسيكية - تجريبي)
+  - src: http://capability-test.local/wp-content/uploads/2026/10/test-product-hoodie-300x300.png (alt: سترة هودي شتوية - تجريبي)
+  - src: http://capability-test.local/wp-content/uploads/2026/10/test-product-jeans-300x300.png (alt: بنطال جينز كاجوال - تجريبي)
+  - src: http://capability-test.local/wp-content/themes/egypt-fashion-child/assets/images/city-edit.jpg (alt: إطلالة رجالية في المدينة)

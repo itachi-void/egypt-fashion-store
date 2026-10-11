@@ -1,0 +1,35 @@
+=== مراجع الصور المستخرجة من ملفات القالب والإضافة (Extracted Image References) ===
+إجمالي المراجع الفريدة: 4
+
+- campaign.jpg : موجود (ملف محلي في assets/images/campaign.jpg)
+- city-edit.jpg : موجود (ملف محلي في assets/images/city-edit.jpg)
+- coat.jpg : موجود (ملف محلي في assets/images/coat.jpg)
+- kids.jpg : موجود (ملف محلي في assets/images/kids.jpg)
+
+=== صور مكتبة الوسائط المستخدمة في المنتجات (Product Media Library Images) ===
+عدد المنتجات التي تحتوي على صور رئيسية في قاعدة البيانات: 8
+
+- منتج #24 [تيشيرت قطني أساسي - تجريبي] (نوع: product):
+    مسار الصورة: wp-content/uploads/2026/10/test-product-tshirt.png
+    الحالة: موجود [الأبعاد الحقيقية: 600x600px (image/png)]
+- منتج #33 [سوار معصم جلدي - تجريبي] (نوع: product):
+    مسار الصورة: wp-content/uploads/2026/10/test-product-bracelet.png
+    الحالة: موجود [الأبعاد الحقيقية: 600x600px (image/png)]
+- منتج #42 [بنطال جينز كاجوال - تجريبي] (نوع: product):
+    مسار الصورة: wp-content/uploads/2026/10/test-product-jeans.png
+    الحالة: موجود [الأبعاد الحقيقية: 600x600px (image/png)]
+- منتج #43 [سترة هودي شتوية - تجريبي] (نوع: product):
+    مسار الصورة: wp-content/uploads/2026/10/test-product-hoodie.png
+    الحالة: موجود [الأبعاد الحقيقية: 600x600px (image/png)]
+- منتج #44 [نظارة شمسية كلاسيكية - تجريبي] (نوع: product):
+    مسار الصورة: wp-content/uploads/2026/10/test-product-sunglasses.png
+    الحالة: موجود [الأبعاد الحقيقية: 600x600px (image/png)]
+- منتج #45 [محفظة بطاقات جلدية - تجريبي] (نوع: product):
+    مسار الصورة: wp-content/uploads/2026/10/test-product-wallet.png
+    الحالة: موجود [الأبعاد الحقيقية: 600x600px (image/png)]
+- منتج #46 [تيشيرت قطني أساسي - تجريبي - S, أبيض] (نوع: product_variation):
+    مسار الصورة: wp-content/uploads/غير متوفر
+    الحالة: مش موجود
+- منتج #60 [سوار معصم جلدي - تجريبي - L, أسود] (نوع: product_variation):
+    مسار الصورة: wp-content/uploads/غير متوفر
+    الحالة: مش موجود

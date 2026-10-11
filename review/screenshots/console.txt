@@ -1,0 +1,22 @@
+=== Console Errors Report ===
+No Console errors detected across any of the captured pages.
+Total console messages logged:
+[home] [log] JQMIGRATE: Migrate is installed, version 3.4.1
+[home] [log] JQMIGRATE: Migrate is installed, version 3.4.1
+[home] [log] JQMIGRATE: Migrate is installed, version 3.4.1
+[shop] [log] JQMIGRATE: Migrate is installed, version 3.4.1
+[shop] [log] JQMIGRATE: Migrate is installed, version 3.4.1
+[category] [log] JQMIGRATE: Migrate is installed, version 3.4.1
+[category] [log] JQMIGRATE: Migrate is installed, version 3.4.1
+[variable-product] [log] JQMIGRATE: Migrate is installed, version 3.4.1
+[variable-product] [log] JQMIGRATE: Migrate is installed, version 3.4.1
+[simple-product] [log] JQMIGRATE: Migrate is installed, version 3.4.1
+[simple-product] [log] JQMIGRATE: Migrate is installed, version 3.4.1
+[cart] [log] JQMIGRATE: Migrate is installed, version 3.4.1
+[cart] [log] JQMIGRATE: Migrate is installed, version 3.4.1
+[checkout] [log] JQMIGRATE: Migrate is installed, version 3.4.1
+[checkout] [log] JQMIGRATE: Migrate is installed, version 3.4.1
+[my-account] [log] JQMIGRATE: Migrate is installed, version 3.4.1
+[my-account] [log] JQMIGRATE: Migrate is installed, version 3.4.1
+[search] [log] JQMIGRATE: Migrate is installed, version 3.4.1
+[search] [log] JQMIGRATE: Migrate is installed, version 3.4.1

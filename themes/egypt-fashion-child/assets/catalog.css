@@ -1,0 +1,142 @@
+/*
+ * Catalog presentation only. WooCommerce owns queries, stock, variation
+ * selection, cart actions and product information.
+ */
+body.woocommerce-shop,
+body.tax-product_cat,
+body.tax-product_tag,
+body.single-product {
+    --madar-catalog-gap: var(--wp--preset--spacing--40);
+    --madar-catalog-space: var(--wp--preset--spacing--60);
+    --madar-catalog-heading: var(--wp--preset--font-size--x-large);
+}
+
+:is(.woocommerce-shop, .tax-product_cat, .tax-product_tag, .single-product) main {
+    padding-block: var(--madar-catalog-space);
+}
+
+:is(.woocommerce-shop, .tax-product_cat, .tax-product_tag) .woocommerce ul.products {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: var(--madar-catalog-space) var(--madar-catalog-gap);
+}
+
+:is(.woocommerce-shop, .tax-product_cat, .tax-product_tag) .woocommerce ul.products::before,
+:is(.woocommerce-shop, .tax-product_cat, .tax-product_tag) .woocommerce ul.products::after {
+    display: none;
+}
+
+:is(.woocommerce-shop, .tax-product_cat, .tax-product_tag) .woocommerce ul.products li.product {
+    float: none;
+    inline-size: auto;
+    margin: 0;
+    min-inline-size: 0;
+}
+
+:is(.woocommerce-shop, .tax-product_cat, .tax-product_tag, .single-product)
+:is(.woocommerce-loop-product__title, .wp-block-post-title, .product_title) {
+    overflow-wrap: anywhere;
+    font-weight: 400;
+}
+
+:is(.woocommerce-shop, .tax-product_cat, .tax-product_tag)
+:is(.woocommerce ul.products li.product img, .wc-block-components-product-image img) {
+    aspect-ratio: 3 / 4;
+    object-fit: contain;
+    background: var(--ef-bg-light);
+}
+
+:is(.woocommerce-shop, .tax-product_cat, .tax-product_tag, .single-product)
+:is(.woocommerce a.button, .woocommerce button.button, .woocommerce input.button) {
+    border-radius: 0;
+    background: var(--ef-primary-color);
+    color: var(--ef-bg-light);
+    padding: var(--wp--preset--spacing--20) var(--wp--preset--spacing--40);
+}
+
+body.single-product .woocommerce div.product .product_title {
+    font-size: var(--madar-catalog-heading);
+    line-height: 1.4;
+}
+
+body.single-product .woocommerce div.product :is(.price, .stock) {
+    color: var(--ef-text-main);
+    font-weight: 400;
+}
+
+body.single-product .woocommerce div.product form.cart {
+    padding-block: var(--madar-catalog-gap);
+}
+
+body.single-product .woocommerce div.product form.cart .variations select {
+    max-inline-size: 100%;
+    background: var(--ef-bg-light);
+    color: var(--ef-text-main);
+    padding: var(--wp--preset--spacing--20);
+}
+
+body.single-product .woocommerce div.product .product_meta {
+    color: var(--ef-text-muted);
+    padding-block: var(--madar-catalog-gap);
+}
+
+body.single-product .woocommerce div.product .woocommerce-tabs {
+    padding-block: var(--madar-catalog-space);
+}
+
+body.single-product .woocommerce div.product .woocommerce-tabs ul.tabs li,
+body.single-product .woocommerce div.product .woocommerce-tabs ul.tabs li.active {
+    background: transparent;
+    border-radius: 0;
+}
+
+:is(.woocommerce-shop, .tax-product_cat, .tax-product_tag, .single-product)
+:is(a, button, input, select):focus-visible {
+    outline: solid var(--ef-accent-color);
+    outline-offset: var(--wp--preset--spacing--20);
+}
+
+@media (min-width: 782px) {
+    :is(.woocommerce-shop, .tax-product_cat, .tax-product_tag) .woocommerce ul.products {
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 781px) {
+    body.single-product .woocommerce div.product :is(div.images, div.summary) {
+        float: none;
+        inline-size: 100%;
+    }
+}
+
+/*
+ * Block theme archives (Product Collection / Product Template).
+ * WooCommerce sets column count and image ratio via classes and inline
+ * styles, so these overrides need !important.
+ */
+:is(.woocommerce-shop, .tax-product_cat, .tax-product_tag) ul.wc-block-product-template {
+    display: grid !important;
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    gap: var(--madar-catalog-space) var(--madar-catalog-gap) !important;
+}
+
+:is(.woocommerce-shop, .tax-product_cat, .tax-product_tag) ul.wc-block-product-template > li.wc-block-product {
+    inline-size: auto !important;
+    max-inline-size: none !important;
+    margin: 0 !important;
+    min-inline-size: 0;
+}
+
+:is(.woocommerce-shop, .tax-product_cat, .tax-product_tag) .wc-block-components-product-image img {
+    aspect-ratio: 3 / 4 !important;
+    object-fit: contain !important;
+    inline-size: 100%;
+    block-size: auto;
+    background: var(--ef-bg-light);
+}
+
+@media (min-width: 782px) {
+    :is(.woocommerce-shop, .tax-product_cat, .tax-product_tag) ul.wc-block-product-template {
+        grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
+    }
+}

@@ -11,11 +11,11 @@ Text Domain: egypt-fashion-child
 @import url('https://fonts.googleapis.com/css2?family=Alexandria:wght@300;400;500;600;700;800&display=swap');
 
 :root {
-    --ef-primary-color: #0f172a;
-    --ef-accent-color: #637626;
-    --ef-bg-light: #f8fafc;
-    --ef-text-main: #1e293b;
-    --ef-text-muted: #64748b;
+    --ef-primary-color: #292923;
+    --ef-accent-color: #817866;
+    --ef-bg-light: #f6f3ed;
+    --ef-text-main: #292923;
+    --ef-text-muted: #69675f;
     --ef-font-family: "Alexandria", system-ui, sans-serif;
 }
 
@@ -107,3 +107,10 @@ body {
     .madar-services { font-size: 9px; gap: 15px; }
     .madar-story h2 { font-size: 29px; }
 }
+
+/* Keep long search terms within the search results heading. */
+body.search-results .wp-block-query-title,
+body.search-no-results .wp-block-query-title {
+    overflow-wrap: anywhere;
+}
+

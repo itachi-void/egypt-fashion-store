@@ -44,3 +44,17 @@ function ef_add_woocommerce_support() {
     add_theme_support('wc-product-gallery-slider');
 }
 add_action('after_setup_theme', 'ef_add_woocommerce_support');
+require_once __DIR__ . '/storefront.php';
+
+function madar_enqueue_storefront_styles() {
+    wp_enqueue_style('madar-storefront', get_stylesheet_directory_uri() . '/assets/storefront.css', ['egypt-fashion-child-style'], '1.1.0');
+}
+add_action('wp_enqueue_scripts', 'madar_enqueue_storefront_styles', 20);
+
+function madar_enqueue_catalog_styles() {
+    if ( ! function_exists( 'is_woocommerce' ) || ! ( is_shop() || is_product_taxonomy() || is_product() ) ) {
+        return;
+    }
+    wp_enqueue_style( 'madar-catalog', get_stylesheet_directory_uri() . '/assets/catalog.css', [ 'madar-storefront' ], '0.2.0' );
+}
+add_action( 'wp_enqueue_scripts', 'madar_enqueue_catalog_styles', 30 );
