@@ -1,0 +1,608 @@
+{
+  "viewport_375": {
+    "header": {
+      "height": 148.09375,
+      "width": 375,
+      "padding": "0px"
+    },
+    "typography": {
+      "h1": {
+        "fontSize": "52px",
+        "lineHeight": "71.76px",
+        "fontWeight": "400",
+        "fontFamily": "\"Noto Naskh Arabic\", serif"
+      },
+      "h2": {
+        "fontSize": "32px",
+        "lineHeight": "41.6px",
+        "fontWeight": "400",
+        "fontFamily": "\"Noto Naskh Arabic\", serif"
+      },
+      "body": {
+        "fontSize": "18.1964px",
+        "lineHeight": "34.5731px",
+        "fontWeight": "300",
+        "fontFamily": "Alexandria, system-ui, sans-serif"
+      },
+      "navLink": {
+        "fontSize": "12px",
+        "lineHeight": "22.8px",
+        "fontWeight": "300",
+        "fontFamily": "Alexandria, system-ui, sans-serif"
+      },
+      "button": {
+        "fontSize": "24px",
+        "lineHeight": "normal",
+        "fontWeight": "400",
+        "fontFamily": "Arial"
+      }
+    },
+    "sections": [
+      {
+        "className": "quiet-hero",
+        "paddingTop": "0px",
+        "paddingBottom": "25px",
+        "paddingLeft": "22.5px",
+        "paddingRight": "22.5px",
+        "marginTop": "0px",
+        "marginBottom": "0px",
+        "height": 883.890625,
+        "width": 375
+      },
+      {
+        "className": "quiet-worlds",
+        "paddingTop": "60px",
+        "paddingBottom": "0px",
+        "paddingLeft": "18.75px",
+        "paddingRight": "18.75px",
+        "marginTop": "0px",
+        "marginBottom": "0px",
+        "height": 440,
+        "width": 375
+      },
+      {
+        "className": "store-section mdr-picks",
+        "paddingTop": "35px",
+        "paddingBottom": "55px",
+        "paddingLeft": "20px",
+        "paddingRight": "20px",
+        "marginTop": "0px",
+        "marginBottom": "0px",
+        "height": 926.578125,
+        "width": 375
+      },
+      {
+        "className": "store-manifesto",
+        "paddingTop": "90px",
+        "paddingBottom": "90px",
+        "paddingLeft": "20px",
+        "paddingRight": "20px",
+        "marginTop": "0px",
+        "marginBottom": "0px",
+        "height": 401.578125,
+        "width": 375
+      },
+      {
+        "className": "motion-scroll",
+        "paddingTop": "0px",
+        "paddingBottom": "0px",
+        "paddingLeft": "0px",
+        "paddingRight": "0px",
+        "marginTop": "25px",
+        "marginBottom": "0px",
+        "height": 1542.796875,
+        "width": 375
+      }
+    ],
+    "productGrid": {
+      "gap": "26px 12px",
+      "gridTemplateColumns": "161.5px 161.5px"
+    },
+    "productCard": {
+      "cardWidth": 161.5,
+      "cardHeight": 329,
+      "imgWidth": 161.5,
+      "imgHeight": 215.328125,
+      "aspectRatio": "0.750"
+    },
+    "shopColumns": {
+      "gridTemplateColumns": "162.5px 162.5px",
+      "gap": "32px 10px",
+      "calculatedColumns": 2
+    }
+  },
+  "viewport_1440": {
+    "header": {
+      "height": 195.359375,
+      "width": 1425,
+      "padding": "0px"
+    },
+    "typography": {
+      "h1": {
+        "fontSize": "83.52px",
+        "lineHeight": "115.258px",
+        "fontWeight": "400",
+        "fontFamily": "\"Noto Naskh Arabic\", serif"
+      },
+      "h2": {
+        "fontSize": "56px",
+        "lineHeight": "72.8px",
+        "fontWeight": "400",
+        "fontFamily": "\"Noto Naskh Arabic\", serif"
+      },
+      "body": {
+        "fontSize": "21.9984px",
+        "lineHeight": "41.797px",
+        "fontWeight": "300",
+        "fontFamily": "Alexandria, system-ui, sans-serif"
+      },
+      "navLink": {
+        "fontSize": "12px",
+        "lineHeight": "22.8px",
+        "fontWeight": "300",
+        "fontFamily": "Alexandria, system-ui, sans-serif"
+      },
+      "button": {
+        "fontSize": "13.3333px",
+        "lineHeight": "normal",
+        "fontWeight": "400",
+        "fontFamily": "Arial"
+      }
+    },
+    "sections": [
+      {
+        "className": "quiet-hero",
+        "paddingTop": "10px",
+        "paddingBottom": "40px",
+        "paddingLeft": "71.25px",
+        "paddingRight": "71.25px",
+        "marginTop": "0px",
+        "marginBottom": "0px",
+        "height": 660,
+        "width": 1425
+      },
+      {
+        "className": "quiet-worlds",
+        "paddingTop": "60px",
+        "paddingBottom": "0px",
+        "paddingLeft": "71.25px",
+        "paddingRight": "71.25px",
+        "marginTop": "0px",
+        "marginBottom": "0px",
+        "height": 580,
+        "width": 1425
+      },
+      {
+        "className": "store-section mdr-picks",
+        "paddingTop": "70px",
+        "paddingBottom": "90px",
+        "paddingLeft": "71.25px",
+        "paddingRight": "71.25px",
+        "marginTop": "0px",
+        "marginBottom": "0px",
+        "height": 790.984375,
+        "width": 1425
+      },
+      {
+        "className": "store-manifesto",
+        "paddingTop": "95px",
+        "paddingBottom": "95px",
+        "paddingLeft": "20px",
+        "paddingRight": "20px",
+        "marginTop": "0px",
+        "marginBottom": "0px",
+        "height": 444.375,
+        "width": 1425
+      },
+      {
+        "className": "motion-scroll",
+        "paddingTop": "0px",
+        "paddingBottom": "0px",
+        "paddingLeft": "0px",
+        "paddingRight": "0px",
+        "marginTop": "25px",
+        "marginBottom": "0px",
+        "height": 1710,
+        "width": 1425
+      }
+    ],
+    "productGrid": {
+      "gap": "34px 20px",
+      "gridTemplateColumns": "305.625px 305.625px 305.625px 305.625px"
+    },
+    "productCard": {
+      "cardWidth": 305.625,
+      "cardHeight": 497.09375,
+      "imgWidth": 305.625,
+      "imgHeight": 407.5,
+      "aspectRatio": "0.750"
+    },
+    "shopColumns": {
+      "gridTemplateColumns": "302.969px 302.984px 302.969px 302.984px",
+      "gap": "56px 23.04px",
+      "calculatedColumns": 4
+    }
+  },
+  "overflow_checks": {
+    "home": {
+      "375px": {
+        "scrollWidth": 375,
+        "innerWidth": 375,
+        "hasOverflow": false,
+        "overflowDiff": 0
+      },
+      "1440px": {
+        "scrollWidth": 1425,
+        "innerWidth": 1440,
+        "hasOverflow": false,
+        "overflowDiff": 0
+      }
+    },
+    "shop": {
+      "375px": {
+        "scrollWidth": 375,
+        "innerWidth": 375,
+        "hasOverflow": false,
+        "overflowDiff": 0
+      },
+      "1440px": {
+        "scrollWidth": 1425,
+        "innerWidth": 1440,
+        "hasOverflow": false,
+        "overflowDiff": 0
+      }
+    },
+    "category_men": {
+      "375px": {
+        "scrollWidth": 375,
+        "innerWidth": 375,
+        "hasOverflow": false,
+        "overflowDiff": 0
+      },
+      "1440px": {
+        "scrollWidth": 1425,
+        "innerWidth": 1440,
+        "hasOverflow": false,
+        "overflowDiff": 0
+      }
+    },
+    "category_kids": {
+      "375px": {
+        "scrollWidth": 375,
+        "innerWidth": 375,
+        "hasOverflow": false,
+        "overflowDiff": 0
+      },
+      "1440px": {
+        "scrollWidth": 1425,
+        "innerWidth": 1440,
+        "hasOverflow": false,
+        "overflowDiff": 0
+      }
+    },
+    "product_simple": {
+      "375px": {
+        "scrollWidth": 375,
+        "innerWidth": 375,
+        "hasOverflow": false,
+        "overflowDiff": 0
+      },
+      "1440px": {
+        "scrollWidth": 1425,
+        "innerWidth": 1440,
+        "hasOverflow": false,
+        "overflowDiff": 0
+      }
+    },
+    "product_variable": {
+      "375px": {
+        "scrollWidth": 375,
+        "innerWidth": 375,
+        "hasOverflow": false,
+        "overflowDiff": 0
+      },
+      "1440px": {
+        "scrollWidth": 1425,
+        "innerWidth": 1440,
+        "hasOverflow": false,
+        "overflowDiff": 0
+      }
+    },
+    "cart": {
+      "375px": {
+        "scrollWidth": 375,
+        "innerWidth": 375,
+        "hasOverflow": false,
+        "overflowDiff": 0
+      },
+      "1440px": {
+        "scrollWidth": 1425,
+        "innerWidth": 1440,
+        "hasOverflow": false,
+        "overflowDiff": 0
+      }
+    },
+    "checkout": {
+      "375px": {
+        "scrollWidth": 375,
+        "innerWidth": 375,
+        "hasOverflow": false,
+        "overflowDiff": 0
+      },
+      "1440px": {
+        "scrollWidth": 1425,
+        "innerWidth": 1440,
+        "hasOverflow": false,
+        "overflowDiff": 0
+      }
+    },
+    "my_account": {
+      "375px": {
+        "scrollWidth": 385,
+        "innerWidth": 385,
+        "hasOverflow": false,
+        "overflowDiff": 0
+      },
+      "1440px": {
+        "scrollWidth": 1425,
+        "innerWidth": 1440,
+        "hasOverflow": false,
+        "overflowDiff": 0
+      }
+    },
+    "lost_password": {
+      "375px": {
+        "scrollWidth": 385,
+        "innerWidth": 385,
+        "hasOverflow": false,
+        "overflowDiff": 0
+      },
+      "1440px": {
+        "scrollWidth": 1425,
+        "innerWidth": 1440,
+        "hasOverflow": false,
+        "overflowDiff": 0
+      }
+    },
+    "search": {
+      "375px": {
+        "scrollWidth": 375,
+        "innerWidth": 375,
+        "hasOverflow": false,
+        "overflowDiff": 0
+      },
+      "1440px": {
+        "scrollWidth": 1425,
+        "innerWidth": 1440,
+        "hasOverflow": false,
+        "overflowDiff": 0
+      }
+    }
+  },
+  "color_contrast": {
+    "bodyText": {
+      "color": "rgb(41, 41, 35)",
+      "bg": "rgb(246, 243, 237)",
+      "ratio": "13.21",
+      "meetsAANormalText": true,
+      "minReq": "4.5:1"
+    },
+    "headings": {
+      "color": "rgb(41, 41, 35)",
+      "bg": "rgb(246, 243, 237)",
+      "ratio": "13.21",
+      "meetsAALargeText": true,
+      "minReq": "3.0:1"
+    },
+    "button": {
+      "color": null,
+      "bg": null,
+      "ratio": "18.88",
+      "meetsAA": true,
+      "minReq": "4.5:1"
+    }
+  },
+  "touch_targets": [
+    {
+      "tag": "A",
+      "text": "تخطى إلى المحتوى",
+      "width": 1,
+      "height": 1,
+      "area": 1,
+      "meetsMin44px": false
+    },
+    {
+      "tag": "A",
+      "text": "التشكيلة ↗",
+      "width": 40.8,
+      "height": 17.1,
+      "area": 696.8,
+      "meetsMin44px": false
+    },
+    {
+      "tag": "A",
+      "text": "مدار\nMEN + KIDS / CAIRO",
+      "width": 295.4,
+      "height": 33,
+      "area": 9749.4,
+      "meetsMin44px": false
+    },
+    {
+      "tag": "BUTTON",
+      "text": "☰",
+      "width": 33.6,
+      "height": 34,
+      "area": 1141.1,
+      "meetsMin44px": false
+    },
+    {
+      "tag": "BUTTON",
+      "text": "البحث",
+      "width": 21,
+      "height": 21,
+      "area": 441,
+      "meetsMin44px": false
+    },
+    {
+      "tag": "BUTTON",
+      "text": "مصر / عربي ⌄",
+      "width": 55.7,
+      "height": 19,
+      "area": 1059,
+      "meetsMin44px": false
+    },
+    {
+      "tag": "A",
+      "text": "0",
+      "width": 34.3,
+      "height": 21,
+      "area": 720.2,
+      "meetsMin44px": false
+    },
+    {
+      "tag": "A",
+      "text": "الحساب",
+      "width": 21,
+      "height": 21,
+      "area": 441,
+      "meetsMin44px": false
+    },
+    {
+      "tag": "A",
+      "text": "0",
+      "width": 34.3,
+      "height": 21,
+      "area": 720.2,
+      "meetsMin44px": false
+    },
+    {
+      "tag": "A",
+      "text": "اكتشف التشكيلة\n←",
+      "width": 159.1,
+      "height": 51,
+      "area": 8113.8,
+      "meetsMin44px": true
+    },
+    {
+      "tag": "A",
+      "text": "من النظرة الأولى،\nإلى كل يوم.\n",
+      "width": 280,
+      "height": 89.6,
+      "area": 25086.3,
+      "meetsMin44px": true
+    },
+    {
+      "tag": "A",
+      "text": "مشهد التمرير ↓",
+      "width": 70.5,
+      "height": 37.9,
+      "area": 2673.1,
+      "meetsMin44px": false
+    },
+    {
+      "tag": "A",
+      "text": "الصور المرنة ↓",
+      "width": 64.5,
+      "height": 37.9,
+      "area": 2445.1,
+      "meetsMin44px": false
+    },
+    {
+      "tag": "A",
+      "text": "أثر المؤشر ↓",
+      "width": 53.7,
+      "height": 37.9,
+      "area": 2033.7,
+      "meetsMin44px": false
+    },
+    {
+      "tag": "A",
+      "text": "انتقال المنتج والسلة ↗",
+      "width": 104.2,
+      "height": 37.9,
+      "area": 3947.7,
+      "meetsMin44px": false
+    },
+    {
+      "tag": "A",
+      "text": "01 / MEN\nللرجل، على مدار يومه.",
+      "width": 156.8,
+      "height": 380,
+      "area": 59565,
+      "meetsMin44px": true
+    },
+    {
+      "tag": "A",
+      "text": "02 / KIDS\nحكايات صغيرة. لحظات ",
+      "width": 156.8,
+      "height": 380,
+      "area": 59565,
+      "meetsMin44px": true
+    },
+    {
+      "tag": "A",
+      "text": "كل القطع ↗",
+      "width": 58.5,
+      "height": 35.9,
+      "area": 2098.5,
+      "meetsMin44px": false
+    },
+    {
+      "tag": "A",
+      "text": "",
+      "width": 161.5,
+      "height": 215.3,
+      "area": 34775.5,
+      "meetsMin44px": true
+    },
+    {
+      "tag": "BUTTON",
+      "text": "♡",
+      "width": 36,
+      "height": 36,
+      "area": 1296,
+      "meetsMin44px": false
+    },
+    {
+      "tag": "BUTTON",
+      "text": "معاينة سريعة +",
+      "width": 137.5,
+      "height": 40,
+      "area": 5500,
+      "meetsMin44px": false
+    },
+    {
+      "tag": "A",
+      "text": "معطف الصوف البكر بلون الجمل",
+      "width": 161.5,
+      "height": 45.6,
+      "area": 7363.4,
+      "meetsMin44px": true
+    },
+    {
+      "tag": "A",
+      "text": "",
+      "width": 161.5,
+      "height": 215.3,
+      "area": 34775.5,
+      "meetsMin44px": true
+    },
+    {
+      "tag": "BUTTON",
+      "text": "♡",
+      "width": 36,
+      "height": 36,
+      "area": 1296,
+      "meetsMin44px": false
+    },
+    {
+      "tag": "BUTTON",
+      "text": "معاينة سريعة +",
+      "width": 137.5,
+      "height": 40,
+      "area": 5500,
+      "meetsMin44px": false
+    }
+  ],
+  "visible_focus": null
+}
