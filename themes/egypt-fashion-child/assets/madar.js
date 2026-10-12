@@ -190,5 +190,49 @@
     }
     document.body.addEventListener('wc-blocks_added_to_cart', bump);
     if (window.jQuery) window.jQuery(document.body).on('added_to_cart', bump);
+
+    /* Interactive Motion Scroll Stage */
+    var scrollScene = document.getElementById('motion-scroll');
+    if (scrollScene) {
+      var updateScrollScene = function () {
+        var bounds = scrollScene.getBoundingClientRect();
+        var maxScroll = Math.max(1, bounds.height - window.innerHeight);
+        var progress = Math.max(0, Math.min(1, -bounds.top / maxScroll));
+        scrollScene.style.setProperty('--scene-progress', progress);
+      };
+      window.addEventListener('scroll', updateScrollScene, { passive: true });
+      window.addEventListener('resize', updateScrollScene);
+      updateScrollScene();
+    }
+
+    /* Interactive Motion Trail */
+    var trailSection = document.getElementById('motion-trail');
+    if (trailSection) {
+      var lastX = 0, lastY = 0, lastTime = 0;
+      var trailImages = ['coat-camel', 'kids-adventure', 'suit-navy', 'knit-cream'];
+      var imgBase = trailSection.getAttribute('data-img-base') || '';
+      trailSection.addEventListener('pointermove', function (e) {
+        if (e.pointerType !== 'mouse' || reduceMotion) return;
+        var bounds = trailSection.getBoundingClientRect();
+        var x = e.clientX - bounds.left;
+        var y = e.clientY - bounds.top;
+        var now = Date.now();
+        if (now - lastTime < 100 || Math.hypot(x - lastX, y - lastY) < 65) return;
+        lastX = x; lastY = y; lastTime = now;
+        var imgName = trailImages[Math.floor(now / 100) % trailImages.length];
+        var img = document.createElement('img');
+        img.className = 'motion-trail-image';
+        img.src = imgBase + imgName + '.jpg';
+        img.alt = '';
+        img.setAttribute('aria-hidden', 'true');
+        img.style.left = x + 'px';
+        img.style.top = y + 'px';
+        img.style.setProperty('--trail-turn', (now % 24 - 12) + 'deg');
+        trailSection.appendChild(img);
+        window.setTimeout(function () {
+          if (img.parentNode) img.parentNode.removeChild(img);
+        }, 1100);
+      });
+    }
   });
 })();

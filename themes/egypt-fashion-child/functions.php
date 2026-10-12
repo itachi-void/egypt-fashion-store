@@ -10,7 +10,7 @@ if (!defined('ABSPATH')) {
     exit; // Exit if accessed directly.
 }
 
-define('MADAR_THEME_VERSION', '2.1.0');
+define('MADAR_THEME_VERSION', '2.1.6');
 
 /**
  * Enqueue parent, child and Madar design layer.

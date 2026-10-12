@@ -73,7 +73,7 @@ add_shortcode('madar_trust', function () {
 
 add_action('wp_footer', function () {
     $url = madar_whatsapp_url('أهلًا مدار، عندي سؤال');
-    if (!$url || is_checkout()) {
+    if (!$url || is_checkout() || is_front_page() || is_home()) {
         return;
     }
     echo '<a class="mdr-wa" href="' . esc_url($url) . '" target="_blank" rel="noopener" aria-label="تواصل معنا على واتساب">' . madar_icon('chat') . '<span>واتساب</span></a>';
