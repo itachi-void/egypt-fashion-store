@@ -28,6 +28,7 @@ id_ed25519
 *.tar
 *.tar.gz
 *.zip
+review/madar-v216/madar-v216-proof.zip
 *.bak
 *.backup
 backups/

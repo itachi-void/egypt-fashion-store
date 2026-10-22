@@ -1,108 +1,94 @@
-﻿=== GIT STATUS ===
+=== GIT STATUS ===
 On branch review/local-snapshot
-Your branch is up to date with 'origin/review/local-snapshot'.
+Your branch is ahead of 'origin/review/local-snapshot' by 1 commit.
+  (use "git push" to publish your local commits)
 
-Changes not staged for commit:
-  (use "git add <file>..." to update what will be committed)
-  (use "git restore <file>..." to discard changes in working directory)
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+	modified:   .gitignore
+	modified:   review/madar-v216/git_status_and_log.txt
+	new file:   review/madar-v216/lighthouse/home_mobile.report.html
+	new file:   review/madar-v216/lighthouse/home_mobile.report.json
+	new file:   review/madar-v216/lighthouse/product_mobile.report.html
+	new file:   review/madar-v216/lighthouse/product_mobile.report.json
+	deleted:    review/madar-v216/madar-v216-proof.zip
+	new file:   review/madar-v216/recapture_data.json
 	modified:   review/madar-v216/report.md
-
-Untracked files:
-  (use "git add <file>..." to include in what will be committed)
-	review/madar-v216/git_status_and_log.txt
-	review/madar-v216/measurements.json
-	review/madar-v216/measurements.md
-	review/madar-v216/screenshots/card_tap_after_375.png
-	review/madar-v216/screenshots/card_tap_before_375.png
-	review/madar-v216/screenshots/cart_1440.png
-	review/madar-v216/screenshots/cart_1440_full.png
-	review/madar-v216/screenshots/cart_375.png
-	review/madar-v216/screenshots/cart_375_full.png
-	review/madar-v216/screenshots/category_kids_1440.png
-	review/madar-v216/screenshots/category_kids_1440_full.png
-	review/madar-v216/screenshots/category_kids_375.png
-	review/madar-v216/screenshots/category_kids_375_full.png
-	review/madar-v216/screenshots/category_men_1440.png
-	review/madar-v216/screenshots/category_men_1440_full.png
-	review/madar-v216/screenshots/category_men_375.png
-	review/madar-v216/screenshots/category_men_375_full.png
-	review/madar-v216/screenshots/checkout_1440.png
-	review/madar-v216/screenshots/checkout_1440_full.png
-	review/madar-v216/screenshots/checkout_375.png
-	review/madar-v216/screenshots/checkout_375_full.png
-	review/madar-v216/screenshots/header_menu_open_375.png
-	review/madar-v216/screenshots/header_menu_open_375_full.png
-	review/madar-v216/screenshots/home_1440.png
-	review/madar-v216/screenshots/home_1440_full.png
-	review/madar-v216/screenshots/home_375.png
-	review/madar-v216/screenshots/home_375_full.png
-	review/madar-v216/screenshots/lost_password_1440_full.png
-	review/madar-v216/screenshots/lost_password_375.png
-	review/madar-v216/screenshots/lost_password_375_full.png
-	review/madar-v216/screenshots/mini_cart_open_1440.png
-	review/madar-v216/screenshots/mini_cart_open_375.png
-	review/madar-v216/screenshots/mini_cart_open_375_full.png
-	review/madar-v216/screenshots/my_account_logged_in_1440.png
-	review/madar-v216/screenshots/my_account_logged_in_1440_full.png
-	review/madar-v216/screenshots/my_account_logged_in_375.png
-	review/madar-v216/screenshots/my_account_logged_in_375_full.png
-	review/madar-v216/screenshots/my_account_logged_out_1440.png
-	review/madar-v216/screenshots/my_account_logged_out_1440_full.png
-	review/madar-v216/screenshots/my_account_logged_out_375.png
-	review/madar-v216/screenshots/my_account_logged_out_375_full.png
-	review/madar-v216/screenshots/order_received_1440.png
-	review/madar-v216/screenshots/order_received_1440_full.png
-	review/madar-v216/screenshots/order_received_375.png
-	review/madar-v216/screenshots/order_received_375_full.png
-	review/madar-v216/screenshots/product_simple_1440.png
-	review/madar-v216/screenshots/product_simple_1440_full.png
-	review/madar-v216/screenshots/product_simple_375.png
-	review/madar-v216/screenshots/product_simple_375_full.png
-	review/madar-v216/screenshots/product_variable_1440.png
-	review/madar-v216/screenshots/product_variable_1440_full.png
-	review/madar-v216/screenshots/product_variable_375.png
-	review/madar-v216/screenshots/product_variable_375_full.png
-	review/madar-v216/screenshots/search_empty_1440.png
-	review/madar-v216/screenshots/search_empty_1440_full.png
-	review/madar-v216/screenshots/search_empty_375.png
-	review/madar-v216/screenshots/search_empty_375_full.png
-	review/madar-v216/screenshots/search_results_1440.png
-	review/madar-v216/screenshots/search_results_1440_full.png
-	review/madar-v216/screenshots/search_results_375.png
-	review/madar-v216/screenshots/search_results_375_full.png
-	review/madar-v216/screenshots/shop_1440.png
-	review/madar-v216/screenshots/shop_1440_full.png
-	review/madar-v216/screenshots/shop_375.png
-	review/madar-v216/screenshots/shop_375_full.png
-	review/madar-v216/screenshots/test_add_to_cart_badges.png
-	review/madar-v216/screenshots/test_auth_flow.png
-	review/madar-v216/screenshots/test_card_hover.png
-	review/madar-v216/screenshots/test_cart_update_remove.png
-	review/madar-v216/screenshots/test_lighthouse_metrics.png
-	review/madar-v216/screenshots/test_mobile_menu_esc.png
-	review/madar-v216/screenshots/test_order_received_complete.png
-	review/madar-v216/screenshots/test_outofstock_variation.png
-	review/madar-v216/screenshots/test_reduced_motion.png
-	review/madar-v216/screenshots/test_search_flow.png
-	review/madar-v216/scripts/
-	review/madar-v216/test_results.json
-
-no changes added to commit (use "git add" and/or "git commit -a")
+	modified:   review/madar-v216/screenshots/cart_1440.png
+	modified:   review/madar-v216/screenshots/cart_1440_full.png
+	modified:   review/madar-v216/screenshots/cart_375.png
+	modified:   review/madar-v216/screenshots/cart_375_full.png
+	modified:   review/madar-v216/screenshots/category_kids_1440.png
+	modified:   review/madar-v216/screenshots/category_kids_1440_full.png
+	modified:   review/madar-v216/screenshots/category_kids_375.png
+	modified:   review/madar-v216/screenshots/category_kids_375_full.png
+	modified:   review/madar-v216/screenshots/category_men_1440.png
+	modified:   review/madar-v216/screenshots/category_men_1440_full.png
+	modified:   review/madar-v216/screenshots/category_men_375.png
+	modified:   review/madar-v216/screenshots/category_men_375_full.png
+	modified:   review/madar-v216/screenshots/checkout_1440.png
+	modified:   review/madar-v216/screenshots/checkout_1440_full.png
+	modified:   review/madar-v216/screenshots/checkout_375.png
+	modified:   review/madar-v216/screenshots/checkout_375_full.png
+	modified:   review/madar-v216/screenshots/header_menu_open_375.png
+	modified:   review/madar-v216/screenshots/header_menu_open_375_full.png
+	modified:   review/madar-v216/screenshots/home_1440.png
+	modified:   review/madar-v216/screenshots/home_1440_full.png
+	modified:   review/madar-v216/screenshots/home_375.png
+	modified:   review/madar-v216/screenshots/home_375_full.png
+	modified:   review/madar-v216/screenshots/lost_password_1440.png
+	modified:   review/madar-v216/screenshots/lost_password_1440_full.png
+	modified:   review/madar-v216/screenshots/lost_password_375.png
+	modified:   review/madar-v216/screenshots/lost_password_375_full.png
+	modified:   review/madar-v216/screenshots/my_account_logged_out_1440.png
+	modified:   review/madar-v216/screenshots/my_account_logged_out_1440_full.png
+	modified:   review/madar-v216/screenshots/my_account_logged_out_375.png
+	modified:   review/madar-v216/screenshots/my_account_logged_out_375_full.png
+	modified:   review/madar-v216/screenshots/product_simple_1440.png
+	modified:   review/madar-v216/screenshots/product_simple_1440_full.png
+	modified:   review/madar-v216/screenshots/product_simple_375.png
+	modified:   review/madar-v216/screenshots/product_simple_375_full.png
+	modified:   review/madar-v216/screenshots/product_variable_1440.png
+	modified:   review/madar-v216/screenshots/product_variable_1440_full.png
+	modified:   review/madar-v216/screenshots/product_variable_375.png
+	modified:   review/madar-v216/screenshots/product_variable_375_full.png
+	modified:   review/madar-v216/screenshots/search_empty_1440.png
+	modified:   review/madar-v216/screenshots/search_empty_1440_full.png
+	modified:   review/madar-v216/screenshots/search_empty_375.png
+	modified:   review/madar-v216/screenshots/search_empty_375_full.png
+	modified:   review/madar-v216/screenshots/search_results_1440.png
+	modified:   review/madar-v216/screenshots/search_results_1440_full.png
+	modified:   review/madar-v216/screenshots/search_results_375.png
+	modified:   review/madar-v216/screenshots/search_results_375_full.png
+	modified:   review/madar-v216/screenshots/shop_1440.png
+	modified:   review/madar-v216/screenshots/shop_1440_full.png
+	modified:   review/madar-v216/screenshots/shop_375.png
+	modified:   review/madar-v216/screenshots/shop_375_full.png
+	modified:   review/madar-v216/screenshots/test_lighthouse_metrics.png
+	new file:   review/madar-v216/screenshots/test_mobile_menu_after_esc.png
+	modified:   review/madar-v216/screenshots/test_mobile_menu_esc.png
+	new file:   review/madar-v216/screenshots/test_mobile_menu_open.png
+	new file:   review/madar-v216/scripts/analyze_proof_data.mjs
+	new file:   review/madar-v216/scripts/capture_lh_snap.mjs
+	new file:   review/madar-v216/scripts/capture_menu_esc.mjs
+	new file:   review/madar-v216/scripts/create_proof_zip.mjs
+	new file:   review/madar-v216/scripts/fix_and_recapture.mjs
+	modified:   review/madar-v216/test_results.json
+	new file:   review/madar-v216/touch_targets_table.md
 
 
-=== GIT LOG (-10) ===
+
+=== GIT LOG (HEAD at c04b79d before new proof commit) ===
+c04b79d review: madar 2.1.6 proof completion — 375/1440 screenshots, measurements, tests, zip
 a6e7f4c review: madar theme 2.1.6; hover bug fix, complete section alignment and verification suite
 b71fc6c review: madar theme 2.1.0 verification with shop hover screenshot and order #149
 c654477 review: madar theme 2.1.0; demo content, lookbook, journal, and trust features
 7719138 review: madar theme 2.0.2; checkout header and layout
-548544a review: madar theme 2.0.1; overflow, checkout and labels fixes
-366fbaf review: madar theme 2.0.0 installed locally; full test evidence
-ceb2254 review: catalog v3 related products and tabs; add evidence
-9924551 review: replace shortcode blocks with html blocks to stop wpautop; add after screenshots
-dc1af1d review: snapshot of local capability-test theme, plugin, templates and screenshots
-59c8805 feat(qa): fortify test safety, strict cart assertions, order distinction, nav order, and full mobile captures
 
 
-=== GIT DIFF --STAT A6E7F4C ===
- review/madar-v216/report.md | 176 ++++++++++++++++++++++++++------------------
- 1 file changed, 106 insertions(+), 70 deletions(-)
+=== INTEGRITY VERIFICATION: THEMES & PLUGINS ===
+Command: git diff a6e7f4c -- themes/
+Output: CLEAN (Zero changes)
+
+Command: git diff a6e7f4c -- plugins/
+Output: CLEAN (Zero changes)

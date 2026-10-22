@@ -1,0 +1,3381 @@
+{
+  "focusAfterEsc": {
+    "tagName": "BODY",
+    "className": "rtl home blog wp-embed-responsive wp-theme-twentytwentyfive wp-child-theme-egypt-fashion-child theme-twentytwentyfive woocommerce-uses-block-theme woocommerce-block-theme-has-button-styles woocommerce-js",
+    "id": "",
+    "ariaLabel": null,
+    "outerHTML": "<body class=\"rtl home blog wp-embed-responsive wp-theme-twentytwentyfive wp-child-theme-egypt-fashion-child theme-twentytwentyfive woocommerce-uses-bl"
+  },
+  "consoleWarnings": {
+    "checkout_375": [],
+    "checkout_1440": [],
+    "category_kids_375": [],
+    "category_kids_1440": [],
+    "shop_375": [],
+    "shop_1440": [],
+    "category_men_375": [],
+    "category_men_1440": [],
+    "product_simple_375": [],
+    "product_simple_1440": [],
+    "product_variable_375": [],
+    "product_variable_1440": [],
+    "home_375": [],
+    "home_1440": [],
+    "cart_375": [],
+    "cart_1440": [],
+    "my_account_logged_out_375": [],
+    "my_account_logged_out_1440": [],
+    "lost_password_375": [],
+    "lost_password_1440": [],
+    "search_results_375": [],
+    "search_results_1440": [],
+    "search_empty_375": [],
+    "search_empty_1440": []
+  },
+  "touchTargetsUnder44": [
+    {
+      "selector": "a#wp-skip-link",
+      "tag": "A",
+      "text": "تخطى إلى المحتوى",
+      "width": 1,
+      "height": 1,
+      "page": "checkout"
+    },
+    {
+      "selector": "a",
+      "tag": "A",
+      "text": "التشكيلة ↗",
+      "width": 40.8,
+      "height": 17.1,
+      "page": "checkout"
+    },
+    {
+      "selector": "a.quiet-brand",
+      "tag": "A",
+      "text": "مدار MEN + KIDS / CAIRO",
+      "width": 295.4,
+      "height": 33,
+      "page": "checkout"
+    },
+    {
+      "selector": "button.store-menu-toggle",
+      "tag": "BUTTON",
+      "text": "☰",
+      "width": 33.6,
+      "height": 34,
+      "page": "checkout"
+    },
+    {
+      "selector": "button.experience-search-trigger",
+      "tag": "BUTTON",
+      "text": "البحث",
+      "width": 21,
+      "height": 21,
+      "page": "checkout"
+    },
+    {
+      "selector": "button",
+      "tag": "BUTTON",
+      "text": "مصر / عربي ⌄",
+      "width": 55.7,
+      "height": 19,
+      "page": "checkout"
+    },
+    {
+      "selector": "a",
+      "tag": "A",
+      "text": "0",
+      "width": 34.3,
+      "height": 21,
+      "page": "checkout"
+    },
+    {
+      "selector": "a",
+      "tag": "A",
+      "text": "الحساب",
+      "width": 21,
+      "height": 21,
+      "page": "checkout"
+    },
+    {
+      "selector": "a.store-cart-link",
+      "tag": "A",
+      "text": "1",
+      "width": 34.3,
+      "height": 21,
+      "page": "checkout"
+    },
+    {
+      "selector": "a.showlogin",
+      "tag": "A",
+      "text": "أنقر هنا لتسجيل الدخول",
+      "width": 124.6,
+      "height": 15,
+      "page": "checkout"
+    },
+    {
+      "selector": "a.showcoupon",
+      "tag": "A",
+      "text": "أنقر هنا لإدخال رمز القسيمة",
+      "width": 146.6,
+      "height": 15,
+      "page": "checkout"
+    },
+    {
+      "selector": "select#billing_state",
+      "tag": "SELECT",
+      "text": "حدد خيارًا… الإسكندرية أسوان أ",
+      "width": 30,
+      "height": 30,
+      "page": "checkout"
+    },
+    {
+      "selector": "input#createaccount",
+      "tag": "INPUT",
+      "text": "1",
+      "width": 13,
+      "height": 13,
+      "page": "checkout"
+    },
+    {
+      "selector": "input#ship-to-different-address-checkbox",
+      "tag": "INPUT",
+      "text": "1",
+      "width": 13,
+      "height": 13,
+      "page": "checkout"
+    },
+    {
+      "selector": "a.woocommerce-privacy-policy-link",
+      "tag": "A",
+      "text": "سياسة الخصوصية",
+      "width": 85,
+      "height": 14,
+      "page": "checkout"
+    },
+    {
+      "selector": "a#wp-skip-link",
+      "tag": "A",
+      "text": "تخطى إلى المحتوى",
+      "width": 1,
+      "height": 1,
+      "page": "category_kids"
+    },
+    {
+      "selector": "a",
+      "tag": "A",
+      "text": "التشكيلة ↗",
+      "width": 40.8,
+      "height": 17.1,
+      "page": "category_kids"
+    },
+    {
+      "selector": "a.quiet-brand",
+      "tag": "A",
+      "text": "مدار MEN + KIDS / CAIRO",
+      "width": 295.4,
+      "height": 33,
+      "page": "category_kids"
+    },
+    {
+      "selector": "button.store-menu-toggle",
+      "tag": "BUTTON",
+      "text": "☰",
+      "width": 33.6,
+      "height": 34,
+      "page": "category_kids"
+    },
+    {
+      "selector": "button.experience-search-trigger",
+      "tag": "BUTTON",
+      "text": "البحث",
+      "width": 21,
+      "height": 21,
+      "page": "category_kids"
+    },
+    {
+      "selector": "button",
+      "tag": "BUTTON",
+      "text": "مصر / عربي ⌄",
+      "width": 55.7,
+      "height": 19,
+      "page": "category_kids"
+    },
+    {
+      "selector": "a",
+      "tag": "A",
+      "text": "0",
+      "width": 34.3,
+      "height": 21,
+      "page": "category_kids"
+    },
+    {
+      "selector": "a",
+      "tag": "A",
+      "text": "الحساب",
+      "width": 21,
+      "height": 21,
+      "page": "category_kids"
+    },
+    {
+      "selector": "a.store-cart-link",
+      "tag": "A",
+      "text": "1",
+      "width": 34.3,
+      "height": 21,
+      "page": "category_kids"
+    },
+    {
+      "selector": "a",
+      "tag": "A",
+      "text": "الرئيسية",
+      "width": 36.1,
+      "height": 14,
+      "page": "category_kids"
+    },
+    {
+      "selector": "a",
+      "tag": "A",
+      "text": "الكل",
+      "width": 53.8,
+      "height": 40.9,
+      "page": "category_kids"
+    },
+    {
+      "selector": "a",
+      "tag": "A",
+      "text": "إكسسوارات",
+      "width": 85.7,
+      "height": 40.9,
+      "page": "category_kids"
+    },
+    {
+      "selector": "a",
+      "tag": "A",
+      "text": "ملابس",
+      "width": 66.7,
+      "height": 40.9,
+      "page": "category_kids"
+    },
+    {
+      "selector": "a",
+      "tag": "A",
+      "text": "أطفال",
+      "width": 63.7,
+      "height": 40.9,
+      "page": "category_kids"
+    },
+    {
+      "selector": "a",
+      "tag": "A",
+      "text": "رجالي",
+      "width": 58.5,
+      "height": 40.9,
+      "page": "category_kids"
+    },
+    {
+      "selector": "button.mdr-tool",
+      "tag": "BUTTON",
+      "text": "الفلاتر والترتيب",
+      "width": 113,
+      "height": 34,
+      "page": "category_kids"
+    },
+    {
+      "selector": "button.mdr-tool",
+      "tag": "BUTTON",
+      "text": "صور أكبر",
+      "width": 34,
+      "height": 34,
+      "page": "category_kids"
+    },
+    {
+      "selector": "button.mdr-tool",
+      "tag": "BUTTON",
+      "text": "منتجات أكثر",
+      "width": 34,
+      "height": 34,
+      "page": "category_kids"
+    },
+    {
+      "selector": "a",
+      "tag": "A",
+      "text": "بولو أطفال مقلّم",
+      "width": 98.6,
+      "height": 22.1,
+      "page": "category_kids"
+    },
+    {
+      "selector": "a.wp-block-button__link",
+      "tag": "A",
+      "text": "تحديد أحد الخيارات",
+      "width": 86.6,
+      "height": 22.4,
+      "page": "category_kids"
+    },
+    {
+      "selector": "a",
+      "tag": "A",
+      "text": "تيشيرت أطفال مقلّم فاتح",
+      "width": 145.5,
+      "height": 22.1,
+      "page": "category_kids"
+    },
+    {
+      "selector": "a.wp-block-button__link",
+      "tag": "A",
+      "text": "تحديد أحد الخيارات",
+      "width": 86.6,
+      "height": 22.4,
+      "page": "category_kids"
+    },
+    {
+      "selector": "a",
+      "tag": "A",
+      "text": "سويتشيرت أطفال بخطوط",
+      "width": 146.7,
+      "height": 22.1,
+      "page": "category_kids"
+    },
+    {
+      "selector": "a.wp-block-button__link",
+      "tag": "A",
+      "text": "تحديد أحد الخيارات",
+      "width": 86.6,
+      "height": 22.4,
+      "page": "category_kids"
+    },
+    {
+      "selector": "a",
+      "tag": "A",
+      "text": "قميص أطفال بني",
+      "width": 106.4,
+      "height": 22.1,
+      "page": "category_kids"
+    },
+    {
+      "selector": "a.wp-block-button__link",
+      "tag": "A",
+      "text": "تحديد أحد الخيارات",
+      "width": 86.6,
+      "height": 22.4,
+      "page": "category_kids"
+    },
+    {
+      "selector": "a.quiet-brand",
+      "tag": "A",
+      "text": "مدار",
+      "width": 59.9,
+      "height": 38,
+      "page": "category_kids"
+    },
+    {
+      "selector": "a",
+      "tag": "A",
+      "text": "الرجال",
+      "width": 28.6,
+      "height": 22.8,
+      "page": "category_kids"
+    },
+    {
+      "selector": "a",
+      "tag": "A",
+      "text": "الأطفال",
+      "width": 40.4,
+      "height": 22.8,
+      "page": "category_kids"
+    },
+    {
+      "selector": "a",
+      "tag": "A",
+      "text": "المفضلة",
+      "width": 45.9,
+      "height": 22.8,
+      "page": "category_kids"
+    },
+    {
+      "selector": "a",
+      "tag": "A",
+      "text": "المقاسات والشحن والأسئلة",
+      "width": 137.7,
+      "height": 22.8,
+      "page": "category_kids"
+    },
+    {
+      "selector": "a",
+      "tag": "A",
+      "text": "تواصل معنا",
+      "width": 61.3,
+      "height": 22.8,
+      "page": "category_kids"
+    },
+    {
+      "selector": "a",
+      "tag": "A",
+      "text": "دليل المقاسات",
+      "width": 75.4,
+      "height": 22.8,
+      "page": "category_kids"
+    },
+    {
+      "selector": "a",
+      "tag": "A",
+      "text": "الخصوصية والسياسات",
+      "width": 112.5,
+      "height": 22.8,
+      "page": "category_kids"
+    },
+    {
+      "selector": "a",
+      "tag": "A",
+      "text": "الحساب والطلبات",
+      "width": 85.7,
+      "height": 22.8,
+      "page": "category_kids"
+    },
+    {
+      "selector": "a",
+      "tag": "A",
+      "text": "سلة المشتريات",
+      "width": 74.8,
+      "height": 22.8,
+      "page": "category_kids"
+    },
+    {
+      "selector": "a",
+      "tag": "A",
+      "text": "عن مدار",
+      "width": 41,
+      "height": 22.8,
+      "page": "category_kids"
+    },
+    {
+      "selector": "a",
+      "tag": "A",
+      "text": "دفتر مدار",
+      "width": 47,
+      "height": 22.8,
+      "page": "category_kids"
+    },
+    {
+      "selector": "a",
+      "tag": "A",
+      "text": "اكتشف أسلوبك",
+      "width": 76.9,
+      "height": 22.8,
+      "page": "category_kids"
+    },
+    {
+      "selector": "a.mdr-wa",
+      "tag": "A",
+      "text": "تواصل معنا على واتساب",
+      "width": 42,
+      "height": 42,
+      "page": "category_kids"
+    },
+    {
+      "selector": "a#wp-skip-link",
+      "tag": "A",
+      "text": "تخطى إلى المحتوى",
+      "width": 1,
+      "height": 1,
+      "page": "shop"
+    },
+    {
+      "selector": "a",
+      "tag": "A",
+      "text": "التشكيلة ↗",
+      "width": 40.8,
+      "height": 17.1,
+      "page": "shop"
+    },
+    {
+      "selector": "a.quiet-brand",
+      "tag": "A",
+      "text": "مدار MEN + KIDS / CAIRO",
+      "width": 295.4,
+      "height": 33,
+      "page": "shop"
+    },
+    {
+      "selector": "button.store-menu-toggle",
+      "tag": "BUTTON",
+      "text": "☰",
+      "width": 33.6,
+      "height": 34,
+      "page": "shop"
+    },
+    {
+      "selector": "button.experience-search-trigger",
+      "tag": "BUTTON",
+      "text": "البحث",
+      "width": 21,
+      "height": 21,
+      "page": "shop"
+    },
+    {
+      "selector": "button",
+      "tag": "BUTTON",
+      "text": "مصر / عربي ⌄",
+      "width": 55.7,
+      "height": 19,
+      "page": "shop"
+    },
+    {
+      "selector": "a",
+      "tag": "A",
+      "text": "0",
+      "width": 34.3,
+      "height": 21,
+      "page": "shop"
+    },
+    {
+      "selector": "a",
+      "tag": "A",
+      "text": "الحساب",
+      "width": 21,
+      "height": 21,
+      "page": "shop"
+    },
+    {
+      "selector": "a.store-cart-link",
+      "tag": "A",
+      "text": "1",
+      "width": 34.3,
+      "height": 21,
+      "page": "shop"
+    },
+    {
+      "selector": "a",
+      "tag": "A",
+      "text": "الرئيسية",
+      "width": 36.1,
+      "height": 14,
+      "page": "shop"
+    },
+    {
+      "selector": "a",
+      "tag": "A",
+      "text": "الكل",
+      "width": 53.8,
+      "height": 40.9,
+      "page": "shop"
+    },
+    {
+      "selector": "a",
+      "tag": "A",
+      "text": "إكسسوارات",
+      "width": 85.7,
+      "height": 40.9,
+      "page": "shop"
+    },
+    {
+      "selector": "a",
+      "tag": "A",
+      "text": "ملابس",
+      "width": 66.7,
+      "height": 40.9,
+      "page": "shop"
+    },
+    {
+      "selector": "a",
+      "tag": "A",
+      "text": "أطفال",
+      "width": 63.7,
+      "height": 40.9,
+      "page": "shop"
+    },
+    {
+      "selector": "a",
+      "tag": "A",
+      "text": "رجالي",
+      "width": 58.5,
+      "height": 40.9,
+      "page": "shop"
+    },
+    {
+      "selector": "button.mdr-tool",
+      "tag": "BUTTON",
+      "text": "الفلاتر والترتيب",
+      "width": 113,
+      "height": 34,
+      "page": "shop"
+    },
+    {
+      "selector": "button.mdr-tool",
+      "tag": "BUTTON",
+      "text": "صور أكبر",
+      "width": 34,
+      "height": 34,
+      "page": "shop"
+    },
+    {
+      "selector": "button.mdr-tool",
+      "tag": "BUTTON",
+      "text": "منتجات أكثر",
+      "width": 34,
+      "height": 34,
+      "page": "shop"
+    },
+    {
+      "selector": "a",
+      "tag": "A",
+      "text": "أوفرشيرت قطن مبروم",
+      "width": 126.3,
+      "height": 22.1,
+      "page": "shop"
+    },
+    {
+      "selector": "a.wp-block-button__link",
+      "tag": "A",
+      "text": "تحديد أحد الخيارات",
+      "width": 86.6,
+      "height": 22.4,
+      "page": "shop"
+    },
+    {
+      "selector": "a",
+      "tag": "A",
+      "text": "بلوفر تريكو بدرجات ترابي",
+      "width": 135.3,
+      "height": 22.1,
+      "page": "shop"
+    },
+    {
+      "selector": "a.wp-block-button__link",
+      "tag": "A",
+      "text": "تحديد أحد الخيارات",
+      "width": 86.6,
+      "height": 22.4,
+      "page": "shop"
+    },
+    {
+      "selector": "a",
+      "tag": "A",
+      "text": "بنطال جينز كاجوال – تجريبي",
+      "width": 154,
+      "height": 22.1,
+      "page": "shop"
+    },
+    {
+      "selector": "button.wp-block-button__link",
+      "tag": "BUTTON",
+      "text": "إضافة إلى السلة",
+      "width": 79.5,
+      "height": 22.4,
+      "page": "shop"
+    },
+    {
+      "selector": "a",
+      "tag": "A",
+      "text": "بولو أطفال مقلّم",
+      "width": 98.6,
+      "height": 22.1,
+      "page": "shop"
+    },
+    {
+      "selector": "a.wp-block-button__link",
+      "tag": "A",
+      "text": "تحديد أحد الخيارات",
+      "width": 86.6,
+      "height": 22.4,
+      "page": "shop"
+    },
+    {
+      "selector": "a",
+      "tag": "A",
+      "text": "تيشيرت أطفال مقلّم فاتح",
+      "width": 145.5,
+      "height": 22.1,
+      "page": "shop"
+    },
+    {
+      "selector": "a.wp-block-button__link",
+      "tag": "A",
+      "text": "تحديد أحد الخيارات",
+      "width": 86.6,
+      "height": 22.4,
+      "page": "shop"
+    },
+    {
+      "selector": "a.wp-block-button__link",
+      "tag": "A",
+      "text": "تحديد أحد الخيارات",
+      "width": 86.6,
+      "height": 22.4,
+      "page": "shop"
+    },
+    {
+      "selector": "a",
+      "tag": "A",
+      "text": "سترة هودي شتوية – تجريبي",
+      "width": 158.8,
+      "height": 22.1,
+      "page": "shop"
+    },
+    {
+      "selector": "button.wp-block-button__link",
+      "tag": "BUTTON",
+      "text": "إضافة إلى السلة",
+      "width": 79.5,
+      "height": 22.4,
+      "page": "shop"
+    },
+    {
+      "selector": "a",
+      "tag": "A",
+      "text": "سوار معصم جلدي – تجريبي",
+      "width": 158.6,
+      "height": 22.1,
+      "page": "shop"
+    },
+    {
+      "selector": "a.wp-block-button__link",
+      "tag": "A",
+      "text": "تحديد أحد الخيارات",
+      "width": 86.6,
+      "height": 22.4,
+      "page": "shop"
+    },
+    {
+      "selector": "a",
+      "tag": "A",
+      "text": "سويتشيرت أطفال بخطوط",
+      "width": 146.7,
+      "height": 22.1,
+      "page": "shop"
+    },
+    {
+      "selector": "a.wp-block-button__link",
+      "tag": "A",
+      "text": "تحديد أحد الخيارات",
+      "width": 86.6,
+      "height": 22.4,
+      "page": "shop"
+    },
+    {
+      "selector": "a",
+      "tag": "A",
+      "text": "طقم بدلة سادة",
+      "width": 90.2,
+      "height": 22.1,
+      "page": "shop"
+    },
+    {
+      "selector": "a.wp-block-button__link",
+      "tag": "A",
+      "text": "تحديد أحد الخيارات",
+      "width": 86.6,
+      "height": 22.4,
+      "page": "shop"
+    },
+    {
+      "selector": "a",
+      "tag": "A",
+      "text": "قميص أطفال بني",
+      "width": 106.4,
+      "height": 22.1,
+      "page": "shop"
+    },
+    {
+      "selector": "a.wp-block-button__link",
+      "tag": "A",
+      "text": "تحديد أحد الخيارات",
+      "width": 86.6,
+      "height": 22.4,
+      "page": "shop"
+    },
+    {
+      "selector": "a",
+      "tag": "A",
+      "text": "قميص مقلّم بقصّة واسعة",
+      "width": 158.4,
+      "height": 22.1,
+      "page": "shop"
+    },
+    {
+      "selector": "a.wp-block-button__link",
+      "tag": "A",
+      "text": "تحديد أحد الخيارات",
+      "width": 86.6,
+      "height": 22.4,
+      "page": "shop"
+    },
+    {
+      "selector": "button.wp-block-button__link",
+      "tag": "BUTTON",
+      "text": "إضافة إلى السلة",
+      "width": 79.5,
+      "height": 22.4,
+      "page": "shop"
+    },
+    {
+      "selector": "a",
+      "tag": "A",
+      "text": "معطف صوف بلون الجمل",
+      "width": 151.8,
+      "height": 22.1,
+      "page": "shop"
+    },
+    {
+      "selector": "a.wp-block-button__link",
+      "tag": "A",
+      "text": "تحديد أحد الخيارات",
+      "width": 86.6,
+      "height": 22.4,
+      "page": "shop"
+    },
+    {
+      "selector": "a",
+      "tag": "A",
+      "text": "معطف طويل أسود",
+      "width": 115.2,
+      "height": 22.1,
+      "page": "shop"
+    },
+    {
+      "selector": "a.wp-block-button__link",
+      "tag": "A",
+      "text": "تحديد أحد الخيارات",
+      "width": 86.6,
+      "height": 22.4,
+      "page": "shop"
+    },
+    {
+      "selector": "button.wp-block-button__link",
+      "tag": "BUTTON",
+      "text": "1 في عربة التسوق",
+      "width": 87.2,
+      "height": 22.4,
+      "page": "shop"
+    },
+    {
+      "selector": "a.quiet-brand",
+      "tag": "A",
+      "text": "مدار",
+      "width": 59.9,
+      "height": 38,
+      "page": "shop"
+    },
+    {
+      "selector": "a",
+      "tag": "A",
+      "text": "الرجال",
+      "width": 28.6,
+      "height": 22.8,
+      "page": "shop"
+    },
+    {
+      "selector": "a",
+      "tag": "A",
+      "text": "الأطفال",
+      "width": 40.4,
+      "height": 22.8,
+      "page": "shop"
+    },
+    {
+      "selector": "a",
+      "tag": "A",
+      "text": "المفضلة",
+      "width": 45.9,
+      "height": 22.8,
+      "page": "shop"
+    },
+    {
+      "selector": "a",
+      "tag": "A",
+      "text": "المقاسات والشحن والأسئلة",
+      "width": 137.7,
+      "height": 22.8,
+      "page": "shop"
+    },
+    {
+      "selector": "a",
+      "tag": "A",
+      "text": "تواصل معنا",
+      "width": 61.3,
+      "height": 22.8,
+      "page": "shop"
+    },
+    {
+      "selector": "a",
+      "tag": "A",
+      "text": "دليل المقاسات",
+      "width": 75.4,
+      "height": 22.8,
+      "page": "shop"
+    },
+    {
+      "selector": "a",
+      "tag": "A",
+      "text": "الخصوصية والسياسات",
+      "width": 112.5,
+      "height": 22.8,
+      "page": "shop"
+    },
+    {
+      "selector": "a",
+      "tag": "A",
+      "text": "الحساب والطلبات",
+      "width": 85.7,
+      "height": 22.8,
+      "page": "shop"
+    },
+    {
+      "selector": "a",
+      "tag": "A",
+      "text": "سلة المشتريات",
+      "width": 74.8,
+      "height": 22.8,
+      "page": "shop"
+    },
+    {
+      "selector": "a",
+      "tag": "A",
+      "text": "عن مدار",
+      "width": 41,
+      "height": 22.8,
+      "page": "shop"
+    },
+    {
+      "selector": "a",
+      "tag": "A",
+      "text": "دفتر مدار",
+      "width": 47,
+      "height": 22.8,
+      "page": "shop"
+    },
+    {
+      "selector": "a",
+      "tag": "A",
+      "text": "اكتشف أسلوبك",
+      "width": 76.9,
+      "height": 22.8,
+      "page": "shop"
+    },
+    {
+      "selector": "a.mdr-wa",
+      "tag": "A",
+      "text": "تواصل معنا على واتساب",
+      "width": 42,
+      "height": 42,
+      "page": "shop"
+    },
+    {
+      "selector": "a#wp-skip-link",
+      "tag": "A",
+      "text": "تخطى إلى المحتوى",
+      "width": 1,
+      "height": 1,
+      "page": "category_men"
+    },
+    {
+      "selector": "a",
+      "tag": "A",
+      "text": "التشكيلة ↗",
+      "width": 40.8,
+      "height": 17.1,
+      "page": "category_men"
+    },
+    {
+      "selector": "a.quiet-brand",
+      "tag": "A",
+      "text": "مدار MEN + KIDS / CAIRO",
+      "width": 295.4,
+      "height": 33,
+      "page": "category_men"
+    },
+    {
+      "selector": "button.store-menu-toggle",
+      "tag": "BUTTON",
+      "text": "☰",
+      "width": 33.6,
+      "height": 34,
+      "page": "category_men"
+    },
+    {
+      "selector": "button.experience-search-trigger",
+      "tag": "BUTTON",
+      "text": "البحث",
+      "width": 21,
+      "height": 21,
+      "page": "category_men"
+    },
+    {
+      "selector": "button",
+      "tag": "BUTTON",
+      "text": "مصر / عربي ⌄",
+      "width": 55.7,
+      "height": 19,
+      "page": "category_men"
+    },
+    {
+      "selector": "a",
+      "tag": "A",
+      "text": "0",
+      "width": 34.3,
+      "height": 21,
+      "page": "category_men"
+    },
+    {
+      "selector": "a",
+      "tag": "A",
+      "text": "الحساب",
+      "width": 21,
+      "height": 21,
+      "page": "category_men"
+    },
+    {
+      "selector": "a.store-cart-link",
+      "tag": "A",
+      "text": "1",
+      "width": 34.3,
+      "height": 21,
+      "page": "category_men"
+    },
+    {
+      "selector": "a",
+      "tag": "A",
+      "text": "الرئيسية",
+      "width": 36.1,
+      "height": 14,
+      "page": "category_men"
+    },
+    {
+      "selector": "a",
+      "tag": "A",
+      "text": "الكل",
+      "width": 53.8,
+      "height": 40.9,
+      "page": "category_men"
+    },
+    {
+      "selector": "a",
+      "tag": "A",
+      "text": "إكسسوارات",
+      "width": 85.7,
+      "height": 40.9,
+      "page": "category_men"
+    },
+    {
+      "selector": "a",
+      "tag": "A",
+      "text": "ملابس",
+      "width": 66.7,
+      "height": 40.9,
+      "page": "category_men"
+    },
+    {
+      "selector": "a",
+      "tag": "A",
+      "text": "أطفال",
+      "width": 63.7,
+      "height": 40.9,
+      "page": "category_men"
+    },
+    {
+      "selector": "a",
+      "tag": "A",
+      "text": "رجالي",
+      "width": 58.5,
+      "height": 40.9,
+      "page": "category_men"
+    },
+    {
+      "selector": "button.mdr-tool",
+      "tag": "BUTTON",
+      "text": "الفلاتر والترتيب",
+      "width": 113,
+      "height": 34,
+      "page": "category_men"
+    },
+    {
+      "selector": "button.mdr-tool",
+      "tag": "BUTTON",
+      "text": "صور أكبر",
+      "width": 34,
+      "height": 34,
+      "page": "category_men"
+    },
+    {
+      "selector": "button.mdr-tool",
+      "tag": "BUTTON",
+      "text": "منتجات أكثر",
+      "width": 34,
+      "height": 34,
+      "page": "category_men"
+    },
+    {
+      "selector": "a",
+      "tag": "A",
+      "text": "أوفرشيرت قطن مبروم",
+      "width": 126.3,
+      "height": 22.1,
+      "page": "category_men"
+    },
+    {
+      "selector": "a.wp-block-button__link",
+      "tag": "A",
+      "text": "تحديد أحد الخيارات",
+      "width": 86.6,
+      "height": 22.4,
+      "page": "category_men"
+    },
+    {
+      "selector": "a",
+      "tag": "A",
+      "text": "بلوفر تريكو بدرجات ترابي",
+      "width": 135.3,
+      "height": 22.1,
+      "page": "category_men"
+    },
+    {
+      "selector": "a.wp-block-button__link",
+      "tag": "A",
+      "text": "تحديد أحد الخيارات",
+      "width": 86.6,
+      "height": 22.4,
+      "page": "category_men"
+    },
+    {
+      "selector": "a",
+      "tag": "A",
+      "text": "طقم بدلة سادة",
+      "width": 90.2,
+      "height": 22.1,
+      "page": "category_men"
+    },
+    {
+      "selector": "a.wp-block-button__link",
+      "tag": "A",
+      "text": "تحديد أحد الخيارات",
+      "width": 86.6,
+      "height": 22.4,
+      "page": "category_men"
+    },
+    {
+      "selector": "a",
+      "tag": "A",
+      "text": "قميص مقلّم بقصّة واسعة",
+      "width": 158.4,
+      "height": 22.1,
+      "page": "category_men"
+    },
+    {
+      "selector": "a.wp-block-button__link",
+      "tag": "A",
+      "text": "تحديد أحد الخيارات",
+      "width": 86.6,
+      "height": 22.4,
+      "page": "category_men"
+    },
+    {
+      "selector": "a",
+      "tag": "A",
+      "text": "معطف صوف بلون الجمل",
+      "width": 151.8,
+      "height": 22.1,
+      "page": "category_men"
+    },
+    {
+      "selector": "a.wp-block-button__link",
+      "tag": "A",
+      "text": "تحديد أحد الخيارات",
+      "width": 86.6,
+      "height": 22.4,
+      "page": "category_men"
+    },
+    {
+      "selector": "a",
+      "tag": "A",
+      "text": "معطف طويل أسود",
+      "width": 115.2,
+      "height": 22.1,
+      "page": "category_men"
+    },
+    {
+      "selector": "a.wp-block-button__link",
+      "tag": "A",
+      "text": "تحديد أحد الخيارات",
+      "width": 86.6,
+      "height": 22.4,
+      "page": "category_men"
+    },
+    {
+      "selector": "a.quiet-brand",
+      "tag": "A",
+      "text": "مدار",
+      "width": 59.9,
+      "height": 38,
+      "page": "category_men"
+    },
+    {
+      "selector": "a",
+      "tag": "A",
+      "text": "الرجال",
+      "width": 28.6,
+      "height": 22.8,
+      "page": "category_men"
+    },
+    {
+      "selector": "a",
+      "tag": "A",
+      "text": "الأطفال",
+      "width": 40.4,
+      "height": 22.8,
+      "page": "category_men"
+    },
+    {
+      "selector": "a",
+      "tag": "A",
+      "text": "المفضلة",
+      "width": 45.9,
+      "height": 22.8,
+      "page": "category_men"
+    },
+    {
+      "selector": "a",
+      "tag": "A",
+      "text": "المقاسات والشحن والأسئلة",
+      "width": 137.7,
+      "height": 22.8,
+      "page": "category_men"
+    },
+    {
+      "selector": "a",
+      "tag": "A",
+      "text": "تواصل معنا",
+      "width": 61.3,
+      "height": 22.8,
+      "page": "category_men"
+    },
+    {
+      "selector": "a",
+      "tag": "A",
+      "text": "دليل المقاسات",
+      "width": 75.4,
+      "height": 22.8,
+      "page": "category_men"
+    },
+    {
+      "selector": "a",
+      "tag": "A",
+      "text": "الخصوصية والسياسات",
+      "width": 112.5,
+      "height": 22.8,
+      "page": "category_men"
+    },
+    {
+      "selector": "a",
+      "tag": "A",
+      "text": "الحساب والطلبات",
+      "width": 85.7,
+      "height": 22.8,
+      "page": "category_men"
+    },
+    {
+      "selector": "a",
+      "tag": "A",
+      "text": "سلة المشتريات",
+      "width": 74.8,
+      "height": 22.8,
+      "page": "category_men"
+    },
+    {
+      "selector": "a",
+      "tag": "A",
+      "text": "عن مدار",
+      "width": 41,
+      "height": 22.8,
+      "page": "category_men"
+    },
+    {
+      "selector": "a",
+      "tag": "A",
+      "text": "دفتر مدار",
+      "width": 47,
+      "height": 22.8,
+      "page": "category_men"
+    },
+    {
+      "selector": "a",
+      "tag": "A",
+      "text": "اكتشف أسلوبك",
+      "width": 76.9,
+      "height": 22.8,
+      "page": "category_men"
+    },
+    {
+      "selector": "a.mdr-wa",
+      "tag": "A",
+      "text": "تواصل معنا على واتساب",
+      "width": 42,
+      "height": 42,
+      "page": "category_men"
+    },
+    {
+      "selector": "a#wp-skip-link",
+      "tag": "A",
+      "text": "تخطى إلى المحتوى",
+      "width": 1,
+      "height": 1,
+      "page": "product_simple"
+    },
+    {
+      "selector": "a",
+      "tag": "A",
+      "text": "التشكيلة ↗",
+      "width": 40.8,
+      "height": 17.1,
+      "page": "product_simple"
+    },
+    {
+      "selector": "a.quiet-brand",
+      "tag": "A",
+      "text": "مدار MEN + KIDS / CAIRO",
+      "width": 295.4,
+      "height": 33,
+      "page": "product_simple"
+    },
+    {
+      "selector": "button.store-menu-toggle",
+      "tag": "BUTTON",
+      "text": "☰",
+      "width": 33.6,
+      "height": 34,
+      "page": "product_simple"
+    },
+    {
+      "selector": "button.experience-search-trigger",
+      "tag": "BUTTON",
+      "text": "البحث",
+      "width": 21,
+      "height": 21,
+      "page": "product_simple"
+    },
+    {
+      "selector": "button",
+      "tag": "BUTTON",
+      "text": "مصر / عربي ⌄",
+      "width": 55.7,
+      "height": 19,
+      "page": "product_simple"
+    },
+    {
+      "selector": "a",
+      "tag": "A",
+      "text": "0",
+      "width": 34.3,
+      "height": 21,
+      "page": "product_simple"
+    },
+    {
+      "selector": "a",
+      "tag": "A",
+      "text": "الحساب",
+      "width": 21,
+      "height": 21,
+      "page": "product_simple"
+    },
+    {
+      "selector": "a.store-cart-link",
+      "tag": "A",
+      "text": "1",
+      "width": 34.3,
+      "height": 21,
+      "page": "product_simple"
+    },
+    {
+      "selector": "a",
+      "tag": "A",
+      "text": "الرئيسية",
+      "width": 36.1,
+      "height": 14,
+      "page": "product_simple"
+    },
+    {
+      "selector": "a",
+      "tag": "A",
+      "text": "إكسسوارات",
+      "width": 51.7,
+      "height": 14,
+      "page": "product_simple"
+    },
+    {
+      "selector": "a.woocommerce-product-gallery__trigger",
+      "tag": "A",
+      "text": "عرض معرض الصورة بشاشة كاملة",
+      "width": 40,
+      "height": 40,
+      "page": "product_simple"
+    },
+    {
+      "selector": "a",
+      "tag": "A",
+      "text": "كلّمنا على واتساب",
+      "width": 82.8,
+      "height": 14,
+      "page": "product_simple"
+    },
+    {
+      "selector": "button.mdr-size-link",
+      "tag": "BUTTON",
+      "text": "دليل المقاسات",
+      "width": 105.8,
+      "height": 17,
+      "page": "product_simple"
+    },
+    {
+      "selector": "a",
+      "tag": "A",
+      "text": "إكسسوارات",
+      "width": 51.7,
+      "height": 14,
+      "page": "product_simple"
+    },
+    {
+      "selector": "a",
+      "tag": "A",
+      "text": "الوصف",
+      "width": 41.8,
+      "height": 44,
+      "page": "product_simple"
+    },
+    {
+      "selector": "a",
+      "tag": "A",
+      "text": "سوار معصم جلدي – تجريبي",
+      "width": 158.6,
+      "height": 22.1,
+      "page": "product_simple"
+    },
+    {
+      "selector": "a.wp-block-button__link",
+      "tag": "A",
+      "text": "تحديد أحد الخيارات",
+      "width": 86.6,
+      "height": 22.4,
+      "page": "product_simple"
+    },
+    {
+      "selector": "button.wp-block-button__link",
+      "tag": "BUTTON",
+      "text": "إضافة إلى السلة",
+      "width": 79.5,
+      "height": 22.4,
+      "page": "product_simple"
+    },
+    {
+      "selector": "a.quiet-brand",
+      "tag": "A",
+      "text": "مدار",
+      "width": 59.9,
+      "height": 38,
+      "page": "product_simple"
+    },
+    {
+      "selector": "a",
+      "tag": "A",
+      "text": "الرجال",
+      "width": 28.6,
+      "height": 22.8,
+      "page": "product_simple"
+    },
+    {
+      "selector": "a",
+      "tag": "A",
+      "text": "الأطفال",
+      "width": 40.4,
+      "height": 22.8,
+      "page": "product_simple"
+    },
+    {
+      "selector": "a",
+      "tag": "A",
+      "text": "المفضلة",
+      "width": 45.9,
+      "height": 22.8,
+      "page": "product_simple"
+    },
+    {
+      "selector": "a",
+      "tag": "A",
+      "text": "المقاسات والشحن والأسئلة",
+      "width": 137.7,
+      "height": 22.8,
+      "page": "product_simple"
+    },
+    {
+      "selector": "a",
+      "tag": "A",
+      "text": "تواصل معنا",
+      "width": 61.3,
+      "height": 22.8,
+      "page": "product_simple"
+    },
+    {
+      "selector": "a",
+      "tag": "A",
+      "text": "دليل المقاسات",
+      "width": 75.4,
+      "height": 22.8,
+      "page": "product_simple"
+    },
+    {
+      "selector": "a",
+      "tag": "A",
+      "text": "الخصوصية والسياسات",
+      "width": 112.5,
+      "height": 22.8,
+      "page": "product_simple"
+    },
+    {
+      "selector": "a",
+      "tag": "A",
+      "text": "الحساب والطلبات",
+      "width": 85.7,
+      "height": 22.8,
+      "page": "product_simple"
+    },
+    {
+      "selector": "a",
+      "tag": "A",
+      "text": "سلة المشتريات",
+      "width": 74.8,
+      "height": 22.8,
+      "page": "product_simple"
+    },
+    {
+      "selector": "a",
+      "tag": "A",
+      "text": "عن مدار",
+      "width": 41,
+      "height": 22.8,
+      "page": "product_simple"
+    },
+    {
+      "selector": "a",
+      "tag": "A",
+      "text": "دفتر مدار",
+      "width": 47,
+      "height": 22.8,
+      "page": "product_simple"
+    },
+    {
+      "selector": "a",
+      "tag": "A",
+      "text": "اكتشف أسلوبك",
+      "width": 76.9,
+      "height": 22.8,
+      "page": "product_simple"
+    },
+    {
+      "selector": "a.mdr-wa",
+      "tag": "A",
+      "text": "تواصل معنا على واتساب",
+      "width": 42,
+      "height": 42,
+      "page": "product_simple"
+    },
+    {
+      "selector": "a#wp-skip-link",
+      "tag": "A",
+      "text": "تخطى إلى المحتوى",
+      "width": 1,
+      "height": 1,
+      "page": "product_variable"
+    },
+    {
+      "selector": "a",
+      "tag": "A",
+      "text": "التشكيلة ↗",
+      "width": 40.8,
+      "height": 17.1,
+      "page": "product_variable"
+    },
+    {
+      "selector": "a.quiet-brand",
+      "tag": "A",
+      "text": "مدار MEN + KIDS / CAIRO",
+      "width": 295.4,
+      "height": 33,
+      "page": "product_variable"
+    },
+    {
+      "selector": "button.store-menu-toggle",
+      "tag": "BUTTON",
+      "text": "☰",
+      "width": 33.6,
+      "height": 34,
+      "page": "product_variable"
+    },
+    {
+      "selector": "button.experience-search-trigger",
+      "tag": "BUTTON",
+      "text": "البحث",
+      "width": 21,
+      "height": 21,
+      "page": "product_variable"
+    },
+    {
+      "selector": "button",
+      "tag": "BUTTON",
+      "text": "مصر / عربي ⌄",
+      "width": 55.7,
+      "height": 19,
+      "page": "product_variable"
+    },
+    {
+      "selector": "a",
+      "tag": "A",
+      "text": "0",
+      "width": 34.3,
+      "height": 21,
+      "page": "product_variable"
+    },
+    {
+      "selector": "a",
+      "tag": "A",
+      "text": "الحساب",
+      "width": 21,
+      "height": 21,
+      "page": "product_variable"
+    },
+    {
+      "selector": "a.store-cart-link",
+      "tag": "A",
+      "text": "1",
+      "width": 34.3,
+      "height": 21,
+      "page": "product_variable"
+    },
+    {
+      "selector": "a",
+      "tag": "A",
+      "text": "الرئيسية",
+      "width": 36.1,
+      "height": 14,
+      "page": "product_variable"
+    },
+    {
+      "selector": "a",
+      "tag": "A",
+      "text": "ملابس",
+      "width": 32.7,
+      "height": 14,
+      "page": "product_variable"
+    },
+    {
+      "selector": "a.woocommerce-product-gallery__trigger",
+      "tag": "A",
+      "text": "عرض معرض الصورة بشاشة كاملة",
+      "width": 40,
+      "height": 40,
+      "page": "product_variable"
+    },
+    {
+      "selector": "select#pa_size",
+      "tag": "SELECT",
+      "text": "تحديد أحد الخيارات L M S XL",
+      "width": 1,
+      "height": 1,
+      "page": "product_variable"
+    },
+    {
+      "selector": "select#pa_color",
+      "tag": "SELECT",
+      "text": "تحديد أحد الخيارات أبيض أسود",
+      "width": 1,
+      "height": 1,
+      "page": "product_variable"
+    },
+    {
+      "selector": "a",
+      "tag": "A",
+      "text": "كلّمنا على واتساب",
+      "width": 82.8,
+      "height": 14,
+      "page": "product_variable"
+    },
+    {
+      "selector": "button.mdr-size-link",
+      "tag": "BUTTON",
+      "text": "دليل المقاسات",
+      "width": 105.8,
+      "height": 17,
+      "page": "product_variable"
+    },
+    {
+      "selector": "a",
+      "tag": "A",
+      "text": "ملابس",
+      "width": 32.7,
+      "height": 14,
+      "page": "product_variable"
+    },
+    {
+      "selector": "a",
+      "tag": "A",
+      "text": "الوصف",
+      "width": 41.8,
+      "height": 44,
+      "page": "product_variable"
+    },
+    {
+      "selector": "a",
+      "tag": "A",
+      "text": "بنطال جينز كاجوال – تجريبي",
+      "width": 154,
+      "height": 22.1,
+      "page": "product_variable"
+    },
+    {
+      "selector": "button.wp-block-button__link",
+      "tag": "BUTTON",
+      "text": "إضافة إلى السلة",
+      "width": 79.5,
+      "height": 22.4,
+      "page": "product_variable"
+    },
+    {
+      "selector": "a",
+      "tag": "A",
+      "text": "سترة هودي شتوية – تجريبي",
+      "width": 158.8,
+      "height": 22.1,
+      "page": "product_variable"
+    },
+    {
+      "selector": "button.wp-block-button__link",
+      "tag": "BUTTON",
+      "text": "إضافة إلى السلة",
+      "width": 79.5,
+      "height": 22.4,
+      "page": "product_variable"
+    },
+    {
+      "selector": "a.quiet-brand",
+      "tag": "A",
+      "text": "مدار",
+      "width": 59.9,
+      "height": 38,
+      "page": "product_variable"
+    },
+    {
+      "selector": "a",
+      "tag": "A",
+      "text": "الرجال",
+      "width": 28.6,
+      "height": 22.8,
+      "page": "product_variable"
+    },
+    {
+      "selector": "a",
+      "tag": "A",
+      "text": "الأطفال",
+      "width": 40.4,
+      "height": 22.8,
+      "page": "product_variable"
+    },
+    {
+      "selector": "a",
+      "tag": "A",
+      "text": "المفضلة",
+      "width": 45.9,
+      "height": 22.8,
+      "page": "product_variable"
+    },
+    {
+      "selector": "a",
+      "tag": "A",
+      "text": "المقاسات والشحن والأسئلة",
+      "width": 137.7,
+      "height": 22.8,
+      "page": "product_variable"
+    },
+    {
+      "selector": "a",
+      "tag": "A",
+      "text": "تواصل معنا",
+      "width": 61.3,
+      "height": 22.8,
+      "page": "product_variable"
+    },
+    {
+      "selector": "a",
+      "tag": "A",
+      "text": "دليل المقاسات",
+      "width": 75.4,
+      "height": 22.8,
+      "page": "product_variable"
+    },
+    {
+      "selector": "a",
+      "tag": "A",
+      "text": "الخصوصية والسياسات",
+      "width": 112.5,
+      "height": 22.8,
+      "page": "product_variable"
+    },
+    {
+      "selector": "a",
+      "tag": "A",
+      "text": "الحساب والطلبات",
+      "width": 85.7,
+      "height": 22.8,
+      "page": "product_variable"
+    },
+    {
+      "selector": "a",
+      "tag": "A",
+      "text": "سلة المشتريات",
+      "width": 74.8,
+      "height": 22.8,
+      "page": "product_variable"
+    },
+    {
+      "selector": "a",
+      "tag": "A",
+      "text": "عن مدار",
+      "width": 41,
+      "height": 22.8,
+      "page": "product_variable"
+    },
+    {
+      "selector": "a",
+      "tag": "A",
+      "text": "دفتر مدار",
+      "width": 47,
+      "height": 22.8,
+      "page": "product_variable"
+    },
+    {
+      "selector": "a",
+      "tag": "A",
+      "text": "اكتشف أسلوبك",
+      "width": 76.9,
+      "height": 22.8,
+      "page": "product_variable"
+    },
+    {
+      "selector": "a.mdr-wa",
+      "tag": "A",
+      "text": "تواصل معنا على واتساب",
+      "width": 42,
+      "height": 42,
+      "page": "product_variable"
+    },
+    {
+      "selector": "a#wp-skip-link",
+      "tag": "A",
+      "text": "تخطى إلى المحتوى",
+      "width": 1,
+      "height": 1,
+      "page": "home"
+    },
+    {
+      "selector": "a",
+      "tag": "A",
+      "text": "التشكيلة ↗",
+      "width": 40.8,
+      "height": 17.1,
+      "page": "home"
+    },
+    {
+      "selector": "a.quiet-brand",
+      "tag": "A",
+      "text": "مدار MEN + KIDS / CAIRO",
+      "width": 295.4,
+      "height": 33,
+      "page": "home"
+    },
+    {
+      "selector": "button.store-menu-toggle",
+      "tag": "BUTTON",
+      "text": "☰",
+      "width": 33.6,
+      "height": 34,
+      "page": "home"
+    },
+    {
+      "selector": "button.experience-search-trigger",
+      "tag": "BUTTON",
+      "text": "البحث",
+      "width": 21,
+      "height": 21,
+      "page": "home"
+    },
+    {
+      "selector": "button",
+      "tag": "BUTTON",
+      "text": "مصر / عربي ⌄",
+      "width": 55.7,
+      "height": 19,
+      "page": "home"
+    },
+    {
+      "selector": "a",
+      "tag": "A",
+      "text": "0",
+      "width": 34.3,
+      "height": 21,
+      "page": "home"
+    },
+    {
+      "selector": "a",
+      "tag": "A",
+      "text": "الحساب",
+      "width": 21,
+      "height": 21,
+      "page": "home"
+    },
+    {
+      "selector": "a.store-cart-link",
+      "tag": "A",
+      "text": "1",
+      "width": 34.3,
+      "height": 21,
+      "page": "home"
+    },
+    {
+      "selector": "a",
+      "tag": "A",
+      "text": "مشهد التمرير ↓",
+      "width": 70.5,
+      "height": 37.9,
+      "page": "home"
+    },
+    {
+      "selector": "a",
+      "tag": "A",
+      "text": "الصور المرنة ↓",
+      "width": 64.5,
+      "height": 37.9,
+      "page": "home"
+    },
+    {
+      "selector": "a",
+      "tag": "A",
+      "text": "أثر المؤشر ↓",
+      "width": 53.7,
+      "height": 37.9,
+      "page": "home"
+    },
+    {
+      "selector": "a",
+      "tag": "A",
+      "text": "انتقال المنتج والسلة ↗",
+      "width": 104.2,
+      "height": 37.9,
+      "page": "home"
+    },
+    {
+      "selector": "a.quiet-line-button",
+      "tag": "A",
+      "text": "كل القطع ↗",
+      "width": 58.5,
+      "height": 35.9,
+      "page": "home"
+    },
+    {
+      "selector": "button.store-card-fav",
+      "tag": "BUTTON",
+      "text": "♡",
+      "width": 36,
+      "height": 36,
+      "page": "home"
+    },
+    {
+      "selector": "button.store-card-fav",
+      "tag": "BUTTON",
+      "text": "♡",
+      "width": 36,
+      "height": 36,
+      "page": "home"
+    },
+    {
+      "selector": "a",
+      "tag": "A",
+      "text": "بدلة إيقاع المدينة الكحلية",
+      "width": 134.6,
+      "height": 22.8,
+      "page": "home"
+    },
+    {
+      "selector": "button.store-card-fav",
+      "tag": "BUTTON",
+      "text": "♡",
+      "width": 36,
+      "height": 36,
+      "page": "home"
+    },
+    {
+      "selector": "a",
+      "tag": "A",
+      "text": "كنزة الكشمير بالياقة العالية",
+      "width": 143.8,
+      "height": 22.8,
+      "page": "home"
+    },
+    {
+      "selector": "button.store-card-fav",
+      "tag": "BUTTON",
+      "text": "♡",
+      "width": 36,
+      "height": 36,
+      "page": "home"
+    },
+    {
+      "selector": "a.quiet-line-button",
+      "tag": "A",
+      "text": "اقرأ حكايتنا ↗",
+      "width": 59.6,
+      "height": 35.9,
+      "page": "home"
+    },
+    {
+      "selector": "a.motion-scene-link",
+      "tag": "A",
+      "text": "اكتشف القطع ↗",
+      "width": 83.4,
+      "height": 35.8,
+      "page": "home"
+    },
+    {
+      "selector": "a.quiet-line-button",
+      "tag": "A",
+      "text": "كل اختيارات مدار ↗",
+      "width": 86.4,
+      "height": 35.9,
+      "page": "home"
+    },
+    {
+      "selector": "a",
+      "tag": "A",
+      "text": "خلّينا نختار معاك ↗",
+      "width": 84.7,
+      "height": 29.9,
+      "page": "home"
+    },
+    {
+      "selector": "a",
+      "tag": "A",
+      "text": "كل الحكايات ↗",
+      "width": 63.9,
+      "height": 29.9,
+      "page": "home"
+    },
+    {
+      "selector": "input",
+      "tag": "INPUT",
+      "text": "",
+      "width": 177,
+      "height": 34,
+      "page": "home"
+    },
+    {
+      "selector": "button",
+      "tag": "BUTTON",
+      "text": "←",
+      "width": 53,
+      "height": 34,
+      "page": "home"
+    },
+    {
+      "selector": "input",
+      "tag": "INPUT",
+      "text": "on",
+      "width": 13,
+      "height": 13,
+      "page": "home"
+    },
+    {
+      "selector": "a",
+      "tag": "A",
+      "text": "كلّمنا على واتساب",
+      "width": 82.8,
+      "height": 14,
+      "page": "home"
+    },
+    {
+      "selector": "a.quiet-brand",
+      "tag": "A",
+      "text": "مدار",
+      "width": 59.9,
+      "height": 38,
+      "page": "home"
+    },
+    {
+      "selector": "a",
+      "tag": "A",
+      "text": "الرجال",
+      "width": 28.6,
+      "height": 22.8,
+      "page": "home"
+    },
+    {
+      "selector": "a",
+      "tag": "A",
+      "text": "الأطفال",
+      "width": 40.4,
+      "height": 22.8,
+      "page": "home"
+    },
+    {
+      "selector": "a",
+      "tag": "A",
+      "text": "المفضلة",
+      "width": 45.9,
+      "height": 22.8,
+      "page": "home"
+    },
+    {
+      "selector": "a",
+      "tag": "A",
+      "text": "المقاسات والشحن والأسئلة",
+      "width": 137.7,
+      "height": 22.8,
+      "page": "home"
+    },
+    {
+      "selector": "a",
+      "tag": "A",
+      "text": "تواصل معنا",
+      "width": 61.3,
+      "height": 22.8,
+      "page": "home"
+    },
+    {
+      "selector": "a",
+      "tag": "A",
+      "text": "دليل المقاسات",
+      "width": 75.4,
+      "height": 22.8,
+      "page": "home"
+    },
+    {
+      "selector": "a",
+      "tag": "A",
+      "text": "الخصوصية والسياسات",
+      "width": 112.5,
+      "height": 22.8,
+      "page": "home"
+    },
+    {
+      "selector": "a",
+      "tag": "A",
+      "text": "الحساب والطلبات",
+      "width": 85.7,
+      "height": 22.8,
+      "page": "home"
+    },
+    {
+      "selector": "a",
+      "tag": "A",
+      "text": "سلة المشتريات",
+      "width": 74.8,
+      "height": 22.8,
+      "page": "home"
+    },
+    {
+      "selector": "a",
+      "tag": "A",
+      "text": "عن مدار",
+      "width": 41,
+      "height": 22.8,
+      "page": "home"
+    },
+    {
+      "selector": "a",
+      "tag": "A",
+      "text": "دفتر مدار",
+      "width": 47,
+      "height": 22.8,
+      "page": "home"
+    },
+    {
+      "selector": "a",
+      "tag": "A",
+      "text": "اكتشف أسلوبك",
+      "width": 76.9,
+      "height": 22.8,
+      "page": "home"
+    },
+    {
+      "selector": "a#wp-skip-link",
+      "tag": "A",
+      "text": "تخطى إلى المحتوى",
+      "width": 1,
+      "height": 1,
+      "page": "cart"
+    },
+    {
+      "selector": "a",
+      "tag": "A",
+      "text": "التشكيلة ↗",
+      "width": 40.8,
+      "height": 17.1,
+      "page": "cart"
+    },
+    {
+      "selector": "a.quiet-brand",
+      "tag": "A",
+      "text": "مدار MEN + KIDS / CAIRO",
+      "width": 295.4,
+      "height": 33,
+      "page": "cart"
+    },
+    {
+      "selector": "button.store-menu-toggle",
+      "tag": "BUTTON",
+      "text": "☰",
+      "width": 33.6,
+      "height": 34,
+      "page": "cart"
+    },
+    {
+      "selector": "button.experience-search-trigger",
+      "tag": "BUTTON",
+      "text": "البحث",
+      "width": 21,
+      "height": 21,
+      "page": "cart"
+    },
+    {
+      "selector": "button",
+      "tag": "BUTTON",
+      "text": "مصر / عربي ⌄",
+      "width": 55.7,
+      "height": 19,
+      "page": "cart"
+    },
+    {
+      "selector": "a",
+      "tag": "A",
+      "text": "0",
+      "width": 34.3,
+      "height": 21,
+      "page": "cart"
+    },
+    {
+      "selector": "a",
+      "tag": "A",
+      "text": "الحساب",
+      "width": 21,
+      "height": 21,
+      "page": "cart"
+    },
+    {
+      "selector": "a.store-cart-link",
+      "tag": "A",
+      "text": "1",
+      "width": 34.3,
+      "height": 21,
+      "page": "cart"
+    },
+    {
+      "selector": "a.remove",
+      "tag": "A",
+      "text": "×",
+      "width": 18,
+      "height": 18,
+      "page": "cart"
+    },
+    {
+      "selector": "a",
+      "tag": "A",
+      "text": "نظارة شمسية كلاسيكية – تجريبي",
+      "width": 163.7,
+      "height": 15,
+      "page": "cart"
+    },
+    {
+      "selector": "a.shipping-calculator-button",
+      "tag": "A",
+      "text": "حساب تكلفة الشحن",
+      "width": 118.6,
+      "height": 18,
+      "page": "cart"
+    },
+    {
+      "selector": "a.quiet-brand",
+      "tag": "A",
+      "text": "مدار",
+      "width": 59.9,
+      "height": 38,
+      "page": "cart"
+    },
+    {
+      "selector": "a",
+      "tag": "A",
+      "text": "الرجال",
+      "width": 28.6,
+      "height": 22.8,
+      "page": "cart"
+    },
+    {
+      "selector": "a",
+      "tag": "A",
+      "text": "الأطفال",
+      "width": 40.4,
+      "height": 22.8,
+      "page": "cart"
+    },
+    {
+      "selector": "a",
+      "tag": "A",
+      "text": "المفضلة",
+      "width": 45.9,
+      "height": 22.8,
+      "page": "cart"
+    },
+    {
+      "selector": "a",
+      "tag": "A",
+      "text": "المقاسات والشحن والأسئلة",
+      "width": 137.7,
+      "height": 22.8,
+      "page": "cart"
+    },
+    {
+      "selector": "a",
+      "tag": "A",
+      "text": "تواصل معنا",
+      "width": 61.3,
+      "height": 22.8,
+      "page": "cart"
+    },
+    {
+      "selector": "a",
+      "tag": "A",
+      "text": "دليل المقاسات",
+      "width": 75.4,
+      "height": 22.8,
+      "page": "cart"
+    },
+    {
+      "selector": "a",
+      "tag": "A",
+      "text": "الخصوصية والسياسات",
+      "width": 112.5,
+      "height": 22.8,
+      "page": "cart"
+    },
+    {
+      "selector": "a",
+      "tag": "A",
+      "text": "الحساب والطلبات",
+      "width": 85.7,
+      "height": 22.8,
+      "page": "cart"
+    },
+    {
+      "selector": "a",
+      "tag": "A",
+      "text": "سلة المشتريات",
+      "width": 74.8,
+      "height": 22.8,
+      "page": "cart"
+    },
+    {
+      "selector": "a",
+      "tag": "A",
+      "text": "عن مدار",
+      "width": 41,
+      "height": 22.8,
+      "page": "cart"
+    },
+    {
+      "selector": "a",
+      "tag": "A",
+      "text": "دفتر مدار",
+      "width": 47,
+      "height": 22.8,
+      "page": "cart"
+    },
+    {
+      "selector": "a",
+      "tag": "A",
+      "text": "اكتشف أسلوبك",
+      "width": 76.9,
+      "height": 22.8,
+      "page": "cart"
+    },
+    {
+      "selector": "a.mdr-wa",
+      "tag": "A",
+      "text": "تواصل معنا على واتساب",
+      "width": 42,
+      "height": 42,
+      "page": "cart"
+    },
+    {
+      "selector": "a#wp-skip-link",
+      "tag": "A",
+      "text": "تخطى إلى المحتوى",
+      "width": 1,
+      "height": 1,
+      "page": "my_account_logged_out"
+    },
+    {
+      "selector": "a",
+      "tag": "A",
+      "text": "التشكيلة ↗",
+      "width": 40.8,
+      "height": 17.1,
+      "page": "my_account_logged_out"
+    },
+    {
+      "selector": "a.quiet-brand",
+      "tag": "A",
+      "text": "مدار MEN + KIDS / CAIRO",
+      "width": 295.4,
+      "height": 33,
+      "page": "my_account_logged_out"
+    },
+    {
+      "selector": "button.store-menu-toggle",
+      "tag": "BUTTON",
+      "text": "☰",
+      "width": 33.6,
+      "height": 34,
+      "page": "my_account_logged_out"
+    },
+    {
+      "selector": "button.experience-search-trigger",
+      "tag": "BUTTON",
+      "text": "البحث",
+      "width": 21,
+      "height": 21,
+      "page": "my_account_logged_out"
+    },
+    {
+      "selector": "button",
+      "tag": "BUTTON",
+      "text": "مصر / عربي ⌄",
+      "width": 55.7,
+      "height": 19,
+      "page": "my_account_logged_out"
+    },
+    {
+      "selector": "a",
+      "tag": "A",
+      "text": "0",
+      "width": 34.3,
+      "height": 21,
+      "page": "my_account_logged_out"
+    },
+    {
+      "selector": "a",
+      "tag": "A",
+      "text": "الحساب",
+      "width": 21,
+      "height": 21,
+      "page": "my_account_logged_out"
+    },
+    {
+      "selector": "a.store-cart-link",
+      "tag": "A",
+      "text": "1",
+      "width": 34.3,
+      "height": 21,
+      "page": "my_account_logged_out"
+    },
+    {
+      "selector": "button.show-password-input",
+      "tag": "BUTTON",
+      "text": "عرض كلمة المرور",
+      "width": 22,
+      "height": 22,
+      "page": "my_account_logged_out"
+    },
+    {
+      "selector": "input#rememberme",
+      "tag": "INPUT",
+      "text": "forever",
+      "width": 13,
+      "height": 13,
+      "page": "my_account_logged_out"
+    },
+    {
+      "selector": "a",
+      "tag": "A",
+      "text": "نسيت كلمة مرورك؟",
+      "width": 149.5,
+      "height": 23,
+      "page": "my_account_logged_out"
+    },
+    {
+      "selector": "button.show-password-input",
+      "tag": "BUTTON",
+      "text": "عرض كلمة المرور",
+      "width": 22,
+      "height": 22,
+      "page": "my_account_logged_out"
+    },
+    {
+      "selector": "a.woocommerce-privacy-policy-link",
+      "tag": "A",
+      "text": "سياسة الخصوصية",
+      "width": 140.6,
+      "height": 23,
+      "page": "my_account_logged_out"
+    },
+    {
+      "selector": "a.quiet-brand",
+      "tag": "A",
+      "text": "مدار",
+      "width": 59.9,
+      "height": 38,
+      "page": "my_account_logged_out"
+    },
+    {
+      "selector": "a",
+      "tag": "A",
+      "text": "الرجال",
+      "width": 28.6,
+      "height": 22.8,
+      "page": "my_account_logged_out"
+    },
+    {
+      "selector": "a",
+      "tag": "A",
+      "text": "الأطفال",
+      "width": 40.4,
+      "height": 22.8,
+      "page": "my_account_logged_out"
+    },
+    {
+      "selector": "a",
+      "tag": "A",
+      "text": "المفضلة",
+      "width": 45.9,
+      "height": 22.8,
+      "page": "my_account_logged_out"
+    },
+    {
+      "selector": "a",
+      "tag": "A",
+      "text": "المقاسات والشحن والأسئلة",
+      "width": 137.7,
+      "height": 22.8,
+      "page": "my_account_logged_out"
+    },
+    {
+      "selector": "a",
+      "tag": "A",
+      "text": "تواصل معنا",
+      "width": 61.3,
+      "height": 22.8,
+      "page": "my_account_logged_out"
+    },
+    {
+      "selector": "a",
+      "tag": "A",
+      "text": "دليل المقاسات",
+      "width": 75.4,
+      "height": 22.8,
+      "page": "my_account_logged_out"
+    },
+    {
+      "selector": "a",
+      "tag": "A",
+      "text": "الخصوصية والسياسات",
+      "width": 112.5,
+      "height": 22.8,
+      "page": "my_account_logged_out"
+    },
+    {
+      "selector": "a",
+      "tag": "A",
+      "text": "الحساب والطلبات",
+      "width": 85.7,
+      "height": 22.8,
+      "page": "my_account_logged_out"
+    },
+    {
+      "selector": "a",
+      "tag": "A",
+      "text": "سلة المشتريات",
+      "width": 74.8,
+      "height": 22.8,
+      "page": "my_account_logged_out"
+    },
+    {
+      "selector": "a",
+      "tag": "A",
+      "text": "عن مدار",
+      "width": 41,
+      "height": 22.8,
+      "page": "my_account_logged_out"
+    },
+    {
+      "selector": "a",
+      "tag": "A",
+      "text": "دفتر مدار",
+      "width": 47,
+      "height": 22.8,
+      "page": "my_account_logged_out"
+    },
+    {
+      "selector": "a",
+      "tag": "A",
+      "text": "اكتشف أسلوبك",
+      "width": 76.9,
+      "height": 22.8,
+      "page": "my_account_logged_out"
+    },
+    {
+      "selector": "a.mdr-wa",
+      "tag": "A",
+      "text": "تواصل معنا على واتساب",
+      "width": 42,
+      "height": 42,
+      "page": "my_account_logged_out"
+    },
+    {
+      "selector": "a#wp-skip-link",
+      "tag": "A",
+      "text": "تخطى إلى المحتوى",
+      "width": 1,
+      "height": 1,
+      "page": "lost_password"
+    },
+    {
+      "selector": "a",
+      "tag": "A",
+      "text": "التشكيلة ↗",
+      "width": 40.8,
+      "height": 17.1,
+      "page": "lost_password"
+    },
+    {
+      "selector": "a.quiet-brand",
+      "tag": "A",
+      "text": "مدار MEN + KIDS / CAIRO",
+      "width": 295.4,
+      "height": 33,
+      "page": "lost_password"
+    },
+    {
+      "selector": "button.store-menu-toggle",
+      "tag": "BUTTON",
+      "text": "☰",
+      "width": 33.6,
+      "height": 34,
+      "page": "lost_password"
+    },
+    {
+      "selector": "button.experience-search-trigger",
+      "tag": "BUTTON",
+      "text": "البحث",
+      "width": 21,
+      "height": 21,
+      "page": "lost_password"
+    },
+    {
+      "selector": "button",
+      "tag": "BUTTON",
+      "text": "مصر / عربي ⌄",
+      "width": 55.7,
+      "height": 19,
+      "page": "lost_password"
+    },
+    {
+      "selector": "a",
+      "tag": "A",
+      "text": "0",
+      "width": 34.3,
+      "height": 21,
+      "page": "lost_password"
+    },
+    {
+      "selector": "a",
+      "tag": "A",
+      "text": "الحساب",
+      "width": 21,
+      "height": 21,
+      "page": "lost_password"
+    },
+    {
+      "selector": "a.store-cart-link",
+      "tag": "A",
+      "text": "1",
+      "width": 34.3,
+      "height": 21,
+      "page": "lost_password"
+    },
+    {
+      "selector": "a.quiet-brand",
+      "tag": "A",
+      "text": "مدار",
+      "width": 59.9,
+      "height": 38,
+      "page": "lost_password"
+    },
+    {
+      "selector": "a",
+      "tag": "A",
+      "text": "الرجال",
+      "width": 28.6,
+      "height": 22.8,
+      "page": "lost_password"
+    },
+    {
+      "selector": "a",
+      "tag": "A",
+      "text": "الأطفال",
+      "width": 40.4,
+      "height": 22.8,
+      "page": "lost_password"
+    },
+    {
+      "selector": "a",
+      "tag": "A",
+      "text": "المفضلة",
+      "width": 45.9,
+      "height": 22.8,
+      "page": "lost_password"
+    },
+    {
+      "selector": "a",
+      "tag": "A",
+      "text": "المقاسات والشحن والأسئلة",
+      "width": 137.7,
+      "height": 22.8,
+      "page": "lost_password"
+    },
+    {
+      "selector": "a",
+      "tag": "A",
+      "text": "تواصل معنا",
+      "width": 61.3,
+      "height": 22.8,
+      "page": "lost_password"
+    },
+    {
+      "selector": "a",
+      "tag": "A",
+      "text": "دليل المقاسات",
+      "width": 75.4,
+      "height": 22.8,
+      "page": "lost_password"
+    },
+    {
+      "selector": "a",
+      "tag": "A",
+      "text": "الخصوصية والسياسات",
+      "width": 112.5,
+      "height": 22.8,
+      "page": "lost_password"
+    },
+    {
+      "selector": "a",
+      "tag": "A",
+      "text": "الحساب والطلبات",
+      "width": 85.7,
+      "height": 22.8,
+      "page": "lost_password"
+    },
+    {
+      "selector": "a",
+      "tag": "A",
+      "text": "سلة المشتريات",
+      "width": 74.8,
+      "height": 22.8,
+      "page": "lost_password"
+    },
+    {
+      "selector": "a",
+      "tag": "A",
+      "text": "عن مدار",
+      "width": 41,
+      "height": 22.8,
+      "page": "lost_password"
+    },
+    {
+      "selector": "a",
+      "tag": "A",
+      "text": "دفتر مدار",
+      "width": 47,
+      "height": 22.8,
+      "page": "lost_password"
+    },
+    {
+      "selector": "a",
+      "tag": "A",
+      "text": "اكتشف أسلوبك",
+      "width": 76.9,
+      "height": 22.8,
+      "page": "lost_password"
+    },
+    {
+      "selector": "a.mdr-wa",
+      "tag": "A",
+      "text": "تواصل معنا على واتساب",
+      "width": 42,
+      "height": 42,
+      "page": "lost_password"
+    },
+    {
+      "selector": "a#wp-skip-link",
+      "tag": "A",
+      "text": "تخطى إلى المحتوى",
+      "width": 1,
+      "height": 1,
+      "page": "search_results"
+    },
+    {
+      "selector": "a",
+      "tag": "A",
+      "text": "التشكيلة ↗",
+      "width": 40.8,
+      "height": 17.1,
+      "page": "search_results"
+    },
+    {
+      "selector": "a.quiet-brand",
+      "tag": "A",
+      "text": "مدار MEN + KIDS / CAIRO",
+      "width": 295.4,
+      "height": 33,
+      "page": "search_results"
+    },
+    {
+      "selector": "button.store-menu-toggle",
+      "tag": "BUTTON",
+      "text": "☰",
+      "width": 33.6,
+      "height": 34,
+      "page": "search_results"
+    },
+    {
+      "selector": "button.experience-search-trigger",
+      "tag": "BUTTON",
+      "text": "البحث",
+      "width": 21,
+      "height": 21,
+      "page": "search_results"
+    },
+    {
+      "selector": "button",
+      "tag": "BUTTON",
+      "text": "مصر / عربي ⌄",
+      "width": 55.7,
+      "height": 19,
+      "page": "search_results"
+    },
+    {
+      "selector": "a",
+      "tag": "A",
+      "text": "0",
+      "width": 34.3,
+      "height": 21,
+      "page": "search_results"
+    },
+    {
+      "selector": "a",
+      "tag": "A",
+      "text": "الحساب",
+      "width": 21,
+      "height": 21,
+      "page": "search_results"
+    },
+    {
+      "selector": "a.store-cart-link",
+      "tag": "A",
+      "text": "1",
+      "width": 34.3,
+      "height": 21,
+      "page": "search_results"
+    },
+    {
+      "selector": "a",
+      "tag": "A",
+      "text": "الرئيسية",
+      "width": 36.1,
+      "height": 14,
+      "page": "search_results"
+    },
+    {
+      "selector": "a",
+      "tag": "A",
+      "text": "المتجر",
+      "width": 28.2,
+      "height": 14,
+      "page": "search_results"
+    },
+    {
+      "selector": "a",
+      "tag": "A",
+      "text": "الكل",
+      "width": 53.8,
+      "height": 40.9,
+      "page": "search_results"
+    },
+    {
+      "selector": "a",
+      "tag": "A",
+      "text": "إكسسوارات",
+      "width": 85.7,
+      "height": 40.9,
+      "page": "search_results"
+    },
+    {
+      "selector": "a",
+      "tag": "A",
+      "text": "ملابس",
+      "width": 66.7,
+      "height": 40.9,
+      "page": "search_results"
+    },
+    {
+      "selector": "a",
+      "tag": "A",
+      "text": "أطفال",
+      "width": 63.7,
+      "height": 40.9,
+      "page": "search_results"
+    },
+    {
+      "selector": "a",
+      "tag": "A",
+      "text": "رجالي",
+      "width": 58.5,
+      "height": 40.9,
+      "page": "search_results"
+    },
+    {
+      "selector": "button.mdr-tool",
+      "tag": "BUTTON",
+      "text": "الفلاتر والترتيب",
+      "width": 113,
+      "height": 34,
+      "page": "search_results"
+    },
+    {
+      "selector": "button.mdr-tool",
+      "tag": "BUTTON",
+      "text": "صور أكبر",
+      "width": 34,
+      "height": 34,
+      "page": "search_results"
+    },
+    {
+      "selector": "button.mdr-tool",
+      "tag": "BUTTON",
+      "text": "منتجات أكثر",
+      "width": 34,
+      "height": 34,
+      "page": "search_results"
+    },
+    {
+      "selector": "a",
+      "tag": "A",
+      "text": "قميص أطفال بني",
+      "width": 106.4,
+      "height": 22.1,
+      "page": "search_results"
+    },
+    {
+      "selector": "a.wp-block-button__link",
+      "tag": "A",
+      "text": "تحديد أحد الخيارات",
+      "width": 86.6,
+      "height": 22.4,
+      "page": "search_results"
+    },
+    {
+      "selector": "a",
+      "tag": "A",
+      "text": "قميص مقلّم بقصّة واسعة",
+      "width": 158.4,
+      "height": 22.1,
+      "page": "search_results"
+    },
+    {
+      "selector": "a.wp-block-button__link",
+      "tag": "A",
+      "text": "تحديد أحد الخيارات",
+      "width": 86.6,
+      "height": 22.4,
+      "page": "search_results"
+    },
+    {
+      "selector": "a.quiet-brand",
+      "tag": "A",
+      "text": "مدار",
+      "width": 59.9,
+      "height": 38,
+      "page": "search_results"
+    },
+    {
+      "selector": "a",
+      "tag": "A",
+      "text": "الرجال",
+      "width": 28.6,
+      "height": 22.8,
+      "page": "search_results"
+    },
+    {
+      "selector": "a",
+      "tag": "A",
+      "text": "الأطفال",
+      "width": 40.4,
+      "height": 22.8,
+      "page": "search_results"
+    },
+    {
+      "selector": "a",
+      "tag": "A",
+      "text": "المفضلة",
+      "width": 45.9,
+      "height": 22.8,
+      "page": "search_results"
+    },
+    {
+      "selector": "a",
+      "tag": "A",
+      "text": "المقاسات والشحن والأسئلة",
+      "width": 137.7,
+      "height": 22.8,
+      "page": "search_results"
+    },
+    {
+      "selector": "a",
+      "tag": "A",
+      "text": "تواصل معنا",
+      "width": 61.3,
+      "height": 22.8,
+      "page": "search_results"
+    },
+    {
+      "selector": "a",
+      "tag": "A",
+      "text": "دليل المقاسات",
+      "width": 75.4,
+      "height": 22.8,
+      "page": "search_results"
+    },
+    {
+      "selector": "a",
+      "tag": "A",
+      "text": "الخصوصية والسياسات",
+      "width": 112.5,
+      "height": 22.8,
+      "page": "search_results"
+    },
+    {
+      "selector": "a",
+      "tag": "A",
+      "text": "الحساب والطلبات",
+      "width": 85.7,
+      "height": 22.8,
+      "page": "search_results"
+    },
+    {
+      "selector": "a",
+      "tag": "A",
+      "text": "سلة المشتريات",
+      "width": 74.8,
+      "height": 22.8,
+      "page": "search_results"
+    },
+    {
+      "selector": "a",
+      "tag": "A",
+      "text": "عن مدار",
+      "width": 41,
+      "height": 22.8,
+      "page": "search_results"
+    },
+    {
+      "selector": "a",
+      "tag": "A",
+      "text": "دفتر مدار",
+      "width": 47,
+      "height": 22.8,
+      "page": "search_results"
+    },
+    {
+      "selector": "a",
+      "tag": "A",
+      "text": "اكتشف أسلوبك",
+      "width": 76.9,
+      "height": 22.8,
+      "page": "search_results"
+    },
+    {
+      "selector": "a.mdr-wa",
+      "tag": "A",
+      "text": "تواصل معنا على واتساب",
+      "width": 42,
+      "height": 42,
+      "page": "search_results"
+    },
+    {
+      "selector": "a#wp-skip-link",
+      "tag": "A",
+      "text": "تخطى إلى المحتوى",
+      "width": 1,
+      "height": 1,
+      "page": "search_empty"
+    },
+    {
+      "selector": "a",
+      "tag": "A",
+      "text": "التشكيلة ↗",
+      "width": 40.8,
+      "height": 17.1,
+      "page": "search_empty"
+    },
+    {
+      "selector": "a.quiet-brand",
+      "tag": "A",
+      "text": "مدار MEN + KIDS / CAIRO",
+      "width": 295.4,
+      "height": 33,
+      "page": "search_empty"
+    },
+    {
+      "selector": "button.store-menu-toggle",
+      "tag": "BUTTON",
+      "text": "☰",
+      "width": 33.6,
+      "height": 34,
+      "page": "search_empty"
+    },
+    {
+      "selector": "button.experience-search-trigger",
+      "tag": "BUTTON",
+      "text": "البحث",
+      "width": 21,
+      "height": 21,
+      "page": "search_empty"
+    },
+    {
+      "selector": "button",
+      "tag": "BUTTON",
+      "text": "مصر / عربي ⌄",
+      "width": 55.7,
+      "height": 19,
+      "page": "search_empty"
+    },
+    {
+      "selector": "a",
+      "tag": "A",
+      "text": "0",
+      "width": 34.3,
+      "height": 21,
+      "page": "search_empty"
+    },
+    {
+      "selector": "a",
+      "tag": "A",
+      "text": "الحساب",
+      "width": 21,
+      "height": 21,
+      "page": "search_empty"
+    },
+    {
+      "selector": "a.store-cart-link",
+      "tag": "A",
+      "text": "1",
+      "width": 34.3,
+      "height": 21,
+      "page": "search_empty"
+    },
+    {
+      "selector": "a",
+      "tag": "A",
+      "text": "الرئيسية",
+      "width": 36.1,
+      "height": 14,
+      "page": "search_empty"
+    },
+    {
+      "selector": "a",
+      "tag": "A",
+      "text": "المتجر",
+      "width": 28.2,
+      "height": 14,
+      "page": "search_empty"
+    },
+    {
+      "selector": "a",
+      "tag": "A",
+      "text": "الكل",
+      "width": 53.8,
+      "height": 40.9,
+      "page": "search_empty"
+    },
+    {
+      "selector": "a",
+      "tag": "A",
+      "text": "إكسسوارات",
+      "width": 85.7,
+      "height": 40.9,
+      "page": "search_empty"
+    },
+    {
+      "selector": "a",
+      "tag": "A",
+      "text": "ملابس",
+      "width": 66.7,
+      "height": 40.9,
+      "page": "search_empty"
+    },
+    {
+      "selector": "a",
+      "tag": "A",
+      "text": "أطفال",
+      "width": 63.7,
+      "height": 40.9,
+      "page": "search_empty"
+    },
+    {
+      "selector": "a",
+      "tag": "A",
+      "text": "رجالي",
+      "width": 58.5,
+      "height": 40.9,
+      "page": "search_empty"
+    },
+    {
+      "selector": "button.mdr-tool",
+      "tag": "BUTTON",
+      "text": "الفلاتر والترتيب",
+      "width": 113,
+      "height": 34,
+      "page": "search_empty"
+    },
+    {
+      "selector": "button.mdr-tool",
+      "tag": "BUTTON",
+      "text": "صور أكبر",
+      "width": 34,
+      "height": 34,
+      "page": "search_empty"
+    },
+    {
+      "selector": "button.mdr-tool",
+      "tag": "BUTTON",
+      "text": "منتجات أكثر",
+      "width": 34,
+      "height": 34,
+      "page": "search_empty"
+    },
+    {
+      "selector": "a.quiet-brand",
+      "tag": "A",
+      "text": "مدار",
+      "width": 59.9,
+      "height": 38,
+      "page": "search_empty"
+    },
+    {
+      "selector": "a",
+      "tag": "A",
+      "text": "الرجال",
+      "width": 28.6,
+      "height": 22.8,
+      "page": "search_empty"
+    },
+    {
+      "selector": "a",
+      "tag": "A",
+      "text": "الأطفال",
+      "width": 40.4,
+      "height": 22.8,
+      "page": "search_empty"
+    },
+    {
+      "selector": "a",
+      "tag": "A",
+      "text": "المفضلة",
+      "width": 45.9,
+      "height": 22.8,
+      "page": "search_empty"
+    },
+    {
+      "selector": "a",
+      "tag": "A",
+      "text": "المقاسات والشحن والأسئلة",
+      "width": 137.7,
+      "height": 22.8,
+      "page": "search_empty"
+    },
+    {
+      "selector": "a",
+      "tag": "A",
+      "text": "تواصل معنا",
+      "width": 61.3,
+      "height": 22.8,
+      "page": "search_empty"
+    },
+    {
+      "selector": "a",
+      "tag": "A",
+      "text": "دليل المقاسات",
+      "width": 75.4,
+      "height": 22.8,
+      "page": "search_empty"
+    },
+    {
+      "selector": "a",
+      "tag": "A",
+      "text": "الخصوصية والسياسات",
+      "width": 112.5,
+      "height": 22.8,
+      "page": "search_empty"
+    },
+    {
+      "selector": "a",
+      "tag": "A",
+      "text": "الحساب والطلبات",
+      "width": 85.7,
+      "height": 22.8,
+      "page": "search_empty"
+    },
+    {
+      "selector": "a",
+      "tag": "A",
+      "text": "سلة المشتريات",
+      "width": 74.8,
+      "height": 22.8,
+      "page": "search_empty"
+    },
+    {
+      "selector": "a",
+      "tag": "A",
+      "text": "عن مدار",
+      "width": 41,
+      "height": 22.8,
+      "page": "search_empty"
+    },
+    {
+      "selector": "a",
+      "tag": "A",
+      "text": "دفتر مدار",
+      "width": 47,
+      "height": 22.8,
+      "page": "search_empty"
+    },
+    {
+      "selector": "a",
+      "tag": "A",
+      "text": "اكتشف أسلوبك",
+      "width": 76.9,
+      "height": 22.8,
+      "page": "search_empty"
+    },
+    {
+      "selector": "a.mdr-wa",
+      "tag": "A",
+      "text": "تواصل معنا على واتساب",
+      "width": 42,
+      "height": 42,
+      "page": "search_empty"
+    }
+  ]
+}
