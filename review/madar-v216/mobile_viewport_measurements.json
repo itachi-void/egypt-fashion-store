@@ -1,0 +1,179 @@
+{
+  "cart": {
+    "page": "http://capability-test.local/cart/",
+    "requiredWidth": 375,
+    "requiredHeight": 812,
+    "windowInnerWidth": 375,
+    "windowInnerHeight": 812,
+    "documentElementClientWidth": 375,
+    "documentElementScrollWidth": 375,
+    "documentElementClientHeight": 812,
+    "documentElementScrollHeight": 1194,
+    "bodyClientWidth": 375,
+    "bodyScrollWidth": 375,
+    "hasHorizontalScroll": false,
+    "overflowExcessPx": 0,
+    "overflowingElementsCount": 2,
+    "topOverflowingElements": [
+      {
+        "tag": "A",
+        "id": "wp-skip-link",
+        "class": "skip-link screen-reader-text",
+        "left": 375,
+        "right": 376,
+        "width": 1,
+        "scrollWidth": 68,
+        "clientWidth": 1,
+        "overflowX": "hidden",
+        "outerSnippet": "<a class=\"skip-link screen-reader-text\" id=\"wp-skip-link\" href=\"#wp--skip-link--target\">تخطى إلى المحتوى</a>"
+      },
+      {
+        "tag": "DIV",
+        "id": null,
+        "class": "widget_shopping_cart_live_region screen-reader-text",
+        "left": 375,
+        "right": 376,
+        "width": 1,
+        "scrollWidth": 1,
+        "clientWidth": 1,
+        "overflowX": "hidden",
+        "outerSnippet": "<div class=\"widget_shopping_cart_live_region screen-reader-text\" role=\"status\"></div>"
+      }
+    ],
+    "cartSpecific": null
+  },
+  "my_account_logged_out": {
+    "page": "http://capability-test.local/my-account/",
+    "requiredWidth": 375,
+    "requiredHeight": 812,
+    "windowInnerWidth": 385,
+    "windowInnerHeight": 834,
+    "documentElementClientWidth": 375,
+    "documentElementScrollWidth": 385,
+    "documentElementClientHeight": 812,
+    "documentElementScrollHeight": 2340,
+    "bodyClientWidth": 375,
+    "bodyScrollWidth": 385,
+    "hasHorizontalScroll": true,
+    "overflowExcessPx": 10,
+    "overflowingElementsCount": 4,
+    "topOverflowingElements": [
+      {
+        "tag": "A",
+        "id": "wp-skip-link",
+        "class": "skip-link screen-reader-text",
+        "left": 385,
+        "right": 386,
+        "width": 1,
+        "scrollWidth": 68,
+        "clientWidth": 1,
+        "overflowX": "hidden",
+        "outerSnippet": "<a class=\"skip-link screen-reader-text\" id=\"wp-skip-link\" href=\"#wp--skip-link--target\">تخطى إلى المحتوى</a>"
+      },
+      {
+        "tag": "DIV",
+        "id": null,
+        "class": "wp-block-group alignfull has-global-padding is-layout-constrained wp-block-group-is-layout-constrained",
+        "left": 0,
+        "right": 395,
+        "width": 395,
+        "scrollWidth": 395,
+        "clientWidth": 395,
+        "overflowX": "visible",
+        "outerSnippet": "<div class=\"wp-block-group alignfull has-global-padding is-layout-constrained wp-block-group-is-layout-constrained\" styl"
+      },
+      {
+        "tag": "DIV",
+        "id": null,
+        "class": "entry-content alignfull wp-block-post-content has-global-padding is-layout-constrained wp-block-post-content-is-layout-constrained",
+        "left": 0,
+        "right": 395,
+        "width": 395,
+        "scrollWidth": 395,
+        "clientWidth": 395,
+        "overflowX": "visible",
+        "outerSnippet": "<div class=\"entry-content alignfull wp-block-post-content has-global-padding is-layout-constrained wp-block-post-content"
+      },
+      {
+        "tag": "DIV",
+        "id": null,
+        "class": "widget_shopping_cart_live_region screen-reader-text",
+        "left": 385,
+        "right": 386,
+        "width": 1,
+        "scrollWidth": 1,
+        "clientWidth": 1,
+        "overflowX": "hidden",
+        "outerSnippet": "<div class=\"widget_shopping_cart_live_region screen-reader-text\" role=\"status\"></div>"
+      }
+    ],
+    "cartSpecific": null
+  },
+  "lost_password": {
+    "page": "http://capability-test.local/my-account/lost-password/",
+    "requiredWidth": 375,
+    "requiredHeight": 812,
+    "windowInnerWidth": 385,
+    "windowInnerHeight": 834,
+    "documentElementClientWidth": 375,
+    "documentElementScrollWidth": 385,
+    "documentElementClientHeight": 812,
+    "documentElementScrollHeight": 1479,
+    "bodyClientWidth": 375,
+    "bodyScrollWidth": 385,
+    "hasHorizontalScroll": true,
+    "overflowExcessPx": 10,
+    "overflowingElementsCount": 4,
+    "topOverflowingElements": [
+      {
+        "tag": "A",
+        "id": "wp-skip-link",
+        "class": "skip-link screen-reader-text",
+        "left": 385,
+        "right": 386,
+        "width": 1,
+        "scrollWidth": 68,
+        "clientWidth": 1,
+        "overflowX": "hidden",
+        "outerSnippet": "<a class=\"skip-link screen-reader-text\" id=\"wp-skip-link\" href=\"#wp--skip-link--target\">تخطى إلى المحتوى</a>"
+      },
+      {
+        "tag": "DIV",
+        "id": null,
+        "class": "wp-block-group alignfull has-global-padding is-layout-constrained wp-block-group-is-layout-constrained",
+        "left": 0,
+        "right": 395,
+        "width": 395,
+        "scrollWidth": 395,
+        "clientWidth": 395,
+        "overflowX": "visible",
+        "outerSnippet": "<div class=\"wp-block-group alignfull has-global-padding is-layout-constrained wp-block-group-is-layout-constrained\" styl"
+      },
+      {
+        "tag": "DIV",
+        "id": null,
+        "class": "entry-content alignfull wp-block-post-content has-global-padding is-layout-constrained wp-block-post-content-is-layout-constrained",
+        "left": 0,
+        "right": 395,
+        "width": 395,
+        "scrollWidth": 395,
+        "clientWidth": 395,
+        "overflowX": "visible",
+        "outerSnippet": "<div class=\"entry-content alignfull wp-block-post-content has-global-padding is-layout-constrained wp-block-post-content"
+      },
+      {
+        "tag": "DIV",
+        "id": null,
+        "class": "widget_shopping_cart_live_region screen-reader-text",
+        "left": 385,
+        "right": 386,
+        "width": 1,
+        "scrollWidth": 1,
+        "clientWidth": 1,
+        "overflowX": "hidden",
+        "outerSnippet": "<div class=\"widget_shopping_cart_live_region screen-reader-text\" role=\"status\"></div>"
+      }
+    ],
+    "cartSpecific": null
+  }
+}

@@ -604,5 +604,142 @@
       "meetsMin44px": false
     }
   ],
-  "visible_focus": null
+  "visible_focus": null,
+  "mobile_viewport_audit_375x812": {
+    "note": "Measured with Chrome DevTools Protocol Emulation.setDeviceMetricsOverride set to 375x812 BEFORE navigation.",
+    "cart_empty": {
+      "requiredWidth": 375,
+      "clientWidth": 375,
+      "scrollWidth": 375,
+      "overflowExcessPx": 0,
+      "hasHorizontalScroll": false
+    },
+    "cart_with_product": {
+      "requiredWidth": 375,
+      "clientWidth": 375,
+      "scrollWidth": 431,
+      "overflowExcessPx": 56,
+      "hasHorizontalScroll": true,
+      "tableRect": {
+        "left": 76,
+        "right": 411,
+        "width": 335
+      },
+      "clippingAnalysis": "The WooCommerce cart table has a computed width of 335px, but due to container layout margins and RTL paddings starting at left: 76px, its right edge extends to 411px (exceeding the 375px viewport by 36px). Lack of an overflow wrapper or responsive vertical stacking expands document scrollWidth to 431px, causing horizontal scrolling and visual clipping on mobile."
+    },
+    "my_account_logged_out": {
+      "requiredWidth": 375,
+      "clientWidth": 375,
+      "scrollWidth": 385,
+      "overflowExcessPx": 10,
+      "hasHorizontalScroll": true,
+      "overflowingElements": [
+        {
+          "tag": "A",
+          "id": "wp-skip-link",
+          "class": "skip-link screen-reader-text",
+          "left": 385,
+          "right": 386,
+          "width": 1,
+          "scrollWidth": 68,
+          "clientWidth": 1,
+          "overflowX": "hidden",
+          "outerSnippet": "<a class=\"skip-link screen-reader-text\" id=\"wp-skip-link\" href=\"#wp--skip-link--target\">تخطى إلى المحتوى</a>"
+        },
+        {
+          "tag": "DIV",
+          "id": null,
+          "class": "wp-block-group alignfull has-global-padding is-layout-constrained wp-block-group-is-layout-constrained",
+          "left": 0,
+          "right": 395,
+          "width": 395,
+          "scrollWidth": 395,
+          "clientWidth": 395,
+          "overflowX": "visible",
+          "outerSnippet": "<div class=\"wp-block-group alignfull has-global-padding is-layout-constrained wp-block-group-is-layout-constrained\" styl"
+        },
+        {
+          "tag": "DIV",
+          "id": null,
+          "class": "entry-content alignfull wp-block-post-content has-global-padding is-layout-constrained wp-block-post-content-is-layout-constrained",
+          "left": 0,
+          "right": 395,
+          "width": 395,
+          "scrollWidth": 395,
+          "clientWidth": 395,
+          "overflowX": "visible",
+          "outerSnippet": "<div class=\"entry-content alignfull wp-block-post-content has-global-padding is-layout-constrained wp-block-post-content"
+        },
+        {
+          "tag": "DIV",
+          "id": null,
+          "class": "widget_shopping_cart_live_region screen-reader-text",
+          "left": 385,
+          "right": 386,
+          "width": 1,
+          "scrollWidth": 1,
+          "clientWidth": 1,
+          "overflowX": "hidden",
+          "outerSnippet": "<div class=\"widget_shopping_cart_live_region screen-reader-text\" role=\"status\"></div>"
+        }
+      ]
+    },
+    "lost_password": {
+      "requiredWidth": 375,
+      "clientWidth": 375,
+      "scrollWidth": 385,
+      "overflowExcessPx": 10,
+      "hasHorizontalScroll": true,
+      "overflowingElements": [
+        {
+          "tag": "A",
+          "id": "wp-skip-link",
+          "class": "skip-link screen-reader-text",
+          "left": 385,
+          "right": 386,
+          "width": 1,
+          "scrollWidth": 68,
+          "clientWidth": 1,
+          "overflowX": "hidden",
+          "outerSnippet": "<a class=\"skip-link screen-reader-text\" id=\"wp-skip-link\" href=\"#wp--skip-link--target\">تخطى إلى المحتوى</a>"
+        },
+        {
+          "tag": "DIV",
+          "id": null,
+          "class": "wp-block-group alignfull has-global-padding is-layout-constrained wp-block-group-is-layout-constrained",
+          "left": 0,
+          "right": 395,
+          "width": 395,
+          "scrollWidth": 395,
+          "clientWidth": 395,
+          "overflowX": "visible",
+          "outerSnippet": "<div class=\"wp-block-group alignfull has-global-padding is-layout-constrained wp-block-group-is-layout-constrained\" styl"
+        },
+        {
+          "tag": "DIV",
+          "id": null,
+          "class": "entry-content alignfull wp-block-post-content has-global-padding is-layout-constrained wp-block-post-content-is-layout-constrained",
+          "left": 0,
+          "right": 395,
+          "width": 395,
+          "scrollWidth": 395,
+          "clientWidth": 395,
+          "overflowX": "visible",
+          "outerSnippet": "<div class=\"entry-content alignfull wp-block-post-content has-global-padding is-layout-constrained wp-block-post-content"
+        },
+        {
+          "tag": "DIV",
+          "id": null,
+          "class": "widget_shopping_cart_live_region screen-reader-text",
+          "left": 385,
+          "right": 386,
+          "width": 1,
+          "scrollWidth": 1,
+          "clientWidth": 1,
+          "overflowX": "hidden",
+          "outerSnippet": "<div class=\"widget_shopping_cart_live_region screen-reader-text\" role=\"status\"></div>"
+        }
+      ]
+    }
+  }
 }

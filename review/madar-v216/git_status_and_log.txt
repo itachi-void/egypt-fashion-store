@@ -1,94 +1,59 @@
-=== GIT STATUS ===
+=== GIT STATUS (STAGED) ===
 On branch review/local-snapshot
-Your branch is ahead of 'origin/review/local-snapshot' by 1 commit.
-  (use "git push" to publish your local commits)
+Your branch is up to date with 'origin/review/local-snapshot'.
 
 Changes to be committed:
   (use "git restore --staged <file>..." to unstage)
-	modified:   .gitignore
-	modified:   review/madar-v216/git_status_and_log.txt
-	new file:   review/madar-v216/lighthouse/home_mobile.report.html
-	new file:   review/madar-v216/lighthouse/home_mobile.report.json
-	new file:   review/madar-v216/lighthouse/product_mobile.report.html
-	new file:   review/madar-v216/lighthouse/product_mobile.report.json
-	deleted:    review/madar-v216/madar-v216-proof.zip
-	new file:   review/madar-v216/recapture_data.json
+	new file:   review/madar-v216/cart_mobile_clipping_analysis.json
+	new file:   review/madar-v216/console_audit_log.json
+	modified:   review/madar-v216/measurements.json
+	modified:   review/madar-v216/measurements.md
+	new file:   review/madar-v216/menu_escape_trace.json
+	new file:   review/madar-v216/mobile_viewport_measurements.json
 	modified:   review/madar-v216/report.md
-	modified:   review/madar-v216/screenshots/cart_1440.png
-	modified:   review/madar-v216/screenshots/cart_1440_full.png
-	modified:   review/madar-v216/screenshots/cart_375.png
-	modified:   review/madar-v216/screenshots/cart_375_full.png
-	modified:   review/madar-v216/screenshots/category_kids_1440.png
-	modified:   review/madar-v216/screenshots/category_kids_1440_full.png
-	modified:   review/madar-v216/screenshots/category_kids_375.png
-	modified:   review/madar-v216/screenshots/category_kids_375_full.png
-	modified:   review/madar-v216/screenshots/category_men_1440.png
-	modified:   review/madar-v216/screenshots/category_men_1440_full.png
-	modified:   review/madar-v216/screenshots/category_men_375.png
-	modified:   review/madar-v216/screenshots/category_men_375_full.png
-	modified:   review/madar-v216/screenshots/checkout_1440.png
-	modified:   review/madar-v216/screenshots/checkout_1440_full.png
-	modified:   review/madar-v216/screenshots/checkout_375.png
-	modified:   review/madar-v216/screenshots/checkout_375_full.png
 	modified:   review/madar-v216/screenshots/header_menu_open_375.png
-	modified:   review/madar-v216/screenshots/header_menu_open_375_full.png
-	modified:   review/madar-v216/screenshots/home_1440.png
-	modified:   review/madar-v216/screenshots/home_1440_full.png
-	modified:   review/madar-v216/screenshots/home_375.png
-	modified:   review/madar-v216/screenshots/home_375_full.png
-	modified:   review/madar-v216/screenshots/lost_password_1440.png
-	modified:   review/madar-v216/screenshots/lost_password_1440_full.png
-	modified:   review/madar-v216/screenshots/lost_password_375.png
-	modified:   review/madar-v216/screenshots/lost_password_375_full.png
-	modified:   review/madar-v216/screenshots/my_account_logged_out_1440.png
-	modified:   review/madar-v216/screenshots/my_account_logged_out_1440_full.png
-	modified:   review/madar-v216/screenshots/my_account_logged_out_375.png
-	modified:   review/madar-v216/screenshots/my_account_logged_out_375_full.png
-	modified:   review/madar-v216/screenshots/product_simple_1440.png
-	modified:   review/madar-v216/screenshots/product_simple_1440_full.png
-	modified:   review/madar-v216/screenshots/product_simple_375.png
-	modified:   review/madar-v216/screenshots/product_simple_375_full.png
-	modified:   review/madar-v216/screenshots/product_variable_1440.png
-	modified:   review/madar-v216/screenshots/product_variable_1440_full.png
-	modified:   review/madar-v216/screenshots/product_variable_375.png
-	modified:   review/madar-v216/screenshots/product_variable_375_full.png
-	modified:   review/madar-v216/screenshots/search_empty_1440.png
-	modified:   review/madar-v216/screenshots/search_empty_1440_full.png
-	modified:   review/madar-v216/screenshots/search_empty_375.png
-	modified:   review/madar-v216/screenshots/search_empty_375_full.png
-	modified:   review/madar-v216/screenshots/search_results_1440.png
-	modified:   review/madar-v216/screenshots/search_results_1440_full.png
-	modified:   review/madar-v216/screenshots/search_results_375.png
-	modified:   review/madar-v216/screenshots/search_results_375_full.png
-	modified:   review/madar-v216/screenshots/shop_1440.png
-	modified:   review/madar-v216/screenshots/shop_1440_full.png
-	modified:   review/madar-v216/screenshots/shop_375.png
-	modified:   review/madar-v216/screenshots/shop_375_full.png
-	modified:   review/madar-v216/screenshots/test_lighthouse_metrics.png
-	new file:   review/madar-v216/screenshots/test_mobile_menu_after_esc.png
+	modified:   review/madar-v216/screenshots/test_add_to_cart_badges.png
+	modified:   review/madar-v216/screenshots/test_card_hover.png
+	modified:   review/madar-v216/screenshots/test_cart_update_remove.png
+	modified:   review/madar-v216/screenshots/test_mobile_menu_after_esc.png
 	modified:   review/madar-v216/screenshots/test_mobile_menu_esc.png
-	new file:   review/madar-v216/screenshots/test_mobile_menu_open.png
-	new file:   review/madar-v216/scripts/analyze_proof_data.mjs
-	new file:   review/madar-v216/scripts/capture_lh_snap.mjs
-	new file:   review/madar-v216/scripts/capture_menu_esc.mjs
-	new file:   review/madar-v216/scripts/create_proof_zip.mjs
-	new file:   review/madar-v216/scripts/fix_and_recapture.mjs
+	modified:   review/madar-v216/screenshots/test_mobile_menu_open.png
+	modified:   review/madar-v216/screenshots/test_outofstock_variation.png
+	modified:   review/madar-v216/screenshots/test_search_flow.png
+	modified:   review/madar-v216/scripts/run_functional_tests.mjs
+	modified:   review/madar-v216/scripts/take_all_screenshots.mjs
 	modified:   review/madar-v216/test_results.json
-	new file:   review/madar-v216/touch_targets_table.md
+	new file:   review/madar-v216/touch_targets_full.json
+	modified:   review/madar-v216/touch_targets_table.md
 
 
+=== STAGED CHANGES STAT ===
+ .../madar-v216/cart_mobile_clipping_analysis.json  |   16 +
+ review/madar-v216/console_audit_log.json           |  200 ++
+ review/madar-v216/measurements.json                |  139 +-
+ review/madar-v216/measurements.md                  |  109 +-
+ review/madar-v216/menu_escape_trace.json           |   42 +
+ .../madar-v216/mobile_viewport_measurements.json   |  179 ++
+ review/madar-v216/report.md                        |  328 ++-
+ .../screenshots/header_menu_open_375.png           |  Bin 70174 -> 62912 bytes
+ .../screenshots/test_add_to_cart_badges.png        |  Bin 27220 -> 68884 bytes
+ review/madar-v216/screenshots/test_card_hover.png  |  Bin 817864 -> 809205 bytes
+ .../screenshots/test_cart_update_remove.png        |  Bin 24979 -> 51780 bytes
+ .../screenshots/test_mobile_menu_after_esc.png     |  Bin 99687 -> 70174 bytes
+ .../screenshots/test_mobile_menu_esc.png           |  Bin 99687 -> 62912 bytes
+ .../screenshots/test_mobile_menu_open.png          |  Bin 70174 -> 62912 bytes
+ .../screenshots/test_outofstock_variation.png      |  Bin 76970 -> 56039 bytes
+ review/madar-v216/screenshots/test_search_flow.png |  Bin 33313 -> 68914 bytes
+ review/madar-v216/scripts/run_functional_tests.mjs |  590 ++--
+ review/madar-v216/scripts/take_all_screenshots.mjs |   40 +-
+ review/madar-v216/test_results.json                |   92 +-
+ review/madar-v216/touch_targets_full.json          | 2810 ++++++++++++++++++++
+ review/madar-v216/touch_targets_table.md           |  288 +-
+ 21 files changed, 4199 insertions(+), 634 deletions(-)
 
-=== GIT LOG (HEAD at c04b79d before new proof commit) ===
+=== RECENT COMMITS ===
+e364bb7 (HEAD -> review/local-snapshot, origin/review/local-snapshot) review: madar 2.1.6 proof correction — separate checkout, lighthouse reports, menu esc trace, full lazy captures, touch table, blocked auth
 c04b79d review: madar 2.1.6 proof completion — 375/1440 screenshots, measurements, tests, zip
 a6e7f4c review: madar theme 2.1.6; hover bug fix, complete section alignment and verification suite
 b71fc6c review: madar theme 2.1.0 verification with shop hover screenshot and order #149
 c654477 review: madar theme 2.1.0; demo content, lookbook, journal, and trust features
-7719138 review: madar theme 2.0.2; checkout header and layout
-
-
-=== INTEGRITY VERIFICATION: THEMES & PLUGINS ===
-Command: git diff a6e7f4c -- themes/
-Output: CLEAN (Zero changes)
-
-Command: git diff a6e7f4c -- plugins/
-Output: CLEAN (Zero changes)

@@ -1,0 +1,42 @@
+{
+  "test": "TEST-08: Mobile Menu Keyboard & Interaction Accessibility",
+  "beforeEscape": {
+    "isOpen": true,
+    "navClasses": "store-nav is-open",
+    "ariaExpanded": "true",
+    "activeElement": {
+      "tagName": "BODY",
+      "id": "",
+      "className": "rtl home blog wp-embed-responsive wp-theme-twentytwentyfive wp-child-theme-egypt-fashion-child theme-twentytwentyfive woocommerce-uses-block-theme woocommerce-block-theme-has-button-styles woocommerce-js",
+      "outerSnippet": "<body class=\"rtl home blog wp-embed-responsive wp-theme-twentytwentyfive wp-child-theme-egypt-fashion-child theme-twentytwentyfive woocommerce-uses-bl"
+    }
+  },
+  "afterEscape": {
+    "isOpen": true,
+    "navClasses": "store-nav is-open",
+    "ariaExpanded": "true",
+    "activeElement": {
+      "tagName": "BODY",
+      "id": "",
+      "className": "rtl home blog wp-embed-responsive wp-theme-twentytwentyfive wp-child-theme-egypt-fashion-child theme-twentytwentyfive woocommerce-uses-block-theme woocommerce-block-theme-has-button-styles woocommerce-js",
+      "outerSnippet": "<body class=\"rtl home blog wp-embed-responsive wp-theme-twentytwentyfive wp-child-theme-egypt-fashion-child theme-twentytwentyfive woocommerce-uses-bl"
+    }
+  },
+  "escapeSuccess": false,
+  "verdict": "FAIL",
+  "failureReason": "Pressing Escape does not close the mobile navigation menu (nav#mdr-nav retains class 'is-open' and button retains aria-expanded='true' because madar.js lines 24-33 only attaches a 'click' listener to .mdr-menu-toggle and has no keydown/Escape handler on the mobile drawer). Focus also does not return to the toggle button.",
+  "clickCloseTest": {
+    "test": "Mobile Menu Click-to-Close via Toggle Button",
+    "result": {
+      "isOpen": false,
+      "ariaExpanded": "false",
+      "activeElement": {
+        "tagName": "BODY",
+        "id": "",
+        "className": "rtl home blog wp-embed-responsive wp-theme-twentytwentyfive wp-child-theme-egypt-fashion-child theme-twentytwentyfive woocommerce-uses-block-theme woocommerce-block-theme-has-button-styles woocommerce-js",
+        "outerSnippet": "<body class=\"rtl home blog wp-embed-responsive wp-theme-twentytwentyfive wp-child-theme-egypt-fashion-child theme-twentytwentyfive woocommerce-uses-bl"
+      }
+    },
+    "verdict": "PASS"
+  }
+}

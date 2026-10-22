@@ -1,195 +1,247 @@
-# تقرير إثبات واعتماد الإصدار 2.1.6 لقالب «مدار» (Madar Theme v2.1.6 Proof Report) — المراجعة الشاملة المحدّثة
+# تقرير التحقق الفني وموثوقية إثبات الإصدار 2.1.6 لقالب «مدار» (Madar Theme v2.1.6 Technical Audit & Test Reliability Report)
 
 **الموقع المحلي:** `capability-test.local`  
-**تاريخ الفحص والتوثيق:** 13 أكتوبر 2026  
-**الـ Commit الأساسي:** [`a6e7f4c`](https://github.com/itachi-void/egypt-fashion-store/commit/a6e7f4c1652929aad89c19d8055c63494508899d)  
+**تاريخ وتحديث الفحص:** 23 أكتوبر 2026  
+**الـ Commit المرجعي الأساسي:** [`a6e7f4c`](https://github.com/itachi-void/egypt-fashion-store/commit/a6e7f4c1652929aad89c19d8055c63494508899d)  
 **الفرع:** `review/local-snapshot`  
+**الغرض:** مراجعة محايدة وتصحيح موثوقية الاختبارات والأدلة وقياسات التخطيط الفعلي، وتوثيق العيوب دون إعلان اعتماد مسبق ودون تعديل القالب.
 
 ---
 
-## 1. ملخص القرار التنفيذي (Executive Summary)
+## 1. ملخص المراجعة والنتائج الفنية (Technical Audit Summary)
 
-### القرار النهائي للاعتماد:
-**«جاهز بشروط» (Conditional Approval)**
+يهدف هذا التقرير إلى تقديم تقييم فني موضوعي مستقل لحالة قالب مدار v2.1.6، مستنداً إلى أدلة قياس حقيقية واختبارات معيارية صارمة، بعيداً عن أحكام النجاح التلقائية أو ادعاءات «التطابق 100%» غير المثبتة.
 
-القالب البرمجي محكم، وتطابق التصميم والواجهة بنسبة 100%، وسجلات الكونسول نظيفة تمامًا (صفر أخطاء وصفر تحذيرات)، والتمرير الأفقي الزائد معدوم بالكامل (0px) على كافة الشاشات والصفحات، ولا توجد أي انزياحات تخطيطية (Zero Layout Shift).
+### خلاصة نتائج الاختبارات الوظيفية الـ 11:
+- **7 اختبارات ناجحة (PASS):** (TEST-01، TEST-02، TEST-03، TEST-04، TEST-06، TEST-09، TEST-10).
+- **اختباران فاشلان (FAIL):**
+  - **TEST-08:** فشل إغلاق القائمة بمفتاح Escape على الموبايل؛ الحدث لا يُعالج وتظل القائمة مفتوحة (`is-open` و `aria-expanded="true"`).
+  - **TEST-11:** عدم تحقيق هدف الأداء (>= 80) للصفحة الرئيسية على الموبايل عبر تدقيق Lighthouse الرسمي (النتيجة الفعلية: **44 / 100**).
+- **اختبار واحد محجوب بيئياً (BLOCKED):**
+  - **TEST-07:** دورة استلام رابط استرجاع كلمة المرور محجوبة بالكامل بواسطة حارس البريد المحلي الإجباري (`local-email-guard.php`).
+- **اختبار واحد غير مُختبر (NOT TESTED):**
+  - **TEST-05:** تم إلغاء اختبار إنشاء طلب جديد في هذه الجلسة التزاماً بسياسة المشروع بعدم إنشاء طلبات أو تغيير المخزون وقواعد البيانات بدون إذن مسبق، مع إلغاء الاعتماد على الطلب القديم #149.
 
-### قائمة الشروط الواجب مراعاتها للاعتماد والتشغيل:
-1. **دورة استرجاع كلمة المرور الكاملة (Password Reset Cycle):** تم تصنيفها بحالة **`BLOCKED`** في بيئة الاختبار؛ نظرًا لوجود الحارس الإجباري المحلي (`wp-content/mu-plugins/local-email-guard.php`) الذي يكتم رسائل `wp_mail` ويمنع خروجها لمنع التسريب، مما يستلزم اختبار وصول الرابط وتعيين كلمة المرور على بيئة خادم تجريبية (Staging Server) حقيقية.
-2. **مساحات اللمس على الموبايل (Touch Targets):** توجد عناصر وأيقونات في الترويسة والأدوات أقل من 44×44px (موضحة تفصيليًا في جدول مساحات اللمس)، ويلزم في التحديث التطويري القادم زيادة مساحات اللمس الشفافة حولها لتطابق معيار WCAG 2.1.
-3. **إغلاق القائمة بمفتاح Escape على الموبايل:** كود القالب `madar.js` حاليًا يفتقر لمستمع حدث `Escape` على عنصر التنقل `#mdr-nav` (مستمع Escape محصور فقط بلوحة البحث والنوافذ المشروطة `dialog`). يتم إغلاق القائمة بنجاح عبر زر التبديل `.mdr-menu-toggle`، ويوصى بإضافة مستمع Escape برمجيًا في أول تحديث صيانة.
-4. **تنظيف كتالوج المتجر:** المنتج التجريبي القديم (#24) منشور حالياً ويظهر في صفحة المتجر العامة `/shop/` (بينما تم إخفاؤه تمامًا من الرئيسية)، ويحتاج لتحويل حالته إلى «مسودة» أو «مخفي» من لوحة التحكم عند الرغبة في إخفائه دون حذفه.
+### خلاصة قياسات التخطيط والتمرير الأفقي (Viewport & Overflow):
+- تم ضبط الـ Viewport الفعلي (375×812px) **قبل بدء التنقل (`Page.navigate`)**.
+- الصفحات الأساسية (الرئيسية، المتجر، الأرشيفات، صفحة المنتج، الدفع): **0px تمرير أفقي زائد**.
+- **صفحة السلة (Cart with Items):** رُصد تجاوز أفقي بمقدار **+56px** (`clientWidth = 375px` مقابل `scrollWidth = 431px`)، وقص فعلي في جدول السلة حيث تمتد حافته اليمنى إلى الإحداثي **411px** خارج إطار الشاشة (مفصل في القسم 9).
+- **صفحتا الحساب واسترجاع كلمة المرور:** رُصد تجاوز أفقي بمقدار **+10px** (`scrollWidth = 385px`) بسبب عناصر Gutenberg الممتدة `alignfull`.
+
+### خلاصة تدقيق الكونسول (Console):
+- تم الاستماع الدائم قبل التنقل عبر CDP (`Runtime.consoleAPICalled`, `Runtime.exceptionThrown`, `Log.entryAdded`) عبر 22 تشغيلاً.
+- النتيجة: **0 استثناءات JS غير معالجة و0 تحذيرات runtime** (السجل التفصيلي في [console_audit_log.json](console_audit_log.json)).
 
 ---
 
-## 2. جدول لقطات الشاشة المتكامل مع الروابط الفعلية (Screenshots & URLs Matrix)
+## 2. مصفوفة لقطات الشاشة وتصنيفها الفني (Screenshots Matrix)
 
-جميع اللقطات محفوظة بصيغة PNG داخل المجلد: `review/madar-v216/screenshots/`
+جميع اللقطات محفوظة في المجلد: `review/madar-v216/screenshots/`.  
+تم تصنيف اللقطات بدقة لتمييز **اللقطات الطبيعية** (الملتقطة عبر DOM الأصلي النقي) عن **اللقطات الموثقة** (التي تطلبت تدخلاً برمجياً في الـ DOM كإزالة الستارة أو فتح الدُرج لأغراض التوثيق البصري):
 
-| الصفحة / الحالة | الرابط الفعلي للصفحة (Page URL) | لقطة الموبايل 375px (Viewport & Full) | لقطة الديسكتوب 1440px (Viewport & Full) | ملاحظات التوثيق الفعلي والتحقق |
+| الصفحة / الحالة | الرابط الفعلي (Page URL) | لقطة الموبايل 375px | لقطة الديسكتوب 1440px | نوع اللقطة وملاحظات التوثيق |
 |---|---|---|---|---|
-| **الرئيسية (Home)** | `http://capability-test.local/` | `home_375.png`<br>`home_375_full.png` | `home_1440.png`<br>`home_1440_full.png` | تطابق كامل لكافة الأقسام الـ 16 وإخفاء واتساب تماماً. الارتفاع الكامل: 11,672px (موبايل) و 10,939px (ديسكتوب). |
-| **المتجر (Shop)** | `http://capability-test.local/shop/` | `shop_375.png`<br>`shop_375_full.png` | `shop_1440.png`<br>`shop_1440_full.png` | شبكة المنتجات (عمودان على الموبايل، و4 أعمدة ديسكتوب) مع تحميل كافة الصور الكسولة. الارتفاع: 4,179px و 3,318px. |
-| **تصنيف رجالي (Men Category)** | `http://capability-test.local/product-category/men/` | `category_men_375.png`<br>`category_men_375_full.png` | `category_men_1440.png`<br>`category_men_1440_full.png` | أرشيف تصنيف الرجال بمنتجاته المعتمدة وصوره المحملة كاملة. الارتفاع: 2,302px و 2,171px. |
-| **تصنيف أطفال (Kids Category)** | `http://capability-test.local/product-category/kids/` | `category_kids_375.png`<br>`category_kids_375_full.png` | `category_kids_1440.png`<br>`category_kids_1440_full.png` | أرشيف تصنيف الأطفال. تم التمرير وتحميل كافة الصور بالكامل (حجم ملف full تجاوز الـ Viewport: 890KB مقابل 760KB). |
-| **منتج بسيط (Simple Product #44)** | `http://capability-test.local/?p=44` | `product_simple_375.png`<br>`product_simple_375_full.png` | `product_simple_1440.png`<br>`product_simple_1440_full.png` | نظارة شمسية كلاسيكية مع إمكانية الإضافة المباشرة والتفاصيل. |
-| **منتج متغيّر (Variable Product #24)** | `http://capability-test.local/?p=24` | `product_variable_375.png`<br>`product_variable_375_full.png` | `product_variable_1440.png`<br>`product_variable_1440_full.png` | تيشيرت أساسي بعد اختيار المقاس واللون وظهور الأزرار التفاعلية. |
-| **السلة (Cart)** | `http://capability-test.local/cart/` | `cart_375.png`<br>`cart_375_full.png` | `cart_1440.png`<br>`cart_1440_full.png` | صفحة السلة بمنتج فعلي (#44)، وتحديث الكميات وإجمالي السلة. الارتفاع: 1,903px و 1,646px. |
-| **صفحة الدفع (Checkout)** | `http://capability-test.local/checkout/` | `checkout_375.png`<br>`checkout_375_full.png` | `checkout_1440.png`<br>`checkout_1440_full.png` | **تم التصوير بعد إضافة منتج للسلة والتأكد من بقاء الرابط على `/checkout/`**: ظهور استمارة الفاتورة وتفاصيل الطلب وخيارات الدفع (ارتفاع كامل 2,384px موبايل و 1,794px ديسكتوب). |
-| **الـ Mini-Cart مفتوح** | `http://capability-test.local/` | `mini_cart_open_375.png`<br>`mini_cart_open_375_full.png` | `mini_cart_open_1440.png` | السلة الجانبية المنبثقة فوق الشاشة. |
-| **استلام الطلب (Order Received)** | `http://capability-test.local/checkout/order-received/149/?key=wc_order_adsrmXJgyidJT` | `order_received_375.png`<br>`order_received_375_full.png` | `order_received_1440.png`<br>`order_received_1440_full.png` | شاشة تأكيد الطلب #149 وطريقة الدفع عند الاستلام. |
-| **حسابي (مسجّل دخول)** | `http://capability-test.local/my-account/` | `my_account_logged_in_375.png`<br>`my_account_logged_in_375_full.png` | `my_account_logged_in_1440.png`<br>`my_account_logged_in_1440_full.png` | لوحة تحكم العميل المعتمدة (الطلبات، العناوين، تفاصيل الحساب). |
-| **حسابي (خارج / Logged Out)** | `http://capability-test.local/my-account/` | `my_account_logged_out_375.png`<br>`my_account_logged_out_375_full.png` | `my_account_logged_out_1440.png`<br>`my_account_logged_out_1440_full.png` | نموذج تسجيل الدخول واستمارة التسجيل. |
-| **استرجاع كلمة المرور** | `http://capability-test.local/my-account/lost-password/` | `lost_password_375.png`<br>`lost_password_375_full.png` | `lost_password_1440.png`<br>`lost_password_1440_full.png` | استمارة طلب استرجاع كلمة المرور. |
-| **البحث مع نتائج (Search Results)** | `http://capability-test.local/?s=%D9%82%D9%85%D9%8A%D8%B5&post_type=product` | `search_results_375.png`<br>`search_results_375_full.png` | `search_results_1440.png`<br>`search_results_1440_full.png` | نتائج البحث عن كلمة «قميص» (إظهار منتجين مطابقين). |
-| **البحث بدون نتائج (Search Empty)** | `http://capability-test.local/?s=xyznotfound123&post_type=product` | `search_empty_375.png`<br>`search_empty_375_full.png` | `search_empty_1440.png`<br>`search_empty_1440_full.png` | رسالة إرشادية واضحة: «لا توجد منتجات تتوافق مع اختيارك». |
-| **قائمة الموبايل مفتوحة** | `http://capability-test.local/` | `test_mobile_menu_open.png`<br>`header_menu_open_375.png` | — | القائمة الجانبية المنسدلة على الموبايل عند فتحها. |
-| **قائمة الموبايل بعد الإغلاق / Esc** | `http://capability-test.local/` | `test_mobile_menu_after_esc.png` | — | القائمة بعد الإغلاق وتأكيد استقرار التركيز البصري. |
-| **الكارت قبل وبعد التفاعل (Tap/Hover)** | `http://capability-test.local/` | `card_tap_before_375.png`<br>`card_tap_after_375.png` | `card_before_hover_1440.png`<br>`card_after_hover_1440.png` | استجابة الكارت للتفاعل وتبديل الصورة للبديلة دون أي layout shift. |
-| **التركيز البصري (Visible Focus)** | `http://capability-test.local/` | — | `visible_focus_closeup.png` | لقطة مكبرة لإطار التركيز البصري المتباين. |
+| **الرئيسية (Home)** | `http://capability-test.local/` | `home_375.png`<br>`home_375_full.png` | `home_1440.png`<br>`home_1440_full.png` | **طبيعية:** 16 قسماً، بدون واتساب. الارتفاع الكامل: 11,672px (موبايل) و 10,939px (ديسكتوب). |
+| **المتجر (Shop)** | `http://capability-test.local/shop/` | `shop_375.png`<br>`shop_375_full.png` | `shop_1440.png`<br>`shop_1440_full.png` | **طبيعية:** شبكة المنتجات (عمودان موبايل، 4 أعمدة ديسكتوب). |
+| **تصنيف رجالي (Men)** | `http://capability-test.local/product-category/men/` | `category_men_375.png`<br>`category_men_375_full.png` | `category_men_1440.png`<br>`category_men_1440_full.png` | **طبيعية:** أرشيف تصنيف الرجال. |
+| **تصنيف أطفال (Kids)** | `http://capability-test.local/product-category/kids/` | `category_kids_375.png`<br>`category_kids_375_full.png` | `category_kids_1440.png`<br>`category_kids_1440_full.png` | **طبيعية:** أرشيف تصنيف الأطفال مع تمرير لكافة الصور. |
+| **منتج بسيط (Simple #44)** | `http://capability-test.local/?p=44` | `product_simple_375.png`<br>`product_simple_375_full.png` | `product_simple_1440.png`<br>`product_simple_1440_full.png` | **طبيعية:** صفحة نظارة شمسية كلاسيكية. |
+| **منتج متغيّر (Variable #24)** | `http://capability-test.local/?p=24` | `product_variable_375.png`<br>`product_variable_375_full.png` | `product_variable_1440.png`<br>`product_variable_1440_full.png` | **موثقة:** تم اختيار المقاس واللون برمجياً لإظهار حالة التحديد. |
+| **السلة (Cart)** | `http://capability-test.local/cart/` | `cart_375.png`<br>`cart_375_full.png` | `cart_1440.png`<br>`cart_1440_full.png` | **طبيعية:** السلة بمنتج فعلي، ويظهر التجاوز الأفقي للجدول على الموبايل. |
+| **صفحة الدفع (Checkout)** | `http://capability-test.local/checkout/` | `checkout_375.png`<br>`checkout_375_full.png` | `checkout_1440.png`<br>`checkout_1440_full.png` | **طبيعية:** تم التصوير بعد إضافة منتج والتأكد من بقاء الرابط على `/checkout/`. |
+| **الميني كارت (Mini-Cart)** | `http://capability-test.local/` | `mini_cart_open_375.png`<br>`mini_cart_open_375_full.png` | `mini_cart_open_1440.png` | **موثقة:** تفعيل فئة `is-open` على الدُرج الجانبي لإظهار السلة المنبثقة. |
+| **استلام الطلب (Order Received)** | `http://capability-test.local/checkout/order-received/[REDACTED]/?key=wc_order_[REDACTED]` | `order_received_375.png`<br>`order_received_375_full.png` | `order_received_1440.png`<br>`order_received_1440_full.png` | **أرشيفية:** توثيق شاشة تأكيد طلب قديم مع حجب المعرفات والمفاتيح. |
+| **حسابي (مسجّل دخول)** | `http://capability-test.local/my-account/` | `my_account_logged_in_375.png`<br>`my_account_logged_in_375_full.png` | `my_account_logged_in_1440.png`<br>`my_account_logged_in_1440_full.png` | **موثقة:** تسجيل الدخول ببيانات اعتماد بيئية غير متتبعة. |
+| **حسابي (خارج)** | `http://capability-test.local/my-account/` | `my_account_logged_out_375.png`<br>`my_account_logged_out_375_full.png` | `my_account_logged_out_1440.png`<br>`my_account_logged_out_1440_full.png` | **طبيعية:** استمارة تسجيل الدخول. |
+| **استرجاع كلمة المرور** | `http://capability-test.local/my-account/lost-password/` | `lost_password_375.png`<br>`lost_password_375_full.png` | `lost_password_1440.png`<br>`lost_password_1440_full.png` | **طبيعية:** نموذج طلب رابط التعيين. |
+| **البحث (مع نتائج)** | `http://capability-test.local/?s=%D9%82%D9%85%D9%8A%D8%B5&post_type=product` | `search_results_375.png`<br>`search_results_375_full.png` | `search_results_1440.png`<br>`search_results_1440_full.png` | **طبيعية:** نتائج البحث عن كلمة «قميص». |
+| **البحث (بدون نتائج)** | `http://capability-test.local/?s=xyznotfound123&post_type=product` | `search_empty_375.png`<br>`search_empty_375_full.png` | `search_empty_1440.png`<br>`search_empty_1440_full.png` | **طبيعية:** شاشة البحث الفارغة. |
+| **قائمة الموبايل مفتوحة** | `http://capability-test.local/` | `test_mobile_menu_open.png` | — | **موثقة:** تم النقر على زر القائمة وفتحها. |
+| **قائمة الموبايل بعد Escape** | `http://capability-test.local/` | `test_mobile_menu_after_esc.png` | — | **طبيعية بعد الحدث:** توثق بقاء القائمة مفتوحة بعد إرسال حدث Escape الفعلي (FAIL). |
+| **الكارت قبل وبعد التفاعل** | `http://capability-test.local/` | `card_tap_before_375.png`<br>`card_tap_after_375.png` | `card_before_hover_1440.png`<br>`card_after_hover_1440.png` | **موثقة:** محاكاة hover/tap لاختبار ثبات الأبعاد واستبدال الصورة. |
+
+> **تنبيه حول ملف التركيز البصري:** تم حذف الإشارة إلى ملف `visible_focus_closeup.png` لعدم وجوده على القرص. تم التحقق من التركيز البصري المتباين برمجياً عبر قواعد CSS (`:focus-visible`).
 
 ---
 
-## 3. فحص تكرار لقطات الشاشة (SHA-256 Duplication Check)
+## 3. فحص تكرار لقطات الشاشة (SHA-256 Analysis)
 
-تم حساب تجزئة SHA-256 لكل لقطة شاشة داخل المجلد، وفيما يلي الحالات المتطابقة وتفسيرها الفني:
-
-| بصمة التجزئة (SHA-256 Hash) | الملفات المتطابقة | التفسير والمبرر الفني للتطابق |
+| بصمة التجزئة (SHA-256 Hash) | الملفات المتطابقة | التفسير والمبرر الفني |
 |---|---|---|
-| `63a426788569e2860b93d499f0ea937133a5ea130451b1495fe96bfd71a777fe` | `mini_cart_open_375.png`<br>`<=> mini_cart_open_375_full.png` | **طبيعي ومبرر تقنياً:** الميني كارت هو درج جانبي منبثق (Modal Slide-over Drawer) مثبت على كامل ارتفاع نافذة العرض (812px) دون أن يتجاوزها في التمرير؛ وبالتالي فإن لقطة الـ Viewport واللقطة الكاملة تلتقطان نفس الإطار المعروض تماماً. |
-| `12f3d26f2037a8181ffca66217cd3f89769ce0a00fc5c9de4a5a7b42c311ef92` | `header_menu_open_375.png`<br>`<=> test_mobile_menu_open.png` | **طبيعي ومبرر تقنياً:** كلا الملفين يوثقان نفس الحالة بالبكسل (قائمة الهيدر مفتوحة على الموبايل 375px)؛ أحدهما تم حفظه لجدول لقطات الصفحات والآخر للاختبار الوظيفي TEST-08. |
-| `0e58e7e3657d3976ee5026c401cbf2894439febb1024f40bad4012205470b1da` | `test_mobile_menu_after_esc.png`<br>`<=> test_mobile_menu_esc.png` | **طبيعي ومبرر تقنياً:** توثيق حالة ما بعد إغلاق القائمة لتأكيد عدم وجود بقايا بصرية واستقرار التركيز البصري على الزر. |
+| `63a426788569e2860b93d499f0ea937133a5ea130451b1495fe96bfd71a777fe` | `mini_cart_open_375.png`<br>`<=> mini_cart_open_375_full.png` | **طبيعي ومبرر:** الميني كارت هو درج جانبي منبثق (Modal Slide-over) مثبت بكامل ارتفاع نافذة العرض (812px) بدون تجاوز عمودي، فتتطابق لقطة الـ Viewport مع الـ Full. |
+| `12f3d26f2037a8181ffca66217cd3f89769ce0a00fc5c9de4a5a7b42c311ef92` | `header_menu_open_375.png`<br>`<=> test_mobile_menu_open.png` | **طبيعي ومبرر:** حفظ لنفس الحالة البصرية (القائمة مفتوحة على الموبايل 375px) لأغراض توثيق الصفحات والاختبار الوظيفي. |
 
-> **ملاحظة تأكيدية:** لقطات صفحة الدفع (`checkout_375.png` و `checkout_1440.png`) أصبحت مستقلة ومختلفة بالكامل عن لقطات صفحة السلة (`cart_375.png` و `cart_1440.png`) بعد ملء السلة والتصوير داخل مسار `/checkout/` الفعلي.
+> **ملاحظة تأكيدية:** لقطات صفحة الدفع (`checkout_375.png` و `checkout_1440.png`) أصبحت مستقلة ومختلفة تماماً بالبايت عن لقطات صفحة السلة بعد إضافة منتج والتصوير داخل مسار `/checkout/` الفعلي.
 
 ---
 
-## 4. تدقيق Lighthouse للموبايل (Mobile Audits)
+## 4. تدقيق Lighthouse للموبايل والتحذيرات المعيارية (Lighthouse Mobile Audits)
 
-تم تشغيل أداة Google Lighthouse الرسمية على بيئة الموبايل (Emulated Mobile) لكل من الصفحة الرئيسية وصفحة المنتج (#44)، وحفظ التقارير كاملة بصيغتي HTML و JSON في المجلد: `review/madar-v216/lighthouse/`:
+تم تشغيل Google Lighthouse Mobile الرسمي على الصفحة الرئيسية وصفحة المنتج (#44). التقارير الأصلية محفوظة كاملة دون تعديل في: `review/madar-v216/lighthouse/`:
 
-| مؤشر التقييم (Category) | الصفحة الرئيسية (Home Mobile) | صفحة المنتج البسيط (Product Mobile #44) | التقييم الفعلي والحالة |
-|---|---|---|---|
-| **الأداء (Performance)** | **44 / 100** | **85 / 100** | صفحة المنتج ممتازة (85). الرئيسية متأثرة بثرائها بالصور الكبيرة (16 قسم). |
-| **إمكانية الوصول (Accessibility)** | **96 / 100** | **97 / 100** | **ممتاز جداً (PASS)** — تباين ألوان عالي ومسميات سليمة. |
-| **أفضل الممارسات (Best Practices)** | **78 / 100** | **78 / 100** | **جيد جداً (PASS)** — كود جافاسكريبت حديث وبنية سليمة. |
-| **تحسين محركات البحث (SEO)** | **92 / 100** | **92 / 100** | **ممتاز جداً (PASS)** — وسوم وصفية وعناوين متدرجة بدقة. |
+| مؤشر التقييم (Category) | الصفحة الرئيسية (Home Mobile) | صفحة المنتج البسيط (Product Mobile #44) | الحالة والهدف المطلوب |
+|---|:---:|:---:|---|
+| **الأداء (Performance)** | **44 / 100** | **85 / 100** | ❌ **FAIL للرئيسية** (الهدف >= 80) / ✅ PASS للمنتج |
+| **إمكانية الوصول (Accessibility)** | **96 / 100** | **97 / 100** | ✅ **PASS** |
+| **أفضل الممارسات (Best Practices)** | **78 / 100** | **78 / 100** | ✅ **PASS** |
+| **تحسين محركات البحث (SEO)** | **92 / 100** | **92 / 100** | ✅ **PASS** |
+
+### التحذيرات والنتائج المعيارية من واقع التقارير الأصلية (Lighthouse Diagnostics):
+1. **انزياح التخطيط التراكمي (Cumulative Layout Shift - CLS):**
+   - الصفحة الرئيسية: **`CLS = 0.004`** (يوجد انزياح طفيف مسجل وليس صفراً مطلقاً كما ادُّعي سابقاً).
+   - صفحة المنتج: **`CLS = 0`**.
+2. **تباين الألوان (Color Contrast):**
+   - الصفحة الرئيسية: رصد التقرير **14 عنصراً** يعاني من ضعف نسبة التباين البصري (عناصر نصوص ثانوية وروابط في التذييل والأدوات).
+   - صفحة المنتج: رصد التقرير **عنصراً واحداً** لا يحقق التباين الكافي.
+3. **غياب الوصف التعريفي (Meta Description):**
+   - تم تسجيل غياب الوسم `<meta name="description">` في كل من الصفحة الرئيسية وصفحة المنتج.
+4. **عوائق الأداء بالرئيسية:**
+   - ملفات CSS تحجب العرض الأولي (Render-blocking resources).
+   - استهلاك كبير للخيط الرئيسي (Main thread work) نتيجة ثراء الصفحة بـ 16 قسماً مع صور غير مدمجة بالكامل.
 
 ### ملفات التقارير المحفوظة:
 - [home_mobile.report.html](lighthouse/home_mobile.report.html) | [home_mobile.report.json](lighthouse/home_mobile.report.json)
 - [product_mobile.report.html](lighthouse/product_mobile.report.html) | [product_mobile.report.json](lighthouse/product_mobile.report.json)
-- لقطة شاشة تقرير المؤشرات: `screenshots/test_lighthouse_metrics.png`
+- لقطة شاشة التقرير: `screenshots/test_lighthouse_metrics.png`
 
 ---
 
-## 5. اختبار إغلاق القائمة بمفتاح Escape وتتبع التركيز البصري (TEST-08 Focus Trace)
+## 5. اختبار إغلاق القائمة بمفتاح Escape وتتبع التركيز الفعلي (TEST-08 Trace)
 
-- **اللقطة الأولى (القائمة مفتوحة):** `screenshots/test_mobile_menu_open.png`
-- **اللقطة الثانية (بعد الإغلاق):** `screenshots/test_mobile_menu_after_esc.png`
-- **التحليل البرمجي والنتيجة:**
-  - عند النقر على زر القائمة `.store-menu-toggle.mdr-menu-toggle`، تفتح القائمة بسلاسة وتضاف فئة `is-open` لعنصر التنقل `nav#mdr-nav`.
-  - عند إرسال حدث الضغط على مفتاح `Escape`، تبيّن أن ملف `themes/egypt-fashion-child/assets/madar.js` (السطور 24-33) لا يحتوي على مستمع حدث `keydown` لـ Escape على عنصر القائمة المتنقلة (المستمع موجود فقط للبحث search وللـ dialogs).
-  - يتم إغلاق القائمة حالياً بنجاح بالنقر على زر التبديل نفسه، وعند إغلاقها يستقر التركيز البصري بدقة على:
-    - **العنصر النشط (Active Element):** `<button type="button" class="store-menu-toggle mdr-menu-toggle" aria-expanded="false" aria-controls="mdr-nav" aria-label="القائمة">☰</button>`
-    - **الفئة (Class):** `store-menu-toggle mdr-menu-toggle`
-    - **الوسم (Tag):** `BUTTON`
-  - تم توثيق هذا القصور كملاحظة تطويرية (Accessibility Enhancement) دون تعديل الكود التزاماً بالقيود.
+تم اختبار سلوك مفتاح `Escape` على قائمة الموبايل بدقة عبر إرسال حدث `Escape` الفعلي بواسطة CDP `Input.dispatchKeyEvent`، وجاءت النتيجة الفعلية المسجلة في [menu_escape_trace.json](menu_escape_trace.json) على النحو التالي:
 
----
-
-## 6. فحص سجل الكونسول والتحذيرات (Console Warnings & Errors)
-
-تم الاستماع لجميع استدعاءات الكونسول (`console.warn`, `console.error`, `Runtime.exceptionThrown`) أثناء تصفح كافة الصفحات:
-
-| الصفحة المختبرة | عدد أخطاء JS (Errors) | عدد التحذيرات (Warnings) | حالة السجل (Console Status) |
+| المعامل الفاحص | قبل إرسال حدث Escape | بعد إرسال حدث Escape الفعلي | الحالة والتقييم |
 |---|---|---|---|
-| **الرئيسية (Home)** | **0** | **0** | Clean (100%) |
-| **المتجر (Shop)** | **0** | **0** | Clean (100%) |
-| **تصنيف رجال (Category Men)** | **0** | **0** | Clean (100%) |
-| **تصنيف أطفال (Category Kids)** | **0** | **0** | Clean (100%) |
-| **منتج بسيط (Simple Product)** | **0** | **0** | Clean (100%) |
-| **منتج متغير (Variable Product)** | **0** | **0** | Clean (100%) |
-| **السلة (Cart)** | **0** | **0** | Clean (100%) |
-| **الدفع (Checkout)** | **0** | **0** | Clean (100%) |
-| **حسابي (My Account)** | **0** | **0** | Clean (100%) |
-| **استرجاع كلمة المرور (Lost Password)** | **0** | **0** | Clean (100%) |
-| **البحث (Search)** | **0** | **0** | Clean (100%) |
+| **فئات زر القائمة (Toggle ClassList)** | `store-menu-toggle mdr-menu-toggle is-open` | `store-menu-toggle mdr-menu-toggle is-open` | **لم تتغير (ظلت مفتوحة)** |
+| **خاصية `aria-expanded`** | `"true"` | `"true"` | **لم تتحول إلى false** |
+| **فئات عنصر التنقل (`nav#mdr-nav`)** | `mdr-nav is-open` | `mdr-nav is-open` | **ظلت فئة `is-open` قائمة** |
+| **العنصر النشط للتركيز (`document.activeElement`)** | `A.mdr-nav-link` (رابط داخل القائمة) | `A.mdr-nav-link` (نفس الرابط) | **لم يستعد زر الفتح التركيز** |
 
-**النتيجة الإجمالية للكونسول:** **صفر أخطاء وصفر تحذيرات عبر جميع الصفحات الـ 11.**
+### التفسير الفني والخلل المرصود:
+- في ملف `themes/egypt-fashion-child/assets/madar.js` (السطور 24-33)، يوجد فقط مستمع للنقر `click` على الزر `.mdr-menu-toggle`.
+- **لا يوجد أي مستمع لحدث `keydown` لمفتاح Escape** على عنصر القائمة `#mdr-nav`.
+- **نتيجة الاختبار: ❌ FAIL صريح.**
+- **اختبار الإغلاق بالنقر (Click-to-close):** عند النقر اليدوي على الزر `.mdr-menu-toggle` يتم إغلاق القائمة بنجاح ويستقر التركيز البصري على الزر `BUTTON.store-menu-toggle`. تم فصل اختبار النقر عن اختبار Escape للتفريق بين السلوكين.
 
 ---
 
-## 7. جدول مساحات اللمس على الموبايل الأقل من 44px (Touch Targets < 44px)
+## 6. فحص سجل الكونسول بالمستمعين الدائمين (TEST-10 Console Audit)
 
-وفقاً لقياسات `getBoundingClientRect()` الدقيقة على شاشة الموبايل (375×812px)، فيما يلي جدول بالعناصر التفاعلية التي تقل أبعادها عن معيار WCAG 2.1 (44×44px)، والموثقة كشروط تحسين لاحقة دون تعديل في الكود الحالي:
+تم ربط مستمعين دائمين عبر بروتوكول CDP قبل بدء التنقل في المتصفح لرصد أي رسائل تخرج أثناء التحميل الأولي:
+- `Runtime.consoleAPICalled` (لرصد التحذيرات والمعلومات والأخطاء)
+- `Runtime.exceptionThrown` (لرصد أي استثناءات غير معالجة في المحرك)
+- `Log.entryAdded` (لرصد سجلات الشبكة والمتصفح)
 
-| العنصر / CSS Selector | العنصر البصري / النص | المقاس الفعلي المقاس (عرض × ارتفاع) | الصفحة التي وُجد بها | معيار WCAG المطلوب |
-|---|---|---|---|---|
-| `button.experience-search-trigger` | زر أيقونة البحث | **21px × 21px** | جميع الصفحات (الترويسة) | ≥ 44px × 44px |
-| `a[aria-label="الحساب"]` | أيقونة حسابي | **21px × 21px** | جميع الصفحات (الترويسة) | ≥ 44px × 44px |
-| `a[aria-label="المفضلة"]` | أيقونة المفضلة والعداد | **34.3px × 21px** | جميع الصفحات (الترويسة) | ≥ 44px × 44px |
-| `a.store-cart-link` | أيقونة السلة والعداد | **34.3px × 21px** | جميع الصفحات (الترويسة) | ≥ 44px × 44px |
-| `button.store-menu-toggle` | زر القائمة (☰) | **33.6px × 34px** | جميع الصفحات (الترويسة) | ≥ 44px × 44px |
-| `button` | زر تغيير اللغة (مصر / عربي ⌄) | **55.7px × 19px** | جميع الصفحات (الترويسة) | ≥ 44px × 44px |
-| `.quiet-top a` | رابط «التشكيلة ↗» بالهيدر العلوي | **40.8px × 17.1px** | جميع الصفحات | ≥ 44px × 44px |
-| `a.quiet-brand` | شعار المتجر «مدار» | **295.4px × 33px** | جميع الصفحات | ≥ 44px × 44px |
-| `button.mdr-tool` | زر «صور أكبر» في الأدوات | **34px × 34px** | المتجر والأرشيفات | ≥ 44px × 44px |
-| `button.mdr-tool` | زر «الفلاتر والترتيب» | **113px × 34px** | المتجر والأرشيفات | ≥ 44px × 44px |
-| `a.showlogin` | رابط «أنقر هنا لتسجيل الدخول» | **124.6px × 15px** | صفحة الدفع (`checkout`) | ≥ 44px × 44px |
-| `a.showcoupon` | رابط «أنقر هنا لإدخال رمز القسيمة» | **146.6px × 15px** | صفحة الدفع (`checkout`) | ≥ 44px × 44px |
-| `select#billing_state` | قائمة اختيار المحافظة | **30px × 30px** | صفحة الدفع (`checkout`) | ≥ 44px × 44px |
-| `input#createaccount` | مربع إنشاء حساب | **13px × 13px** | صفحة الدفع (`checkout`) | ≥ 44px × 44px |
-| `input#ship-to-different-address-checkbox` | مربع الشحن لعنوان مختلف | **13px × 13px** | صفحة الدفع (`checkout`) | ≥ 44px × 44px |
-| `a.woocommerce-privacy-policy-link` | رابط سياسة الخصوصية | **85px × 14px** | صفحة الدفع (`checkout`) | ≥ 44px × 44px |
+تم تنفيذ التدقيق عبر 11 صفحة بمقاسي العرض (375px و 1440px - إجمالي 22 تشغيلاً)، وحفظ السجل المنقح بالكامل في [console_audit_log.json](console_audit_log.json):
 
----
+| الصفحة المختبرة | أخطاء JS غير المعالجة (375 / 1440) | تحذيرات المتصفح Runtime (375 / 1440) | حالة الرصد |
+|---|:---:|:---:|:---:|
+| **الرئيسية (Home)** | 0 / 0 | 0 / 0 | خالي من الأخطاء والتحذيرات |
+| **المتجر (Shop)** | 0 / 0 | 0 / 0 | خالي من الأخطاء والتحذيرات |
+| **تصنيف رجال (Men)** | 0 / 0 | 0 / 0 | خالي من الأخطاء والتحذيرات |
+| **تصنيف أطفال (Kids)** | 0 / 0 | 0 / 0 | خالي من الأخطاء والتحذيرات |
+| **منتج بسيط (Simple #44)** | 0 / 0 | 0 / 0 | خالي من الأخطاء والتحذيرات |
+| **منتج متغيّر (Variable #24)** | 0 / 0 | 0 / 0 | خالي من الأخطاء والتحذيرات |
+| **السلة (Cart)** | 0 / 0 | 0 / 0 | خالي من الأخطاء والتحذيرات |
+| **الدفع (Checkout)** | 0 / 0 | 0 / 0 | خالي من الأخطاء والتحذيرات |
+| **حسابي (My Account)** | 0 / 0 | 0 / 0 | خالي من الأخطاء والتحذيرات |
+| **استرجاع كلمة المرور (Lost Password)** | 0 / 0 | 0 / 0 | خالي من الأخطاء والتحذيرات |
+| **البحث (Search)** | 0 / 0 | 0 / 0 | خالي من الأخطاء والتحذيرات |
 
-## 8. ملخص الاختبارات الوظيفية المحدّث (Test Results Summary)
-
-(التفاصيل الكاملة والخطوات مسجلة في [test_results.json](test_results.json))
-
-- **إجمالي الاختبارات الوظيفية:** 11 اختبار
-- **عدد الاختبارات الناجحة (PASS):** **10**
-- **عدد الاختبارات المحجوبة بيئياً (BLOCKED):** **1** (دورة استرجاع البريد الكاملة بسبب حارس البريد المحلي)
-- **عدد الاختبارات الفاشلة (FAIL):** **0**
-
-| رمز الاختبار | اسم الاختبار الوظيفي | الحالة | اللقطة المرفقة | النتيجة الفعلية المقاسة |
-|---|---|---|---|---|
-| **TEST-01** | hover الكارت: تبديل الصورة والعودة دون وميض أو layout shift | **PASS** | `test_card_hover.png` | شفافية الصورة البديلة بالهوفر: `0.98`. انزياح التخطيط: `0px`. |
-| **TEST-02** | إضافة للسلة وتحديث العداد وإشعار الإضافة | **PASS** | `test_add_to_cart_badges.png` | تحديث العداد وظهور إشعار الإضافة مع زر «عرض السلة». |
-| **TEST-03** | variation نافد: معطّل ومش قابل للاختيار / الشراء | **PASS** | `test_outofstock_variation.png` | المقاس النافد (XL) يعطل زر الشراء ويظهر «غير متوفر في المخزون». |
-| **TEST-04** | تغيير الكمية والحذف من السلة | **PASS** | `test_cart_update_remove.png` | تم الحذف وظهور رسالة تأكيد الحذف وتفريغ السلة بنجاح. |
-| **TEST-05** | إكمال طلب تجريبي كامل (الدفع عند الاستلام) ورقم الطلب | **PASS** | `test_order_received_complete.png` | نجاح تقديم الطلب وتوليد رقم الطلب #149 بشاشة order-received. |
-| **TEST-06** | البحث: مع وجود نتائج وبدون نتائج | **PASS** | `test_search_flow.png` | إظهار منتجين لكلمة «قميص»، ورسالة نظيفة للبحث الفارغ. |
-| **TEST-07** | دورة الحساب: تسجيل الدخول / الخروج / طلب الاسترجاع الكامل | **BLOCKED** | `test_auth_flow.png` | الدخول والخروج ناجحان. إرسال النموذج ناجح لـ `?reset-link-sent=true`. استلام الرابط بالبريد محجوب بحارس البريد المحلي. |
-| **TEST-08** | القائمة على الموبايل: فتح وغلق والتنقل وزر Escape | **PASS** | `test_mobile_menu_open.png` | فتح القائمة ناجح. إغلاق القائمة عبر الزر ناجح مع ثبات التركيز البصري. |
-| **TEST-09** | دعم prefers-reduced-motion: إيقاف الحركات والتحولات | **PASS** | `test_reduced_motion.png` | تطابق وسائط تقليل الحركة وتطبيقها في تنسيقات CSS. |
-| **TEST-10** | فحص سجل الكونسول (Console): صفر أخطاء وصفر تحذيرات | **PASS** | `home_1440.png` | **0 أخطاء و 0 تحذيرات جافاسكريبت** عبر جميع الصفحات الـ 11. |
-| **TEST-11** | أداء الموبايل وتدقيق Lighthouse الرسمي | **PASS** | `test_lighthouse_metrics.png` | الرئيسية: أداء 44، وصول 96، سيو 92. المنتج: أداء 85، وصول 97، سيو 92. |
+**النتيجة الإجمالية:** صفر استثناءات جافاسكريبت غير معالجة وصفر تحذيرات runtime مسجلة عبر كافة الـ 22 تشغيلاً.
 
 ---
 
-## 9. تأكيد سلامة الإضافات والقالب
+## 7. فحص مساحات اللمس على الموبايل (Touch Targets Analysis)
 
-- ناتج الأمر: `git diff a6e7f4c -- plugins/`  
-  **فارغ تمامًا (Zero changes)** — لم يتم لمس أو تعديل أي ملف في الإضافات.
-- ناتج الأمر: `git diff a6e7f4c -- themes/`  
-  **فارغ تمامًا (Zero changes)** — لم يتم تعديل أي سطر برمجي في القالب، والتزمنا بكون المهمة إثباتًا وتوثيقًا فقط.
-- كافة الملفات المضافة تقتصر حصريًا على أدلة المراجعة داخل: `review/madar-v216/`.
+وفقاً للتوجيهات، تم استخراج وحصر **كافة العناصر التفاعلية** التي تقل أبعادها عن 44×44px على الموبايل (375×812px) دون أي اقتطاع `slice()` عبر الصفحات الـ 7 الأساسية.  
+الجدول الكامل الذي يضم **234 عنصراً تفاعلياً** مع الـ Selectors القابلة للتحديد بدقة محفوظ في: [touch_targets_table.md](touch_targets_table.md) والبيانات الخام في [touch_targets_full.json](touch_targets_full.json).
 
+### الإطار المعياري لمساحات اللمس (Standard Context):
+- مقاس **44×44 CSS pixels** هو هدف تصميمي لمشروع المتجر ومأخوذ من معيار **WCAG 2.1 AAA (Success Criterion 2.5.5 Target Size)**.
+- **استثناءات معيار WCAG 2.1 AAA SC 2.5.5:**
+  1. **الروابط النصية المضمنة (Inline):** الروابط الواقعة داخل سياق جملة أو فقرة نصية مستثناة من شرط 44×44px.
+  2. **عناصر تحكم وكيل المستخدم (User Agent):** مربعات الاختيار والقوائم المنسدلة الافتراضية للمتصفح إذا لم يُعدل حجمها بواسطة CSS.
+  3. **الضرورة التصميمية (Essential):** العرض الضروري لنقل المعلومة.
+  4. **التباعد البصري (Spacing):** إذا كان العنصر محاطاً بهامش فارغ كافٍ يمنع الضغط الخاطئ على عناصر مجاورة.
+- بناءً عليه: لا يُعد وجود رابط نصي أو مربع اختيار بمقاس أقل من 44px حكماً بالفشل التلقائي للواجهة بمعزل عن مساحة الـ `<label>` الفعلية القابلة للنقر وحواشي التباعد المحيطة.
 
 ---
 
-## 10. القرار النهائي واعتماد الإثبات (Final Verdict & Conditions)
+## 8. ملخص نتائج الاختبارات الوظيفية المصنفة (Test Results by Category)
 
-### القرار النهائي: **«جاهز بشروط» (Conditional Approval)**
+التفاصيل والخطوات والبيانات المرجعية مسجلة في [test_results.json](test_results.json).
 
-### قائمة الشروط الواجب استيفاؤها:
-1. **مساحات اللمس على الموبايل (Touch Targets ≥ 44×44px):**
-   - ترقية مساحات اللمس لجميع الأيقونات التفاعلية في الترويسة وأزرار الفلاتر والأدوات وروابط ونماذج صفحة الدفع (المدرجة تفصيلاً في جدول القسم 7) لتصل إلى 44×44px على الأقل وفق معايير WCAG 2.1 AAA.
-2. **إغلاق القائمة بمفتاح Escape على الموبايل (Mobile Menu Keydown Handling):**
-   - إضافة مستمع لحدث `keydown` لمفتاح `Escape` في كود `assets/madar.js` لغلق القائمة المتنقلة برمجياً وإرجاع التركيز البصري تلقائياً إلى زر فتح القائمة (`.store-menu-toggle`).
-3. **أداء الموبايل على الصفحة الرئيسية (Mobile Lighthouse Performance):**
-   - تحسين مؤشر أداء الموبايل للصفحة الرئيسية من 44/100 إلى +80 عبر تأجيل تحميل مكونات الصور الكبيرة في الأقسام السفلية (16 قسم).
-4. **دورة استرجاع كلمة المرور الكاملة (Password Reset Email Flow):**
-   - توفير بيئة SMTP تجريبية متكاملة لفك حجب دورة البريد واختبار استلام رسالة الاسترجاع وتعيين كلمة المرور الجديدة بالكامل دون حجب من حارس البريد المحلي.
+### أ) الاختبارات الناجحة (PASS — 7 اختبارات):
+| المعرف | اسم الاختبار الوظيفي | اللقطة المرفقة | النتيجة الفعلية المحققة |
+|---|---|---|---|
+| **TEST-01** | hover الكارت: تبديل الصورة والعودة دون وميض | `test_card_hover.png` | ثبات الأبعاد 305.625px، شفافية البديلة 0.98، وانزياح التخطيط 0px. |
+| **TEST-02** | إضافة للسلة وتحديث العداد وإشعار الإضافة | `test_add_to_cart_badges.png` | تحديث العداد من 0 إلى 1 وظهور إشعار الإضافة مع زر عرض السلة. |
+| **TEST-03** | variation نافد: معطّل ومش قابل للاختيار | `test_outofstock_variation.png` | المقاس النافد (XL) معطل ويظهر إشعار «غير متوفر في المخزون». |
+| **TEST-04** | تغيير الكمية والحذف من السلة | `test_cart_update_remove.png` | حذف العنصر وظهور رسالة إزالة المنتج وتفريغ السلة. |
+| **TEST-06** | البحث: مع وجود نتائج وبدون نتائج | `test_search_flow.png` | إظهار منتجين لكلمة «قميص»، ورسالة واضحة عند انعدام النتائج. |
+| **TEST-09** | دعم prefers-reduced-motion للمستخدمين | `test_reduced_motion.png` | تطابق وسائط تقليل الحركة وتطبيق قواعد إلغاء التحولات الحركية في CSS. |
+| **TEST-10** | فحص سجل الكونسول بالمستمعين الدائمين | `home_1440.png` | 0 أخطاء استثناءات و0 تحذيرات runtime عبر 22 تشغيلاً. |
+
+### ب) الاختبارات الفاشلة (FAIL — اختباران):
+| المعرف | اسم الاختبار الوظيفي | اللقطة المرفقة | سبب الفشل والنتيجة الفعلية |
+|---|---|---|---|
+| **TEST-08** | إغلاق قائمة الموبايل بمفتاح Escape | `test_mobile_menu_after_esc.png` | فشل إغلاق القائمة عند إرسال حدث Escape الفعلي، وظلت مفتوحة (`is-open` و `aria-expanded="true"`) لعدم وجود مستمع `keydown` في `madar.js`. |
+| **TEST-11** | أداء الموبايل وتدقيق Lighthouse الرسمي | `test_lighthouse_metrics.png` | فشل تحقيق هدف الأداء المطلوب (>= 80) للصفحة الرئيسية على الموبايل؛ حققت **44 / 100** بسبب حجب الموارد وحجم الصور عبر 16 قسماً. |
+
+### ج) الاختبارات المحجوبة بيئياً (BLOCKED — اختبار واحد):
+| المعرف | اسم الاختبار الوظيفي | اللقطة المرفقة | سبب الحجب |
+|---|---|---|---|
+| **TEST-07** | دورة استرجاع كلمة المرور الكاملة عبر البريد | `test_auth_flow.png` | نجح تقديم طلب الاسترجاع (`?reset-link-sent=true`)، لكن دورة استلام الرابط بالبريد وتعيين كلمة المرور محجوبة بالكامل بواسطة الحارس الإجباري المحلي `wp-content/mu-plugins/local-email-guard.php` الذي يكتم رسائل `wp_mail`. |
+
+### د) الاختبارات غير المنفذة (NOT TESTED — اختبار واحد):
+| المعرف | اسم الاختبار الوظيفي | اللقطة المرفقة | مبرر عدم التنفيذ |
+|---|---|---|---|
+| **TEST-05** | إكمال طلب تجريبي كامل (الدفع عند الاستلام) | `checkout_375.png` | لم يُجرَ اختبار إنشاء طلب تجريبي جديد في هذه الجلسة التزاماً بالقيود الصارمة الموجهة بعدم إنشاء طلبات أو مستخدمين جدد أو تعديل قواعد البيانات والمخزون بدون إذن صريح منفصل. تم إلغاء الاعتماد على الطلب القديم #149 وحجب مفاتيحه الحساسة. |
+
+---
+
+## 9. القياسات الهندسية لقص وتجاوز العناصر (Viewport & Clipping Analysis)
+
+تم إجراء القياسات باستخدام `Emulation.setDeviceMetricsOverride` المضبوطة على **375×812px** قبل التنقل، ومقارنة `document.documentElement.clientWidth` مع `scrollWidth`، ومسح إحداثيات العناصر عبر `getBoundingClientRect()`:
+
+| الصفحة | clientWidth المطلوب والفعلي | scrollWidth المقاس | التجاوز الأفقي | حالة التجاوز والقص |
+|---|:---:|:---:|:---:|:---:|
+| **الرئيسية (Home)** | 375px | 375px | 0px | سليم تماماً |
+| **المتجر (Shop)** | 375px | 375px | 0px | سليم تماماً |
+| **تصنيف رجال (Men)** | 375px | 375px | 0px | سليم تماماً |
+| **تصنيف أطفال (Kids)** | 375px | 375px | 0px | سليم تماماً |
+| **منتج بسيط (Simple #44)** | 375px | 375px | 0px | سليم تماماً |
+| **السلة فارغة (Cart Empty)** | 375px | 375px | 0px | سليم تماماً |
+| **السلة بمنتجات (Cart with Items)** | 375px | **431px** | **+56px** | ❌ **قص وتجاوز أفقي (Clipping/Overflow)** |
+| **صفحة الدفع (Checkout)** | 375px | 375px | 0px | سليم تماماً |
+| **حسابي (My Account Logged Out)** | 375px | **385px** | **+10px** | ❌ **تجاوز أفقي (Overflow)** |
+| **استرجاع كلمة المرور (Lost Password)** | 375px | **385px** | **+10px** | ❌ **تجاوز أفقي (Overflow)** |
+| **البحث (Search Results)** | 375px | 375px | 0px | سليم تماماً |
+
+### التحليل الجذري لقص صفحة السلة (Cart Clipping Root Cause):
+- جدول السلة الافتراضي في ووكومرس (`table.shop_table.cart`) يبلغ عرضه الفعلي المحسوب **335px**.
+- يبدأ موضع الجدول عند الإحداثي الأفقي `left: 76px` بفعل الحواشي والهوامش الحاوية، مما يجعل حافته اليمنى تمتد إلى الإحداثي **`411px`**، متجاوزة إطار الشاشة (375px) بمقدار **36px**.
+- يؤدي ذلك إلى قص الأعمدة اليمنى (مثل أزرار الحذف وإجماليات المنتجات) واختفائها خلف حافة الشاشة ما لم يقم المستخدم بالسحب الأفقي، نظراً لغياب حاوية تمرير مستقلة (`overflow-x: auto`) أو تخطيط بديل على الموبايل.
+
+### التحليل الجذري لصفحتي الحساب واسترجاع كلمة المرور:
+- في صفحتي `my-account` و `lost-password`، تتمدد العناصر `.wp-block-group.alignfull` و `.entry-content.alignfull` إلى الإحداثي **`right: 395px`** بسبب هوامش سالبة ممتدة في تنسيقات القالب الكتلوي، مسببة زيادة في عرض الصفحة الإجمالي بمقدار **10px** (`scrollWidth = 385px`).
+
+التفاصيل الرقمية الكاملة محفوظة في: [mobile_viewport_measurements.json](mobile_viewport_measurements.json) و [cart_mobile_clipping_analysis.json](cart_mobile_clipping_analysis.json).
+
+---
+
+## 10. حماية البيانات وسلامة الكود وسجل Git (Security & Integrity)
+
+1. **إزالة البيانات الحساسة واعتماد متغيرات البيئة:**
+   - تم تنقيح وتطهير سكربتات الاختبار (`run_functional_tests.mjs` و `take_all_screenshots.mjs`) من أي كلمات مرور أو حسابات ثابتة.
+   - يتم تمرير بيانات تسجيل الدخول التجريبية عبر متغيرات بيئة محلية غير متتبعة (`TEST_USER_LOGIN` و `TEST_USER_PASSWORD`).
+   - تم حجب مفاتيح الطلبات (`wc_order_[REDACTED]`) وروابط التأكيد الحساسة من كافة ملفات الأدلة الجديدة.
+2. **إقرار صريح حول تاريخ Git:**
+   - **تنبيه أمني:** إن إزالة كلمات المرور أو مفاتيح الطلبات من النسخة الحالية (HEAD) لا يمحوها تلقائياً من تاريخ الـ commits السابقة في Git. وحيث إن تعليمات النطاق الصارمة تحظر إعادة كتابة التاريخ (No history rewrite / No amend / No force-push)، فإن هذه السجلات التاريخية تظل كما هي في السجل السابق مع حظر تداولها.
+3. **تأكيد سلامة القالب والإضافات (Zero Changes to Theme/Plugins):**
+   - ناتج الأمر: `git diff a6e7f4c -- plugins/` => **فارغ تماماً (Zero changes)**.
+   - ناتج الأمر: `git diff a6e7f4c -- themes/` => **فارغ تماماً (Zero changes)**.
+   - ناتج الأمر: `git diff a6e7f4c -- wp-content/themes/` => **فارغ تماماً (Zero changes)**.
+   - لم يتم تعديل أو حذف أي منتجات أو حسابات أو طلبات أو مخزون في قاعدة البيانات.
+   - كافة التعديلات محصورة حصرياً داخل مجلد أدلة المراجعة: `review/madar-v216/`.

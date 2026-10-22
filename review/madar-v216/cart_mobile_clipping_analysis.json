@@ -1,0 +1,16 @@
+{
+  "winWidth": 431,
+  "docClientWidth": 375,
+  "docScrollWidth": 431,
+  "tableRect": {
+    "left": 76,
+    "right": 411,
+    "width": 335
+  },
+  "tableScrollWidth": 335,
+  "tableClientWidth": 335,
+  "clippedColumns": [],
+  "hasHorizontalScroll": true,
+  "actionsRect": {},
+  "couponRect": {}
+}

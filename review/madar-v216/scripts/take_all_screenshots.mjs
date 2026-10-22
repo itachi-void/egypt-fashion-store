@@ -103,7 +103,7 @@ async function run() {
             { name: "product_simple", url: "http://capability-test.local/?p=44" },
             { name: "cart", url: "http://capability-test.local/cart/" },
             { name: "checkout", url: "http://capability-test.local/checkout/" },
-            { name: "order_received", url: "http://capability-test.local/checkout/order-received/149/?key=wc_order_adsrmXJgyidJT" },
+            ...(process.env.TEST_ORDER_RECEIVED_URL ? [{ name: "order_received", url: process.env.TEST_ORDER_RECEIVED_URL }] : []),
             { name: "my_account_logged_out", url: "http://capability-test.local/my-account/" },
             { name: "lost_password", url: "http://capability-test.local/my-account/lost-password/" },
             { name: "search_results", url: "http://capability-test.local/?s=%D9%82%D9%85%D9%8A%D8%B5&post_type=product" },
@@ -190,22 +190,28 @@ async function run() {
             const client = await createClient("http://capability-test.local/my-account/");
             await sleep(3000);
 
-            // Login as customer
-            await client.send("Runtime.evaluate", {
-                expression: `(function() {
-                    const user = document.querySelector('#username');
-                    const pass = document.querySelector('#password');
-                    const btn = document.querySelector('button[name="login"]');
-                    if (user && pass && btn) {
-                        user.value = 'storefront-tester@example.com';
-                        pass.value = 'TestPass#Storefront2026';
-                        user.dispatchEvent(new Event('input', { bubbles: true }));
-                        pass.dispatchEvent(new Event('input', { bubbles: true }));
-                        btn.click();
-                    }
-                })()`
-            });
-            await sleep(4000);
+            // Login as customer if env credentials provided
+            const testUser = process.env.TEST_USER_LOGIN || '';
+            const testPassword = process.env.TEST_USER_PASSWORD || '';
+            if (testUser && testPassword) {
+                await client.send("Runtime.evaluate", {
+                    expression: `(function() {
+                        const user = document.querySelector('#username');
+                        const pass = document.querySelector('#password');
+                        const btn = document.querySelector('button[name="login"]');
+                        if (user && pass && btn) {
+                            user.value = ${JSON.stringify(testUser)};
+                            pass.value = ${JSON.stringify(testPassword)};
+                            user.dispatchEvent(new Event('input', { bubbles: true }));
+                            pass.dispatchEvent(new Event('input', { bubbles: true }));
+                            btn.click();
+                        }
+                    })()`
+                });
+                await sleep(4000);
+            } else {
+                console.log("No customer credentials in env (TEST_USER_LOGIN/TEST_USER_PASSWORD); skipping login submission.");
+            }
 
             console.log("Capturing my_account_logged_in @ 375px...");
             await capturePair(client, "my_account_logged_in", 375, 812, true);

@@ -1,0 +1,200 @@
+{
+  "home_375": {
+    "url": "http://capability-test.local/",
+    "viewport": "375x812",
+    "warningCount": 0,
+    "errorCount": 0,
+    "warnings": [],
+    "errors": [],
+    "exceptions": []
+  },
+  "shop_375": {
+    "url": "http://capability-test.local/shop/",
+    "viewport": "375x812",
+    "warningCount": 0,
+    "errorCount": 0,
+    "warnings": [],
+    "errors": [],
+    "exceptions": []
+  },
+  "category_men_375": {
+    "url": "http://capability-test.local/product-category/men/",
+    "viewport": "375x812",
+    "warningCount": 0,
+    "errorCount": 0,
+    "warnings": [],
+    "errors": [],
+    "exceptions": []
+  },
+  "category_kids_375": {
+    "url": "http://capability-test.local/product-category/kids/",
+    "viewport": "375x812",
+    "warningCount": 0,
+    "errorCount": 0,
+    "warnings": [],
+    "errors": [],
+    "exceptions": []
+  },
+  "product_simple_375": {
+    "url": "http://capability-test.local/?p=44",
+    "viewport": "375x812",
+    "warningCount": 0,
+    "errorCount": 0,
+    "warnings": [],
+    "errors": [],
+    "exceptions": []
+  },
+  "product_variable_375": {
+    "url": "http://capability-test.local/?p=24",
+    "viewport": "375x812",
+    "warningCount": 0,
+    "errorCount": 0,
+    "warnings": [],
+    "errors": [],
+    "exceptions": []
+  },
+  "cart_375": {
+    "url": "http://capability-test.local/cart/",
+    "viewport": "375x812",
+    "warningCount": 0,
+    "errorCount": 0,
+    "warnings": [],
+    "errors": [],
+    "exceptions": []
+  },
+  "checkout_375": {
+    "url": "http://capability-test.local/checkout/",
+    "viewport": "375x812",
+    "warningCount": 0,
+    "errorCount": 0,
+    "warnings": [],
+    "errors": [],
+    "exceptions": []
+  },
+  "my_account_logged_out_375": {
+    "url": "http://capability-test.local/my-account/",
+    "viewport": "375x812",
+    "warningCount": 0,
+    "errorCount": 0,
+    "warnings": [],
+    "errors": [],
+    "exceptions": []
+  },
+  "lost_password_375": {
+    "url": "http://capability-test.local/my-account/lost-password/",
+    "viewport": "375x812",
+    "warningCount": 0,
+    "errorCount": 0,
+    "warnings": [],
+    "errors": [],
+    "exceptions": []
+  },
+  "search_results_375": {
+    "url": "http://capability-test.local/?s=%D9%82%D9%85%D9%8A%D8%B5&post_type=product",
+    "viewport": "375x812",
+    "warningCount": 0,
+    "errorCount": 0,
+    "warnings": [],
+    "errors": [],
+    "exceptions": []
+  },
+  "home_1440": {
+    "url": "http://capability-test.local/",
+    "viewport": "1440x900",
+    "warningCount": 0,
+    "errorCount": 0,
+    "warnings": [],
+    "errors": [],
+    "exceptions": []
+  },
+  "shop_1440": {
+    "url": "http://capability-test.local/shop/",
+    "viewport": "1440x900",
+    "warningCount": 0,
+    "errorCount": 0,
+    "warnings": [],
+    "errors": [],
+    "exceptions": []
+  },
+  "category_men_1440": {
+    "url": "http://capability-test.local/product-category/men/",
+    "viewport": "1440x900",
+    "warningCount": 0,
+    "errorCount": 0,
+    "warnings": [],
+    "errors": [],
+    "exceptions": []
+  },
+  "category_kids_1440": {
+    "url": "http://capability-test.local/product-category/kids/",
+    "viewport": "1440x900",
+    "warningCount": 0,
+    "errorCount": 0,
+    "warnings": [],
+    "errors": [],
+    "exceptions": []
+  },
+  "product_simple_1440": {
+    "url": "http://capability-test.local/?p=44",
+    "viewport": "1440x900",
+    "warningCount": 0,
+    "errorCount": 0,
+    "warnings": [],
+    "errors": [],
+    "exceptions": []
+  },
+  "product_variable_1440": {
+    "url": "http://capability-test.local/?p=24",
+    "viewport": "1440x900",
+    "warningCount": 0,
+    "errorCount": 0,
+    "warnings": [],
+    "errors": [],
+    "exceptions": []
+  },
+  "cart_1440": {
+    "url": "http://capability-test.local/cart/",
+    "viewport": "1440x900",
+    "warningCount": 0,
+    "errorCount": 0,
+    "warnings": [],
+    "errors": [],
+    "exceptions": []
+  },
+  "checkout_1440": {
+    "url": "http://capability-test.local/checkout/",
+    "viewport": "1440x900",
+    "warningCount": 0,
+    "errorCount": 0,
+    "warnings": [],
+    "errors": [],
+    "exceptions": []
+  },
+  "my_account_logged_out_1440": {
+    "url": "http://capability-test.local/my-account/",
+    "viewport": "1440x900",
+    "warningCount": 0,
+    "errorCount": 0,
+    "warnings": [],
+    "errors": [],
+    "exceptions": []
+  },
+  "lost_password_1440": {
+    "url": "http://capability-test.local/my-account/lost-password/",
+    "viewport": "1440x900",
+    "warningCount": 0,
+    "errorCount": 0,
+    "warnings": [],
+    "errors": [],
+    "exceptions": []
+  },
+  "search_results_1440": {
+    "url": "http://capability-test.local/?s=%D9%82%D9%85%D9%8A%D8%B5&post_type=product",
+    "viewport": "1440x900",
+    "warningCount": 0,
+    "errorCount": 0,
+    "warnings": [],
+    "errors": [],
+    "exceptions": []
+  }
+}
