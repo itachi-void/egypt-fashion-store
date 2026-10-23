@@ -4,56 +4,32 @@ Your branch is up to date with 'origin/review/local-snapshot'.
 
 Changes to be committed:
   (use "git restore --staged <file>..." to unstage)
-	new file:   review/madar-v216/cart_mobile_clipping_analysis.json
-	new file:   review/madar-v216/console_audit_log.json
-	modified:   review/madar-v216/measurements.json
-	modified:   review/madar-v216/measurements.md
-	new file:   review/madar-v216/menu_escape_trace.json
-	new file:   review/madar-v216/mobile_viewport_measurements.json
+	modified:   review/madar-v216/console_audit_log.json
+	modified:   review/madar-v216/git_status_and_log.txt
 	modified:   review/madar-v216/report.md
-	modified:   review/madar-v216/screenshots/header_menu_open_375.png
-	modified:   review/madar-v216/screenshots/test_add_to_cart_badges.png
+	modified:   review/madar-v216/screenshots/test_auth_flow.png
 	modified:   review/madar-v216/screenshots/test_card_hover.png
-	modified:   review/madar-v216/screenshots/test_cart_update_remove.png
-	modified:   review/madar-v216/screenshots/test_mobile_menu_after_esc.png
-	modified:   review/madar-v216/screenshots/test_mobile_menu_esc.png
-	modified:   review/madar-v216/screenshots/test_mobile_menu_open.png
 	modified:   review/madar-v216/screenshots/test_outofstock_variation.png
-	modified:   review/madar-v216/screenshots/test_search_flow.png
+	modified:   review/madar-v216/screenshots/test_reduced_motion.png
+	new file:   review/madar-v216/scripts/audit_console.mjs
 	modified:   review/madar-v216/scripts/run_functional_tests.mjs
-	modified:   review/madar-v216/scripts/take_all_screenshots.mjs
 	modified:   review/madar-v216/test_results.json
-	new file:   review/madar-v216/touch_targets_full.json
-	modified:   review/madar-v216/touch_targets_table.md
-
 
 === STAGED CHANGES STAT ===
- .../madar-v216/cart_mobile_clipping_analysis.json  |   16 +
- review/madar-v216/console_audit_log.json           |  200 ++
- review/madar-v216/measurements.json                |  139 +-
- review/madar-v216/measurements.md                  |  109 +-
- review/madar-v216/menu_escape_trace.json           |   42 +
- .../madar-v216/mobile_viewport_measurements.json   |  179 ++
- review/madar-v216/report.md                        |  328 ++-
- .../screenshots/header_menu_open_375.png           |  Bin 70174 -> 62912 bytes
- .../screenshots/test_add_to_cart_badges.png        |  Bin 27220 -> 68884 bytes
- review/madar-v216/screenshots/test_card_hover.png  |  Bin 817864 -> 809205 bytes
- .../screenshots/test_cart_update_remove.png        |  Bin 24979 -> 51780 bytes
- .../screenshots/test_mobile_menu_after_esc.png     |  Bin 99687 -> 70174 bytes
- .../screenshots/test_mobile_menu_esc.png           |  Bin 99687 -> 62912 bytes
- .../screenshots/test_mobile_menu_open.png          |  Bin 70174 -> 62912 bytes
- .../screenshots/test_outofstock_variation.png      |  Bin 76970 -> 56039 bytes
- review/madar-v216/screenshots/test_search_flow.png |  Bin 33313 -> 68914 bytes
- review/madar-v216/scripts/run_functional_tests.mjs |  590 ++--
- review/madar-v216/scripts/take_all_screenshots.mjs |   40 +-
- review/madar-v216/test_results.json                |   92 +-
- review/madar-v216/touch_targets_full.json          | 2810 ++++++++++++++++++++
- review/madar-v216/touch_targets_table.md           |  288 +-
- 21 files changed, 4199 insertions(+), 634 deletions(-)
+ review/madar-v216/console_audit_log.json           | 696 +++++++++++++++------
+ review/madar-v216/report.md                        | 282 ++++-----
+ review/madar-v216/screenshots/test_auth_flow.png   | Bin 33345 -> 60916 bytes
+ review/madar-v216/screenshots/test_card_hover.png  | Bin 809205 -> 822158 bytes
+ .../screenshots/test_outofstock_variation.png      | Bin 56039 -> 286997 bytes
+ .../madar-v216/screenshots/test_reduced_motion.png | Bin 31522 -> 3955 bytes
+ review/madar-v216/scripts/audit_console.mjs        | 257 ++++++++
+ review/madar-v216/scripts/run_functional_tests.mjs | 532 ++++++++++------
+ review/madar-v216/test_results.json                |  88 +--
+ 9 files changed, 1266 insertions(+), 589 deletions(-)
 
 === RECENT COMMITS ===
-e364bb7 (HEAD -> review/local-snapshot, origin/review/local-snapshot) review: madar 2.1.6 proof correction — separate checkout, lighthouse reports, menu esc trace, full lazy captures, touch table, blocked auth
+44f2596 review: correct test reliability, empirical clipping, escape fail trace, and sanitize secrets
+e364bb7 review: madar 2.1.6 proof correction — separate checkout, lighthouse reports, menu esc trace, full lazy captures, touch table, blocked auth
 c04b79d review: madar 2.1.6 proof completion — 375/1440 screenshots, measurements, tests, zip
 a6e7f4c review: madar theme 2.1.6; hover bug fix, complete section alignment and verification suite
 b71fc6c review: madar theme 2.1.0 verification with shop hover screenshot and order #149
-c654477 review: madar theme 2.1.0; demo content, lookbook, journal, and trust features

@@ -1,200 +1,506 @@
 {
-  "home_375": {
-    "url": "http://capability-test.local/",
-    "viewport": "375x812",
-    "warningCount": 0,
-    "errorCount": 0,
-    "warnings": [],
-    "errors": [],
-    "exceptions": []
+  "runMetadata": {
+    "script": "review/madar-v216/scripts/audit_console.mjs",
+    "timestamp": "2026-10-23T11:41:07.826Z",
+    "environment": "capability-test.local",
+    "methodology": "CDP permanent listeners attached before Emulation and Page.navigate",
+    "totalRuns": 22,
+    "expectedRuns": 22,
+    "allRunsSuccessful": true
   },
-  "shop_375": {
-    "url": "http://capability-test.local/shop/",
-    "viewport": "375x812",
-    "warningCount": 0,
-    "errorCount": 0,
-    "warnings": [],
-    "errors": [],
-    "exceptions": []
+  "canaryVerification": {
+    "executedAt": "2026-10-23T11:39:29.383Z",
+    "isolatedTarget": "about:blank",
+    "capturedWarning": true,
+    "capturedError": true,
+    "passed": true
   },
-  "category_men_375": {
-    "url": "http://capability-test.local/product-category/men/",
-    "viewport": "375x812",
-    "warningCount": 0,
-    "errorCount": 0,
-    "warnings": [],
-    "errors": [],
-    "exceptions": []
+  "summary": {
+    "totalRuns": 22,
+    "totalUnhandledExceptions": 0,
+    "totalErrors": 0,
+    "totalWarnings": 0,
+    "overallStatus": "CLEAN"
   },
-  "category_kids_375": {
-    "url": "http://capability-test.local/product-category/kids/",
-    "viewport": "375x812",
-    "warningCount": 0,
-    "errorCount": 0,
-    "warnings": [],
-    "errors": [],
-    "exceptions": []
-  },
-  "product_simple_375": {
-    "url": "http://capability-test.local/?p=44",
-    "viewport": "375x812",
-    "warningCount": 0,
-    "errorCount": 0,
-    "warnings": [],
-    "errors": [],
-    "exceptions": []
-  },
-  "product_variable_375": {
-    "url": "http://capability-test.local/?p=24",
-    "viewport": "375x812",
-    "warningCount": 0,
-    "errorCount": 0,
-    "warnings": [],
-    "errors": [],
-    "exceptions": []
-  },
-  "cart_375": {
-    "url": "http://capability-test.local/cart/",
-    "viewport": "375x812",
-    "warningCount": 0,
-    "errorCount": 0,
-    "warnings": [],
-    "errors": [],
-    "exceptions": []
-  },
-  "checkout_375": {
-    "url": "http://capability-test.local/checkout/",
-    "viewport": "375x812",
-    "warningCount": 0,
-    "errorCount": 0,
-    "warnings": [],
-    "errors": [],
-    "exceptions": []
-  },
-  "my_account_logged_out_375": {
-    "url": "http://capability-test.local/my-account/",
-    "viewport": "375x812",
-    "warningCount": 0,
-    "errorCount": 0,
-    "warnings": [],
-    "errors": [],
-    "exceptions": []
-  },
-  "lost_password_375": {
-    "url": "http://capability-test.local/my-account/lost-password/",
-    "viewport": "375x812",
-    "warningCount": 0,
-    "errorCount": 0,
-    "warnings": [],
-    "errors": [],
-    "exceptions": []
-  },
-  "search_results_375": {
-    "url": "http://capability-test.local/?s=%D9%82%D9%85%D9%8A%D8%B5&post_type=product",
-    "viewport": "375x812",
-    "warningCount": 0,
-    "errorCount": 0,
-    "warnings": [],
-    "errors": [],
-    "exceptions": []
-  },
-  "home_1440": {
-    "url": "http://capability-test.local/",
-    "viewport": "1440x900",
-    "warningCount": 0,
-    "errorCount": 0,
-    "warnings": [],
-    "errors": [],
-    "exceptions": []
-  },
-  "shop_1440": {
-    "url": "http://capability-test.local/shop/",
-    "viewport": "1440x900",
-    "warningCount": 0,
-    "errorCount": 0,
-    "warnings": [],
-    "errors": [],
-    "exceptions": []
-  },
-  "category_men_1440": {
-    "url": "http://capability-test.local/product-category/men/",
-    "viewport": "1440x900",
-    "warningCount": 0,
-    "errorCount": 0,
-    "warnings": [],
-    "errors": [],
-    "exceptions": []
-  },
-  "category_kids_1440": {
-    "url": "http://capability-test.local/product-category/kids/",
-    "viewport": "1440x900",
-    "warningCount": 0,
-    "errorCount": 0,
-    "warnings": [],
-    "errors": [],
-    "exceptions": []
-  },
-  "product_simple_1440": {
-    "url": "http://capability-test.local/?p=44",
-    "viewport": "1440x900",
-    "warningCount": 0,
-    "errorCount": 0,
-    "warnings": [],
-    "errors": [],
-    "exceptions": []
-  },
-  "product_variable_1440": {
-    "url": "http://capability-test.local/?p=24",
-    "viewport": "1440x900",
-    "warningCount": 0,
-    "errorCount": 0,
-    "warnings": [],
-    "errors": [],
-    "exceptions": []
-  },
-  "cart_1440": {
-    "url": "http://capability-test.local/cart/",
-    "viewport": "1440x900",
-    "warningCount": 0,
-    "errorCount": 0,
-    "warnings": [],
-    "errors": [],
-    "exceptions": []
-  },
-  "checkout_1440": {
-    "url": "http://capability-test.local/checkout/",
-    "viewport": "1440x900",
-    "warningCount": 0,
-    "errorCount": 0,
-    "warnings": [],
-    "errors": [],
-    "exceptions": []
-  },
-  "my_account_logged_out_1440": {
-    "url": "http://capability-test.local/my-account/",
-    "viewport": "1440x900",
-    "warningCount": 0,
-    "errorCount": 0,
-    "warnings": [],
-    "errors": [],
-    "exceptions": []
-  },
-  "lost_password_1440": {
-    "url": "http://capability-test.local/my-account/lost-password/",
-    "viewport": "1440x900",
-    "warningCount": 0,
-    "errorCount": 0,
-    "warnings": [],
-    "errors": [],
-    "exceptions": []
-  },
-  "search_results_1440": {
-    "url": "http://capability-test.local/?s=%D9%82%D9%85%D9%8A%D8%B5&post_type=product",
-    "viewport": "1440x900",
-    "warningCount": 0,
-    "errorCount": 0,
-    "warnings": [],
-    "errors": [],
-    "exceptions": []
-  }
+  "runs": [
+    {
+      "runKey": "home_375",
+      "pageName": "home",
+      "requestedUrl": "http://capability-test.local/",
+      "finalUrl": "http://capability-test.local/",
+      "viewport": {
+        "width": 375,
+        "height": 812,
+        "mobile": true
+      },
+      "status": "OK",
+      "timestamp": "2026-10-23T11:39:34.162Z",
+      "errorCount": 0,
+      "warningCount": 0,
+      "unhandledExceptions": [],
+      "calls": []
+    },
+    {
+      "runKey": "home_1440",
+      "pageName": "home",
+      "requestedUrl": "http://capability-test.local/",
+      "finalUrl": "http://capability-test.local/",
+      "viewport": {
+        "width": 1440,
+        "height": 900,
+        "mobile": false
+      },
+      "status": "OK",
+      "timestamp": "2026-10-23T11:39:38.204Z",
+      "errorCount": 0,
+      "warningCount": 0,
+      "unhandledExceptions": [],
+      "calls": [
+        {
+          "type": "log",
+          "message": "JQMIGRATE: Migrate is installed, version 3.4.1"
+        }
+      ]
+    },
+    {
+      "runKey": "shop_375",
+      "pageName": "shop",
+      "requestedUrl": "http://capability-test.local/shop/",
+      "finalUrl": "http://capability-test.local/shop/",
+      "viewport": {
+        "width": 375,
+        "height": 812,
+        "mobile": true
+      },
+      "status": "OK",
+      "timestamp": "2026-10-23T11:39:43.803Z",
+      "errorCount": 0,
+      "warningCount": 0,
+      "unhandledExceptions": [],
+      "calls": [
+        {
+          "type": "log",
+          "message": "JQMIGRATE: Migrate is installed, version 3.4.1"
+        }
+      ]
+    },
+    {
+      "runKey": "shop_1440",
+      "pageName": "shop",
+      "requestedUrl": "http://capability-test.local/shop/",
+      "finalUrl": "http://capability-test.local/shop/",
+      "viewport": {
+        "width": 1440,
+        "height": 900,
+        "mobile": false
+      },
+      "status": "OK",
+      "timestamp": "2026-10-23T11:39:48.668Z",
+      "errorCount": 0,
+      "warningCount": 0,
+      "unhandledExceptions": [],
+      "calls": [
+        {
+          "type": "log",
+          "message": "JQMIGRATE: Migrate is installed, version 3.4.1"
+        }
+      ]
+    },
+    {
+      "runKey": "category_men_375",
+      "pageName": "category_men",
+      "requestedUrl": "http://capability-test.local/product-category/men/",
+      "finalUrl": "http://capability-test.local/product-category/men/",
+      "viewport": {
+        "width": 375,
+        "height": 812,
+        "mobile": true
+      },
+      "status": "OK",
+      "timestamp": "2026-10-23T11:39:53.020Z",
+      "errorCount": 0,
+      "warningCount": 0,
+      "unhandledExceptions": [],
+      "calls": [
+        {
+          "type": "log",
+          "message": "JQMIGRATE: Migrate is installed, version 3.4.1"
+        }
+      ]
+    },
+    {
+      "runKey": "category_men_1440",
+      "pageName": "category_men",
+      "requestedUrl": "http://capability-test.local/product-category/men/",
+      "finalUrl": "http://capability-test.local/product-category/men/",
+      "viewport": {
+        "width": 1440,
+        "height": 900,
+        "mobile": false
+      },
+      "status": "OK",
+      "timestamp": "2026-10-23T11:39:57.349Z",
+      "errorCount": 0,
+      "warningCount": 0,
+      "unhandledExceptions": [],
+      "calls": [
+        {
+          "type": "log",
+          "message": "JQMIGRATE: Migrate is installed, version 3.4.1"
+        }
+      ]
+    },
+    {
+      "runKey": "category_kids_375",
+      "pageName": "category_kids",
+      "requestedUrl": "http://capability-test.local/product-category/kids/",
+      "finalUrl": "http://capability-test.local/product-category/kids/",
+      "viewport": {
+        "width": 375,
+        "height": 812,
+        "mobile": true
+      },
+      "status": "OK",
+      "timestamp": "2026-10-23T11:40:01.616Z",
+      "errorCount": 0,
+      "warningCount": 0,
+      "unhandledExceptions": [],
+      "calls": [
+        {
+          "type": "log",
+          "message": "JQMIGRATE: Migrate is installed, version 3.4.1"
+        }
+      ]
+    },
+    {
+      "runKey": "category_kids_1440",
+      "pageName": "category_kids",
+      "requestedUrl": "http://capability-test.local/product-category/kids/",
+      "finalUrl": "http://capability-test.local/product-category/kids/",
+      "viewport": {
+        "width": 1440,
+        "height": 900,
+        "mobile": false
+      },
+      "status": "OK",
+      "timestamp": "2026-10-23T11:40:05.768Z",
+      "errorCount": 0,
+      "warningCount": 0,
+      "unhandledExceptions": [],
+      "calls": [
+        {
+          "type": "log",
+          "message": "JQMIGRATE: Migrate is installed, version 3.4.1"
+        }
+      ]
+    },
+    {
+      "runKey": "product_simple_375",
+      "pageName": "product_simple",
+      "requestedUrl": "http://capability-test.local/?p=44",
+      "finalUrl": "http://capability-test.local/product/%d9%86%d8%b8%d8%a7%d8%b1%d8%a9-%d8%b4%d9%85%d8%b3%d9%8a%d8%a9-%d9%83%d9%84%d8%a7%d8%b3%d9%8a%d9%83%d9%8a%d8%a9-%d8%aa%d8%ac%d8%b1%d9%8a%d8%a8%d9%8a/",
+      "viewport": {
+        "width": 375,
+        "height": 812,
+        "mobile": true
+      },
+      "status": "OK",
+      "timestamp": "2026-10-23T11:40:10.214Z",
+      "errorCount": 0,
+      "warningCount": 0,
+      "unhandledExceptions": [],
+      "calls": [
+        {
+          "type": "log",
+          "message": "JQMIGRATE: Migrate is installed, version 3.4.1"
+        }
+      ]
+    },
+    {
+      "runKey": "product_simple_1440",
+      "pageName": "product_simple",
+      "requestedUrl": "http://capability-test.local/?p=44",
+      "finalUrl": "http://capability-test.local/product/%d9%86%d8%b8%d8%a7%d8%b1%d8%a9-%d8%b4%d9%85%d8%b3%d9%8a%d8%a9-%d9%83%d9%84%d8%a7%d8%b3%d9%8a%d9%83%d9%8a%d8%a9-%d8%aa%d8%ac%d8%b1%d9%8a%d8%a8%d9%8a/",
+      "viewport": {
+        "width": 1440,
+        "height": 900,
+        "mobile": false
+      },
+      "status": "OK",
+      "timestamp": "2026-10-23T11:40:14.814Z",
+      "errorCount": 0,
+      "warningCount": 0,
+      "unhandledExceptions": [],
+      "calls": [
+        {
+          "type": "log",
+          "message": "JQMIGRATE: Migrate is installed, version 3.4.1"
+        }
+      ]
+    },
+    {
+      "runKey": "product_variable_375",
+      "pageName": "product_variable",
+      "requestedUrl": "http://capability-test.local/?p=141",
+      "finalUrl": "http://capability-test.local/product/%d9%85%d8%b9%d8%b7%d9%81-%d8%b5%d9%88%d9%81-%d8%a8%d9%84%d9%88%d9%86-%d8%a7%d9%84%d8%ac%d9%85%d9%84/",
+      "viewport": {
+        "width": 375,
+        "height": 812,
+        "mobile": true
+      },
+      "status": "OK",
+      "timestamp": "2026-10-23T11:40:19.276Z",
+      "errorCount": 0,
+      "warningCount": 0,
+      "unhandledExceptions": [],
+      "calls": [
+        {
+          "type": "log",
+          "message": "JQMIGRATE: Migrate is installed, version 3.4.1"
+        }
+      ]
+    },
+    {
+      "runKey": "product_variable_1440",
+      "pageName": "product_variable",
+      "requestedUrl": "http://capability-test.local/?p=141",
+      "finalUrl": "http://capability-test.local/product/%d9%85%d8%b9%d8%b7%d9%81-%d8%b5%d9%88%d9%81-%d8%a8%d9%84%d9%88%d9%86-%d8%a7%d9%84%d8%ac%d9%85%d9%84/",
+      "viewport": {
+        "width": 1440,
+        "height": 900,
+        "mobile": false
+      },
+      "status": "OK",
+      "timestamp": "2026-10-23T11:40:23.969Z",
+      "errorCount": 0,
+      "warningCount": 0,
+      "unhandledExceptions": [],
+      "calls": [
+        {
+          "type": "log",
+          "message": "JQMIGRATE: Migrate is installed, version 3.4.1"
+        }
+      ]
+    },
+    {
+      "runKey": "cart_375",
+      "pageName": "cart",
+      "requestedUrl": "http://capability-test.local/cart/",
+      "finalUrl": "http://capability-test.local/cart/",
+      "viewport": {
+        "width": 375,
+        "height": 812,
+        "mobile": true
+      },
+      "status": "OK",
+      "timestamp": "2026-10-23T11:40:28.190Z",
+      "errorCount": 0,
+      "warningCount": 0,
+      "unhandledExceptions": [],
+      "calls": [
+        {
+          "type": "log",
+          "message": "JQMIGRATE: Migrate is installed, version 3.4.1"
+        }
+      ]
+    },
+    {
+      "runKey": "cart_1440",
+      "pageName": "cart",
+      "requestedUrl": "http://capability-test.local/cart/",
+      "finalUrl": "http://capability-test.local/cart/",
+      "viewport": {
+        "width": 1440,
+        "height": 900,
+        "mobile": false
+      },
+      "status": "OK",
+      "timestamp": "2026-10-23T11:40:32.259Z",
+      "errorCount": 0,
+      "warningCount": 0,
+      "unhandledExceptions": [],
+      "calls": [
+        {
+          "type": "log",
+          "message": "JQMIGRATE: Migrate is installed, version 3.4.1"
+        }
+      ]
+    },
+    {
+      "runKey": "checkout_375",
+      "pageName": "checkout",
+      "requestedUrl": "http://capability-test.local/checkout/",
+      "finalUrl": "http://capability-test.local/cart/",
+      "viewport": {
+        "width": 375,
+        "height": 812,
+        "mobile": true
+      },
+      "status": "OK",
+      "timestamp": "2026-10-23T11:40:36.416Z",
+      "errorCount": 0,
+      "warningCount": 0,
+      "unhandledExceptions": [],
+      "calls": [
+        {
+          "type": "log",
+          "message": "JQMIGRATE: Migrate is installed, version 3.4.1"
+        }
+      ]
+    },
+    {
+      "runKey": "checkout_1440",
+      "pageName": "checkout",
+      "requestedUrl": "http://capability-test.local/checkout/",
+      "finalUrl": "http://capability-test.local/cart/",
+      "viewport": {
+        "width": 1440,
+        "height": 900,
+        "mobile": false
+      },
+      "status": "OK",
+      "timestamp": "2026-10-23T11:40:40.603Z",
+      "errorCount": 0,
+      "warningCount": 0,
+      "unhandledExceptions": [],
+      "calls": [
+        {
+          "type": "log",
+          "message": "JQMIGRATE: Migrate is installed, version 3.4.1"
+        }
+      ]
+    },
+    {
+      "runKey": "my_account_logged_out_375",
+      "pageName": "my_account_logged_out",
+      "requestedUrl": "http://capability-test.local/my-account/",
+      "finalUrl": "http://capability-test.local/my-account/",
+      "viewport": {
+        "width": 375,
+        "height": 812,
+        "mobile": true
+      },
+      "status": "OK",
+      "timestamp": "2026-10-23T11:40:45.938Z",
+      "errorCount": 0,
+      "warningCount": 0,
+      "unhandledExceptions": [],
+      "calls": [
+        {
+          "type": "log",
+          "message": "JQMIGRATE: Migrate is installed, version 3.4.1"
+        }
+      ]
+    },
+    {
+      "runKey": "my_account_logged_out_1440",
+      "pageName": "my_account_logged_out",
+      "requestedUrl": "http://capability-test.local/my-account/",
+      "finalUrl": "http://capability-test.local/my-account/",
+      "viewport": {
+        "width": 1440,
+        "height": 900,
+        "mobile": false
+      },
+      "status": "OK",
+      "timestamp": "2026-10-23T11:40:50.308Z",
+      "errorCount": 0,
+      "warningCount": 0,
+      "unhandledExceptions": [],
+      "calls": [
+        {
+          "type": "log",
+          "message": "JQMIGRATE: Migrate is installed, version 3.4.1"
+        }
+      ]
+    },
+    {
+      "runKey": "lost_password_375",
+      "pageName": "lost_password",
+      "requestedUrl": "http://capability-test.local/my-account/lost-password/",
+      "finalUrl": "http://capability-test.local/my-account/lost-password/",
+      "viewport": {
+        "width": 375,
+        "height": 812,
+        "mobile": true
+      },
+      "status": "OK",
+      "timestamp": "2026-10-23T11:40:54.521Z",
+      "errorCount": 0,
+      "warningCount": 0,
+      "unhandledExceptions": [],
+      "calls": [
+        {
+          "type": "log",
+          "message": "JQMIGRATE: Migrate is installed, version 3.4.1"
+        }
+      ]
+    },
+    {
+      "runKey": "lost_password_1440",
+      "pageName": "lost_password",
+      "requestedUrl": "http://capability-test.local/my-account/lost-password/",
+      "finalUrl": "http://capability-test.local/my-account/lost-password/",
+      "viewport": {
+        "width": 1440,
+        "height": 900,
+        "mobile": false
+      },
+      "status": "OK",
+      "timestamp": "2026-10-23T11:40:58.915Z",
+      "errorCount": 0,
+      "warningCount": 0,
+      "unhandledExceptions": [],
+      "calls": [
+        {
+          "type": "log",
+          "message": "JQMIGRATE: Migrate is installed, version 3.4.1"
+        }
+      ]
+    },
+    {
+      "runKey": "search_results_375",
+      "pageName": "search_results",
+      "requestedUrl": "http://capability-test.local/?s=%D9%82%D9%85%D9%8A%D8%B5&post_type=product",
+      "finalUrl": "http://capability-test.local/?s=%D9%82%D9%85%D9%8A%D8%B5&post_type=product",
+      "viewport": {
+        "width": 375,
+        "height": 812,
+        "mobile": true
+      },
+      "status": "OK",
+      "timestamp": "2026-10-23T11:41:03.376Z",
+      "errorCount": 0,
+      "warningCount": 0,
+      "unhandledExceptions": [],
+      "calls": [
+        {
+          "type": "log",
+          "message": "JQMIGRATE: Migrate is installed, version 3.4.1"
+        }
+      ]
+    },
+    {
+      "runKey": "search_results_1440",
+      "pageName": "search_results",
+      "requestedUrl": "http://capability-test.local/?s=%D9%82%D9%85%D9%8A%D8%B5&post_type=product",
+      "finalUrl": "http://capability-test.local/?s=%D9%82%D9%85%D9%8A%D8%B5&post_type=product",
+      "viewport": {
+        "width": 1440,
+        "height": 900,
+        "mobile": false
+      },
+      "status": "OK",
+      "timestamp": "2026-10-23T11:41:07.826Z",
+      "errorCount": 0,
+      "warningCount": 0,
+      "unhandledExceptions": [],
+      "calls": [
+        {
+          "type": "log",
+          "message": "JQMIGRATE: Migrate is installed, version 3.4.1"
+        }
+      ]
+    }
+  ]
 }
