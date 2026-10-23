@@ -1,0 +1,40 @@
+{
+  "taskId": "MADAR-AG-002C",
+  "sourceCommit": "69bf80a72dfd014bfe2cf8c2ab360c3ee8e1aecd",
+  "guardVersion": "1.0.0",
+  "capturedAt": null,
+  "files": [
+    {
+      "fileName": "baseline-desktop-1440.png",
+      "bytes": 6924493,
+      "sha256": "9c407efe0f6904f2806845000d0fd77a2471f1887dacf85c9992d0017c01a580",
+      "pngDimensions": {
+        "width": 1425,
+        "height": 11138
+      },
+      "reported_capture_measurements": {
+        "viewport": "1440x1000",
+        "clientWidth": 1425,
+        "scrollWidth": 1425,
+        "scrollHeight": 11138,
+        "fontStatus": "loaded"
+      }
+    },
+    {
+      "fileName": "baseline-mobile-375.png",
+      "bytes": 8181941,
+      "sha256": "afb97428843eb0273775d0f9c9b01e586edfebc299ff6e0a39979f4ce3695cda",
+      "pngDimensions": {
+        "width": 750,
+        "height": 23344
+      },
+      "reported_capture_measurements": {
+        "viewport": "375x812",
+        "clientWidth": 375,
+        "scrollWidth": 375,
+        "scrollHeight": 11672,
+        "fontStatus": "loaded"
+      }
+    }
+  ]
+}
