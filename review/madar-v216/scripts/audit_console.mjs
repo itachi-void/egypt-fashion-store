@@ -172,14 +172,42 @@ async function runConsoleAudit() {
                 let finalUrl = p.url;
 
                 try {
-                    await client.send("Page.navigate", { url: p.url });
+                    if (p.name === 'checkout') {
+                        // Pre-populate session cart with existing item so WooCommerce does not redirect /checkout/ to /cart/
+                        await client.send("Page.navigate", { url: "http://capability-test.local/?add-to-cart=44" });
+                        await sleep(2500);
+                    }
+
+                    const navRes = await client.send("Page.navigate", { url: p.url });
+                    if (navRes?.errorText) {
+                        status = `NAVIGATION_FAILED: ${navRes.errorText}`;
+                    }
                     await sleep(3500);
 
-                    const urlEval = await client.send("Runtime.evaluate", {
-                        expression: "window.location.href",
+                    const pageState = await client.send("Runtime.evaluate", {
+                        expression: `(function() {
+                            return {
+                                href: window.location.href,
+                                isErrorPage: window.location.href.startsWith('chrome-error://'),
+                                hasCheckoutForm: !!document.querySelector('form.checkout, #order_review, .woocommerce-checkout')
+                            };
+                        })()`,
                         returnByValue: true
                     });
-                    finalUrl = urlEval.result?.value || p.url;
+                    const info = pageState.result?.value;
+                    if (!info || info.isErrorPage) {
+                        status = `NAVIGATION_FAILED: Chrome error page (${info?.href || 'unknown'})`;
+                        finalUrl = info?.href || 'unknown';
+                    } else {
+                        finalUrl = info.href;
+                        if (p.name === 'checkout') {
+                            if (finalUrl.includes('/cart/')) {
+                                status = "REDIRECTED_TO_CART_NOT_COVERED";
+                            } else if (!info.hasCheckoutForm) {
+                                status = "CHECKOUT_FORM_MISSING";
+                            }
+                        }
+                    }
                 } catch (navErr) {
                     status = `NAVIGATION_FAILED: ${navErr.message}`;
                 }
@@ -225,7 +253,7 @@ async function runConsoleAudit() {
                 totalUnhandledExceptions: totalExceptions,
                 totalErrors,
                 totalWarnings,
-                overallStatus: (totalErrors === 0 && auditRecords.length === 22 && auditRecords.every(r => r.status === "OK")) ? "CLEAN" : "ISSUES_FOUND"
+                overallStatus: (canaryRecord.passed && totalErrors === 0 && totalExceptions === 0 && auditRecords.length === 22 && auditRecords.every(r => r.status === "OK")) ? "CLEAN" : "ISSUES_FOUND"
             },
             runs: auditRecords
         };
@@ -233,7 +261,7 @@ async function runConsoleAudit() {
         const outPath = path.join(reviewDir, "console_audit_log.json");
         fs.writeFileSync(outPath, JSON.stringify(auditReport, null, 2), "utf8");
         console.log(`\nSaved structured console audit log: ${outPath}`);
-        console.log(`Summary: ${auditRecords.length} runs, ${totalExceptions} exceptions, ${totalErrors} errors, ${totalWarnings} warnings.`);
+        console.log(`Summary: ${auditRecords.length} runs, ${totalExceptions} exceptions, ${totalErrors} errors, ${totalWarnings} warnings. Status: ${auditReport.summary.overallStatus}`);
 
         return auditReport;
 
@@ -251,7 +279,12 @@ async function runConsoleAudit() {
     }
 }
 
-runConsoleAudit().catch(err => {
+runConsoleAudit().then(report => {
+    if (report && report.summary.overallStatus !== "CLEAN") {
+        console.error(`Audit completed with issues (overallStatus: ${report.summary.overallStatus}). Setting exitCode 1.`);
+        process.exitCode = 1;
+    }
+}).catch(err => {
     console.error("Fatal console audit error:", err);
     process.exitCode = 1;
 });

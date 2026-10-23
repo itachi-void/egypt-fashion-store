@@ -1,7 +1,7 @@
 {
   "runMetadata": {
     "script": "review/madar-v216/scripts/audit_console.mjs",
-    "timestamp": "2026-10-23T11:41:07.826Z",
+    "timestamp": "2026-10-23T13:03:02.026Z",
     "environment": "capability-test.local",
     "methodology": "CDP permanent listeners attached before Emulation and Page.navigate",
     "totalRuns": 22,
@@ -9,7 +9,7 @@
     "allRunsSuccessful": true
   },
   "canaryVerification": {
-    "executedAt": "2026-10-23T11:39:29.383Z",
+    "executedAt": "2026-10-23T13:01:04.307Z",
     "isolatedTarget": "about:blank",
     "capturedWarning": true,
     "capturedError": true,
@@ -34,11 +34,16 @@
         "mobile": true
       },
       "status": "OK",
-      "timestamp": "2026-10-23T11:39:34.162Z",
+      "timestamp": "2026-10-23T13:01:09.479Z",
       "errorCount": 0,
       "warningCount": 0,
       "unhandledExceptions": [],
-      "calls": []
+      "calls": [
+        {
+          "type": "log",
+          "message": "JQMIGRATE: Migrate is installed, version 3.4.1"
+        }
+      ]
     },
     {
       "runKey": "home_1440",
@@ -51,7 +56,7 @@
         "mobile": false
       },
       "status": "OK",
-      "timestamp": "2026-10-23T11:39:38.204Z",
+      "timestamp": "2026-10-23T13:01:14.225Z",
       "errorCount": 0,
       "warningCount": 0,
       "unhandledExceptions": [],
@@ -73,7 +78,7 @@
         "mobile": true
       },
       "status": "OK",
-      "timestamp": "2026-10-23T11:39:43.803Z",
+      "timestamp": "2026-10-23T13:01:19.695Z",
       "errorCount": 0,
       "warningCount": 0,
       "unhandledExceptions": [],
@@ -95,7 +100,7 @@
         "mobile": false
       },
       "status": "OK",
-      "timestamp": "2026-10-23T11:39:48.668Z",
+      "timestamp": "2026-10-23T13:01:24.715Z",
       "errorCount": 0,
       "warningCount": 0,
       "unhandledExceptions": [],
@@ -117,7 +122,7 @@
         "mobile": true
       },
       "status": "OK",
-      "timestamp": "2026-10-23T11:39:53.020Z",
+      "timestamp": "2026-10-23T13:01:29.927Z",
       "errorCount": 0,
       "warningCount": 0,
       "unhandledExceptions": [],
@@ -139,7 +144,7 @@
         "mobile": false
       },
       "status": "OK",
-      "timestamp": "2026-10-23T11:39:57.349Z",
+      "timestamp": "2026-10-23T13:01:35.252Z",
       "errorCount": 0,
       "warningCount": 0,
       "unhandledExceptions": [],
@@ -161,7 +166,7 @@
         "mobile": true
       },
       "status": "OK",
-      "timestamp": "2026-10-23T11:40:01.616Z",
+      "timestamp": "2026-10-23T13:01:40.059Z",
       "errorCount": 0,
       "warningCount": 0,
       "unhandledExceptions": [],
@@ -183,7 +188,7 @@
         "mobile": false
       },
       "status": "OK",
-      "timestamp": "2026-10-23T11:40:05.768Z",
+      "timestamp": "2026-10-23T13:01:44.544Z",
       "errorCount": 0,
       "warningCount": 0,
       "unhandledExceptions": [],
@@ -205,7 +210,7 @@
         "mobile": true
       },
       "status": "OK",
-      "timestamp": "2026-10-23T11:40:10.214Z",
+      "timestamp": "2026-10-23T13:01:49.353Z",
       "errorCount": 0,
       "warningCount": 0,
       "unhandledExceptions": [],
@@ -227,7 +232,7 @@
         "mobile": false
       },
       "status": "OK",
-      "timestamp": "2026-10-23T11:40:14.814Z",
+      "timestamp": "2026-10-23T13:01:54.651Z",
       "errorCount": 0,
       "warningCount": 0,
       "unhandledExceptions": [],
@@ -249,7 +254,7 @@
         "mobile": true
       },
       "status": "OK",
-      "timestamp": "2026-10-23T11:40:19.276Z",
+      "timestamp": "2026-10-23T13:02:00.154Z",
       "errorCount": 0,
       "warningCount": 0,
       "unhandledExceptions": [],
@@ -271,7 +276,7 @@
         "mobile": false
       },
       "status": "OK",
-      "timestamp": "2026-10-23T11:40:23.969Z",
+      "timestamp": "2026-10-23T13:02:05.327Z",
       "errorCount": 0,
       "warningCount": 0,
       "unhandledExceptions": [],
@@ -293,7 +298,7 @@
         "mobile": true
       },
       "status": "OK",
-      "timestamp": "2026-10-23T11:40:28.190Z",
+      "timestamp": "2026-10-23T13:02:09.769Z",
       "errorCount": 0,
       "warningCount": 0,
       "unhandledExceptions": [],
@@ -315,7 +320,7 @@
         "mobile": false
       },
       "status": "OK",
-      "timestamp": "2026-10-23T11:40:32.259Z",
+      "timestamp": "2026-10-23T13:02:14.223Z",
       "errorCount": 0,
       "warningCount": 0,
       "unhandledExceptions": [],
@@ -330,18 +335,22 @@
       "runKey": "checkout_375",
       "pageName": "checkout",
       "requestedUrl": "http://capability-test.local/checkout/",
-      "finalUrl": "http://capability-test.local/cart/",
+      "finalUrl": "http://capability-test.local/checkout/",
       "viewport": {
         "width": 375,
         "height": 812,
         "mobile": true
       },
       "status": "OK",
-      "timestamp": "2026-10-23T11:40:36.416Z",
+      "timestamp": "2026-10-23T13:02:22.813Z",
       "errorCount": 0,
       "warningCount": 0,
       "unhandledExceptions": [],
       "calls": [
+        {
+          "type": "log",
+          "message": "JQMIGRATE: Migrate is installed, version 3.4.1"
+        },
         {
           "type": "log",
           "message": "JQMIGRATE: Migrate is installed, version 3.4.1"
@@ -352,18 +361,22 @@
       "runKey": "checkout_1440",
       "pageName": "checkout",
       "requestedUrl": "http://capability-test.local/checkout/",
-      "finalUrl": "http://capability-test.local/cart/",
+      "finalUrl": "http://capability-test.local/checkout/",
       "viewport": {
         "width": 1440,
         "height": 900,
         "mobile": false
       },
       "status": "OK",
-      "timestamp": "2026-10-23T11:40:40.603Z",
+      "timestamp": "2026-10-23T13:02:31.272Z",
       "errorCount": 0,
       "warningCount": 0,
       "unhandledExceptions": [],
       "calls": [
+        {
+          "type": "log",
+          "message": "JQMIGRATE: Migrate is installed, version 3.4.1"
+        },
         {
           "type": "log",
           "message": "JQMIGRATE: Migrate is installed, version 3.4.1"
@@ -381,7 +394,7 @@
         "mobile": true
       },
       "status": "OK",
-      "timestamp": "2026-10-23T11:40:45.938Z",
+      "timestamp": "2026-10-23T13:02:37.500Z",
       "errorCount": 0,
       "warningCount": 0,
       "unhandledExceptions": [],
@@ -403,7 +416,7 @@
         "mobile": false
       },
       "status": "OK",
-      "timestamp": "2026-10-23T11:40:50.308Z",
+      "timestamp": "2026-10-23T13:02:42.453Z",
       "errorCount": 0,
       "warningCount": 0,
       "unhandledExceptions": [],
@@ -425,7 +438,7 @@
         "mobile": true
       },
       "status": "OK",
-      "timestamp": "2026-10-23T11:40:54.521Z",
+      "timestamp": "2026-10-23T13:02:47.416Z",
       "errorCount": 0,
       "warningCount": 0,
       "unhandledExceptions": [],
@@ -447,7 +460,7 @@
         "mobile": false
       },
       "status": "OK",
-      "timestamp": "2026-10-23T11:40:58.915Z",
+      "timestamp": "2026-10-23T13:02:52.225Z",
       "errorCount": 0,
       "warningCount": 0,
       "unhandledExceptions": [],
@@ -469,7 +482,7 @@
         "mobile": true
       },
       "status": "OK",
-      "timestamp": "2026-10-23T11:41:03.376Z",
+      "timestamp": "2026-10-23T13:02:57.343Z",
       "errorCount": 0,
       "warningCount": 0,
       "unhandledExceptions": [],
@@ -491,7 +504,7 @@
         "mobile": false
       },
       "status": "OK",
-      "timestamp": "2026-10-23T11:41:07.826Z",
+      "timestamp": "2026-10-23T13:03:02.026Z",
       "errorCount": 0,
       "warningCount": 0,
       "unhandledExceptions": [],

@@ -5,31 +5,44 @@ Your branch is up to date with 'origin/review/local-snapshot'.
 Changes to be committed:
   (use "git restore --staged <file>..." to unstage)
 	modified:   review/madar-v216/console_audit_log.json
-	modified:   review/madar-v216/git_status_and_log.txt
+	new file:   review/madar-v216/execution_log.json
+	new file:   review/madar-v216/execution_log.txt
 	modified:   review/madar-v216/report.md
-	modified:   review/madar-v216/screenshots/test_auth_flow.png
+	new file:   review/madar-v216/screenshots/test_card_during_hover.png
 	modified:   review/madar-v216/screenshots/test_card_hover.png
-	modified:   review/madar-v216/screenshots/test_outofstock_variation.png
-	modified:   review/madar-v216/screenshots/test_reduced_motion.png
-	new file:   review/madar-v216/scripts/audit_console.mjs
+	new file:   review/madar-v216/screenshots/test_card_post_hover.png
+	new file:   review/madar-v216/screenshots_manifest.json
+	modified:   review/madar-v216/scripts/audit_console.mjs
+	new file:   review/madar-v216/scripts/generate_report.mjs
+	new file:   review/madar-v216/scripts/generate_screenshots_manifest.mjs
+	new file:   review/madar-v216/scripts/run_and_record_execution.mjs
 	modified:   review/madar-v216/scripts/run_functional_tests.mjs
+	new file:   review/madar-v216/scripts/verify_validator.mjs
 	modified:   review/madar-v216/test_results.json
 
+
 === STAGED CHANGES STAT ===
- review/madar-v216/console_audit_log.json           | 696 +++++++++++++++------
- review/madar-v216/report.md                        | 282 ++++-----
- review/madar-v216/screenshots/test_auth_flow.png   | Bin 33345 -> 60916 bytes
- review/madar-v216/screenshots/test_card_hover.png  | Bin 809205 -> 822158 bytes
- .../screenshots/test_outofstock_variation.png      | Bin 56039 -> 286997 bytes
- .../madar-v216/screenshots/test_reduced_motion.png | Bin 31522 -> 3955 bytes
- review/madar-v216/scripts/audit_console.mjs        | 257 ++++++++
- review/madar-v216/scripts/run_functional_tests.mjs | 532 ++++++++++------
- review/madar-v216/test_results.json                |  88 +--
- 9 files changed, 1266 insertions(+), 589 deletions(-)
+ review/madar-v216/console_audit_log.json           |   67 +-
+ review/madar-v216/execution_log.json               |  150 +++
+ review/madar-v216/execution_log.txt                |  139 +++
+ review/madar-v216/report.md                        |  168 +--
+ .../screenshots/test_card_during_hover.png         |  Bin 0 -> 800571 bytes
+ review/madar-v216/screenshots/test_card_hover.png  |  Bin 809403 -> 800571 bytes
+ .../screenshots/test_card_post_hover.png           |  Bin 0 -> 807554 bytes
+ review/madar-v216/screenshots_manifest.json        | 1188 ++++++++++++++++++++
+ review/madar-v216/scripts/audit_console.mjs        |   47 +-
+ review/madar-v216/scripts/generate_report.mjs      |  292 +++++
+ .../scripts/generate_screenshots_manifest.mjs      |  167 +++
+ .../scripts/run_and_record_execution.mjs           |  191 ++++
+ review/madar-v216/scripts/run_functional_tests.mjs |  315 ++++--
+ review/madar-v216/scripts/verify_validator.mjs     |  198 ++++
+ review/madar-v216/test_results.json                |  149 ++-
+ 15 files changed, 2848 insertions(+), 223 deletions(-)
 
 === RECENT COMMITS ===
+672f7cb review: independently assess 75873c6 evidence and reproduce false-positive assertions
+75873c6 review: correct empirical assertions, permanent console audit, reduced-motion root cause, and report precision
 44f2596 review: correct test reliability, empirical clipping, escape fail trace, and sanitize secrets
 e364bb7 review: madar 2.1.6 proof correction — separate checkout, lighthouse reports, menu esc trace, full lazy captures, touch table, blocked auth
 c04b79d review: madar 2.1.6 proof completion — 375/1440 screenshots, measurements, tests, zip
-a6e7f4c review: madar theme 2.1.6; hover bug fix, complete section alignment and verification suite
-b71fc6c review: madar theme 2.1.0 verification with shop hover screenshot and order #149
+

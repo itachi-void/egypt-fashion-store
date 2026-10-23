@@ -1,0 +1,139 @@
+================================================================================
+MADAR v2.1.6 AUDIT EXECUTION LOG
+Run ID: audit_run_2026-10-23T13-01-00-109Z
+Started: 2026-10-23T13:01:00.116Z
+Node: v24.13.0 | Platform: win32 x64
+================================================================================
+
+--------------------------------------------------------------------------------
+STEP: verify_validator
+Command: node review/madar-v216/scripts/verify_validator.mjs
+Description: Independent negative validation unit tests verifying rejection of synthetic invalid console audit logs (missing fields, repeated scenes, discrepancies, checkout redirect, network errors)
+Start: 2026-10-23T13:01:00.117Z
+End:   2026-10-23T13:01:00.524Z (407ms)
+Exit Code: 0 (Expected: 0) -> MATCHED
+Log Output:
+=== RUNNING INDEPENDENT NEGATIVE VALIDATION TESTS ===
+[PASS] Fixture 1 (missing summary/run fields) correctly rejected as NOT TESTED
+[PASS] Fixture 2 (repeated home_375 scene) correctly rejected as NOT TESTED
+[PASS] Fixture 3 (raw errors vs zero summary discrepancy) correctly rejected as NOT TESTED
+[PASS] Fixture 4 (checkout redirected to cart) correctly rejected as NOT TESTED
+[PASS] Fixture 5 (network connection refused) correctly rejected as NOT TESTED
+=== ALL NEGATIVE VALIDATION TESTS PASSED ===
+
+--------------------------------------------------------------------------------
+STEP: audit_console
+Command: node review/madar-v216/scripts/audit_console.mjs
+Description: Standalone console audit with permanent CDP listeners, isolated Canary verification, and checkout page pre-population to guarantee 22 unique scenes without redirect to cart
+Start: 2026-10-23T13:01:00.525Z
+End:   2026-10-23T13:03:03.094Z (122569ms)
+Exit Code: 0 (Expected: 0) -> MATCHED
+Produced / Updated Artifacts:
+  - console_audit_log.json (14720 bytes) [SHA-256: 9d3102392caba1f25390cdf2846ca036e44d6057e0bc37177d929948fdfbbd55]
+Log Output:
+=== STARTING STANDALONE CONSOLE AUDIT WITH PERMANENT LISTENERS ===
+
+[Step 1] Running isolated canary verification on about:blank...
+Canary verification: PASSED (listeners verified active)
+Auditing [home_375] -> http://capability-test.local/ (375x812)...
+Auditing [home_1440] -> http://capability-test.local/ (1440x900)...
+Auditing [shop_375] -> http://capability-test.local/shop/ (375x812)...
+Auditing [shop_1440] -> http://capability-test.local/shop/ (1440x900)...
+Auditing [category_men_375] -> http://capability-test.local/product-category/men/ (375x812)...
+Auditing [category_men_1440] -> http://capability-test.local/product-category/men/ (1440x900)...
+Auditing [category_kids_375] -> http://capability-test.local/product-category/kids/ (375x812)...
+Auditing [category_kids_1440] -> http://capability-test.local/product-category/kids/ (1440x900)...
+Auditing [product_simple_375] -> http://capability-test.local/?p=44 (375x812)...
+Auditing [product_simple_1440] -> http://capability-test.local/?p=44 (1440x900)...
+Auditing [product_variable_375] -> http://capability-test.local/?p=141 (375x812)...
+Auditing [product_variable_1440] -> http://capability-test.local/?p=141 (1440x900)...
+Auditing [cart_375] -> http://capability-test.local/cart/ (375x812)...
+Auditing [cart_1440] -> http://capability-test.local/cart/ (1440x900)...
+Auditing [checkout_375] -> http://capability-test.local/checkout/ (375x812)...
+Auditing [checkout_1440] -> http://capability-test.local/checkout/ (1440x900)...
+Auditing [my_account_logged_out_375] -> http://capability-test.local/my-account/ (375x812)...
+Auditing [my_account_logged_out_1440] -> http://capability-test.local/my-account/ (1440x900)...
+Auditing [lost_password_375] -> http://capability-test.local/my-account/lost-password/ (375x812)...
+Auditing [lost_password_1440] -> http://capability-test.local/my-account/lost-password/ (1440x900)...
+Auditing [search_results_375] -> http://capability-test.local/?s=%D9%82%D9%85%D9%8A%D8%B5&post_type=product (375x812)...
+Auditing [search_results_1440] -> http://capability-test.local/?s=%D9%82%D9%85%D9%8A%D8%B5&post_type=product (1440x900)...
+
+Saved structured console audit log: C:\Users\itachi\.gemini\antigravity-ide\scratch\egypt-fashion-store\review\madar-v216\console_audit_log.json
+Summary: 22 runs, 0 exceptions, 0 errors, 0 warnings. Status: CLEAN
+
+--------------------------------------------------------------------------------
+STEP: run_functional_tests
+Command: node review/madar-v216/scripts/run_functional_tests.mjs
+Description: Rigorous functional test suite (TEST-01 to TEST-11) testing storefront behavior, DOM metrics, empirical variation ID proof, and recording true FAIL/BLOCKED statuses
+Start: 2026-10-23T13:03:03.099Z
+End:   2026-10-23T13:04:19.949Z (76850ms)
+Exit Code: 1 (Expected: 1) -> MATCHED
+Produced / Updated Artifacts:
+  - test_results.json (17044 bytes) [SHA-256: dc2b88db1a7395143093f8a418342be5c44de2d06ee6b635a97040ea2ceda791]
+  - screenshots/test_card_during_hover.png (800571 bytes) [SHA-256: c132a36233cb33b466699d971d2bd34f6b183fe889845612ec22c69eff51ed5d]
+  - screenshots/test_card_post_hover.png (807554 bytes) [SHA-256: 2dd66ee6ab4cc7fe89302ce2085769061a9e08cb05888d2f9ae68f7fcc1d415e]
+  - screenshots/test_add_to_cart_badges.png (68884 bytes) [SHA-256: 0ac2d5502d3d794b43d24616057c2d6de2d308ab63519aa6d835f94ce6c2f59e]
+  - screenshots/test_outofstock_variation.png (286997 bytes) [SHA-256: 1f70b55bf9dcbed04ab06b322b6d9a6164d8a492b3bf748e5a41eb5415bff86c]
+  - screenshots/test_cart_update_remove.png (51780 bytes) [SHA-256: b62f6425e5cca888cde1d4082c38b862a0a0a88eca1555f699a4dc73ec153b81]
+  - screenshots/test_search_flow.png (68914 bytes) [SHA-256: 5bde114a7b5bfd742e2238b557ba0c7216321c9c63c9371ccf2834e82f05f088]
+  - screenshots/test_auth_flow.png (60916 bytes) [SHA-256: ffe46ac02d44e8fbd078b93e727beb9cf0634876da18628a6298c6d6409874a8]
+  - screenshots/test_mobile_menu_after_esc.png (70174 bytes) [SHA-256: 12f3d26f2037a8181ffca66217cd3f89769ce0a00fc5c9de4a5a7b42c311ef92]
+  - screenshots/test_reduced_motion.png (3955 bytes) [SHA-256: 13bda0a915b04e1ab3cb9e66ddd36c4cfbcc297b3d777c1dc9219af3f4ee0a37]
+Log Output:
+=== STARTING RIGOROUS FUNCTIONAL TEST SUITE ===
+
+[Test 1] Running Card Hover & Layout Shift test...
+
+[Test 2] Running Add to Cart & Badges Update test...
+
+[Test 3] Running Out-of-Stock Variation test (Product #141, Var #145)...
+
+[Test 4] Running Cart Item Removal test...
+
+[Test 5] Recording Live Test Order policy status...
+
+[Test 6] Running Search with and without results test...
+
+[Test 7] Running Auth cycle & Password Reset test...
+
+[Test 8] Running Mobile Menu Escape & Focus Trace test...
+
+[Test 9] Running prefers-reduced-motion empirical behavior test...
+
+[Test 10] Checking Standalone Console Audit Log with Strict Validator...
+
+[Test 11] Checking Archival Lighthouse performance targets...
+
+Saved test_results.json: C:\Users\itachi\.gemini\antigravity-ide\scratch\egypt-fashion-store\review\madar-v216\test_results.json
+=== FUNCTIONAL TEST SUITE FINISHED ===
+Test Summary Breakdown: { PASS: 6, 'NOT TESTED': 1, BLOCKED: 1, FAIL: 3 }
+[Notice] Test suite completed with 3 failing test(s) (FAIL: 3). Setting non-zero exit code.
+
+--------------------------------------------------------------------------------
+STEP: generate_screenshots_manifest
+Command: node review/madar-v216/scripts/generate_screenshots_manifest.mjs
+Description: Generate structured screenshots manifest categorizing all PNG screenshots (natural, intervened, archival) with dimensions, interventions, and SHA-256 hashes
+Start: 2026-10-23T13:04:19.980Z
+End:   2026-10-23T13:04:20.480Z (500ms)
+Exit Code: 0 (Expected: 0) -> MATCHED
+Produced / Updated Artifacts:
+  - screenshots_manifest.json (37587 bytes) [SHA-256: 38f8eab4626065042fed0d7edbc18b85c315f750a2d2ab606ca512a2ca63c698]
+Log Output:
+Generated screenshots manifest: C:\Users\itachi\.gemini\antigravity-ide\scratch\egypt-fashion-store\review\madar-v216\screenshots_manifest.json (82 files, 3 duplicate groups)
+
+--------------------------------------------------------------------------------
+STEP: generate_report
+Command: node review/madar-v216/scripts/generate_report.mjs
+Description: Compile and synchronize review/madar-v216/report.md directly from raw test_results.json and manifest with 100% numerical consistency
+Start: 2026-10-23T13:04:20.483Z
+End:   2026-10-23T13:04:20.689Z (206ms)
+Exit Code: 0 (Expected: 0) -> MATCHED
+Produced / Updated Artifacts:
+  - report.md (37568 bytes) [SHA-256: e4b8df38d716c19426768ad0ffd5b7f996a001f13b4a72f832816a2ca4bc739e]
+Log Output:
+Generated report.md: C:\Users\itachi\.gemini\antigravity-ide\scratch\egypt-fashion-store\review\madar-v216\report.md (26381 bytes)
+
+================================================================================
+PIPELINE COMPLETED: 2026-10-23T13:04:20.692Z
+Status: SUCCESS_WITH_DOCUMENTED_FAILURES
+================================================================================

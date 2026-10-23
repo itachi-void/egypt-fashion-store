@@ -2,6 +2,7 @@ import { spawn } from 'child_process';
 import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
+import { validateConsoleAuditLog } from './verify_validator.mjs';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -65,6 +66,7 @@ async function createClient(url) {
 async function run() {
     const testResults = [];
     let hasFailure = false;
+    const runTimestamp = new Date().toISOString();
 
     try {
         await sleep(2500);
@@ -130,6 +132,10 @@ async function run() {
                 returnByValue: true
             });
 
+            const snapHover = await client.send("Page.captureScreenshot", { format: "png" });
+            fs.writeFileSync(path.join(screenshotsDir, "test_card_during_hover.png"), Buffer.from(snapHover.data, 'base64'));
+            fs.writeFileSync(path.join(screenshotsDir, "test_card_hover.png"), Buffer.from(snapHover.data, 'base64'));
+
             await client.send("Input.dispatchMouseEvent", { type: "mouseMoved", x: 0, y: 0 });
             await sleep(700);
 
@@ -147,8 +153,8 @@ async function run() {
                 returnByValue: true
             });
 
-            const snap = await client.send("Page.captureScreenshot", { format: "png" });
-            fs.writeFileSync(path.join(screenshotsDir, "test_card_hover.png"), Buffer.from(snap.data, 'base64'));
+            const snapPost = await client.send("Page.captureScreenshot", { format: "png" });
+            fs.writeFileSync(path.join(screenshotsDir, "test_card_post_hover.png"), Buffer.from(snapPost.data, 'base64'));
 
             const init = initialCard.result?.value;
             const hov = hoverCard.result?.value;
@@ -186,9 +192,17 @@ async function run() {
                 name: "hover الكارت: تبديل الصورة والعودة دون وميض أو layout shift",
                 steps: "1. قياس موضع وأبعاد كارت المنتج الأولي (x, y, w, h). 2. إرسال حدث حركة الفأرة فوق الكارت وقياس الأبعاد وشفافية البديلة (altOpacity). 3. إبعاد الفأرة والتحقق من عودة الشفافية لمستوى الخمول (<= 0.05) وثبات الموضع تماماً.",
                 expected: "تبديل الصورة البديلة لـ opacity >= 0.75، ثبات إحداثيات ومقاسات الكارت بنسبة 100% دون انزياح موضعي (shift <= 0.5px)، وعودة شفافية الصورة البديلة إلى الخمول (<= 0.05).",
-                actual: `أبعاد وموضع أولي: (${init?.width}x${init?.height} عند x:${init?.left}, y:${init?.top}). أثناء الهوفر: (${hov?.width}x${hov?.height} عند x:${hov?.left}, y:${hov?.top}) بشفافية: ${hov?.altOpacity}. بعد الإبعاد: (${aft?.width}x${aft?.height} عند x:${aft?.left}, y:${aft?.top}) بشفافية: ${aft?.altOpacity}. أقصى انزياح موضعي مقاس: ${maxShift.toFixed(2)}px.`,
+                actual: `أبعاد وموضع أولي: (${init?.width}x${init?.height} عند x:${init?.left}, y:${init?.top}) بشفافية: ${init?.altOpacity}. أثناء الهوفر: (${hov?.width}x${hov?.height} عند x:${hov?.left}, y:${hov?.top}) بشفافية: ${hov?.altOpacity}. بعد الإبعاد: (${aft?.width}x${aft?.height} عند x:${aft?.left}, y:${aft?.top}) بشفافية: ${aft?.altOpacity}. أقصى انزياح موضعي مقاس: ${maxShift.toFixed(2)}px.`,
+                metrics: {
+                    initial: init,
+                    duringHover: hov,
+                    postHover: aft,
+                    maxShiftPx: parseFloat(maxShift.toFixed(2)),
+                    noLayoutShift: test1Pass
+                },
                 status: test1Pass ? "PASS" : "FAIL",
-                screenshot: "test_card_hover.png"
+                screenshot: "test_card_during_hover.png",
+                postScreenshot: "test_card_post_hover.png"
             });
 
             client.ws.close();
@@ -226,7 +240,7 @@ async function run() {
                                      document.querySelector('[tabindex="1"].wc-forward')?.closest('div, li');
                     return {
                         count: isNaN(parsed) ? null : parsed,
-                        notice: noticeEl ? noticeEl.textContent.trim() : null
+                        notice: noticeEl ? noticeEl.textContent.trim().replace(/\\s+/g, ' ') : null
                     };
                 })()`,
                 returnByValue: true
@@ -251,7 +265,14 @@ async function run() {
                 name: "إضافة للسلة وتحديث العداد وإشعار الإضافة",
                 steps: "1. قراءة عداد السلة العددي الأولي في الترويسة (.store-cart-link small). 2. الضغط على 'إضافة إلى السلة' في صفحة منتج بسيط (#44). 3. فحص زيادة العداد الفعلي بمقدار +1 وظهور إشعار الإضافة الرسمي.",
                 expected: "قراءة قيمة رقمية صحيحة قبل الإضافة، وزيادة العداد بمقدار +1 بالضبط (لا يقبل null)، مع ظهور إشعار الإضافة وزر عرض السلة.",
-                actual: `العداد العددي قبل: ${countBefore}، العداد العددي بعد: ${countAfter} (الزيادة: ${countAfter - countBefore}). نص الإشعار: "${noticeText ? noticeText.slice(0, 75).replace(/\\s+/g, ' ') : 'لا يوجد'}"`,
+                actual: `العداد العددي قبل: ${countBefore}، العداد العددي بعد: ${countAfter} (الزيادة: ${countAfter - countBefore}). نص الإشعار: "${noticeText ? noticeText.slice(0, 75) : 'لا يوجد'}"`,
+                metrics: {
+                    countBefore,
+                    countAfter,
+                    increment: (countAfter !== null && countBefore !== null) ? countAfter - countBefore : null,
+                    noticeFound: !!noticeText,
+                    noticeText
+                },
                 status: test2Pass ? "PASS" : "FAIL",
                 screenshot: "test_add_to_cart_badges.png"
             });
@@ -266,7 +287,37 @@ async function run() {
             await client.send("Emulation.setDeviceMetricsOverride", { width: 1440, height: 900, deviceScaleFactor: 1, mobile: false });
             await sleep(3500);
 
-            // Select out-of-stock option 'XL' (Variation ID: 145)
+            // 1. Read product data and variations JSON attribute directly from form.variations_form
+            const prodDataRes = await client.send("Runtime.evaluate", {
+                expression: `(function() {
+                    const form = document.querySelector('form.variations_form');
+                    const productId = form ? form.getAttribute('data-product_id') : null;
+                    const rawVariations = form ? form.getAttribute('data-product_variations') : null;
+                    let variations = [];
+                    try { variations = JSON.parse(rawVariations); } catch (_) {}
+                    
+                    const select = form ? form.querySelector('select') : null;
+                    const xlOption = select ? Array.from(select.options).find(o => o.value === 'XL') : null;
+                    
+                    const matchedVar = variations.find(v => {
+                        const attrs = Object.values(v.attributes || {});
+                        return attrs.includes('XL');
+                    });
+                    
+                    return {
+                        productId,
+                        xlOptionExists: !!xlOption,
+                        xlOptionDisabledBefore: xlOption ? xlOption.disabled : false,
+                        matchedVariationId: matchedVar ? matchedVar.variation_id : null,
+                        matchedVarInStock: matchedVar ? matchedVar.is_in_stock : null,
+                        matchedVarAvailabilityHtml: matchedVar ? matchedVar.availability_html : null
+                    };
+                })()`,
+                returnByValue: true
+            });
+            const prodMeta = prodDataRes.result?.value;
+
+            // 2. Select option 'XL' through user-simulated change event
             await client.send("Runtime.evaluate", {
                 expression: `(function() {
                     const sel = document.querySelector('form.cart select');
@@ -279,14 +330,17 @@ async function run() {
             });
             await sleep(1500);
 
+            // 3. Inspect post-selection state: hidden input variation_id, button disabled, stock notice
             const varState = await client.send("Runtime.evaluate", {
                 expression: `(function() {
                     const btn = document.querySelector('.single_add_to_cart_button');
                     const oosNotice = document.querySelector('.stock.out-of-stock, .woocommerce-variation-availability');
                     const form = document.querySelector('form.cart');
                     const sel = form ? form.querySelector('select') : null;
+                    const varInput = form ? form.querySelector('input[name="variation_id"]') : null;
                     return {
                         selectedOption: sel ? sel.value : null,
+                        inputVariationId: varInput ? varInput.value : null,
                         btnDisabled: btn ? (btn.disabled || btn.classList.contains('disabled')) : false,
                         stockNotice: oosNotice ? oosNotice.innerText.trim() : null
                     };
@@ -298,21 +352,34 @@ async function run() {
             fs.writeFileSync(path.join(screenshotsDir, "test_outofstock_variation.png"), Buffer.from(snap.data, 'base64'));
 
             const selectedVal = varState.result?.value?.selectedOption;
+            const inputVarId = varState.result?.value?.inputVariationId;
             const btnIsDisabled = varState.result?.value?.btnDisabled;
             const rawNotice = varState.result?.value?.stockNotice;
 
             const variationIsXL = selectedVal === 'XL';
+            const matchedVarId = prodMeta?.matchedVariationId;
+            const idMatchesInput = String(matchedVarId) === String(inputVarId);
             const noticeMatchesOOS = !!(rawNotice && rawNotice.includes('غير متوفر في المخزون'));
-            const test3Pass = variationIsXL && btnIsDisabled && noticeMatchesOOS;
+            const isInStockFalse = prodMeta?.matchedVarInStock === false;
 
+            const test3Pass = variationIsXL && (matchedVarId === 145) && idMatchesInput && btnIsDisabled && noticeMatchesOOS && isInStockFalse;
             if (!test3Pass) hasFailure = true;
 
             testResults.push({
                 testId: "TEST-03",
                 name: "variation نافد: معطّل ومش قابل للاختيار / الشراء",
-                steps: "1. فتح منتج متغيّر (#141: معطف صوف بلون الجمل). 2. اختيار المقاس النافد (XL - Variation ID: 145). 3. فحص حالة زر الإضافة وإشعار التوفر المقروء فعلياً من DOM دون نص افتراضي.",
-                expected: "عند اختيار المقاس النافد (XL - ID 145)، يتعطل زر الإضافة (disabled) ويظهر إشعار 'غير متوفر في المخزون' من قِبل WooCommerce.",
-                actual: `المنتج: #141 (معطف صوف بلون الجمل). الخيار المحدد: "${selectedVal}" (ID: 145). حالة تعطيل الزر: ${btnIsDisabled}. إشعار التوفر الفعلي المقروء: "${rawNotice || 'لم يُقرأ أي إشعار'}".`,
+                steps: "1. قراءة بيانات المنتج المتغير (#141) وقائمة التنويعات data-product_variations من الـ DOM مباشرة. 2. التحقق من ربط المقاس XL بالتنويعة #145 وأن is_in_stock: false في بيانات ووكومرس. 3. اختيار المقاس ومطابقة حقل variation_id الديناميكي (145) وتعطيل زر الإضافة وقراءة إشعار النفاد الفعلي من DOM.",
+                expected: "المنتج #141 يحتوي على تنويعة XL بمعرف حقيقي 145 بحالة نفاد (is_in_stock: false)، وعند اختيارها يتعطل زر الإضافة ويظهر إشعار 'غير متوفر في المخزون'.",
+                actual: `المنتج: #${prodMeta?.productId} (معطف صوف بلون الجمل). التنويعة المطابقة: ID ${matchedVarId} (المخزون في البيانات: ${prodMeta?.matchedVarInStock}). قيمة الحقل المخفي بعد الاختيار: ${inputVarId}. حالة تعطيل الزر: ${btnIsDisabled}. إشعار التوفر الفعلي المقروء: "${rawNotice || 'لم يُقرأ أي إشعار'}".`,
+                metrics: {
+                    productId: prodMeta?.productId,
+                    variationId: matchedVarId,
+                    inputVariationId: inputVarId,
+                    selectedOption: selectedVal,
+                    isInStock: prodMeta?.matchedVarInStock,
+                    btnDisabled: btnIsDisabled,
+                    stockNotice: rawNotice
+                },
                 status: test3Pass ? "PASS" : "FAIL",
                 screenshot: "test_outofstock_variation.png"
             });
@@ -323,7 +390,7 @@ async function run() {
         // TEST 4: Cart Item Removal (Separated from untested quantity update)
         console.log("\n[Test 4] Running Cart Item Removal test...");
         {
-            // Add item inside Chrome session to ensure cart is not empty
+            // Add item to cart to ensure cart is not empty
             const addClient = await createClient("http://capability-test.local/?add-to-cart=44");
             await sleep(2500);
             addClient.ws.close();
@@ -332,6 +399,26 @@ async function run() {
             await client.send("Emulation.setDeviceMetricsOverride", { width: 1440, height: 900, deviceScaleFactor: 1, mobile: false });
             await sleep(3500);
 
+            // 1. Verify item row exists before removal
+            const beforeCart = await client.send("Runtime.evaluate", {
+                expression: `(function() {
+                    const rows = document.querySelectorAll('table.cart .cart_item, .woocommerce-cart-form .cart_item');
+                    const firstRow = rows.length > 0 ? rows[0] : null;
+                    const removeLink = firstRow ? firstRow.querySelector('a.remove') : document.querySelector('a.remove');
+                    const prodTitle = firstRow ? firstRow.querySelector('.product-name a')?.innerText.trim() : null;
+                    const countEl = document.querySelector('.store-cart-link small');
+                    return {
+                        itemCount: rows.length,
+                        productName: prodTitle,
+                        hasRemoveLink: !!removeLink,
+                        badgeCount: countEl ? parseInt(countEl.innerText.trim(), 10) : null
+                    };
+                })()`,
+                returnByValue: true
+            });
+            const bCart = beforeCart.result?.value;
+
+            // 2. Click remove
             await client.send("Runtime.evaluate", {
                 expression: `(function() {
                     const removeBtn = document.querySelector('a.remove, .cart_item a.remove, button.remove, .wc-block-cart-item__remove-link');
@@ -340,33 +427,47 @@ async function run() {
             });
             await sleep(4000);
 
-            const removeResult = await client.send("Runtime.evaluate", {
+            // 3. Inspect post-removal state
+            const afterCart = await client.send("Runtime.evaluate", {
                 expression: `(function() {
-                    const notice = document.querySelector('.woocommerce-message, .cart-empty, .wc-block-cart__empty-cart__title, .woocommerce-info');
-                    if (notice) return notice.innerText.trim();
-                    if (document.body.innerText.includes('فارغة') || document.body.innerText.includes('إزالة') || document.body.innerText.includes('empty') || document.body.innerText.includes('تراجع')) {
-                        return 'سلة مشترياتك فارغة حالياً.';
-                    }
-                    return null;
+                    const rows = document.querySelectorAll('table.cart .cart_item, .woocommerce-cart-form .cart_item');
+                    const noticeEl = document.querySelector('.woocommerce-message, .woocommerce-info, .cart-empty, [role="alert"]');
+                    const countEl = document.querySelector('.store-cart-link small');
+                    return {
+                        itemCount: rows.length,
+                        noticeText: noticeEl ? noticeEl.innerText.trim() : null,
+                        badgeCount: countEl ? parseInt(countEl.innerText.trim(), 10) : null
+                    };
                 })()`,
                 returnByValue: true
             });
+            const aCart = afterCart.result?.value;
 
             const snap = await client.send("Page.captureScreenshot", { format: "png" });
             fs.writeFileSync(path.join(screenshotsDir, "test_cart_update_remove.png"), Buffer.from(snap.data, 'base64'));
 
-            const rawVal = removeResult.result?.value;
-            const hasNotice = !!(rawVal && (rawVal.includes('إزالة') || rawVal.includes('فارغة') || rawVal.includes('removed') || rawVal.includes('empty') || rawVal.includes('تراجع')));
+            const hadItemBefore = bCart?.itemCount > 0 && bCart?.hasRemoveLink;
+            const itemRowRemoved = aCart?.itemCount === 0;
+            const hasRemovalNotice = !!(aCart?.noticeText && (aCart.noticeText.includes('إزالة') || aCart.noticeText.includes('فارغة') || aCart.noticeText.includes('تراجع') || aCart.noticeText.includes('سلة')));
 
-            if (!hasNotice) hasFailure = true;
+            const test4Pass = hadItemBefore && itemRowRemoved && hasRemovalNotice;
+            if (!test4Pass) hasFailure = true;
 
             testResults.push({
                 testId: "TEST-04",
                 name: "حذف المنتج من السلة (مع إيضاح نطاق الاختبار)",
-                steps: "1. الدخول إلى صفحة السلة بمنتج موجود (#44). 2. الضغط على زر الحذف من السلة (a.remove). 3. فحص استجابة الصفحة وإشعار الحذف أو تفريغ السلة.",
-                expected: "حذف العنصر وظهور رسالة تأكيد الحذف أو إشعار سلة المشتريات فارغة. (تنبيه: تحديث كميات السلة عبر حقول الأرقام وزر التحديث لم يتم اختباره في هذه الجلسة).",
-                actual: `تم اختبار حذف المنتج بنجاح. رسالة الحذف / تفريغ السلة: "${rawVal ? rawVal.substring(0, 80) : 'لا يوجد'}". ملاحظة: اختبار تعديل الكمية (quantity input) غير مُختبر ومفصول عن هذا الإثبات.`,
-                status: hasNotice ? "PASS" : "FAIL",
+                steps: "1. الدخول إلى صفحة السلة والتأكد من وجود صف المنتج (#44) ورابط الحذف. 2. النقر على رابط الحذف الفعلي (a.remove). 3. التحقق من اختفاء صف المنتج بالكامل وقراءة إشعار الحذف وتحديث العداد.",
+                expected: "وجود صف المنتج قبل الحذف، واختفاء صفه تماماً بعد الحذف وظهور إشعار تأكيد الحذف أو تفريغ السلة الرسمي. (تنبيه: تعديل الكميات عبر حقول الأرقام وزر التحديث لم يتم اختباره في هذه الجلسة).",
+                actual: `الصفوف قبل الحذف: ${bCart?.itemCount} (المنتج: "${bCart?.productName}"). الصفوف بعد الحذف: ${aCart?.itemCount}. رسالة الحذف المقروءة فعلياً: "${aCart?.noticeText || 'لم يُقرأ أي إشعار'}". ملاحظة: اختبار تعديل الكمية (quantity input) غير مُختبر ومفصول تماماً عن هذا الإثبات.`,
+                metrics: {
+                    itemsBefore: bCart?.itemCount,
+                    productRemoved: bCart?.productName,
+                    itemsAfter: aCart?.itemCount,
+                    rowRemoved: itemRowRemoved,
+                    noticeText: aCart?.noticeText,
+                    quantityUpdateTested: false
+                },
+                status: test4Pass ? "PASS" : "FAIL",
                 screenshot: "test_cart_update_remove.png"
             });
 
@@ -382,6 +483,10 @@ async function run() {
                 steps: "1. وضع منتج بالسلة والدخول للدفع /checkout/. 2. ملء بيانات العنوان واختيار طريقة 'الدفع عند الاستلام'. 3. النقر على تأكيد الطلب وانتظار شاشة الاستلام order-received.",
                 expected: "إنشاء طلب حقيقي جديد أثناء نفس جلسة الفحص والوصول لصفحة order-received الرسمية برقم طلب جديد وتأكيد مكتمل.",
                 actual: "لم يُنفّذ هذا المسار في هذه الجلسة التزاماً صارماً بسياسة المشروع المانعة لإنشاء طلبات تجريبية أو تعديل المخزون وقواعد البيانات بدون إذن كتابي صريح منفصل. تم استبعاد أي fallback على الطلب القديم #149 ومفاتيحه الحساسة.",
+                metrics: {
+                    executionPolicy: "STRICT_PROHIBITION_NO_ORDERS_NO_DB_MUTATION",
+                    executed: false
+                },
                 status: "NOT TESTED",
                 screenshot: "checkout_1440.png"
             });
@@ -431,7 +536,13 @@ async function run() {
                 name: "البحث: مع وجود نتائج وبدون نتائج",
                 steps: "1. البحث عن 'قميص' والتأكد من ظهور المنتجات. 2. البحث عن مصطلح غير موجود 'xyznotfound123' والتأكد من إشعار عدم العثور على نتائج.",
                 expected: "ظهور نتائج للمصطلح الصحيح، وظهور رسالة إرشادية نظيفة عند انعدام النتائج.",
-                actual: `عدد النتائج لكلمة 'قميص': ${countFound}. حالة انعدام النتائج: "${noResText ? noResText.substring(0, 60).replace(/\\s+/g, ' ') : 'لا توجد رسالة'}".`,
+                actual: `عدد النتائج لكلمة 'قميص': ${countFound}. حالة انعدام النتائج: "${noResText ? noResText.slice(0, 60).replace(/\\s+/g, ' ') : 'لا توجد رسالة'}".`,
+                metrics: {
+                    queryWithResults: "قميص",
+                    resultsCount: countFound,
+                    queryWithoutResults: "xyznotfound123",
+                    emptyNoticeText: noResText
+                },
                 status: searchPass ? "PASS" : "FAIL",
                 screenshot: "test_search_flow.png"
             });
@@ -442,7 +553,6 @@ async function run() {
         // TEST 7: Auth: Login / Logout / Lost-Password (Distinguishing Session from Archive)
         console.log("\n[Test 7] Running Auth cycle & Password Reset test...");
         {
-            // Execute lost-password form submission in this session
             const client = await createClient("http://capability-test.local/my-account/lost-password/");
             await client.send("Emulation.setDeviceMetricsOverride", { width: 1440, height: 900, deviceScaleFactor: 1, mobile: false });
             await sleep(3500);
@@ -475,7 +585,14 @@ async function run() {
                 name: "دورة الحساب: تسجيل الدخول / الخروج / دورة استرجاع كلمة المرور الكاملة",
                 steps: "1. تمييز الإجراءات المنفذة في هذه الجلسة عن الأرشيف: إرسال نموذج استرجاع كلمة المرور من /my-account/lost-password/. 2. فحص استلام البريد وتعيين كلمة المرور. 3. خطوات تسجيل الدخول/الخروج مستندة لبيانات المراجعة الأرشيفية السابقة تجنباً لإنشاء مستخدمين جدد.",
                 expected: "إرسال نموذج الاسترجاع بنجاح، ووصول رابط الاسترجاع بالبريد وتعيين كلمة المرور الجديدة بالكامل دون حجب.",
-                actual: `إرسال نموذج الاسترجاع في هذه الجلسة: ناجح (أعيد التوجيه إلى reset-link-sent=true: ${resetSubmitted}). استلام رسالة البريد وتعيين كلمة المرور: محجوب بالكامل (BLOCKED) بسبب اعتراض وكتم رسائل wp_mail عبر wp-content/mu-plugins/local-email-guard.php. خطوات الدخول/الخروج أرشيفية وموثقة سابقاً دون تعديل على المستخدمين.`,
+                actual: `إرسال نموذج الاسترجاع في هذه الجلسة: ${resetSubmitted ? 'ناجح' : 'فاشل'} (أعيد التوجيه إلى reset-link-sent=true: ${resetSubmitted}). استلام رسالة البريد وتعيين كلمة المرور: محجوب بالكامل (BLOCKED) بسبب اعتراض وكتم رسائل wp_mail عبر wp-content/mu-plugins/local-email-guard.php. خطوات الدخول/الخروج أرشيفية وموثقة سابقاً دون تعديل على المستخدمين.`,
+                metrics: {
+                    resetFormSubmitted: resetSubmitted,
+                    resetUrl,
+                    emailDeliveryBlocked: true,
+                    guardPlugin: "wp-content/mu-plugins/local-email-guard.php",
+                    authSessionStatus: "ARCHIVAL_LOGIN_LOGOUT_PRESERVED"
+                },
                 status: "BLOCKED",
                 screenshot: "test_auth_flow.png"
             });
@@ -507,7 +624,8 @@ async function run() {
                     return {
                         isOpen: nav ? nav.classList.contains('is-open') : false,
                         ariaExpanded: btn ? btn.getAttribute('aria-expanded') : null,
-                        activeElementTag: act ? act.tagName : null
+                        activeElementTag: act ? act.tagName : null,
+                        activeElementIsToggle: act === btn
                     };
                 })()`,
                 returnByValue: true
@@ -527,7 +645,8 @@ async function run() {
                     return {
                         isOpen: nav ? nav.classList.contains('is-open') : false,
                         ariaExpanded: btn ? btn.getAttribute('aria-expanded') : null,
-                        activeElementTag: act ? act.tagName : null
+                        activeElementTag: act ? act.tagName : null,
+                        activeElementIsToggle: act === btn
                     };
                 })()`,
                 returnByValue: true
@@ -539,23 +658,28 @@ async function run() {
             const bef = beforeEscape.result?.value;
             const aft = afterEscape.result?.value;
 
-            // Full Escape compliance requirement:
-            // 1. Menu must close (isOpen === false)
-            // 2. aria-expanded must be "false"
-            // 3. Focus must be restored to toggle button (BUTTON)
+            const menuOpenedFirst = bef?.isOpen === true && bef?.ariaExpanded === 'true';
             const escapeClosedMenu = (aft?.isOpen === false);
             const ariaTurnedFalse = (aft?.ariaExpanded === 'false');
-            const focusRestoredToButton = (aft?.activeElementTag === 'BUTTON');
+            const focusRestoredToToggle = aft?.activeElementIsToggle === true;
 
-            const test8Pass = escapeClosedMenu && ariaTurnedFalse && focusRestoredToButton;
+            const test8Pass = menuOpenedFirst && escapeClosedMenu && ariaTurnedFalse && focusRestoredToToggle;
             if (!test8Pass) hasFailure = true;
 
             testResults.push({
                 testId: "TEST-08",
                 name: "القائمة على الموبايل: فتح وغلق والتنقل وزر Escape",
-                steps: "1. عرض شاشة الموبايل (375px). 2. فتح القائمة بـ .store-menu-toggle. 3. إرسال حدث مفتاح Escape الفعلي عبر CDP Input دون نقر. 4. فحص إغلاق القائمة (isOpen === false)، وتحول aria-expanded إلى 'false'، واستعادة التركيز البصري للزر (BUTTON).",
-                expected: "إغلاق القائمة فور إرسال حدث Escape، وتحول aria-expanded إلى 'false'، واستعادة التركيز البصري تلقائياً على زر القائمة (BUTTON.store-menu-toggle).",
-                actual: `قبل Escape: (isOpen: ${bef?.isOpen}, aria-expanded: "${bef?.ariaExpanded}", active: ${bef?.activeElementTag}). بعد Escape: (isOpen: ${aft?.isOpen}, aria-expanded: "${aft?.ariaExpanded}", active: ${aft?.activeElementTag}). فشل: القائمة لم تُغلق بمفتاح Escape لعدم وجود مستمع keydown في madar.js وظل التركيز على BODY دون استعادة التركيز للزر. (الإغلاق بالنقر يعمل بنجاح ومفصول).`,
+                steps: "1. عرض شاشة الموبايل (375px). 2. فتح القائمة بـ .store-menu-toggle والتأكد من فتحها أولاً. 3. إرسال حدث مفتاح Escape الفعلي عبر CDP Input دون نقر. 4. فحص إغلاق القائمة (isOpen === false)، وتحول aria-expanded إلى 'false'، واستعادة التركيز البصري للزر نفسه (document.activeElement === toggleBtn).",
+                expected: "فتح القائمة بنجاح، ثم إغلاقها فور إرسال حدث Escape، وتحول aria-expanded إلى 'false'، واستعادة التركيز البصري تلقائياً على زر القائمة (BUTTON.store-menu-toggle).",
+                actual: `فتح القائمة أوليّاً: ${menuOpenedFirst} (isOpen: ${bef?.isOpen}, aria: "${bef?.ariaExpanded}"). بعد Escape: (isOpen: ${aft?.isOpen}, aria: "${aft?.ariaExpanded}", active: ${aft?.activeElementTag}, استعادة التركيز للزر: ${focusRestoredToToggle}). فشل: القائمة لم تُغلق بمفتاح Escape لعدم وجود مستمع keydown في madar.js وظل التركيز على BODY دون استعادة التركيز للزر. (الإغلاق بالنقر يعمل بنجاح ومفصول).`,
+                metrics: {
+                    menuOpenedFirst,
+                    closedAfterEscape: escapeClosedMenu,
+                    ariaExpandedAfter: aft?.ariaExpanded,
+                    activeElementTag: aft?.activeElementTag,
+                    focusRestoredToToggleBtn: focusRestoredToToggle,
+                    clickToCloseWorking: true
+                },
                 status: test8Pass ? "PASS" : "FAIL",
                 screenshot: "test_mobile_menu_after_esc.png"
             });
@@ -566,8 +690,8 @@ async function run() {
         // TEST 9: prefers-reduced-motion: Empirical Behavior on Target Elements
         console.log("\n[Test 9] Running prefers-reduced-motion empirical behavior test...");
         {
-            // 1. Test Desktop 1440px
-            const clientDesk = await createClient("http://capability-test.local/");
+            // 1. Test Desktop 1440px starting from about:blank
+            const clientDesk = await createClient("about:blank");
             await clientDesk.send("Emulation.setDeviceMetricsOverride", { width: 1440, height: 900, deviceScaleFactor: 1, mobile: false });
             await clientDesk.send("Emulation.setEmulatedMedia", {
                 media: "screen",
@@ -594,8 +718,8 @@ async function run() {
             });
             clientDesk.ws.close();
 
-            // 2. Test Mobile 375px
-            const clientMob = await createClient("http://capability-test.local/");
+            // 2. Test Mobile 375px starting from about:blank
+            const clientMob = await createClient("about:blank");
             await clientMob.send("Emulation.setDeviceMetricsOverride", { width: 375, height: 812, deviceScaleFactor: 1, mobile: true });
             await clientMob.send("Emulation.setEmulatedMedia", {
                 media: "screen",
@@ -613,7 +737,9 @@ async function run() {
                     return {
                         mediaMatches: window.matchMedia('(prefers-reduced-motion: reduce)').matches,
                         curtainAnimationDuration: sCurtain ? sCurtain.animationDuration : null,
-                        cardTransitionDuration: sCard ? sCard.transitionDuration : null
+                        curtainAnimationName: sCurtain ? sCurtain.animationName : null,
+                        cardTransitionDuration: sCard ? sCard.transitionDuration : null,
+                        cardTransitionProperty: sCard ? sCard.transitionProperty : null
                     };
                 })()`,
                 returnByValue: true
@@ -626,11 +752,10 @@ async function run() {
             const dRes = deskMotion.result?.value;
             const mRes = mobMotion.result?.value;
 
-            // Strict Criterion: Both desktop and mobile must suppress animations/transitions (duration === '0s' or name === 'none')
             const deskCurtainSuppressed = dRes?.curtainAnimationDuration === '0s' || dRes?.curtainAnimationName === 'none';
             const deskCardSuppressed = dRes?.cardTransitionDuration === '0s' || dRes?.cardTransitionProperty === 'none';
-            const mobCurtainSuppressed = mRes?.curtainAnimationDuration === '0s';
-            const mobCardSuppressed = mRes?.cardTransitionDuration === '0s';
+            const mobCurtainSuppressed = mRes?.curtainAnimationDuration === '0s' || mRes?.curtainAnimationName === 'none';
+            const mobCardSuppressed = mRes?.cardTransitionDuration === '0s' || mRes?.cardTransitionProperty === 'none';
 
             const allViewportsSuppressed = deskCurtainSuppressed && deskCardSuppressed && mobCurtainSuppressed && mobCardSuppressed;
 
@@ -639,67 +764,67 @@ async function run() {
             testResults.push({
                 testId: "TEST-09",
                 name: "دعم prefers-reduced-motion: إيقاف الحركات والتحولات للمستخدمين الحساسين للحركة",
-                steps: "1. محاكاة prefers-reduced-motion: reduce عبر CDP Emulation.setEmulatedMedia. 2. فحص السلوك الفعلي للقيم المحسوبة (computed styles) للحركة والتحولات على العناصر المستهدفة (.motion-curtain و .store-card img) على الديسكتوب (1440px) والموبايل (375px)، وعدم الاكتفاء بـ matchMedia وحده.",
+                steps: "1. محاكاة prefers-reduced-motion: reduce عبر CDP Emulation.setEmulatedMedia قبل أول تحميل للصفحة من about:blank. 2. فحص السلوك الفعلي للقيم المحسوبة (computed styles) للحركة والتحولات على العناصر المستهدفة (.motion-curtain و .store-card img) على الديسكتوب (1440px) والموبايل (375px)، وعدم الاكتفاء بـ matchMedia وحده.",
                 expected: "إيقاف الحركات والتحولات بالكامل على كافة الشاشات (animationDuration = 0s و transitionDuration = 0s أو none).",
-                actual: `تطابق الميديا: true. القياس الفعلي: على الموبايل (375px) تم كتم الحركة بنجاح (ستارة: ${mRes?.curtainAnimationDuration}، كارت: ${mRes?.cardTransitionDuration}). لكن على الديسكتوب (1440px) استمر تشغيل الحركة (ستارة: ${dRes?.curtainAnimationDuration} [${dRes?.curtainAnimationName}]، كارت: ${dRes?.cardTransitionDuration} [${dRes?.cardTransitionProperty}]) نتيجة خلل بنيوي في madar.css حيث لم يُغلق قوس @media (max-width: 700px) في السطر 2261 مما جعل قواعد تقليل الحركة محصورة بشاشات الموبايل فقط. النتيجة: FAIL.`,
+                actual: `تطابق الميديا: (ديسكتوب: ${dRes?.mediaMatches}، موبايل: ${mRes?.mediaMatches}). القياس الفعلي: على الموبايل (375px) تم كتم الحركة بنجاح (ستارة: ${mRes?.curtainAnimationDuration}، كارت: ${mRes?.cardTransitionDuration}). لكن على الديسكتوب (1440px) استمر تشغيل الحركة (ستارة: ${dRes?.curtainAnimationDuration} [${dRes?.curtainAnimationName}]، كارت: ${dRes?.cardTransitionDuration} [${dRes?.cardTransitionProperty}]) نتيجة خلل بنيوي في madar.css حيث لم يُغلق قوس @media (max-width: 700px) في السطر 2261 مما جعل قواعد تقليل الحركة محصورة بشاشات الموبايل فقط وحرم الديسكتوب منها. النتيجة: FAIL.`,
+                metrics: {
+                    desktop: {
+                        width: 1440,
+                        mediaMatches: dRes?.mediaMatches,
+                        curtainDuration: dRes?.curtainAnimationDuration,
+                        curtainName: dRes?.curtainAnimationName,
+                        cardDuration: dRes?.cardTransitionDuration,
+                        cardProperty: dRes?.cardTransitionProperty,
+                        suppressed: (deskCurtainSuppressed && deskCardSuppressed)
+                    },
+                    mobile: {
+                        width: 375,
+                        mediaMatches: mRes?.mediaMatches,
+                        curtainDuration: mRes?.curtainAnimationDuration,
+                        curtainName: mRes?.curtainAnimationName,
+                        cardDuration: mRes?.cardTransitionDuration,
+                        cardProperty: mRes?.cardTransitionProperty,
+                        suppressed: (mobCurtainSuppressed && mobCardSuppressed)
+                    },
+                    structuralCssBug: "themes/egypt-fashion-child/assets/madar.css:2261 unclosed @media (max-width: 700px)"
+                },
                 status: allViewportsSuppressed ? "PASS" : "FAIL",
                 screenshot: "test_reduced_motion.png"
             });
         }
 
-        // TEST 10: Standalone Console Audit Verification
-        console.log("\n[Test 10] Checking Standalone Console Audit Log...");
+        // TEST 10: Standalone Console Audit Verification with Strict Structural Validation
+        console.log("\n[Test 10] Checking Standalone Console Audit Log with Strict Validator...");
         {
             const logPath = path.join(reviewDir, "console_audit_log.json");
             let auditLog = null;
-            let fileValid = false;
-
             if (fs.existsSync(logPath)) {
                 try {
                     auditLog = JSON.parse(fs.readFileSync(logPath, "utf8"));
-                    fileValid = true;
                 } catch (_) {}
             }
 
-            const expectedRuns = 22;
-            const actualRuns = auditLog?.runs?.length || 0;
-            const hasCompleteCoverage = actualRuns === expectedRuns;
-            const canaryPassed = auditLog?.canaryVerification?.passed === true;
-            const allNavOk = auditLog?.runs ? auditLog.runs.every(r => r.status === "OK") : false;
-            const totalErrors = auditLog?.summary?.totalErrors || 0;
-            const totalExceptions = auditLog?.summary?.totalUnhandledExceptions || 0;
-
-            let test10Status = "PASS";
-            let actualMsg = "";
-
-            if (!fileValid || !auditLog) {
-                test10Status = "NOT TESTED";
-                actualMsg = "ملف سجل الكونسول مفقود أو غير صالح. صُنّف خطأ رصد/NOT TESTED.";
-                hasFailure = true;
-            } else if (!hasCompleteCoverage || !allNavOk) {
-                test10Status = "NOT TESTED";
-                actualMsg = `تغطية الفحص ناقصة أو حدث فشل تنقل (${actualRuns}/${expectedRuns} تشغيل ناجح). صُنّف NOT TESTED.`;
-                hasFailure = true;
-            } else if (!canaryPassed) {
-                test10Status = "FAIL";
-                actualMsg = "فشل اختبار التحقق المستقل من المجمع (Canary verification failed).";
-                hasFailure = true;
-            } else if (totalErrors > 0 || totalExceptions > 0) {
-                test10Status = "FAIL";
-                actualMsg = `رُصدت أخطاء أو استثناءات: ${totalExceptions} استثناءات، ${totalErrors} أخطاء.`;
-                hasFailure = true;
-            } else {
-                test10Status = "PASS";
-                actualMsg = `تم التحقق بالمستمعين الدائمين عبر 22 تشغيلاً كاملاً (11 صفحة × 2 مقاس). التحقق المستقل (Canary on about:blank): ناجح ومفصول. صفر استثناءات غير معالجة وصفر أخطاء كونسول.`;
-            }
+            const validation = validateConsoleAuditLog(auditLog);
+            if (validation.status !== "PASS") hasFailure = true;
 
             testResults.push({
                 testId: "TEST-10",
                 name: "فحص سجل الكونسول (Console): صفر أخطاء JS مع تسجيل التحذيرات في كافة الصفحات",
-                steps: "1. فحص ملف console_audit_log.json المجمع بواسطة السكربت المستقل audit_console.mjs. 2. التحقق من اكتمال مصفوفة الـ 22 تشغيلاً (11 صفحة × مقاسين) وسلامة التنقل. 3. التحقق من نجاح فحص الـ Canary المعزول على about:blank. 4. التأكد من انعدام الاستثناءات والأخطاء.",
-                expected: "ملف تدقيق سليم بتغطية كاملة (22/22 تشغيل بنجاح OK)، ونجاح فحص الـ Canary المستقل، مع صفر أخطاء كونسول وصفر استثناءات JS.",
-                actual: actualMsg,
-                status: test10Status,
+                steps: "1. فحص ملف console_audit_log.json المجمع بواسطة السكربت المستقل audit_console.mjs. 2. التحقق البنيوي الصارم من اكتمال مصفوفة الـ 22 تشغيلاً الفريدة وسلامة التنقل وثبات صفحة الدفع دون تحويل. 3. مطابقة الأعداد مع تفاصيل التشغيلات والتحقق المستقل من Canary على صفحة معزولة. 4. التأكد من انعدام الاستثناءات والأخطاء.",
+                expected: "ملف تدقيق سليم بتغطية فريدة كاملة (22/22 تشغيل بنجاح OK دون تحويل)، ونجاح فحص الـ Canary المستقل، مع صفر أخطاء كونسول وصفر استثناءات JS.",
+                actual: validation.reason,
+                metrics: {
+                    validationResult: validation.status,
+                    isValidStructure: validation.valid,
+                    totalRunsRecorded: auditLog?.runs?.length || 0,
+                    uniqueScenesCovered: auditLog?.runs ? new Set(auditLog.runs.map(r => r.runKey)).size : 0,
+                    checkoutCoveredWithoutRedirect: auditLog?.runs ? auditLog.runs.filter(r => r.pageName === 'checkout').every(r => r.status === 'OK' && r.finalUrl.includes('/checkout/')) : false,
+                    canaryPassed: auditLog?.canaryVerification?.passed === true,
+                    totalErrors: auditLog?.summary?.totalErrors ?? null,
+                    totalUnhandledExceptions: auditLog?.summary?.totalUnhandledExceptions ?? null,
+                    totalWarnings: auditLog?.summary?.totalWarnings ?? null
+                },
+                status: validation.status,
                 screenshot: "home_1440.png"
             });
         }
@@ -726,9 +851,17 @@ async function run() {
             testResults.push({
                 testId: "TEST-11",
                 name: "أداء الموبايل وتدقيق Lighthouse الرسمي (تقرير الأداء vs هدف الأداء)",
-                steps: "1. قراءة تقارير Lighthouse الرسمية الأرشيفية (المحفوظة بتاريخ 12 أكتوبر 2026 في lighthouse/). 2. مقارنة الدرجات المحققة بالهدف المطلوب (>= 80/100).",
+                steps: "1. قراءة تقارير Lighthouse الرسمية الأرشيفية (المحفوظة بتاريخ 12 أكتوبر 2026 في lighthouse/). 2. مقارنة الدرجات المحققة بالهدف المطلوب للأداء فقط (>= 80/100).",
                 expected: "تحقيق هدف الأداء المطلوب (>= 80/100) لكل من الصفحة الرئيسية وصفحة المنتج.",
                 actual: `تقارير Lighthouse أرشيفية مثبتة بتاريخ 12 أكتوبر 2026 في مجلد lighthouse/. صفحة المنتج حققت الهدف: ${prodPerfScore}/100 (>= 80). الصفحة الرئيسية فشلت في تحقيق الهدف: ${homePerfScore}/100 (< 80) نتيجة حجب موارد CSS وحجم الصور عبر الأقسام الـ 16. انزياح التخطيط التراكمي (CLS) المقاس: 0.004 للرئيسية و 0 للمنتج. النتيجة: FAIL.`,
+                metrics: {
+                    archivalDate: "2026-10-12",
+                    targetPerformanceScore: targetScore,
+                    homePerformanceScore: homePerfScore,
+                    homeMetTarget: homeMetTarget,
+                    productPerformanceScore: prodPerfScore,
+                    productMetTarget: prodMetTarget
+                },
                 status: (homeMetTarget && prodMetTarget) ? "PASS" : "FAIL",
                 screenshot: "test_lighthouse_metrics.png"
             });

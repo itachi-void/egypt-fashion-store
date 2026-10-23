@@ -1,0 +1,150 @@
+{
+  "runId": "audit_run_2026-10-23T13-01-00-109Z",
+  "pipelineStart": "2026-10-23T13:01:00.116Z",
+  "environment": {
+    "nodeVersion": "v24.13.0",
+    "platform": "win32",
+    "arch": "x64",
+    "gitBranch": "review/local-snapshot",
+    "currentCommit": "672f7cbbe0a556e4aadeecea3380d1ec04cabd9d",
+    "targetStore": "http://capability-test.local/"
+  },
+  "steps": [
+    {
+      "name": "verify_validator",
+      "command": "node review/madar-v216/scripts/verify_validator.mjs",
+      "description": "Independent negative validation unit tests verifying rejection of synthetic invalid console audit logs (missing fields, repeated scenes, discrepancies, checkout redirect, network errors)",
+      "startTime": "2026-10-23T13:01:00.117Z",
+      "endTime": "2026-10-23T13:01:00.524Z",
+      "durationMs": 407,
+      "expectedExitCode": 0,
+      "actualExitCode": 0,
+      "exitCodeMatchesExpectation": true,
+      "outputs": [],
+      "outputSnippet": "=== RUNNING INDEPENDENT NEGATIVE VALIDATION TESTS ===\n[PASS] Fixture 1 (missing summary/run fields) correctly rejected as NOT TESTED\n[PASS] Fixture 2 (repeated home_375 scene) correctly rejected as NOT TESTED\n[PASS] Fixture 3 (raw errors vs zero summary discrepancy) correctly rejected as NOT TESTED\n[PASS] Fixture 4 (checkout redirected to cart) correctly rejected as NOT TESTED\n[PASS] Fixture 5 (network connection refused) correctly rejected as NOT TESTED\n=== ALL NEGATIVE VALIDATION TESTS PASSED "
+    },
+    {
+      "name": "audit_console",
+      "command": "node review/madar-v216/scripts/audit_console.mjs",
+      "description": "Standalone console audit with permanent CDP listeners, isolated Canary verification, and checkout page pre-population to guarantee 22 unique scenes without redirect to cart",
+      "startTime": "2026-10-23T13:01:00.525Z",
+      "endTime": "2026-10-23T13:03:03.094Z",
+      "durationMs": 122569,
+      "expectedExitCode": 0,
+      "actualExitCode": 0,
+      "exitCodeMatchesExpectation": true,
+      "outputs": [
+        {
+          "file": "console_audit_log.json",
+          "sizeBytes": 14720,
+          "sha256": "9d3102392caba1f25390cdf2846ca036e44d6057e0bc37177d929948fdfbbd55"
+        }
+      ],
+      "outputSnippet": "=== STARTING STANDALONE CONSOLE AUDIT WITH PERMANENT LISTENERS ===\n\n[Step 1] Running isolated canary verification on about:blank...\nCanary verification: PASSED (listeners verified active)\nAuditing [home_375] -> http://capability-test.local/ (375x812)...\nAuditing [home_1440] -> http://capability-test.local/ (1440x900)...\nAuditing [shop_375] -> http://capability-test.local/shop/ (375x812)...\nAuditing [shop_1440] -> http://capability-test.local/shop/ (1440x900)...\nAuditing [category_men_375] -> htt"
+    },
+    {
+      "name": "run_functional_tests",
+      "command": "node review/madar-v216/scripts/run_functional_tests.mjs",
+      "description": "Rigorous functional test suite (TEST-01 to TEST-11) testing storefront behavior, DOM metrics, empirical variation ID proof, and recording true FAIL/BLOCKED statuses",
+      "startTime": "2026-10-23T13:03:03.099Z",
+      "endTime": "2026-10-23T13:04:19.949Z",
+      "durationMs": 76850,
+      "expectedExitCode": 1,
+      "actualExitCode": 1,
+      "exitCodeMatchesExpectation": true,
+      "outputs": [
+        {
+          "file": "test_results.json",
+          "sizeBytes": 17044,
+          "sha256": "dc2b88db1a7395143093f8a418342be5c44de2d06ee6b635a97040ea2ceda791"
+        },
+        {
+          "file": "screenshots/test_card_during_hover.png",
+          "sizeBytes": 800571,
+          "sha256": "c132a36233cb33b466699d971d2bd34f6b183fe889845612ec22c69eff51ed5d"
+        },
+        {
+          "file": "screenshots/test_card_post_hover.png",
+          "sizeBytes": 807554,
+          "sha256": "2dd66ee6ab4cc7fe89302ce2085769061a9e08cb05888d2f9ae68f7fcc1d415e"
+        },
+        {
+          "file": "screenshots/test_add_to_cart_badges.png",
+          "sizeBytes": 68884,
+          "sha256": "0ac2d5502d3d794b43d24616057c2d6de2d308ab63519aa6d835f94ce6c2f59e"
+        },
+        {
+          "file": "screenshots/test_outofstock_variation.png",
+          "sizeBytes": 286997,
+          "sha256": "1f70b55bf9dcbed04ab06b322b6d9a6164d8a492b3bf748e5a41eb5415bff86c"
+        },
+        {
+          "file": "screenshots/test_cart_update_remove.png",
+          "sizeBytes": 51780,
+          "sha256": "b62f6425e5cca888cde1d4082c38b862a0a0a88eca1555f699a4dc73ec153b81"
+        },
+        {
+          "file": "screenshots/test_search_flow.png",
+          "sizeBytes": 68914,
+          "sha256": "5bde114a7b5bfd742e2238b557ba0c7216321c9c63c9371ccf2834e82f05f088"
+        },
+        {
+          "file": "screenshots/test_auth_flow.png",
+          "sizeBytes": 60916,
+          "sha256": "ffe46ac02d44e8fbd078b93e727beb9cf0634876da18628a6298c6d6409874a8"
+        },
+        {
+          "file": "screenshots/test_mobile_menu_after_esc.png",
+          "sizeBytes": 70174,
+          "sha256": "12f3d26f2037a8181ffca66217cd3f89769ce0a00fc5c9de4a5a7b42c311ef92"
+        },
+        {
+          "file": "screenshots/test_reduced_motion.png",
+          "sizeBytes": 3955,
+          "sha256": "13bda0a915b04e1ab3cb9e66ddd36c4cfbcc297b3d777c1dc9219af3f4ee0a37"
+        }
+      ],
+      "outputSnippet": "=== STARTING RIGOROUS FUNCTIONAL TEST SUITE ===\n\n[Test 1] Running Card Hover & Layout Shift test...\n\n[Test 2] Running Add to Cart & Badges Update test...\n\n[Test 3] Running Out-of-Stock Variation test (Product #141, Var #145)...\n\n[Test 4] Running Cart Item Removal test...\n\n[Test 5] Recording Live Test Order policy status...\n\n[Test 6] Running Search with and without results test...\n\n[Test 7] Running Auth cycle & Password Reset test...\n\n[Test 8] Running Mobile Menu Escape & Focus Trace test...\n\n[Te"
+    },
+    {
+      "name": "generate_screenshots_manifest",
+      "command": "node review/madar-v216/scripts/generate_screenshots_manifest.mjs",
+      "description": "Generate structured screenshots manifest categorizing all PNG screenshots (natural, intervened, archival) with dimensions, interventions, and SHA-256 hashes",
+      "startTime": "2026-10-23T13:04:19.980Z",
+      "endTime": "2026-10-23T13:04:20.480Z",
+      "durationMs": 500,
+      "expectedExitCode": 0,
+      "actualExitCode": 0,
+      "exitCodeMatchesExpectation": true,
+      "outputs": [
+        {
+          "file": "screenshots_manifest.json",
+          "sizeBytes": 37587,
+          "sha256": "38f8eab4626065042fed0d7edbc18b85c315f750a2d2ab606ca512a2ca63c698"
+        }
+      ],
+      "outputSnippet": "Generated screenshots manifest: C:\\Users\\itachi\\.gemini\\antigravity-ide\\scratch\\egypt-fashion-store\\review\\madar-v216\\screenshots_manifest.json (82 files, 3 duplicate groups)\n"
+    },
+    {
+      "name": "generate_report",
+      "command": "node review/madar-v216/scripts/generate_report.mjs",
+      "description": "Compile and synchronize review/madar-v216/report.md directly from raw test_results.json and manifest with 100% numerical consistency",
+      "startTime": "2026-10-23T13:04:20.483Z",
+      "endTime": "2026-10-23T13:04:20.689Z",
+      "durationMs": 206,
+      "expectedExitCode": 0,
+      "actualExitCode": 0,
+      "exitCodeMatchesExpectation": true,
+      "outputs": [
+        {
+          "file": "report.md",
+          "sizeBytes": 37568,
+          "sha256": "e4b8df38d716c19426768ad0ffd5b7f996a001f13b4a72f832816a2ca4bc739e"
+        }
+      ],
+      "outputSnippet": "Generated report.md: C:\\Users\\itachi\\.gemini\\antigravity-ide\\scratch\\egypt-fashion-store\\review\\madar-v216\\report.md (26381 bytes)\n"
+    }
+  ],
+  "pipelineEnd": "2026-10-23T13:04:20.692Z",
+  "overallExitStatus": "SUCCESS_WITH_DOCUMENTED_FAILURES"
+}

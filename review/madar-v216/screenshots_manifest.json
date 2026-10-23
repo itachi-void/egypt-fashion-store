@@ -1,0 +1,1188 @@
+{
+  "generatedAt": "2026-10-23T13:04:20.102Z",
+  "totalScreenshots": 82,
+  "screenshots": [
+    {
+      "filename": "card_after_hover_1440.png",
+      "sha256": "6e2fe9a70ab7793948d07f08b4693518e4d26ffced8f65fdd64d0026956d9103",
+      "sizeBytes": 832852,
+      "targetUrl": "http://capability-test.local/",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "category": "intervened",
+      "interventions": [
+        "removed .motion-curtain, simulated hover on desktop card"
+      ],
+      "provenance": "commit:c04b79d (2026-10-12)"
+    },
+    {
+      "filename": "card_before_hover_1440.png",
+      "sha256": "2ad0c8294a9c74466b4908afd0a9bb3692cbbf91c8b1cc20cafc624480cb6966",
+      "sizeBytes": 822188,
+      "targetUrl": "http://capability-test.local/",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "category": "intervened",
+      "interventions": [
+        "removed .motion-curtain, scrolled card into view"
+      ],
+      "provenance": "commit:c04b79d (2026-10-12)"
+    },
+    {
+      "filename": "card_tap_after_375.png",
+      "sha256": "2e1b10d0133e3c6d80fc8cfc58929dce8f3dcf9b8dcaae5ece22bf8342ed00f1",
+      "sizeBytes": 263236,
+      "targetUrl": "http://capability-test.local/",
+      "viewport": {
+        "width": 375,
+        "height": 812
+      },
+      "category": "intervened",
+      "interventions": [
+        "removed .motion-curtain, simulated tap on mobile card"
+      ],
+      "provenance": "commit:c04b79d (2026-10-12)"
+    },
+    {
+      "filename": "card_tap_before_375.png",
+      "sha256": "c80efa3f81b4cf39fd238c7331b22f8857db94f1f98f4c27727997fd0e8cac90",
+      "sizeBytes": 265599,
+      "targetUrl": "http://capability-test.local/",
+      "viewport": {
+        "width": 375,
+        "height": 812
+      },
+      "category": "intervened",
+      "interventions": [
+        "removed .motion-curtain, scrolled card into view"
+      ],
+      "provenance": "commit:c04b79d (2026-10-12)"
+    },
+    {
+      "filename": "cart_1440.png",
+      "sha256": "17ab8d74eefb62fc2258022107068e3a605b38910e9f87ec266cd0e744d5d6cb",
+      "sizeBytes": 53059,
+      "targetUrl": "http://capability-test.local/cart/",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "category": "natural",
+      "interventions": [
+        "cart populated via ?add-to-cart=44"
+      ],
+      "provenance": "commit:c04b79d (2026-10-12)"
+    },
+    {
+      "filename": "cart_1440_full.png",
+      "sha256": "e1a119da14be99dc64bf0681b3833da57b8fbb2995a72e00a89c783b512b32f7",
+      "sizeBytes": 85019,
+      "targetUrl": "http://capability-test.local/cart/",
+      "viewport": {
+        "width": 1440,
+        "height": 1100
+      },
+      "category": "natural",
+      "interventions": [
+        "cart populated via ?add-to-cart=44"
+      ],
+      "provenance": "commit:c04b79d (2026-10-12)"
+    },
+    {
+      "filename": "cart_375.png",
+      "sha256": "6c5449e21363d1c6693d3d691f4eae0fbc8b8f1409798c4a0c86086cea1eee46",
+      "sizeBytes": 25256,
+      "targetUrl": "http://capability-test.local/cart/",
+      "viewport": {
+        "width": 375,
+        "height": 812
+      },
+      "category": "natural",
+      "interventions": [
+        "cart populated via ?add-to-cart=44"
+      ],
+      "provenance": "commit:c04b79d (2026-10-12)"
+    },
+    {
+      "filename": "cart_375_full.png",
+      "sha256": "58be545addf26accbb8dff870094e552946e830cec645682a12f6dc6e8740cdc",
+      "sizeBytes": 56991,
+      "targetUrl": "http://capability-test.local/cart/",
+      "viewport": {
+        "width": 375,
+        "height": 1200
+      },
+      "category": "natural",
+      "interventions": [
+        "cart populated via ?add-to-cart=44"
+      ],
+      "provenance": "commit:c04b79d (2026-10-12)"
+    },
+    {
+      "filename": "cart_page_1440.png",
+      "sha256": "698c5b7e320fdb1247ca0d0fc3832eb042e231979d8888d76f4d7c14faca095e",
+      "sizeBytes": 47751,
+      "targetUrl": "http://capability-test.local/",
+      "viewport": {
+        "width": 0,
+        "height": 0
+      },
+      "category": "unclassified",
+      "interventions": [],
+      "provenance": "unknown"
+    },
+    {
+      "filename": "category_kids_1440.png",
+      "sha256": "66491362b82acf74eaa4b76349a9ad3f7f32fb6b6fdcf38d4d807fe9cacdffd3",
+      "sizeBytes": 760484,
+      "targetUrl": "http://capability-test.local/product-category/kids/",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "category": "natural",
+      "interventions": [],
+      "provenance": "commit:c04b79d (2026-10-12)"
+    },
+    {
+      "filename": "category_kids_1440_full.png",
+      "sha256": "69b34f493d91a2ae4d3b8c1712456613035a4bf5004c4103bb6fc6038bdde4d2",
+      "sizeBytes": 890465,
+      "targetUrl": "http://capability-test.local/product-category/kids/",
+      "viewport": {
+        "width": 1440,
+        "height": 1540
+      },
+      "category": "natural",
+      "interventions": [],
+      "provenance": "commit:c04b79d (2026-10-12)"
+    },
+    {
+      "filename": "category_kids_375.png",
+      "sha256": "f5b68182a9d1500f9519910b08b0600307113f1e3032e01aa4ad40c8529879b9",
+      "sizeBytes": 151530,
+      "targetUrl": "http://capability-test.local/product-category/kids/",
+      "viewport": {
+        "width": 375,
+        "height": 812
+      },
+      "category": "natural",
+      "interventions": [],
+      "provenance": "commit:c04b79d (2026-10-12)"
+    },
+    {
+      "filename": "category_kids_375_full.png",
+      "sha256": "1caed652b54e5ac9faa378a46c72348613434d0883a4fab6eb98128ab6fd9a6c",
+      "sizeBytes": 325945,
+      "targetUrl": "http://capability-test.local/product-category/kids/",
+      "viewport": {
+        "width": 375,
+        "height": 1680
+      },
+      "category": "natural",
+      "interventions": [],
+      "provenance": "commit:c04b79d (2026-10-12)"
+    },
+    {
+      "filename": "category_men_1440.png",
+      "sha256": "5eb0a2e9381705d3944dff134f1c81c4f60cde1efc13651bb84e2187ecfa551b",
+      "sizeBytes": 632906,
+      "targetUrl": "http://capability-test.local/product-category/men/",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "category": "natural",
+      "interventions": [],
+      "provenance": "commit:c04b79d (2026-10-12)"
+    },
+    {
+      "filename": "category_men_1440_full.png",
+      "sha256": "509ab9760abd4367a0558ffcc5338ae8231673b4f531f438000cbe4ffd381e08",
+      "sizeBytes": 1050439,
+      "targetUrl": "http://capability-test.local/product-category/men/",
+      "viewport": {
+        "width": 1440,
+        "height": 1540
+      },
+      "category": "natural",
+      "interventions": [],
+      "provenance": "commit:c04b79d (2026-10-12)"
+    },
+    {
+      "filename": "category_men_375.png",
+      "sha256": "915d9e671f9f6129c8664de5c72825aaee88da8a7637e0d386ad94c5cf356c78",
+      "sizeBytes": 123036,
+      "targetUrl": "http://capability-test.local/product-category/men/",
+      "viewport": {
+        "width": 375,
+        "height": 812
+      },
+      "category": "natural",
+      "interventions": [],
+      "provenance": "commit:c04b79d (2026-10-12)"
+    },
+    {
+      "filename": "category_men_375_full.png",
+      "sha256": "583f70e80974e18ad855e681590ba2bd32f205102f5e9ea2de93acf8390dc576",
+      "sizeBytes": 360945,
+      "targetUrl": "http://capability-test.local/product-category/men/",
+      "viewport": {
+        "width": 375,
+        "height": 1680
+      },
+      "category": "natural",
+      "interventions": [],
+      "provenance": "commit:c04b79d (2026-10-12)"
+    },
+    {
+      "filename": "checkout_1440.png",
+      "sha256": "b3614cd3afdd42690d98bd2afe1cdc305522c8bc287389782598b98a873cc45f",
+      "sizeBytes": 54255,
+      "targetUrl": "http://capability-test.local/checkout/",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "category": "natural",
+      "interventions": [
+        "session cart populated with item"
+      ],
+      "provenance": "commit:e364bb7 (2026-10-22)"
+    },
+    {
+      "filename": "checkout_1440_full.png",
+      "sha256": "58c7407c9d018078ef64f47cd4ab939844958fd5174ebe487cd7537dae605942",
+      "sizeBytes": 106047,
+      "targetUrl": "http://capability-test.local/checkout/",
+      "viewport": {
+        "width": 1440,
+        "height": 1600
+      },
+      "category": "natural",
+      "interventions": [
+        "session cart populated with item"
+      ],
+      "provenance": "commit:e364bb7 (2026-10-22)"
+    },
+    {
+      "filename": "checkout_375.png",
+      "sha256": "2e918c8b43affb69ba1b3a8d341c1ec4700081031e5463687cd7f215ee1782c3",
+      "sizeBytes": 35463,
+      "targetUrl": "http://capability-test.local/checkout/",
+      "viewport": {
+        "width": 375,
+        "height": 812
+      },
+      "category": "natural",
+      "interventions": [
+        "session cart populated with item"
+      ],
+      "provenance": "commit:e364bb7 (2026-10-22)"
+    },
+    {
+      "filename": "checkout_375_full.png",
+      "sha256": "b957b061308a9f3968aaf628430328fba678f347b889e57418fe3d7fa368281e",
+      "sizeBytes": 93089,
+      "targetUrl": "http://capability-test.local/checkout/",
+      "viewport": {
+        "width": 375,
+        "height": 1900
+      },
+      "category": "natural",
+      "interventions": [
+        "session cart populated with item"
+      ],
+      "provenance": "commit:e364bb7 (2026-10-22)"
+    },
+    {
+      "filename": "full_wp_1440.png",
+      "sha256": "ee4b83963073cd48699c28fb8fb555e8e3d0a9e17de93cc1d3734a87651c8257",
+      "sizeBytes": 6011856,
+      "targetUrl": "http://capability-test.local/",
+      "viewport": {
+        "width": 0,
+        "height": 0
+      },
+      "category": "unclassified",
+      "interventions": [],
+      "provenance": "unknown"
+    },
+    {
+      "filename": "header_menu_open_375.png",
+      "sha256": "525b27cd14c5c4865cd42069a4d278510937c88f07a9a53f05e47e7d003a231e",
+      "sizeBytes": 62912,
+      "targetUrl": "http://capability-test.local/",
+      "viewport": {
+        "width": 375,
+        "height": 812
+      },
+      "category": "intervened",
+      "interventions": [
+        "clicked .store-menu-toggle button"
+      ],
+      "provenance": "commit:c04b79d (2026-10-12)"
+    },
+    {
+      "filename": "header_menu_open_375_full.png",
+      "sha256": "9e4a361170fb89bfa63e17356364d1fb14434774743d7a25f1f0e99069c7da9d",
+      "sizeBytes": 70112,
+      "targetUrl": "http://capability-test.local/",
+      "viewport": {
+        "width": 0,
+        "height": 0
+      },
+      "category": "unclassified",
+      "interventions": [],
+      "provenance": "unknown"
+    },
+    {
+      "filename": "home_1440.png",
+      "sha256": "bb9c68f8402656eed0acfb3ed4e74060cde5116b82ef079c9cb34b6f81a0831e",
+      "sizeBytes": 439698,
+      "targetUrl": "http://capability-test.local/",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "category": "natural",
+      "interventions": [],
+      "provenance": "commit:c04b79d (2026-10-12)"
+    },
+    {
+      "filename": "home_1440_full.png",
+      "sha256": "a96fbc23b74840c443b5de704696d18de4f1ae81bef875f41a5cb585e88595c7",
+      "sizeBytes": 8031659,
+      "targetUrl": "http://capability-test.local/",
+      "viewport": {
+        "width": 1440,
+        "height": 10939
+      },
+      "category": "intervened",
+      "interventions": [
+        "removed .motion-curtain",
+        "forced .is-visible to capture full lazy content"
+      ],
+      "provenance": "commit:e364bb7 (2026-10-22)"
+    },
+    {
+      "filename": "home_375.png",
+      "sha256": "01e4f0abcc34f58dc330f3312aab568ec1fb8ee0be933a221ec2eda8c5190241",
+      "sizeBytes": 99511,
+      "targetUrl": "http://capability-test.local/",
+      "viewport": {
+        "width": 375,
+        "height": 812
+      },
+      "category": "natural",
+      "interventions": [],
+      "provenance": "commit:e364bb7 (2026-10-22)"
+    },
+    {
+      "filename": "home_375_full.png",
+      "sha256": "dbef125db5d33ee180edd7f0bd8b3f6ec8cd65ffa81351fc4e452f034fd54146",
+      "sizeBytes": 2170279,
+      "targetUrl": "http://capability-test.local/",
+      "viewport": {
+        "width": 375,
+        "height": 11672
+      },
+      "category": "intervened",
+      "interventions": [
+        "removed .motion-curtain",
+        "forced .is-visible to capture full lazy content"
+      ],
+      "provenance": "commit:e364bb7 (2026-10-22)"
+    },
+    {
+      "filename": "lost_password_1440.png",
+      "sha256": "1d0dcea214a932ed076ea19f2c11dd96394a87b2902a348576ee3a5b1ce9d629",
+      "sizeBytes": 52570,
+      "targetUrl": "http://capability-test.local/my-account/lost-password/",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "category": "natural",
+      "interventions": [],
+      "provenance": "commit:c04b79d (2026-10-12)"
+    },
+    {
+      "filename": "lost_password_1440_full.png",
+      "sha256": "cd8d97d21a6c64f6a16fd871a89cb0b91d9f62a4b874e7b143569f98d845b86e",
+      "sizeBytes": 78949,
+      "targetUrl": "http://capability-test.local/my-account/lost-password/",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "category": "natural",
+      "interventions": [],
+      "provenance": "commit:c04b79d (2026-10-12)"
+    },
+    {
+      "filename": "lost_password_375.png",
+      "sha256": "01c1a163a8440d06854dc2a3ecfe54190f4d7d48820d2ab3d5ac39d3e4635706",
+      "sizeBytes": 34854,
+      "targetUrl": "http://capability-test.local/my-account/lost-password/",
+      "viewport": {
+        "width": 375,
+        "height": 812
+      },
+      "category": "natural",
+      "interventions": [],
+      "provenance": "commit:c04b79d (2026-10-12)"
+    },
+    {
+      "filename": "lost_password_375_full.png",
+      "sha256": "0fb2a31ea01f8ee748e85bbeb10b262bf64254ceebdd9cf7c9b85b5faad9aa5e",
+      "sizeBytes": 60073,
+      "targetUrl": "http://capability-test.local/my-account/lost-password/",
+      "viewport": {
+        "width": 375,
+        "height": 1000
+      },
+      "category": "natural",
+      "interventions": [],
+      "provenance": "commit:c04b79d (2026-10-12)"
+    },
+    {
+      "filename": "mini_cart_open_1440.png",
+      "sha256": "67027d5327a8b70cfa6932ffaf94375b3748ee7c9356cc016f95ef05e325d746",
+      "sizeBytes": 52272,
+      "targetUrl": "http://capability-test.local/",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "category": "intervened",
+      "interventions": [
+        "forced class .is-open on mini-cart drawer"
+      ],
+      "provenance": "commit:c04b79d (2026-10-12)"
+    },
+    {
+      "filename": "mini_cart_open_375.png",
+      "sha256": "63a426788569e2860b93d499f0ea937133a5ea130451b1495fe96bfd71a777fe",
+      "sizeBytes": 26577,
+      "targetUrl": "http://capability-test.local/",
+      "viewport": {
+        "width": 375,
+        "height": 812
+      },
+      "category": "intervened",
+      "interventions": [
+        "forced class .is-open on mini-cart drawer"
+      ],
+      "provenance": "commit:c04b79d (2026-10-12)"
+    },
+    {
+      "filename": "mini_cart_open_375_full.png",
+      "sha256": "63a426788569e2860b93d499f0ea937133a5ea130451b1495fe96bfd71a777fe",
+      "sizeBytes": 26577,
+      "targetUrl": "http://capability-test.local/",
+      "viewport": {
+        "width": 375,
+        "height": 812
+      },
+      "category": "intervened",
+      "interventions": [
+        "forced class .is-open on mini-cart drawer"
+      ],
+      "provenance": "commit:c04b79d (2026-10-12)"
+    },
+    {
+      "filename": "my_account_logged_in_1440.png",
+      "sha256": "0a1d840ec4dac40823bb57c5491af7b391ba93f05e04303a95d7b24e90e6695f",
+      "sizeBytes": 30401,
+      "targetUrl": "http://capability-test.local/my-account/",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "category": "archival",
+      "interventions": [
+        "authenticated customer session in baseline review"
+      ],
+      "provenance": "commit:c04b79d (2026-10-12)"
+    },
+    {
+      "filename": "my_account_logged_in_1440_full.png",
+      "sha256": "711b82a6311467f3c13c2418fec08674e8a98bbb1bba25ad6f3d7e63b6e4457e",
+      "sizeBytes": 81915,
+      "targetUrl": "http://capability-test.local/my-account/",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "category": "archival",
+      "interventions": [
+        "authenticated customer session in baseline review"
+      ],
+      "provenance": "commit:c04b79d (2026-10-12)"
+    },
+    {
+      "filename": "my_account_logged_in_375.png",
+      "sha256": "9890d828ac6b1722858c081d06005a027ce5299128b8cad1cc6ae172f830529b",
+      "sizeBytes": 25417,
+      "targetUrl": "http://capability-test.local/my-account/",
+      "viewport": {
+        "width": 375,
+        "height": 812
+      },
+      "category": "archival",
+      "interventions": [
+        "authenticated customer session in baseline review"
+      ],
+      "provenance": "commit:c04b79d (2026-10-12)"
+    },
+    {
+      "filename": "my_account_logged_in_375_full.png",
+      "sha256": "ec2c1c6290147ed75f4c7f39a97a76ec7c1f2f870f3c171f3cef54bae830d5f6",
+      "sizeBytes": 40305,
+      "targetUrl": "http://capability-test.local/my-account/",
+      "viewport": {
+        "width": 375,
+        "height": 1100
+      },
+      "category": "archival",
+      "interventions": [
+        "authenticated customer session in baseline review"
+      ],
+      "provenance": "commit:c04b79d (2026-10-12)"
+    },
+    {
+      "filename": "my_account_logged_out_1440.png",
+      "sha256": "339167f4a1180d21e3016fa58413e7ae562c96d790cbbe25a9ae5ff6dae42595",
+      "sizeBytes": 45906,
+      "targetUrl": "http://capability-test.local/my-account/",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "category": "natural",
+      "interventions": [],
+      "provenance": "commit:c04b79d (2026-10-12)"
+    },
+    {
+      "filename": "my_account_logged_out_1440_full.png",
+      "sha256": "6ba3d09f5c8976815b907a3c1df1a0fb8b3fbeed0f063be4c899d8a37f855157",
+      "sizeBytes": 108409,
+      "targetUrl": "http://capability-test.local/my-account/",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "category": "natural",
+      "interventions": [],
+      "provenance": "commit:c04b79d (2026-10-12)"
+    },
+    {
+      "filename": "my_account_logged_out_375.png",
+      "sha256": "f0f5b6acec5f9a250fbae340c6ec7c0c18ad8551b8b3aa6160ade5989d59ca28",
+      "sizeBytes": 29982,
+      "targetUrl": "http://capability-test.local/my-account/",
+      "viewport": {
+        "width": 375,
+        "height": 812
+      },
+      "category": "natural",
+      "interventions": [],
+      "provenance": "commit:c04b79d (2026-10-12)"
+    },
+    {
+      "filename": "my_account_logged_out_375_full.png",
+      "sha256": "4bc4b0ade874ac83ee0fcd1dd367b35d47df9da4f78e3aaede22c0a28db2c8e7",
+      "sizeBytes": 87462,
+      "targetUrl": "http://capability-test.local/my-account/",
+      "viewport": {
+        "width": 375,
+        "height": 1100
+      },
+      "category": "natural",
+      "interventions": [],
+      "provenance": "commit:c04b79d (2026-10-12)"
+    },
+    {
+      "filename": "order_received_1440.png",
+      "sha256": "7379371b50808d9602ab6b599c26d2bbaf529e8ac0803df79cff7ae9fb1951fe",
+      "sizeBytes": 50575,
+      "targetUrl": "http://capability-test.local/checkout/order-received/[REDACTED]/",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "category": "archival",
+      "interventions": [
+        "historical order confirmation view with sensitive tokens redacted"
+      ],
+      "provenance": "commit:c04b79d (2026-10-12)"
+    },
+    {
+      "filename": "order_received_1440_full.png",
+      "sha256": "179c8fde8b23abc1074b093a9e172965f77c24bb1d4e32b0bf4ad7ba1192e0dc",
+      "sizeBytes": 71015,
+      "targetUrl": "http://capability-test.local/checkout/order-received/[REDACTED]/",
+      "viewport": {
+        "width": 1440,
+        "height": 1100
+      },
+      "category": "archival",
+      "interventions": [
+        "historical order confirmation view with sensitive tokens redacted"
+      ],
+      "provenance": "commit:c04b79d (2026-10-12)"
+    },
+    {
+      "filename": "order_received_375.png",
+      "sha256": "d14eb35569f99426570ef57555b0a018f0d82923b41623ca4d316ea07cea41aa",
+      "sizeBytes": 36517,
+      "targetUrl": "http://capability-test.local/checkout/order-received/[REDACTED]/",
+      "viewport": {
+        "width": 375,
+        "height": 812
+      },
+      "category": "archival",
+      "interventions": [
+        "historical order confirmation view with sensitive tokens redacted"
+      ],
+      "provenance": "commit:c04b79d (2026-10-12)"
+    },
+    {
+      "filename": "order_received_375_full.png",
+      "sha256": "3bda970e371800271e6b7f7cde28a90e4308cea87f2505186a77cd70a4e01650",
+      "sizeBytes": 59739,
+      "targetUrl": "http://capability-test.local/checkout/order-received/[REDACTED]/",
+      "viewport": {
+        "width": 375,
+        "height": 1200
+      },
+      "category": "archival",
+      "interventions": [
+        "historical order confirmation view with sensitive tokens redacted"
+      ],
+      "provenance": "commit:c04b79d (2026-10-12)"
+    },
+    {
+      "filename": "product_24_single_1440.png",
+      "sha256": "38317b798f5d52a06ff3b5e1f7354432564141099e570c0835a1fe119cd895df",
+      "sizeBytes": 49309,
+      "targetUrl": "http://capability-test.local/?p=24",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "category": "archival",
+      "interventions": [
+        "legacy product #24 view from earlier test suite"
+      ],
+      "provenance": "commit:b71fc6c (2026-10-12)"
+    },
+    {
+      "filename": "product_simple_1440.png",
+      "sha256": "63426f2db489fb00654107faa8a952908a581eefd796d311549eaab3fb806ccd",
+      "sizeBytes": 72911,
+      "targetUrl": "http://capability-test.local/?p=44",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "category": "natural",
+      "interventions": [],
+      "provenance": "commit:c04b79d (2026-10-12)"
+    },
+    {
+      "filename": "product_simple_1440_full.png",
+      "sha256": "4800a43990bb9c48d90c1f8c38e630ef95a89020950c41919b694773ffcfd19c",
+      "sizeBytes": 139616,
+      "targetUrl": "http://capability-test.local/?p=44",
+      "viewport": {
+        "width": 1440,
+        "height": 1800
+      },
+      "category": "natural",
+      "interventions": [],
+      "provenance": "commit:c04b79d (2026-10-12)"
+    },
+    {
+      "filename": "product_simple_375.png",
+      "sha256": "8bd45bce8c7221269a86473bb433c83b4feb19bf624d9def92dc0ff89c0f06cc",
+      "sizeBytes": 27117,
+      "targetUrl": "http://capability-test.local/?p=44",
+      "viewport": {
+        "width": 375,
+        "height": 812
+      },
+      "category": "natural",
+      "interventions": [],
+      "provenance": "commit:c04b79d (2026-10-12)"
+    },
+    {
+      "filename": "product_simple_375_full.png",
+      "sha256": "1eef24a8239739051d4484da8eb60d4f0a311bf0ec97460e862aeb9a1ce02746",
+      "sizeBytes": 107996,
+      "targetUrl": "http://capability-test.local/?p=44",
+      "viewport": {
+        "width": 375,
+        "height": 2100
+      },
+      "category": "natural",
+      "interventions": [],
+      "provenance": "commit:c04b79d (2026-10-12)"
+    },
+    {
+      "filename": "product_variable_1440.png",
+      "sha256": "f9d6501554589f817dd7c9e000f806870b365742e6cc0e4b737dcc0c516fdfbb",
+      "sizeBytes": 56039,
+      "targetUrl": "http://capability-test.local/?p=141",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "category": "intervened",
+      "interventions": [
+        "simulated dropdown option selection"
+      ],
+      "provenance": "commit:c04b79d (2026-10-12)"
+    },
+    {
+      "filename": "product_variable_1440_full.png",
+      "sha256": "630fc59afcc2a12faf68bf546390d08c0baa15eb2e58447425876e24f1b600a2",
+      "sizeBytes": 146366,
+      "targetUrl": "http://capability-test.local/?p=141",
+      "viewport": {
+        "width": 1440,
+        "height": 1900
+      },
+      "category": "intervened",
+      "interventions": [
+        "simulated dropdown option selection"
+      ],
+      "provenance": "commit:c04b79d (2026-10-12)"
+    },
+    {
+      "filename": "product_variable_375.png",
+      "sha256": "95bf26554331f5094a45e97c5b73b44d6de008efa3e6cacd1227dc372999822f",
+      "sizeBytes": 26009,
+      "targetUrl": "http://capability-test.local/?p=141",
+      "viewport": {
+        "width": 375,
+        "height": 812
+      },
+      "category": "intervened",
+      "interventions": [
+        "simulated dropdown option selection"
+      ],
+      "provenance": "commit:c04b79d (2026-10-12)"
+    },
+    {
+      "filename": "product_variable_375_full.png",
+      "sha256": "f9d2f0b2e8c32576e24bc113fc3299a4cca273970c784ef03c9137247b4d6591",
+      "sizeBytes": 113561,
+      "targetUrl": "http://capability-test.local/?p=141",
+      "viewport": {
+        "width": 375,
+        "height": 2200
+      },
+      "category": "intervened",
+      "interventions": [
+        "simulated dropdown option selection"
+      ],
+      "provenance": "commit:c04b79d (2026-10-12)"
+    },
+    {
+      "filename": "search_empty_1440.png",
+      "sha256": "d10cc8e7ddcf175f9289f20d9a4448b62668b13e6b8021d8aa0859f6ee236876",
+      "sizeBytes": 68887,
+      "targetUrl": "http://capability-test.local/?s=xyznotfound123&post_type=product",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "category": "natural",
+      "interventions": [],
+      "provenance": "commit:c04b79d (2026-10-12)"
+    },
+    {
+      "filename": "search_empty_1440_full.png",
+      "sha256": "59f5ac4b97a6c39c8012e9ab0a65174fe8ccbe7a4c76a9eff01be524e5fe52dc",
+      "sizeBytes": 83039,
+      "targetUrl": "http://capability-test.local/?s=xyznotfound123&post_type=product",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "category": "natural",
+      "interventions": [],
+      "provenance": "commit:c04b79d (2026-10-12)"
+    },
+    {
+      "filename": "search_empty_375.png",
+      "sha256": "b79c1f6100405accfd7b440a492ed24baaa0367b65ad5ecb01a6de6ae43d3280",
+      "sizeBytes": 41586,
+      "targetUrl": "http://capability-test.local/?s=xyznotfound123&post_type=product",
+      "viewport": {
+        "width": 375,
+        "height": 812
+      },
+      "category": "natural",
+      "interventions": [],
+      "provenance": "commit:c04b79d (2026-10-12)"
+    },
+    {
+      "filename": "search_empty_375_full.png",
+      "sha256": "a42795ba2fff8d8db8f31b0d30b4ac7c879113447029c78d73aac26b949f0065",
+      "sizeBytes": 60180,
+      "targetUrl": "http://capability-test.local/?s=xyznotfound123&post_type=product",
+      "viewport": {
+        "width": 375,
+        "height": 900
+      },
+      "category": "natural",
+      "interventions": [],
+      "provenance": "commit:c04b79d (2026-10-12)"
+    },
+    {
+      "filename": "search_results_1440.png",
+      "sha256": "410be3dad7df7850a3c553483c3d5bd28980b98c7e5c76323378ebc5a7703f34",
+      "sizeBytes": 465131,
+      "targetUrl": "http://capability-test.local/?s=%D9%82%D9%85%D9%8A%D8%B5&post_type=product",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "category": "natural",
+      "interventions": [],
+      "provenance": "commit:c04b79d (2026-10-12)"
+    },
+    {
+      "filename": "search_results_1440_full.png",
+      "sha256": "3cea91e2be77bd0d8c6a09d90cbf5caedfa3ee138f613e234870ed0fba51f3fa",
+      "sizeBytes": 528450,
+      "targetUrl": "http://capability-test.local/?s=%D9%82%D9%85%D9%8A%D8%B5&post_type=product",
+      "viewport": {
+        "width": 1440,
+        "height": 1400
+      },
+      "category": "natural",
+      "interventions": [],
+      "provenance": "commit:c04b79d (2026-10-12)"
+    },
+    {
+      "filename": "search_results_375.png",
+      "sha256": "37c071ac435fc8fa60d344e0012c1139a2bf0774ae45844b211fe25631d58f09",
+      "sizeBytes": 163005,
+      "targetUrl": "http://capability-test.local/?s=%D9%82%D9%85%D9%8A%D8%B5&post_type=product",
+      "viewport": {
+        "width": 375,
+        "height": 812
+      },
+      "category": "natural",
+      "interventions": [],
+      "provenance": "commit:c04b79d (2026-10-12)"
+    },
+    {
+      "filename": "search_results_375_full.png",
+      "sha256": "cf53fb5d5dfdb172441e3aff6a6b2c5819f21c3744dba4e35899c94d7cc6419a",
+      "sizeBytes": 195452,
+      "targetUrl": "http://capability-test.local/?s=%D9%82%D9%85%D9%8A%D8%B5&post_type=product",
+      "viewport": {
+        "width": 375,
+        "height": 1500
+      },
+      "category": "natural",
+      "interventions": [],
+      "provenance": "commit:c04b79d (2026-10-12)"
+    },
+    {
+      "filename": "shop_1440.png",
+      "sha256": "642a510217f0cc600113f7aa34eda6daa3d97a27b14f10f59da2faf4619eaf7b",
+      "sizeBytes": 568276,
+      "targetUrl": "http://capability-test.local/shop/",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "category": "natural",
+      "interventions": [],
+      "provenance": "commit:c04b79d (2026-10-12)"
+    },
+    {
+      "filename": "shop_1440_full.png",
+      "sha256": "54e4586e9f063cc04a7eedf9fc2fa9566734226f4755876f6d82672e8d67b7a1",
+      "sizeBytes": 1956631,
+      "targetUrl": "http://capability-test.local/shop/",
+      "viewport": {
+        "width": 1440,
+        "height": 1540
+      },
+      "category": "natural",
+      "interventions": [],
+      "provenance": "commit:c04b79d (2026-10-12)"
+    },
+    {
+      "filename": "shop_375.png",
+      "sha256": "f9fdacdd59ef963d6e19aa093afba68136ccb0cafcc4f36f95282430d210ec39",
+      "sizeBytes": 123236,
+      "targetUrl": "http://capability-test.local/shop/",
+      "viewport": {
+        "width": 375,
+        "height": 812
+      },
+      "category": "natural",
+      "interventions": [],
+      "provenance": "commit:c04b79d (2026-10-12)"
+    },
+    {
+      "filename": "shop_375_full.png",
+      "sha256": "69e30ca4cdefa2dfbd3069691dd64ee12ff687a321df5361c8a1825969f54c68",
+      "sizeBytes": 666733,
+      "targetUrl": "http://capability-test.local/shop/",
+      "viewport": {
+        "width": 375,
+        "height": 1680
+      },
+      "category": "natural",
+      "interventions": [],
+      "provenance": "commit:c04b79d (2026-10-12)"
+    },
+    {
+      "filename": "test_add_to_cart_badges.png",
+      "sha256": "0ac2d5502d3d794b43d24616057c2d6de2d308ab63519aa6d835f94ce6c2f59e",
+      "sizeBytes": 68884,
+      "targetUrl": "http://capability-test.local/?p=44",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "category": "intervened",
+      "interventions": [
+        "clicked button.single_add_to_cart_button"
+      ],
+      "provenance": "session:current (2026-10-23)"
+    },
+    {
+      "filename": "test_auth_flow.png",
+      "sha256": "ffe46ac02d44e8fbd078b93e727beb9cf0634876da18628a6298c6d6409874a8",
+      "sizeBytes": 60916,
+      "targetUrl": "http://capability-test.local/my-account/lost-password/",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "category": "intervened",
+      "interventions": [
+        "submitted lost password form"
+      ],
+      "provenance": "session:current (2026-10-23)"
+    },
+    {
+      "filename": "test_card_during_hover.png",
+      "sha256": "c132a36233cb33b466699d971d2bd34f6b183fe889845612ec22c69eff51ed5d",
+      "sizeBytes": 800571,
+      "targetUrl": "http://capability-test.local/",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "category": "intervened",
+      "interventions": [
+        "removed .motion-curtain, mouseMoved onto card center"
+      ],
+      "provenance": "session:current (2026-10-23)"
+    },
+    {
+      "filename": "test_card_hover.png",
+      "sha256": "c132a36233cb33b466699d971d2bd34f6b183fe889845612ec22c69eff51ed5d",
+      "sizeBytes": 800571,
+      "targetUrl": "http://capability-test.local/",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "category": "intervened",
+      "interventions": [
+        "removed .motion-curtain, mouseMoved onto card center"
+      ],
+      "provenance": "session:current (2026-10-23)"
+    },
+    {
+      "filename": "test_card_post_hover.png",
+      "sha256": "2dd66ee6ab4cc7fe89302ce2085769061a9e08cb05888d2f9ae68f7fcc1d415e",
+      "sizeBytes": 807554,
+      "targetUrl": "http://capability-test.local/",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "category": "intervened",
+      "interventions": [
+        "removed .motion-curtain, mouseMoved away to 0,0"
+      ],
+      "provenance": "session:current (2026-10-23)"
+    },
+    {
+      "filename": "test_cart_update_remove.png",
+      "sha256": "b62f6425e5cca888cde1d4082c38b862a0a0a88eca1555f699a4dc73ec153b81",
+      "sizeBytes": 51780,
+      "targetUrl": "http://capability-test.local/cart/",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "category": "intervened",
+      "interventions": [
+        "pre-added item, clicked a.remove in cart"
+      ],
+      "provenance": "session:current (2026-10-23)"
+    },
+    {
+      "filename": "test_lighthouse_metrics.png",
+      "sha256": "4e05414d1010d8e12fa8642d1b5508311f0fcbe154e8ab7eef8c007c29e3320c",
+      "sizeBytes": 76908,
+      "targetUrl": "http://capability-test.local/",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "category": "archival",
+      "interventions": [
+        "archival capture of Google Lighthouse mobile audit"
+      ],
+      "provenance": "commit:c04b79d (2026-10-12)"
+    },
+    {
+      "filename": "test_mobile_menu_after_esc.png",
+      "sha256": "12f3d26f2037a8181ffca66217cd3f89769ce0a00fc5c9de4a5a7b42c311ef92",
+      "sizeBytes": 70174,
+      "targetUrl": "http://capability-test.local/",
+      "viewport": {
+        "width": 375,
+        "height": 812
+      },
+      "category": "intervened",
+      "interventions": [
+        "opened menu via toggle, dispatched CDP Escape event"
+      ],
+      "provenance": "session:current (2026-10-23)"
+    },
+    {
+      "filename": "test_mobile_menu_esc.png",
+      "sha256": "525b27cd14c5c4865cd42069a4d278510937c88f07a9a53f05e47e7d003a231e",
+      "sizeBytes": 62912,
+      "targetUrl": "http://capability-test.local/",
+      "viewport": {
+        "width": 375,
+        "height": 812
+      },
+      "category": "intervened",
+      "interventions": [
+        "clicked menu toggle, dispatched Escape (remained open)"
+      ],
+      "provenance": "commit:e364bb7 (2026-10-22)"
+    },
+    {
+      "filename": "test_mobile_menu_open.png",
+      "sha256": "525b27cd14c5c4865cd42069a4d278510937c88f07a9a53f05e47e7d003a231e",
+      "sizeBytes": 62912,
+      "targetUrl": "http://capability-test.local/",
+      "viewport": {
+        "width": 375,
+        "height": 812
+      },
+      "category": "intervened",
+      "interventions": [
+        "clicked .store-menu-toggle button"
+      ],
+      "provenance": "commit:e364bb7 (2026-10-22)"
+    },
+    {
+      "filename": "test_order_received_complete.png",
+      "sha256": "ddc21421edf63ad6e73e9232ce25f1bcdb1125de7e63435da1c1517b808ad0c1",
+      "sizeBytes": 25022,
+      "targetUrl": "http://capability-test.local/checkout/order-received/[REDACTED]/",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "category": "archival",
+      "interventions": [
+        "historical order confirmation view with sensitive tokens redacted"
+      ],
+      "provenance": "commit:c04b79d (2026-10-12)"
+    },
+    {
+      "filename": "test_outofstock_variation.png",
+      "sha256": "1f70b55bf9dcbed04ab06b322b6d9a6164d8a492b3bf748e5a41eb5415bff86c",
+      "sizeBytes": 286997,
+      "targetUrl": "http://capability-test.local/?p=141",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "category": "intervened",
+      "interventions": [
+        "selected out-of-stock option XL (variation #145)"
+      ],
+      "provenance": "session:current (2026-10-23)"
+    },
+    {
+      "filename": "test_reduced_motion.png",
+      "sha256": "13bda0a915b04e1ab3cb9e66ddd36c4cfbcc297b3d777c1dc9219af3f4ee0a37",
+      "sizeBytes": 3955,
+      "targetUrl": "http://capability-test.local/",
+      "viewport": {
+        "width": 375,
+        "height": 812
+      },
+      "category": "intervened",
+      "interventions": [
+        "emulated media feature prefers-reduced-motion: reduce"
+      ],
+      "provenance": "session:current (2026-10-23)"
+    },
+    {
+      "filename": "test_search_flow.png",
+      "sha256": "5bde114a7b5bfd742e2238b557ba0c7216321c9c63c9371ccf2834e82f05f088",
+      "sizeBytes": 68914,
+      "targetUrl": "http://capability-test.local/?s=xyznotfound123&post_type=product",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "category": "intervened",
+      "interventions": [
+        "executed non-existent search query"
+      ],
+      "provenance": "session:current (2026-10-23)"
+    }
+  ],
+  "duplicateGroups": [
+    {
+      "sha256": "525b27cd14c5c4865cd42069a4d278510937c88f07a9a53f05e47e7d003a231e",
+      "files": [
+        "header_menu_open_375.png",
+        "test_mobile_menu_esc.png",
+        "test_mobile_menu_open.png"
+      ]
+    },
+    {
+      "sha256": "63a426788569e2860b93d499f0ea937133a5ea130451b1495fe96bfd71a777fe",
+      "files": [
+        "mini_cart_open_375.png",
+        "mini_cart_open_375_full.png"
+      ]
+    },
+    {
+      "sha256": "c132a36233cb33b466699d971d2bd34f6b183fe889845612ec22c69eff51ed5d",
+      "files": [
+        "test_card_during_hover.png",
+        "test_card_hover.png"
+      ]
+    }
+  ]
+}

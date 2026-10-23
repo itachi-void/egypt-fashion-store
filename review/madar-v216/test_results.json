@@ -4,9 +4,35 @@
     "name": "hover الكارت: تبديل الصورة والعودة دون وميض أو layout shift",
     "steps": "1. قياس موضع وأبعاد كارت المنتج الأولي (x, y, w, h). 2. إرسال حدث حركة الفأرة فوق الكارت وقياس الأبعاد وشفافية البديلة (altOpacity). 3. إبعاد الفأرة والتحقق من عودة الشفافية لمستوى الخمول (<= 0.05) وثبات الموضع تماماً.",
     "expected": "تبديل الصورة البديلة لـ opacity >= 0.75، ثبات إحداثيات ومقاسات الكارت بنسبة 100% دون انزياح موضعي (shift <= 0.5px)، وعودة شفافية الصورة البديلة إلى الخمول (<= 0.05).",
-    "actual": "أبعاد وموضع أولي: (305.625x474.296875 عند x:1048.125, y:200.328125). أثناء الهوفر: (305.625x474.296875 عند x:1048.125, y:200.328125) بشفافية: 0.956207. بعد الإبعاد: (305.625x474.296875 عند x:1048.125, y:200.328125) بشفافية: 0. أقصى انزياح موضعي مقاس: 0.00px.",
+    "actual": "أبعاد وموضع أولي: (305.625x497.09375 عند x:1048.125, y:183.328125) بشفافية: 0. أثناء الهوفر: (305.625x497.09375 عند x:1048.125, y:183.328125) بشفافية: 0.997152. بعد الإبعاد: (305.625x497.09375 عند x:1048.125, y:183.328125) بشفافية: 3.92926e-10. أقصى انزياح موضعي مقاس: 0.00px.",
+    "metrics": {
+      "initial": {
+        "width": 305.625,
+        "height": 497.09375,
+        "top": 183.328125,
+        "left": 1048.125,
+        "altOpacity": 0
+      },
+      "duringHover": {
+        "width": 305.625,
+        "height": 497.09375,
+        "top": 183.328125,
+        "left": 1048.125,
+        "altOpacity": 0.997152
+      },
+      "postHover": {
+        "width": 305.625,
+        "height": 497.09375,
+        "top": 183.328125,
+        "left": 1048.125,
+        "altOpacity": 3.92926e-10
+      },
+      "maxShiftPx": 0,
+      "noLayoutShift": true
+    },
     "status": "PASS",
-    "screenshot": "test_card_hover.png"
+    "screenshot": "test_card_during_hover.png",
+    "postScreenshot": "test_card_post_hover.png"
   },
   {
     "testId": "TEST-02",
@@ -14,24 +40,48 @@
     "steps": "1. قراءة عداد السلة العددي الأولي في الترويسة (.store-cart-link small). 2. الضغط على 'إضافة إلى السلة' في صفحة منتج بسيط (#44). 3. فحص زيادة العداد الفعلي بمقدار +1 وظهور إشعار الإضافة الرسمي.",
     "expected": "قراءة قيمة رقمية صحيحة قبل الإضافة، وزيادة العداد بمقدار +1 بالضبط (لا يقبل null)، مع ظهور إشعار الإضافة وزر عرض السلة.",
     "actual": "العداد العددي قبل: 0، العداد العددي بعد: 1 (الزيادة: 1). نص الإشعار: \"تم إضافة “نظارة شمسية كلاسيكية – تجريبي” إلى سلة مشترياتك. عرض السلة\"",
+    "metrics": {
+      "countBefore": 0,
+      "countAfter": 1,
+      "increment": 1,
+      "noticeFound": true,
+      "noticeText": "تم إضافة “نظارة شمسية كلاسيكية – تجريبي” إلى سلة مشترياتك. عرض السلة"
+    },
     "status": "PASS",
     "screenshot": "test_add_to_cart_badges.png"
   },
   {
     "testId": "TEST-03",
     "name": "variation نافد: معطّل ومش قابل للاختيار / الشراء",
-    "steps": "1. فتح منتج متغيّر (#141: معطف صوف بلون الجمل). 2. اختيار المقاس النافد (XL - Variation ID: 145). 3. فحص حالة زر الإضافة وإشعار التوفر المقروء فعلياً من DOM دون نص افتراضي.",
-    "expected": "عند اختيار المقاس النافد (XL - ID 145)، يتعطل زر الإضافة (disabled) ويظهر إشعار 'غير متوفر في المخزون' من قِبل WooCommerce.",
-    "actual": "المنتج: #141 (معطف صوف بلون الجمل). الخيار المحدد: \"XL\" (ID: 145). حالة تعطيل الزر: true. إشعار التوفر الفعلي المقروء: \"غير متوفر في المخزون\".",
+    "steps": "1. قراءة بيانات المنتج المتغير (#141) وقائمة التنويعات data-product_variations من الـ DOM مباشرة. 2. التحقق من ربط المقاس XL بالتنويعة #145 وأن is_in_stock: false في بيانات ووكومرس. 3. اختيار المقاس ومطابقة حقل variation_id الديناميكي (145) وتعطيل زر الإضافة وقراءة إشعار النفاد الفعلي من DOM.",
+    "expected": "المنتج #141 يحتوي على تنويعة XL بمعرف حقيقي 145 بحالة نفاد (is_in_stock: false)، وعند اختيارها يتعطل زر الإضافة ويظهر إشعار 'غير متوفر في المخزون'.",
+    "actual": "المنتج: #141 (معطف صوف بلون الجمل). التنويعة المطابقة: ID 145 (المخزون في البيانات: false). قيمة الحقل المخفي بعد الاختيار: 145. حالة تعطيل الزر: true. إشعار التوفر الفعلي المقروء: \"غير متوفر في المخزون\".",
+    "metrics": {
+      "productId": "141",
+      "variationId": 145,
+      "inputVariationId": "145",
+      "selectedOption": "XL",
+      "isInStock": false,
+      "btnDisabled": true,
+      "stockNotice": "غير متوفر في المخزون"
+    },
     "status": "PASS",
     "screenshot": "test_outofstock_variation.png"
   },
   {
     "testId": "TEST-04",
     "name": "حذف المنتج من السلة (مع إيضاح نطاق الاختبار)",
-    "steps": "1. الدخول إلى صفحة السلة بمنتج موجود (#44). 2. الضغط على زر الحذف من السلة (a.remove). 3. فحص استجابة الصفحة وإشعار الحذف أو تفريغ السلة.",
-    "expected": "حذف العنصر وظهور رسالة تأكيد الحذف أو إشعار سلة المشتريات فارغة. (تنبيه: تحديث كميات السلة عبر حقول الأرقام وزر التحديث لم يتم اختباره في هذه الجلسة).",
-    "actual": "تم اختبار حذف المنتج بنجاح. رسالة الحذف / تفريغ السلة: \"سلة مشترياتك فارغة حالياً.\". ملاحظة: اختبار تعديل الكمية (quantity input) غير مُختبر ومفصول عن هذا الإثبات.",
+    "steps": "1. الدخول إلى صفحة السلة والتأكد من وجود صف المنتج (#44) ورابط الحذف. 2. النقر على رابط الحذف الفعلي (a.remove). 3. التحقق من اختفاء صف المنتج بالكامل وقراءة إشعار الحذف وتحديث العداد.",
+    "expected": "وجود صف المنتج قبل الحذف، واختفاء صفه تماماً بعد الحذف وظهور إشعار تأكيد الحذف أو تفريغ السلة الرسمي. (تنبيه: تعديل الكميات عبر حقول الأرقام وزر التحديث لم يتم اختباره في هذه الجلسة).",
+    "actual": "الصفوف قبل الحذف: 1 (المنتج: \"نظارة شمسية كلاسيكية – تجريبي\"). الصفوف بعد الحذف: 0. رسالة الحذف المقروءة فعلياً: \"تم إزالة “نظارة شمسية كلاسيكية – تجريبي”. تراجع؟\". ملاحظة: اختبار تعديل الكمية (quantity input) غير مُختبر ومفصول تماماً عن هذا الإثبات.",
+    "metrics": {
+      "itemsBefore": 1,
+      "productRemoved": "نظارة شمسية كلاسيكية – تجريبي",
+      "itemsAfter": 0,
+      "rowRemoved": true,
+      "noticeText": "تم إزالة “نظارة شمسية كلاسيكية – تجريبي”. تراجع؟",
+      "quantityUpdateTested": false
+    },
     "status": "PASS",
     "screenshot": "test_cart_update_remove.png"
   },
@@ -41,6 +91,10 @@
     "steps": "1. وضع منتج بالسلة والدخول للدفع /checkout/. 2. ملء بيانات العنوان واختيار طريقة 'الدفع عند الاستلام'. 3. النقر على تأكيد الطلب وانتظار شاشة الاستلام order-received.",
     "expected": "إنشاء طلب حقيقي جديد أثناء نفس جلسة الفحص والوصول لصفحة order-received الرسمية برقم طلب جديد وتأكيد مكتمل.",
     "actual": "لم يُنفّذ هذا المسار في هذه الجلسة التزاماً صارماً بسياسة المشروع المانعة لإنشاء طلبات تجريبية أو تعديل المخزون وقواعد البيانات بدون إذن كتابي صريح منفصل. تم استبعاد أي fallback على الطلب القديم #149 ومفاتيحه الحساسة.",
+    "metrics": {
+      "executionPolicy": "STRICT_PROHIBITION_NO_ORDERS_NO_DB_MUTATION",
+      "executed": false
+    },
     "status": "NOT TESTED",
     "screenshot": "checkout_1440.png"
   },
@@ -50,6 +104,12 @@
     "steps": "1. البحث عن 'قميص' والتأكد من ظهور المنتجات. 2. البحث عن مصطلح غير موجود 'xyznotfound123' والتأكد من إشعار عدم العثور على نتائج.",
     "expected": "ظهور نتائج للمصطلح الصحيح، وظهور رسالة إرشادية نظيفة عند انعدام النتائج.",
     "actual": "عدد النتائج لكلمة 'قميص': 2. حالة انعدام النتائج: \"لا توجد منتجات تتوافق مع اختيارك.\n\nالبحث\nالبحث\".",
+    "metrics": {
+      "queryWithResults": "قميص",
+      "resultsCount": 2,
+      "queryWithoutResults": "xyznotfound123",
+      "emptyNoticeText": "لا توجد منتجات تتوافق مع اختيارك.\n\nالبحث\nالبحث"
+    },
     "status": "PASS",
     "screenshot": "test_search_flow.png"
   },
@@ -59,42 +119,97 @@
     "steps": "1. تمييز الإجراءات المنفذة في هذه الجلسة عن الأرشيف: إرسال نموذج استرجاع كلمة المرور من /my-account/lost-password/. 2. فحص استلام البريد وتعيين كلمة المرور. 3. خطوات تسجيل الدخول/الخروج مستندة لبيانات المراجعة الأرشيفية السابقة تجنباً لإنشاء مستخدمين جدد.",
     "expected": "إرسال نموذج الاسترجاع بنجاح، ووصول رابط الاسترجاع بالبريد وتعيين كلمة المرور الجديدة بالكامل دون حجب.",
     "actual": "إرسال نموذج الاسترجاع في هذه الجلسة: ناجح (أعيد التوجيه إلى reset-link-sent=true: true). استلام رسالة البريد وتعيين كلمة المرور: محجوب بالكامل (BLOCKED) بسبب اعتراض وكتم رسائل wp_mail عبر wp-content/mu-plugins/local-email-guard.php. خطوات الدخول/الخروج أرشيفية وموثقة سابقاً دون تعديل على المستخدمين.",
+    "metrics": {
+      "resetFormSubmitted": true,
+      "resetUrl": "http://capability-test.local/my-account/lost-password/?reset-link-sent=true",
+      "emailDeliveryBlocked": true,
+      "guardPlugin": "wp-content/mu-plugins/local-email-guard.php",
+      "authSessionStatus": "ARCHIVAL_LOGIN_LOGOUT_PRESERVED"
+    },
     "status": "BLOCKED",
     "screenshot": "test_auth_flow.png"
   },
   {
     "testId": "TEST-08",
     "name": "القائمة على الموبايل: فتح وغلق والتنقل وزر Escape",
-    "steps": "1. عرض شاشة الموبايل (375px). 2. فتح القائمة بـ .store-menu-toggle. 3. إرسال حدث مفتاح Escape الفعلي عبر CDP Input دون نقر. 4. فحص إغلاق القائمة (isOpen === false)، وتحول aria-expanded إلى 'false'، واستعادة التركيز البصري للزر (BUTTON).",
-    "expected": "إغلاق القائمة فور إرسال حدث Escape، وتحول aria-expanded إلى 'false'، واستعادة التركيز البصري تلقائياً على زر القائمة (BUTTON.store-menu-toggle).",
-    "actual": "قبل Escape: (isOpen: true, aria-expanded: \"true\", active: BODY). بعد Escape: (isOpen: true, aria-expanded: \"true\", active: BODY). فشل: القائمة لم تُغلق بمفتاح Escape لعدم وجود مستمع keydown في madar.js وظل التركيز على BODY دون استعادة التركيز للزر. (الإغلاق بالنقر يعمل بنجاح ومفصول).",
+    "steps": "1. عرض شاشة الموبايل (375px). 2. فتح القائمة بـ .store-menu-toggle والتأكد من فتحها أولاً. 3. إرسال حدث مفتاح Escape الفعلي عبر CDP Input دون نقر. 4. فحص إغلاق القائمة (isOpen === false)، وتحول aria-expanded إلى 'false'، واستعادة التركيز البصري للزر نفسه (document.activeElement === toggleBtn).",
+    "expected": "فتح القائمة بنجاح، ثم إغلاقها فور إرسال حدث Escape، وتحول aria-expanded إلى 'false'، واستعادة التركيز البصري تلقائياً على زر القائمة (BUTTON.store-menu-toggle).",
+    "actual": "فتح القائمة أوليّاً: true (isOpen: true, aria: \"true\"). بعد Escape: (isOpen: true, aria: \"true\", active: BODY, استعادة التركيز للزر: false). فشل: القائمة لم تُغلق بمفتاح Escape لعدم وجود مستمع keydown في madar.js وظل التركيز على BODY دون استعادة التركيز للزر. (الإغلاق بالنقر يعمل بنجاح ومفصول).",
+    "metrics": {
+      "menuOpenedFirst": true,
+      "closedAfterEscape": false,
+      "ariaExpandedAfter": "true",
+      "activeElementTag": "BODY",
+      "focusRestoredToToggleBtn": false,
+      "clickToCloseWorking": true
+    },
     "status": "FAIL",
     "screenshot": "test_mobile_menu_after_esc.png"
   },
   {
     "testId": "TEST-09",
     "name": "دعم prefers-reduced-motion: إيقاف الحركات والتحولات للمستخدمين الحساسين للحركة",
-    "steps": "1. محاكاة prefers-reduced-motion: reduce عبر CDP Emulation.setEmulatedMedia. 2. فحص السلوك الفعلي للقيم المحسوبة (computed styles) للحركة والتحولات على العناصر المستهدفة (.motion-curtain و .store-card img) على الديسكتوب (1440px) والموبايل (375px)، وعدم الاكتفاء بـ matchMedia وحده.",
+    "steps": "1. محاكاة prefers-reduced-motion: reduce عبر CDP Emulation.setEmulatedMedia قبل أول تحميل للصفحة من about:blank. 2. فحص السلوك الفعلي للقيم المحسوبة (computed styles) للحركة والتحولات على العناصر المستهدفة (.motion-curtain و .store-card img) على الديسكتوب (1440px) والموبايل (375px)، وعدم الاكتفاء بـ matchMedia وحده.",
     "expected": "إيقاف الحركات والتحولات بالكامل على كافة الشاشات (animationDuration = 0s و transitionDuration = 0s أو none).",
-    "actual": "تطابق الميديا: true. القياس الفعلي: على الموبايل (375px) تم كتم الحركة بنجاح (ستارة: 0s، كارت: 0s). لكن على الديسكتوب (1440px) استمر تشغيل الحركة (ستارة: 0.85s [motion-curtain-exit]، كارت: 0.8s, 0.7s [transform, opacity]) نتيجة خلل بنيوي في madar.css حيث لم يُغلق قوس @media (max-width: 700px) في السطر 2261 مما جعل قواعد تقليل الحركة محصورة بشاشات الموبايل فقط. النتيجة: FAIL.",
+    "actual": "تطابق الميديا: (ديسكتوب: true، موبايل: true). القياس الفعلي: على الموبايل (375px) تم كتم الحركة بنجاح (ستارة: 0s، كارت: 0s). لكن على الديسكتوب (1440px) استمر تشغيل الحركة (ستارة: 0.85s [motion-curtain-exit]، كارت: 0.8s, 0.7s [transform, opacity]) نتيجة خلل بنيوي في madar.css حيث لم يُغلق قوس @media (max-width: 700px) في السطر 2261 مما جعل قواعد تقليل الحركة محصورة بشاشات الموبايل فقط وحرم الديسكتوب منها. النتيجة: FAIL.",
+    "metrics": {
+      "desktop": {
+        "width": 1440,
+        "mediaMatches": true,
+        "curtainDuration": "0.85s",
+        "curtainName": "motion-curtain-exit",
+        "cardDuration": "0.8s, 0.7s",
+        "cardProperty": "transform, opacity",
+        "suppressed": false
+      },
+      "mobile": {
+        "width": 375,
+        "mediaMatches": true,
+        "curtainDuration": "0s",
+        "curtainName": "none",
+        "cardDuration": "0s",
+        "cardProperty": "none",
+        "suppressed": true
+      },
+      "structuralCssBug": "themes/egypt-fashion-child/assets/madar.css:2261 unclosed @media (max-width: 700px)"
+    },
     "status": "FAIL",
     "screenshot": "test_reduced_motion.png"
   },
   {
     "testId": "TEST-10",
     "name": "فحص سجل الكونسول (Console): صفر أخطاء JS مع تسجيل التحذيرات في كافة الصفحات",
-    "steps": "1. فحص ملف console_audit_log.json المجمع بواسطة السكربت المستقل audit_console.mjs. 2. التحقق من اكتمال مصفوفة الـ 22 تشغيلاً (11 صفحة × مقاسين) وسلامة التنقل. 3. التحقق من نجاح فحص الـ Canary المعزول على about:blank. 4. التأكد من انعدام الاستثناءات والأخطاء.",
-    "expected": "ملف تدقيق سليم بتغطية كاملة (22/22 تشغيل بنجاح OK)، ونجاح فحص الـ Canary المستقل، مع صفر أخطاء كونسول وصفر استثناءات JS.",
-    "actual": "تم التحقق بالمستمعين الدائمين عبر 22 تشغيلاً كاملاً (11 صفحة × 2 مقاس). التحقق المستقل (Canary on about:blank): ناجح ومفصول. صفر استثناءات غير معالجة وصفر أخطاء كونسول.",
+    "steps": "1. فحص ملف console_audit_log.json المجمع بواسطة السكربت المستقل audit_console.mjs. 2. التحقق البنيوي الصارم من اكتمال مصفوفة الـ 22 تشغيلاً الفريدة وسلامة التنقل وثبات صفحة الدفع دون تحويل. 3. مطابقة الأعداد مع تفاصيل التشغيلات والتحقق المستقل من Canary على صفحة معزولة. 4. التأكد من انعدام الاستثناءات والأخطاء.",
+    "expected": "ملف تدقيق سليم بتغطية فريدة كاملة (22/22 تشغيل بنجاح OK دون تحويل)، ونجاح فحص الـ Canary المستقل، مع صفر أخطاء كونسول وصفر استثناءات JS.",
+    "actual": "سجل تدقيق سليم بتغطية فريدة كاملة (22/22 تشغيل بنجاح OK بما فيها صفحة الدفع دون تحويل)، ونجاح فحص Canary المستقل، مع صفر أخطاء وصفر استثناءات",
+    "metrics": {
+      "validationResult": "PASS",
+      "isValidStructure": true,
+      "totalRunsRecorded": 22,
+      "uniqueScenesCovered": 22,
+      "checkoutCoveredWithoutRedirect": true,
+      "canaryPassed": true,
+      "totalErrors": 0,
+      "totalUnhandledExceptions": 0,
+      "totalWarnings": 0
+    },
     "status": "PASS",
     "screenshot": "home_1440.png"
   },
   {
     "testId": "TEST-11",
     "name": "أداء الموبايل وتدقيق Lighthouse الرسمي (تقرير الأداء vs هدف الأداء)",
-    "steps": "1. قراءة تقارير Lighthouse الرسمية الأرشيفية (المحفوظة بتاريخ 12 أكتوبر 2026 في lighthouse/). 2. مقارنة الدرجات المحققة بالهدف المطلوب (>= 80/100).",
+    "steps": "1. قراءة تقارير Lighthouse الرسمية الأرشيفية (المحفوظة بتاريخ 12 أكتوبر 2026 في lighthouse/). 2. مقارنة الدرجات المحققة بالهدف المطلوب للأداء فقط (>= 80/100).",
     "expected": "تحقيق هدف الأداء المطلوب (>= 80/100) لكل من الصفحة الرئيسية وصفحة المنتج.",
     "actual": "تقارير Lighthouse أرشيفية مثبتة بتاريخ 12 أكتوبر 2026 في مجلد lighthouse/. صفحة المنتج حققت الهدف: 85/100 (>= 80). الصفحة الرئيسية فشلت في تحقيق الهدف: 44/100 (< 80) نتيجة حجب موارد CSS وحجم الصور عبر الأقسام الـ 16. انزياح التخطيط التراكمي (CLS) المقاس: 0.004 للرئيسية و 0 للمنتج. النتيجة: FAIL.",
+    "metrics": {
+      "archivalDate": "2026-10-12",
+      "targetPerformanceScore": 80,
+      "homePerformanceScore": 44,
+      "homeMetTarget": false,
+      "productPerformanceScore": 85,
+      "productMetTarget": true
+    },
     "status": "FAIL",
     "screenshot": "test_lighthouse_metrics.png"
   }
