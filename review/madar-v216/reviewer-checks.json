@@ -1,0 +1,117 @@
+{
+  "purpose": "Independent static evidence review and isolated synthetic predicate checks",
+  "evidenceCommit": "75873c66faa5d16ece1b169c750ebe4be72d3196",
+  "command": "node review/madar-v216/scripts/reviewer_checks.mjs",
+  "noStoreRequests": true,
+  "noBrowserExecution": true,
+  "originalRawResultsUnmodified": true,
+  "rawStatusCounts": {
+    "PASS": 6,
+    "NOT TESTED": 1,
+    "BLOCKED": 1,
+    "FAIL": 3
+  },
+  "test01": {
+    "rawActual": "أبعاد وموضع أولي: (305.625x474.296875 عند x:1048.125, y:200.328125). أثناء الهوفر: (305.625x474.296875 عند x:1048.125, y:200.328125) بشفافية: 0.956207. بعد الإبعاد: (305.625x474.296875 عند x:1048.125, y:200.328125) بشفافية: 0. أقصى انزياح موضعي مقاس: 0.00px.",
+    "reportSummary": "  - **TEST-01:** ثبات أبعاد كارت المنتج وموضعه (305.625×497.09px عند x:1048.12, y:195.33) دون انزياح موضعي (أقصى انزياح مقاس: 0.00px)، مع تبديل الصورة عند الهوفر (شفافية: 0.997 >= 0.75) وعودتها التامة للخمول عند الإبعاد (شفافية: 0.00 <= 0.05)."
+  },
+  "consoleAudit": {
+    "runMetadata": {
+      "script": "review/madar-v216/scripts/audit_console.mjs",
+      "timestamp": "2026-10-23T11:41:07.826Z",
+      "environment": "capability-test.local",
+      "methodology": "CDP permanent listeners attached before Emulation and Page.navigate",
+      "totalRuns": 22,
+      "expectedRuns": 22,
+      "allRunsSuccessful": true
+    },
+    "uniqueRunKeys": 22,
+    "checkoutRuns": [
+      {
+        "runKey": "checkout_375",
+        "requestedUrl": "http://capability-test.local/checkout/",
+        "finalUrl": "http://capability-test.local/cart/",
+        "status": "OK"
+      },
+      {
+        "runKey": "checkout_1440",
+        "requestedUrl": "http://capability-test.local/checkout/",
+        "finalUrl": "http://capability-test.local/cart/",
+        "status": "OK"
+      }
+    ],
+    "canary": {
+      "executedAt": "2026-10-23T11:39:29.383Z",
+      "isolatedTarget": "about:blank",
+      "capturedWarning": true,
+      "capturedError": true,
+      "passed": true
+    }
+  },
+  "syntheticCounterexamples": [
+    {
+      "name": "missing_summary_and_run_fields",
+      "observed": {
+        "status": "PASS",
+        "hasFailure": false
+      },
+      "requiredClassification": "NOT TESTED / observation error; never PASS"
+    },
+    {
+      "name": "repeated_same_scene",
+      "observed": {
+        "status": "PASS",
+        "hasFailure": false
+      },
+      "requiredClassification": "NOT TESTED / observation error; never PASS"
+    },
+    {
+      "name": "raw_errors_with_zero_summary",
+      "observed": {
+        "status": "PASS",
+        "hasFailure": false
+      },
+      "requiredClassification": "NOT TESTED / observation error; never PASS"
+    }
+  ],
+  "syntheticNavigationCounterexample": {
+    "returnedByMock": {
+      "errorText": "net::ERR_CONNECTION_REFUSED"
+    },
+    "observed": {
+      "status": "OK",
+      "finalUrl": "chrome-error://chromewebdata/"
+    }
+  },
+  "screenshotSha256DuplicateGroups": [
+    {
+      "sha256": "525b27cd14c5c4865cd42069a4d278510937c88f07a9a53f05e47e7d003a231e",
+      "files": [
+        "header_menu_open_375.png",
+        "test_mobile_menu_esc.png",
+        "test_mobile_menu_open.png"
+      ]
+    },
+    {
+      "sha256": "63a426788569e2860b93d499f0ea937133a5ea130451b1495fe96bfd71a777fe",
+      "files": [
+        "mini_cart_open_375.png",
+        "mini_cart_open_375_full.png"
+      ]
+    }
+  ],
+  "evidenceCommitChangedFiles": [
+    "review/madar-v216/console_audit_log.json",
+    "review/madar-v216/git_status_and_log.txt",
+    "review/madar-v216/report.md",
+    "review/madar-v216/screenshots/test_auth_flow.png",
+    "review/madar-v216/screenshots/test_card_hover.png",
+    "review/madar-v216/screenshots/test_outofstock_variation.png",
+    "review/madar-v216/screenshots/test_reduced_motion.png",
+    "review/madar-v216/scripts/audit_console.mjs",
+    "review/madar-v216/scripts/run_functional_tests.mjs",
+    "review/madar-v216/test_results.json"
+  ],
+  "themePluginDiffFromA6e7f4c": "empty",
+  "interpretation": "Exit 0 means reviewer checks completed, NOT that storefront tests passed."
+}
